@@ -6,6 +6,5 @@
 //
 
 struct LoginAPIErrorResponse: Codable {
-    let code: Int
-    let message: String
+    let error: String
 }

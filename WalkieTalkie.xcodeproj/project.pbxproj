@@ -32,7 +32,6 @@
 		C46024D92E27F75A0032EDA6 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024D82E27F75A0032EDA6 /* RegisterRequest.swift */; };
 		C46024DB2E27F81B0032EDA6 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024DA2E27F81B0032EDA6 /* RegisterResponse.swift */; };
 		C46024DD2E27F8310032EDA6 /* RegisterAPIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024DC2E27F8310032EDA6 /* RegisterAPIErrorResponse.swift */; };
-		C46024DF2E27F8460032EDA6 /* RegisterAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024DE2E27F8460032EDA6 /* RegisterAPIError.swift */; };
 		C46024E22E27F86D0032EDA6 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024E12E27F86D0032EDA6 /* RegisterProtocols.swift */; };
 		C46024E42E27F8930032EDA6 /* RegisterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024E32E27F8930032EDA6 /* RegisterRepository.swift */; };
 		C46024E62E27F8B40032EDA6 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024E52E27F8B40032EDA6 /* RegisterInteractor.swift */; };
@@ -98,7 +97,6 @@
 		C46024D82E27F75A0032EDA6 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		C46024DA2E27F81B0032EDA6 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		C46024DC2E27F8310032EDA6 /* RegisterAPIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAPIErrorResponse.swift; sourceTree = "<group>"; };
-		C46024DE2E27F8460032EDA6 /* RegisterAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAPIError.swift; sourceTree = "<group>"; };
 		C46024E12E27F86D0032EDA6 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		C46024E32E27F8930032EDA6 /* RegisterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRepository.swift; sourceTree = "<group>"; };
 		C46024E52E27F8B40032EDA6 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
@@ -285,7 +283,6 @@
 				C46024D82E27F75A0032EDA6 /* RegisterRequest.swift */,
 				C46024DA2E27F81B0032EDA6 /* RegisterResponse.swift */,
 				C46024DC2E27F8310032EDA6 /* RegisterAPIErrorResponse.swift */,
-				C46024DE2E27F8460032EDA6 /* RegisterAPIError.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -449,7 +446,6 @@
 				C46024C82E2702FC0032EDA6 /* LoginResponse.swift in Sources */,
 				C46024D02E27038A0032EDA6 /* LoginInteractor.swift in Sources */,
 				C46024C02E2702750032EDA6 /* TokenExpirationHandler.swift in Sources */,
-				C46024DF2E27F8460032EDA6 /* RegisterAPIError.swift in Sources */,
 				C46024D22E2703A20032EDA6 /* LoginRouter.swift in Sources */,
 				C46024A42E26FFCF0032EDA6 /* AppDelegate.swift in Sources */,
 				C46024F32E2803F60032EDA6 /* LogoutResponse.swift in Sources */,

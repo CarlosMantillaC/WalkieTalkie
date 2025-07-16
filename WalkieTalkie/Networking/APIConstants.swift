@@ -11,11 +11,10 @@ enum APIConstants {
     static let baseURL = "http://159.203.187.94"
     
     enum Endpoint {
-        static let register = "/api/register"
-        static let login = "/api/login"
-        static let logout = "/api/logout"
-        static let user = "/api/user"
-        static let users = "/api/users"
+        static let register = "/register"
+        static let login = "/login"
+        static let logout = "/logout"
+        static let user = "/channels"
     }
     
     struct Headers {

@@ -6,5 +6,5 @@
 //
 
 struct RegisterAPIErrorResponse: Codable {
-    let error: RegisterAPIError
+    let error: String
 }

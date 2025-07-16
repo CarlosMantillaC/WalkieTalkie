@@ -10,7 +10,6 @@ import Foundation
 protocol RegisterRepositoryProtocol {
     func register(user: RegisterRequest, completion: @escaping (Result<RegisterResponse, Error>) -> Void)
 }
-
 final class RegisterRepository: RegisterRepositoryProtocol {
     private let session: URLSession
     
@@ -52,9 +51,9 @@ final class RegisterRepository: RegisterRepositoryProtocol {
             } catch {
                 if let apiError = try? JSONDecoder().decode(RegisterAPIErrorResponse.self, from: data) {
                     let customError = NSError(
-                        domain: "",
-                        code: apiError.error.code,
-                        userInfo: [NSLocalizedDescriptionKey: apiError.error.message]
+                        domain: "API",
+                        code: 400,
+                        userInfo: [NSLocalizedDescriptionKey: apiError.error]
                     )
                     completion(.failure(customError))
                 } else {

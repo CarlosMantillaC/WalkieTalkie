@@ -53,8 +53,8 @@ final class LoginRepository: LoginRepositoryProtocol {
                 if let apiError = try? JSONDecoder().decode(LoginAPIErrorResponse.self, from: data) {
                     let customError = NSError(
                         domain: "API",
-                        code: apiError.code,
-                        userInfo: [NSLocalizedDescriptionKey: apiError.message]
+                        code: 400,
+                        userInfo: [NSLocalizedDescriptionKey: apiError.error]
                     )
                     completion(.failure(customError))
                 }

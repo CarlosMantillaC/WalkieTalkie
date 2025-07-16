@@ -36,9 +36,8 @@ class RegisterViewController: UIViewController {
     @IBAction func didTapSend(_ sender: Any) {
         if let presenter = presenter {
             presenter.didTapSend(
-                name: nameTextField.text ?? "",
+                first_name: nameTextField.text ?? "",
                 last_name: lastNameTextField.text ?? "",
-                age: ageTextField.text ?? "",
                 email: emailTextField.text ?? "",
                 password: passwordTextField.text ?? "",
                 confirm_password: confirmPasswordTextField.text ?? ""
@@ -90,8 +89,6 @@ extension RegisterViewController: UITextFieldDelegate {
             lastNameTextField.becomeFirstResponder()
         case lastNameTextField:
             ageTextField.becomeFirstResponder()
-        case ageTextField:
-            emailTextField.becomeFirstResponder()
         case emailTextField:
             passwordTextField.becomeFirstResponder()
         case passwordTextField:

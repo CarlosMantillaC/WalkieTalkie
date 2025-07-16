@@ -15,31 +15,25 @@ final class RegisterPresenter {
 
 extension RegisterPresenter: RegisterPresenterProtocol {
     func didTapSend(
-        name: String,
+        first_name: String,
         last_name: String,
-        age: String,
         email: String,
         password: String,
         confirm_password: String) {
             
-            guard !name.isEmpty, !last_name.isEmpty, !age.isEmpty, !email.isEmpty, !password.isEmpty, !confirm_password.isEmpty else {
+            guard !first_name.isEmpty, !last_name.isEmpty, !email.isEmpty, !password.isEmpty, !confirm_password.isEmpty else {
                 view?.showError("Todos los campos son obligatorios.")
                 return
             }
             
             let nameRegex = "^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$"
-            if !NSPredicate(format: "SELF MATCHES %@", nameRegex).evaluate(with: name) {
+            if !NSPredicate(format: "SELF MATCHES %@", nameRegex).evaluate(with: first_name) {
                 view?.showError("El nombre solo debe contener letras.")
                 return
             }
             
             if !NSPredicate(format: "SELF MATCHES %@", nameRegex).evaluate(with: last_name) {
                 view?.showError("El apellido solo debe contener letras.")
-                return
-            }
-            
-            guard let ageInt = Int(age), ageInt > 12 && ageInt <= 100 else {
-                view?.showError("Edad inválida.")
                 return
             }
             
@@ -59,9 +53,8 @@ extension RegisterPresenter: RegisterPresenterProtocol {
             }
             
             let request = RegisterRequest(
-                name: name,
+                first_name: first_name,
                 last_name: last_name,
-                age: ageInt,
                 email: email,
                 password: password,
                 confirm_password: confirm_password
