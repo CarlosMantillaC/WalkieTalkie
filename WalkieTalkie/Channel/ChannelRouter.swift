@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class HomeRouter: HomeRouterProtocol {
+final class ChannelRouter: ChannelRouterProtocol {
     weak var viewController: UIViewController?
     
     static func createModule() -> UIViewController {
-        let view = HomeViewController()
-        let presenter = HomePresenter()
-        let interactor = HomeInteractor()
-        let router = HomeRouter()
+        let view = ChannelViewController()
+        let presenter = ChannelPresenter()
+        let interactor = ChannelInteractor()
+        let router = ChannelRouter()
         
         view.presenter = presenter
         presenter.view = view

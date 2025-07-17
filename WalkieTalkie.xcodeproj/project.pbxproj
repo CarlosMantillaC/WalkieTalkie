@@ -41,13 +41,23 @@
 		C46024EE2E27F92D0032EDA6 /* StyleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024ED2E27F92D0032EDA6 /* StyleTextField.swift */; };
 		C46024F02E27F9480032EDA6 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024EF2E27F9480032EDA6 /* RegisterRouter.swift */; };
 		C46024F32E2803F60032EDA6 /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024F22E2803F60032EDA6 /* LogoutResponse.swift */; };
-		C46024F52E28042A0032EDA6 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024F42E28042A0032EDA6 /* HomeInteractor.swift */; };
-		C46024F72E2804420032EDA6 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024F62E2804420032EDA6 /* HomePresenter.swift */; };
-		C46024F92E2804520032EDA6 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024F82E2804520032EDA6 /* HomeProtocols.swift */; };
-		C46024FC2E2804DE0032EDA6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024FA2E2804DE0032EDA6 /* HomeViewController.swift */; };
-		C46024FD2E2804DE0032EDA6 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46024FB2E2804DE0032EDA6 /* HomeViewController.xib */; };
-		C46024FF2E2805390032EDA6 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024FE2E2805390032EDA6 /* HomeRouter.swift */; };
+		C46024F52E28042A0032EDA6 /* ChannelInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024F42E28042A0032EDA6 /* ChannelInteractor.swift */; };
+		C46024F72E2804420032EDA6 /* ChannelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024F62E2804420032EDA6 /* ChannelPresenter.swift */; };
+		C46024F92E2804520032EDA6 /* ChannelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024F82E2804520032EDA6 /* ChannelProtocols.swift */; };
+		C46024FD2E2804DE0032EDA6 /* ChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46024FB2E2804DE0032EDA6 /* ChannelViewController.xib */; };
+		C46024FF2E2805390032EDA6 /* ChannelRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024FE2E2805390032EDA6 /* ChannelRouter.swift */; };
 		C46025012E2805990032EDA6 /* LogoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025002E2805990032EDA6 /* LogoutRepository.swift */; };
+		C46025072E2905640032EDA6 /* ChannelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025052E2905640032EDA6 /* ChannelsTableViewCell.swift */; };
+		C46025082E2905640032EDA6 /* ChannelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46025062E2905640032EDA6 /* ChannelsTableViewCell.xib */; };
+		C460250A2E290A200032EDA6 /* ChannelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025092E290A200032EDA6 /* ChannelsRepository.swift */; };
+		C460250D2E290A8B0032EDA6 /* Channels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460250C2E290A8B0032EDA6 /* Channels.swift */; };
+		C460250F2E290AD20032EDA6 /* ChannelsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460250E2E290AD20032EDA6 /* ChannelsProtocols.swift */; };
+		C46025112E2916110032EDA6 /* ChannelsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025102E2916110032EDA6 /* ChannelsInteractor.swift */; };
+		C46025132E2917C90032EDA6 /* ChannelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025122E2917C90032EDA6 /* ChannelsPresenter.swift */; };
+		C46025162E2918730032EDA6 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025142E2918730032EDA6 /* ChannelsViewController.swift */; };
+		C46025172E2918730032EDA6 /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46025152E2918730032EDA6 /* ChannelsViewController.xib */; };
+		C46025192E291ACE0032EDA6 /* ChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025182E291ACE0032EDA6 /* ChannelsRouter.swift */; };
+		C460251B2E2939B00032EDA6 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460251A2E2939B00032EDA6 /* ChannelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,13 +116,23 @@
 		C46024ED2E27F92D0032EDA6 /* StyleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTextField.swift; sourceTree = "<group>"; };
 		C46024EF2E27F9480032EDA6 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		C46024F22E2803F60032EDA6 /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
-		C46024F42E28042A0032EDA6 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		C46024F62E2804420032EDA6 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
-		C46024F82E2804520032EDA6 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
-		C46024FA2E2804DE0032EDA6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		C46024FB2E2804DE0032EDA6 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		C46024FE2E2805390032EDA6 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		C46024F42E28042A0032EDA6 /* ChannelInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelInteractor.swift; sourceTree = "<group>"; };
+		C46024F62E2804420032EDA6 /* ChannelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPresenter.swift; sourceTree = "<group>"; };
+		C46024F82E2804520032EDA6 /* ChannelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelProtocols.swift; sourceTree = "<group>"; };
+		C46024FB2E2804DE0032EDA6 /* ChannelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelViewController.xib; sourceTree = "<group>"; };
+		C46024FE2E2805390032EDA6 /* ChannelRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelRouter.swift; sourceTree = "<group>"; };
 		C46025002E2805990032EDA6 /* LogoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRepository.swift; sourceTree = "<group>"; };
+		C46025052E2905640032EDA6 /* ChannelsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsTableViewCell.swift; sourceTree = "<group>"; };
+		C46025062E2905640032EDA6 /* ChannelsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsTableViewCell.xib; sourceTree = "<group>"; };
+		C46025092E290A200032EDA6 /* ChannelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRepository.swift; sourceTree = "<group>"; };
+		C460250C2E290A8B0032EDA6 /* Channels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channels.swift; sourceTree = "<group>"; };
+		C460250E2E290AD20032EDA6 /* ChannelsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsProtocols.swift; sourceTree = "<group>"; };
+		C46025102E2916110032EDA6 /* ChannelsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsInteractor.swift; sourceTree = "<group>"; };
+		C46025122E2917C90032EDA6 /* ChannelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenter.swift; sourceTree = "<group>"; };
+		C46025142E2918730032EDA6 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		C46025152E2918730032EDA6 /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
+		C46025182E291ACE0032EDA6 /* ChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouter.swift; sourceTree = "<group>"; };
+		C460251A2E2939B00032EDA6 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +187,8 @@
 				C46024C12E2702970032EDA6 /* Repository */,
 				C46024B12E26FFE80032EDA6 /* Login */,
 				C46024D62E27F4D10032EDA6 /* Register */,
-				C46024D72E27F69C0032EDA6 /* Home */,
+				C46024D72E27F69C0032EDA6 /* Channel */,
+				C46025042E2904680032EDA6 /* Channels */,
 				C460249E2E26FFCF0032EDA6 /* AppDelegate.swift */,
 				C460249F2E26FFCF0032EDA6 /* Assets.xcassets */,
 				C46024A02E26FFCF0032EDA6 /* Info.plist */,
@@ -226,6 +247,7 @@
 				C46024C22E2702B30032EDA6 /* LoginRepository.swift */,
 				C46024E32E27F8930032EDA6 /* RegisterRepository.swift */,
 				C46025002E2805990032EDA6 /* LogoutRepository.swift */,
+				C46025092E290A200032EDA6 /* ChannelsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -263,18 +285,18 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
-		C46024D72E27F69C0032EDA6 /* Home */ = {
+		C46024D72E27F69C0032EDA6 /* Channel */ = {
 			isa = PBXGroup;
 			children = (
 				C46024F12E2803D60032EDA6 /* Entities */,
-				C46024F42E28042A0032EDA6 /* HomeInteractor.swift */,
-				C46024F62E2804420032EDA6 /* HomePresenter.swift */,
-				C46024F82E2804520032EDA6 /* HomeProtocols.swift */,
-				C46024FA2E2804DE0032EDA6 /* HomeViewController.swift */,
-				C46024FB2E2804DE0032EDA6 /* HomeViewController.xib */,
-				C46024FE2E2805390032EDA6 /* HomeRouter.swift */,
+				C46024F42E28042A0032EDA6 /* ChannelInteractor.swift */,
+				C46024F62E2804420032EDA6 /* ChannelPresenter.swift */,
+				C46024F82E2804520032EDA6 /* ChannelProtocols.swift */,
+				C460251A2E2939B00032EDA6 /* ChannelViewController.swift */,
+				C46024FB2E2804DE0032EDA6 /* ChannelViewController.xib */,
+				C46024FE2E2805390032EDA6 /* ChannelRouter.swift */,
 			);
-			path = Home;
+			path = Channel;
 			sourceTree = "<group>";
 		};
 		C46024E02E27F8500032EDA6 /* Entities */ = {
@@ -291,6 +313,30 @@
 			isa = PBXGroup;
 			children = (
 				C46024F22E2803F60032EDA6 /* LogoutResponse.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C46025042E2904680032EDA6 /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				C460250B2E290A700032EDA6 /* Entities */,
+				C46025052E2905640032EDA6 /* ChannelsTableViewCell.swift */,
+				C46025062E2905640032EDA6 /* ChannelsTableViewCell.xib */,
+				C460250E2E290AD20032EDA6 /* ChannelsProtocols.swift */,
+				C46025102E2916110032EDA6 /* ChannelsInteractor.swift */,
+				C46025122E2917C90032EDA6 /* ChannelsPresenter.swift */,
+				C46025142E2918730032EDA6 /* ChannelsViewController.swift */,
+				C46025152E2918730032EDA6 /* ChannelsViewController.xib */,
+				C46025182E291ACE0032EDA6 /* ChannelsRouter.swift */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		C460250B2E290A700032EDA6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C460250C2E290A8B0032EDA6 /* Channels.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -406,10 +452,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46025172E2918730032EDA6 /* ChannelsViewController.xib in Resources */,
 				C46024B52E2700540032EDA6 /* LoginViewController.xib in Resources */,
 				C46024A72E26FFCF0032EDA6 /* Assets.xcassets in Resources */,
 				C46024EC2E27F8E40032EDA6 /* RegisterViewController.xib in Resources */,
-				C46024FD2E2804DE0032EDA6 /* HomeViewController.xib in Resources */,
+				C46024FD2E2804DE0032EDA6 /* ChannelViewController.xib in Resources */,
+				C46025082E2905640032EDA6 /* ChannelsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,22 +482,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46025192E291ACE0032EDA6 /* ChannelsRouter.swift in Sources */,
 				C46024B42E2700540032EDA6 /* LoginViewController.swift in Sources */,
 				C46024DD2E27F8310032EDA6 /* RegisterAPIErrorResponse.swift in Sources */,
 				C46024CC2E2703530032EDA6 /* LoginProtocols.swift in Sources */,
-				C46024F72E2804420032EDA6 /* HomePresenter.swift in Sources */,
-				C46024F52E28042A0032EDA6 /* HomeInteractor.swift in Sources */,
+				C46024F72E2804420032EDA6 /* ChannelPresenter.swift in Sources */,
+				C46024F52E28042A0032EDA6 /* ChannelInteractor.swift in Sources */,
 				C46024E62E27F8B40032EDA6 /* RegisterInteractor.swift in Sources */,
+				C46025132E2917C90032EDA6 /* ChannelsPresenter.swift in Sources */,
+				C46025162E2918730032EDA6 /* ChannelsViewController.swift in Sources */,
 				C46024D92E27F75A0032EDA6 /* RegisterRequest.swift in Sources */,
 				C46024F02E27F9480032EDA6 /* RegisterRouter.swift in Sources */,
 				C46024B82E2701A20032EDA6 /* APIConstants.swift in Sources */,
 				C46024C82E2702FC0032EDA6 /* LoginResponse.swift in Sources */,
+				C46025112E2916110032EDA6 /* ChannelsInteractor.swift in Sources */,
 				C46024D02E27038A0032EDA6 /* LoginInteractor.swift in Sources */,
 				C46024C02E2702750032EDA6 /* TokenExpirationHandler.swift in Sources */,
 				C46024D22E2703A20032EDA6 /* LoginRouter.swift in Sources */,
 				C46024A42E26FFCF0032EDA6 /* AppDelegate.swift in Sources */,
 				C46024F32E2803F60032EDA6 /* LogoutResponse.swift in Sources */,
 				C46024E42E27F8930032EDA6 /* RegisterRepository.swift in Sources */,
+				C46025072E2905640032EDA6 /* ChannelsTableViewCell.swift in Sources */,
 				C46024BA2E2702180032EDA6 /* URLRequest+Extensions.swift in Sources */,
 				C46024E22E27F86D0032EDA6 /* RegisterProtocols.swift in Sources */,
 				C46024CA2E2703180032EDA6 /* LoginAPIErrorResponse.swift in Sources */,
@@ -458,15 +511,18 @@
 				C46024CE2E2703730032EDA6 /* LoginPresenter.swift in Sources */,
 				C46024A52E26FFCF0032EDA6 /* SceneDelegate.swift in Sources */,
 				C46024BE2E27025A0032EDA6 /* Notifications+Extensions.swift in Sources */,
+				C460250F2E290AD20032EDA6 /* ChannelsProtocols.swift in Sources */,
 				C46024E82E27F8CB0032EDA6 /* RegisterPresenter.swift in Sources */,
-				C46024FF2E2805390032EDA6 /* HomeRouter.swift in Sources */,
+				C46024FF2E2805390032EDA6 /* ChannelRouter.swift in Sources */,
 				C46024D52E27040F0032EDA6 /* KeyboardHandling.swift in Sources */,
 				C46024BC2E27023B0032EDA6 /* TokenManager.swift in Sources */,
 				C46024EB2E27F8E40032EDA6 /* RegisterViewController.swift in Sources */,
-				C46024F92E2804520032EDA6 /* HomeProtocols.swift in Sources */,
-				C46024FC2E2804DE0032EDA6 /* HomeViewController.swift in Sources */,
+				C46024F92E2804520032EDA6 /* ChannelProtocols.swift in Sources */,
+				C460250A2E290A200032EDA6 /* ChannelsRepository.swift in Sources */,
 				C46024C62E2702E90032EDA6 /* LoginRequest.swift in Sources */,
+				C460250D2E290A8B0032EDA6 /* Channels.swift in Sources */,
 				C46024EE2E27F92D0032EDA6 /* StyleTextField.swift in Sources */,
+				C460251B2E2939B00032EDA6 /* ChannelViewController.swift in Sources */,
 				C46024DB2E27F81B0032EDA6 /* RegisterResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

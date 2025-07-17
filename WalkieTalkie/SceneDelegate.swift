@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let token = TokenManager.accessToken, !token.isEmpty {
             print("Token detectado al iniciar la app:", token)
-            initialViewController = HomeRouter.createModule()
+            initialViewController = ChannelsRouter.createModule()
         } else {
             print("No hay token al iniciar la app")
             initialViewController = LoginRouter.createModule()

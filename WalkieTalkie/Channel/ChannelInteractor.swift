@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class HomeInteractor: HomeInteractorProtocol {
-    weak var presenter: HomeInteractorOutputProtocol?
+final class ChannelInteractor: ChannelInteractorProtocol {
+    weak var presenter: ChannelInteractorOutputProtocol?
     private let repository: LogoutRepositoryProtocol
     
     init(repository: LogoutRepositoryProtocol = LogoutRepository()) {

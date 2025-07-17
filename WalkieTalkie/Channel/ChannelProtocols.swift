@@ -7,23 +7,23 @@
 
 import Foundation
 
-protocol HomeViewProtocol: AnyObject {
+protocol ChannelViewProtocol: AnyObject {
     func showLogoutError(_ message: String)
 }
 
-protocol HomePresenterProtocol: AnyObject {
+protocol ChannelPresenterProtocol: AnyObject {
     func didTapLogout()
 }
 
-protocol HomeInteractorProtocol: AnyObject {
+protocol ChannelInteractorProtocol: AnyObject {
     func logout()
 }
 
-protocol HomeInteractorOutputProtocol: AnyObject {
+protocol ChannelInteractorOutputProtocol: AnyObject {
     func logoutSucceeded(message: String)
     func logoutFailed(with error: Error)
 }
 
-protocol HomeRouterProtocol: AnyObject {
+protocol ChannelRouterProtocol: AnyObject {
     func navigateToLogin(with message: String)
 }
