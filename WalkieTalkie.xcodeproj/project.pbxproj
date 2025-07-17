@@ -58,6 +58,7 @@
 		C46025172E2918730032EDA6 /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46025152E2918730032EDA6 /* ChannelsViewController.xib */; };
 		C46025192E291ACE0032EDA6 /* ChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025182E291ACE0032EDA6 /* ChannelsRouter.swift */; };
 		C460251B2E2939B00032EDA6 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460251A2E2939B00032EDA6 /* ChannelViewController.swift */; };
+		C460251D2E29439A0032EDA6 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460251C2E29439A0032EDA6 /* WebSocketService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		C46025152E2918730032EDA6 /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
 		C46025182E291ACE0032EDA6 /* ChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouter.swift; sourceTree = "<group>"; };
 		C460251A2E2939B00032EDA6 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		C460251C2E29439A0032EDA6 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 		C46024A32E26FFCF0032EDA6 /* WalkieTalkie */ = {
 			isa = PBXGroup;
 			children = (
+				C480A1052E2979D3000E0C7F /* Service */,
 				C46024B62E27018B0032EDA6 /* Networking */,
 				C46024C12E2702970032EDA6 /* Repository */,
 				C46024B12E26FFE80032EDA6 /* Login */,
@@ -341,6 +344,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		C480A1052E2979D3000E0C7F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C460251C2E29439A0032EDA6 /* WebSocketService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -496,6 +507,7 @@
 				C46024B82E2701A20032EDA6 /* APIConstants.swift in Sources */,
 				C46024C82E2702FC0032EDA6 /* LoginResponse.swift in Sources */,
 				C46025112E2916110032EDA6 /* ChannelsInteractor.swift in Sources */,
+				C460251D2E29439A0032EDA6 /* WebSocketService.swift in Sources */,
 				C46024D02E27038A0032EDA6 /* LoginInteractor.swift in Sources */,
 				C46024C02E2702750032EDA6 /* TokenExpirationHandler.swift in Sources */,
 				C46024D22E2703A20032EDA6 /* LoginRouter.swift in Sources */,

@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChannelViewController" customModule="WalkieTalkie" customModuleProvider="target">
             <connections>
                 <outlet property="exitButton" destination="ssX-Mp-rG8" id="H3G-pF-Xuf"/>
-                <outlet property="nameChannelLabel" destination="xrG-Ts-WKf" id="Uqm-PX-jtK"/>
+                <outlet property="nameChannelLabel" destination="xrG-Ts-WKf" id="dvv-AB-0fR"/>
                 <outlet property="talkToPushButton" destination="mHF-fa-1VD" id="pBB-Nm-PVC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,7 +33,7 @@
                                         <constraint firstAttribute="width" constant="211" id="BEQ-us-YwS"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssX-Mp-rG8">
@@ -45,6 +45,9 @@
                                     <buttonConfiguration key="configuration" style="filled" title="Salir">
                                         <color key="baseBackgroundColor" red="0.38823529411764707" green="0.38039215686274508" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="exitButtonTapped:" destination="-1" eventType="touchUpInside" id="ixm-eV-ucO"/>
+                                    </connections>
                                 </button>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nRM-NW-bhK">
                                     <rect key="frame" x="37" y="130" width="318" height="330"/>
@@ -57,6 +60,10 @@
                                     <buttonConfiguration key="configuration" style="filled" title="Hablar">
                                         <color key="baseBackgroundColor" red="0.38823529411764707" green="0.38039215686274508" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="talkButtonPressed:" destination="-1" eventType="touchDown" id="t3L-uW-7nB"/>
+                                        <action selector="talkButtonReleased:" destination="-1" eventType="touchUpInside" id="4tV-b4-lDc"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>

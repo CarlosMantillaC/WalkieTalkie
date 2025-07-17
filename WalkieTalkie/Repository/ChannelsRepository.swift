@@ -19,7 +19,7 @@ class ChannelsRepository: ChannelsRepositoryProtocol {
     }
     
     func fetchChannels(completion: @escaping (Result<[Channel], Error>) -> Void) {
-        guard let url = URL(string: "http://159.203.187.94/channels") else {
+        guard let url = URL(string: APIConstants.baseURL + APIConstants.Endpoint.channels) else {
             completion(.failure(NSError(domain: "BadURL", code: -1)))
             return
         }

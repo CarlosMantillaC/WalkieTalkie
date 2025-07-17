@@ -17,6 +17,7 @@ protocol ChannelsPresenterProtocol: AnyObject {
     var channelsCount: Int { get }
     func viewDidLoad()
     func configure(cell: ChannelsTableViewCell, at index: Int)
+    func didSelectChannel(at index: Int)
 }
 
 protocol ChannelsInteractorProtocol: AnyObject {
@@ -29,5 +30,6 @@ protocol ChannelsInteractorOutput: AnyObject {
 }
 
 protocol ChannelsRouterProtocol: AnyObject {
-   static func createModule() -> UIViewController
+    static func createModule() -> UIViewController
+    func navigateToChannel(with channel: Channel)
 }

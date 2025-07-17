@@ -10,9 +10,31 @@ import Foundation
 final class ChannelInteractor: ChannelInteractorProtocol {
     weak var presenter: ChannelInteractorOutputProtocol?
     private let repository: LogoutRepositoryProtocol
-    
-    init(repository: LogoutRepositoryProtocol = LogoutRepository()) {
+    private let socket: WebSocketServiceProtocol
+    private let channel: Channel
+
+    init(channel: Channel, repository: LogoutRepositoryProtocol = LogoutRepository(),
+         socket: WebSocketServiceProtocol = WebSocketService()) {
+        self.channel = channel
         self.repository = repository
+        self.socket = socket
+        
+    }
+
+    func connectToChannel(named name: String) {
+        socket.connect(to: name)
+    }
+
+    func startTalking() {
+        socket.send(message: "START")
+    }
+
+    func stopTalking() {
+        socket.send(message: "STOP")
+    }
+    
+    func disconnectFromChannel() {
+        socket.disconnect()
     }
     
     func logout() {

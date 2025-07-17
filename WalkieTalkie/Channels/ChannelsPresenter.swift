@@ -28,6 +28,11 @@ final class ChannelsPresenter: ChannelsPresenterProtocol {
         cell.customLabel.text = channel.name
         cell.customImageView.image = UIImage(systemName: "dot.radiowaves.left.and.right")
     }
+    
+    func didSelectChannel(at index: Int) {
+        let channel = channels[index]
+        router?.navigateToChannel(with: channel)
+    }
 }
 
 extension ChannelsPresenter: ChannelsInteractorOutput {

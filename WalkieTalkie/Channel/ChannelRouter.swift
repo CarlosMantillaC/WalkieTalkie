@@ -10,12 +10,12 @@ import UIKit
 final class ChannelRouter: ChannelRouterProtocol {
     weak var viewController: UIViewController?
     
-    static func createModule() -> UIViewController {
-        let view = ChannelViewController()
-        let presenter = ChannelPresenter()
-        let interactor = ChannelInteractor()
+    static func createModule(with channel: Channel) -> UIViewController {
+        let view = ChannelViewController(nibName: "ChannelViewController", bundle: nil)
+        let presenter = ChannelPresenter(channel: channel)
+        let interactor = ChannelInteractor(channel: channel)
         let router = ChannelRouter()
-        
+
         view.presenter = presenter
         presenter.view = view
         presenter.interactor = interactor
@@ -44,5 +44,11 @@ final class ChannelRouter: ChannelRouterProtocol {
                 navController.present(alert, animated: true)
             }
         }
+    }
+    
+    func navigateToChannels() {
+        print("saliendo a canales")
+        let channelsVC = ChannelsRouter.createModule()
+        viewController?.navigationController?.setViewControllers([channelsVC], animated: true)
     }
 }

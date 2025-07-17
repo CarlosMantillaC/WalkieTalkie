@@ -46,6 +46,11 @@ extension ChannelsViewController: UITableViewDataSource, UITableViewDelegate {
         presenter?.configure(cell: cell, at: indexPath.row)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectChannel(at: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension ChannelsViewController: ChannelsViewProtocol {

@@ -19,6 +19,8 @@ class ChannelViewController: UIViewController {
         super.viewDidLoad()
         title = "Inicio"
 
+        presenter?.viewDidLoad()
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Cerrar sesión",
             style: .plain,
@@ -27,12 +29,28 @@ class ChannelViewController: UIViewController {
         )
     }
 
+    @IBAction func talkButtonPressed(_ sender: UIButton) {
+        presenter?.startTalking()
+    }
+
+    @IBAction func talkButtonReleased(_ sender: UIButton) {
+        presenter?.stopTalking()
+    }
+
+    @IBAction func exitButtonTapped(_ sender: UIButton) {
+        presenter?.didTapExit()
+    }
+
     @objc private func didTapLogout() {
         presenter?.didTapLogout()
     }
 }
 
 extension ChannelViewController: ChannelViewProtocol {
+    func setChannelName(_ name: String) {
+        nameChannelLabel.text = name
+    }
+    
     func showLogoutError(_ message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))

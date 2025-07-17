@@ -14,7 +14,7 @@ enum APIConstants {
         static let register = "/register"
         static let login = "/login"
         static let logout = "/logout"
-        static let user = "/channels"
+        static let channels = "/channels"
     }
     
     struct Headers {
