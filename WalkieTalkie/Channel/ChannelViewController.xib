@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChannelViewController" customModule="WalkieTalkie" customModuleProvider="target">
             <connections>
-                <outlet property="exitButton" destination="ssX-Mp-rG8" id="H3G-pF-Xuf"/>
                 <outlet property="nameChannelLabel" destination="xrG-Ts-WKf" id="dvv-AB-0fR"/>
                 <outlet property="talkToPushButton" destination="mHF-fa-1VD" id="pBB-Nm-PVC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -36,19 +35,6 @@
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssX-Mp-rG8">
-                                    <rect key="frame" x="298" y="45" width="57.333333333333314" height="35"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="57.329999999999998" id="Dqb-Sh-X5r"/>
-                                    </constraints>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="filled" title="Salir">
-                                        <color key="baseBackgroundColor" red="0.38823529411764707" green="0.38039215686274508" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </buttonConfiguration>
-                                    <connections>
-                                        <action selector="exitButtonTapped:" destination="-1" eventType="touchUpInside" id="ixm-eV-ucO"/>
-                                    </connections>
-                                </button>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nRM-NW-bhK">
                                     <rect key="frame" x="37" y="130" width="318" height="330"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -69,11 +55,9 @@
                             <constraints>
                                 <constraint firstItem="xrG-Ts-WKf" firstAttribute="leading" secondItem="ZAV-7z-AXu" secondAttribute="leading" constant="37" id="9U5-az-9Ih"/>
                                 <constraint firstItem="xrG-Ts-WKf" firstAttribute="top" secondItem="ZAV-7z-AXu" secondAttribute="top" constant="47" id="Csd-1H-b9j"/>
-                                <constraint firstItem="ssX-Mp-rG8" firstAttribute="top" secondItem="ZAV-7z-AXu" secondAttribute="top" constant="45" id="Gup-Or-3Qd"/>
                                 <constraint firstAttribute="bottom" secondItem="nRM-NW-bhK" secondAttribute="bottom" constant="206" id="WU3-8t-tEv"/>
                                 <constraint firstAttribute="height" constant="666" id="fuB-da-WPh"/>
                                 <constraint firstAttribute="trailing" secondItem="nRM-NW-bhK" secondAttribute="trailing" constant="38" id="qAr-xl-MNq"/>
-                                <constraint firstAttribute="trailing" secondItem="ssX-Mp-rG8" secondAttribute="trailing" constant="37.666666666666686" id="rY9-Vs-bqM"/>
                                 <constraint firstItem="nRM-NW-bhK" firstAttribute="leading" secondItem="ZAV-7z-AXu" secondAttribute="leading" constant="37" id="rf4-lo-3zX"/>
                                 <constraint firstItem="nRM-NW-bhK" firstAttribute="top" secondItem="ZAV-7z-AXu" secondAttribute="top" constant="130" id="u9T-n8-t5E"/>
                             </constraints>

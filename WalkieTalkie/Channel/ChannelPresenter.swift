@@ -30,11 +30,6 @@ final class ChannelPresenter: ChannelPresenterProtocol {
     func stopTalking() {
         interactor?.stopTalking()
     }
-
-    func didTapLogout() {
-        interactor?.disconnectFromChannel()
-        interactor?.logout()
-    }
     
     func didTapExit() {
         interactor?.disconnectFromChannel()
@@ -43,16 +38,7 @@ final class ChannelPresenter: ChannelPresenterProtocol {
 }
 
 extension ChannelPresenter: ChannelInteractorOutputProtocol {
-    func logoutSucceeded(message: String) {
-        router?.navigateToLogin(with: message)
-    }
-
-    func logoutFailed(with error: Error) {
-        view?.showLogoutError(error.localizedDescription)
-    }
-    
     func didReceivePermissionToSpeak() {
-        // Opcional: podrías notificar a la vista
         print("🎙️ Tienes permiso para hablar")
     }
 }

@@ -10,11 +10,9 @@ import UIKit
 
 protocol ChannelViewProtocol: AnyObject {
     func setChannelName(_ name: String)
-    func showLogoutError(_ message: String)
 }
 
 protocol ChannelPresenterProtocol: AnyObject {
-    func didTapLogout()
     func viewDidLoad()
     func startTalking()
     func stopTalking()
@@ -26,17 +24,13 @@ protocol ChannelInteractorProtocol: AnyObject {
     func startTalking()
     func stopTalking()
     func disconnectFromChannel()
-    func logout()
 }
 
 protocol ChannelInteractorOutputProtocol: AnyObject {
-    func logoutSucceeded(message: String)
-    func logoutFailed(with error: Error)
     func didReceivePermissionToSpeak()
 }
 
 protocol ChannelRouterProtocol: AnyObject {
     static func createModule(with channel: Channel) -> UIViewController
-    func navigateToLogin(with message: String)
     func navigateToChannels()
 }

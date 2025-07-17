@@ -332,13 +332,13 @@
 			isa = PBXGroup;
 			children = (
 				C460250B2E290A700032EDA6 /* Entities */,
-				C46025052E2905640032EDA6 /* ChannelsTableViewCell.swift */,
-				C46025062E2905640032EDA6 /* ChannelsTableViewCell.xib */,
 				C460250E2E290AD20032EDA6 /* ChannelsProtocols.swift */,
 				C46025102E2916110032EDA6 /* ChannelsInteractor.swift */,
 				C46025122E2917C90032EDA6 /* ChannelsPresenter.swift */,
 				C46025142E2918730032EDA6 /* ChannelsViewController.swift */,
 				C46025152E2918730032EDA6 /* ChannelsViewController.xib */,
+				C46025052E2905640032EDA6 /* ChannelsTableViewCell.swift */,
+				C46025062E2905640032EDA6 /* ChannelsTableViewCell.xib */,
 				C46025182E291ACE0032EDA6 /* ChannelsRouter.swift */,
 			);
 			path = Channels;

@@ -15,14 +15,5 @@ class ChannelsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
-    }
-    
-    private func setupUI() {
-        customImageView.layer.cornerRadius =  customImageView.frame.height / 2
-        customImageView.clipsToBounds = true
-        customImageView.layer.borderColor = UIColor.systemIndigo.cgColor
-        customImageView.layer.borderWidth = 2
-        customImageView.contentMode = .scaleAspectFill
     }
 }

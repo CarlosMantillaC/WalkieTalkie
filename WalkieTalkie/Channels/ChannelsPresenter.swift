@@ -33,9 +33,21 @@ final class ChannelsPresenter: ChannelsPresenterProtocol {
         let channel = channels[index]
         router?.navigateToChannel(with: channel)
     }
+    
+    func didTapLogout() {
+        interactor?.logout()
+    }
 }
 
 extension ChannelsPresenter: ChannelsInteractorOutput {
+    func logoutSucceeded(message: String) {
+        router?.navigateToLogin(with: message)
+    }
+
+    func logoutFailed(with error: Error) {
+        view?.showError(message: error.localizedDescription)
+    }
+    
     func didLoadChannels(_ channels: [Channel]) {
         self.channels = channels
         view?.reloadData()

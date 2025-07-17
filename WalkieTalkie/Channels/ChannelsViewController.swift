@@ -15,8 +15,17 @@ class ChannelsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Lista de Canales"
+        
         setupTableView()
         presenter?.viewDidLoad()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Cerrar sesión",
+            style: .plain,
+            target: self,
+            action: #selector(didTapLogout)
+        )
     }
 
     private func setupTableView() {
@@ -28,6 +37,10 @@ class ChannelsViewController: UIViewController {
             UINib(nibName: "ChannelsTableViewCell", bundle: nil),
             forCellReuseIdentifier: "ChannelsCell"
         )
+    }
+    
+    @objc private func didTapLogout() {
+        presenter?.didTapLogout()
     }
 }
 
@@ -59,7 +72,9 @@ extension ChannelsViewController: ChannelsViewProtocol {
     }
 
     func showError(message: String) {
-        print("Error: \(message)")
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
 }
 

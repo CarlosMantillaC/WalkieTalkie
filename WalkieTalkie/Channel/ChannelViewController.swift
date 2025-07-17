@@ -11,21 +11,18 @@ class ChannelViewController: UIViewController {
     
     @IBOutlet weak var nameChannelLabel: UILabel!
     @IBOutlet weak var talkToPushButton: UIButton!
-    @IBOutlet weak var exitButton: UIButton!
     
     var presenter: ChannelPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Inicio"
-
         presenter?.viewDidLoad()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "Cerrar sesión",
+            title: "Salir",
             style: .plain,
             target: self,
-            action: #selector(didTapLogout)
+            action: #selector(didTapExit)
         )
     }
 
@@ -37,23 +34,13 @@ class ChannelViewController: UIViewController {
         presenter?.stopTalking()
     }
 
-    @IBAction func exitButtonTapped(_ sender: UIButton) {
+    @objc private func didTapExit() {
         presenter?.didTapExit()
-    }
-
-    @objc private func didTapLogout() {
-        presenter?.didTapLogout()
     }
 }
 
 extension ChannelViewController: ChannelViewProtocol {
     func setChannelName(_ name: String) {
         nameChannelLabel.text = name
-    }
-    
-    func showLogoutError(_ message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
     }
 }

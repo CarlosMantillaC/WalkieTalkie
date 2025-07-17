@@ -9,17 +9,14 @@ import Foundation
 
 final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelegate {
     weak var presenter: ChannelInteractorOutputProtocol?
-    private let repository: LogoutRepositoryProtocol
     private var socket: WebSocketServiceProtocol
     private let audioService: AudioServiceProtocol
     private let channel: Channel
 
     init(channel: Channel,
-         repository: LogoutRepositoryProtocol = LogoutRepository(),
          socket: WebSocketServiceProtocol = WebSocketService(),
          audioService: AudioServiceProtocol = AudioService()) {
         self.channel = channel
-        self.repository = repository
         self.socket = socket
         self.audioService = audioService
         self.socket.delegate = self
@@ -41,20 +38,6 @@ final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelega
 
     func disconnectFromChannel() {
         socket.disconnect()
-    }
-
-    func logout() {
-        repository.logout { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let message):
-                    TokenManager.clear()
-                    self?.presenter?.logoutSucceeded(message: message)
-                case .failure(let error):
-                    self?.presenter?.logoutFailed(with: error)
-                }
-            }
-        }
     }
     
     func didReceive(message: String) {
