@@ -61,6 +61,8 @@
 		C460251D2E29439A0032EDA6 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460251C2E29439A0032EDA6 /* WebSocketService.swift */; };
 		C480A1072E297AE1000E0C7F /* AudioServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A1062E297AE1000E0C7F /* AudioServiceProtocol.swift */; };
 		C480A10A2E297B11000E0C7F /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A1092E297B11000E0C7F /* AudioService.swift */; };
+		C480A10D2E298457000E0C7F /* WebSocketServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A10C2E298457000E0C7F /* WebSocketServiceDelegate.swift */; };
+		C480A10F2E298481000E0C7F /* WebSocketServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A10E2E298481000E0C7F /* WebSocketServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,8 @@
 		C460251C2E29439A0032EDA6 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
 		C480A1062E297AE1000E0C7F /* AudioServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioServiceProtocol.swift; sourceTree = "<group>"; };
 		C480A1092E297B11000E0C7F /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		C480A10C2E298457000E0C7F /* WebSocketServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketServiceDelegate.swift; sourceTree = "<group>"; };
+		C480A10E2E298481000E0C7F /* WebSocketServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,8 +355,8 @@
 		C480A1052E2979D3000E0C7F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				C480A10B2E29843F000E0C7F /* WebSocketService */,
 				C480A1082E297AF4000E0C7F /* AudioService */,
-				C460251C2E29439A0032EDA6 /* WebSocketService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -364,6 +368,16 @@
 				C480A1092E297B11000E0C7F /* AudioService.swift */,
 			);
 			path = AudioService;
+			sourceTree = "<group>";
+		};
+		C480A10B2E29843F000E0C7F /* WebSocketService */ = {
+			isa = PBXGroup;
+			children = (
+				C460251C2E29439A0032EDA6 /* WebSocketService.swift */,
+				C480A10C2E298457000E0C7F /* WebSocketServiceDelegate.swift */,
+				C480A10E2E298481000E0C7F /* WebSocketServiceProtocol.swift */,
+			);
+			path = WebSocketService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +525,7 @@
 				C46024B42E2700540032EDA6 /* LoginViewController.swift in Sources */,
 				C46024DD2E27F8310032EDA6 /* RegisterAPIErrorResponse.swift in Sources */,
 				C46024CC2E2703530032EDA6 /* LoginProtocols.swift in Sources */,
+				C480A10F2E298481000E0C7F /* WebSocketServiceProtocol.swift in Sources */,
 				C46024F72E2804420032EDA6 /* ChannelPresenter.swift in Sources */,
 				C480A10A2E297B11000E0C7F /* AudioService.swift in Sources */,
 				C46024F52E28042A0032EDA6 /* ChannelInteractor.swift in Sources */,
@@ -531,6 +546,7 @@
 				C46024F32E2803F60032EDA6 /* LogoutResponse.swift in Sources */,
 				C46024E42E27F8930032EDA6 /* RegisterRepository.swift in Sources */,
 				C46025072E2905640032EDA6 /* ChannelsTableViewCell.swift in Sources */,
+				C480A10D2E298457000E0C7F /* WebSocketServiceDelegate.swift in Sources */,
 				C46024BA2E2702180032EDA6 /* URLRequest+Extensions.swift in Sources */,
 				C46024E22E27F86D0032EDA6 /* RegisterProtocols.swift in Sources */,
 				C46024CA2E2703180032EDA6 /* LoginAPIErrorResponse.swift in Sources */,

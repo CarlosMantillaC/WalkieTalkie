@@ -7,13 +7,8 @@
 
 import Foundation
 
-protocol WebSocketServiceProtocol {
-    func connect(to channel: String)
-    func send(message: String)
-    func disconnect()
-}
-
 final class WebSocketService: WebSocketServiceProtocol {
+    weak var delegate: WebSocketServiceDelegate?
     private var webSocketTask: URLSessionWebSocketTask?
     private let url = URL(string: "ws://159.203.187.94/ws")!
     private let session: URLSession
@@ -76,6 +71,7 @@ final class WebSocketService: WebSocketServiceProtocol {
                 switch message {
                 case .string(let text):
                     print("📩 Received string message: \(text)")
+                    delegate?.didReceive(message: text)
                 case .data(let data):
                     print("📩 Received binary message: \(data)")
                 @unknown default:

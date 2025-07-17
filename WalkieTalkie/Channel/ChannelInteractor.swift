@@ -7,10 +7,10 @@
 
 import Foundation
 
-final class ChannelInteractor: ChannelInteractorProtocol {
+final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelegate {
     weak var presenter: ChannelInteractorOutputProtocol?
     private let repository: LogoutRepositoryProtocol
-    private let socket: WebSocketServiceProtocol
+    private var socket: WebSocketServiceProtocol
     private let audioService: AudioServiceProtocol
     private let channel: Channel
 
@@ -22,6 +22,7 @@ final class ChannelInteractor: ChannelInteractorProtocol {
         self.repository = repository
         self.socket = socket
         self.audioService = audioService
+        self.socket.delegate = self
     }
 
     func connectToChannel(named name: String) {
@@ -54,5 +55,19 @@ final class ChannelInteractor: ChannelInteractorProtocol {
                 }
             }
         }
+    }
+    
+    func didReceive(message: String) {
+        if message == "🗣️ Puedes hablar" {
+            presenter?.didReceivePermissionToSpeak()
+            return
+        }
+
+        guard let data = Data(base64Encoded: message) else {
+            print("❌ Could not decode base64 audio")
+            return
+        }
+
+        audioService.playAudioData(data)
     }
 }

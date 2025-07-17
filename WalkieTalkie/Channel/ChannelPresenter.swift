@@ -50,4 +50,9 @@ extension ChannelPresenter: ChannelInteractorOutputProtocol {
     func logoutFailed(with error: Error) {
         view?.showLogoutError(error.localizedDescription)
     }
+    
+    func didReceivePermissionToSpeak() {
+        // Opcional: podrías notificar a la vista
+        print("🎙️ Tienes permiso para hablar")
+    }
 }

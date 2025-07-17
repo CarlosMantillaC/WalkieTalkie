@@ -32,6 +32,7 @@ protocol ChannelInteractorProtocol: AnyObject {
 protocol ChannelInteractorOutputProtocol: AnyObject {
     func logoutSucceeded(message: String)
     func logoutFailed(with error: Error)
+    func didReceivePermissionToSpeak()
 }
 
 protocol ChannelRouterProtocol: AnyObject {
