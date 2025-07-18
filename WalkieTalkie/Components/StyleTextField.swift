@@ -16,7 +16,7 @@ class StyledTextField: UITextField {
     
     private func setupStyle() {
         layer.borderWidth = 1.5
-        layer.borderColor = UIColor.systemIndigo.cgColor
+        layer.borderColor = UIColor.fromHex("4b0082").cgColor
         layer.cornerRadius = 20
         clipsToBounds = true
     }

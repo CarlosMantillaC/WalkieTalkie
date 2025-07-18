@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="gopetext" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="WalkieTalkie" customModuleProvider="target">
             <connections>
                 <outlet property="ageTextField" destination="mx8-Vf-hHy" id="jDt-Tb-PS6"/>
                 <outlet property="confirmPasswordTextField" destination="fc1-Si-THk" id="iHU-GJ-L6H"/>
@@ -31,7 +31,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkq-5l-6XY">
                             <rect key="frame" x="0.0" y="-10" width="393" height="684"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZQB-tv-PyX" customClass="StyledTextField" customModule="gopetext" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZQB-tv-PyX" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
                                     <rect key="frame" x="26" y="126.66666666666666" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="registerName"/>
                                     <constraints>
@@ -40,7 +40,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" textContentType="name"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellido" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R13-IT-R7B" customClass="StyledTextField" customModule="gopetext" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellido" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R13-IT-R7B" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
                                     <rect key="frame" x="26" y="196.66666666666669" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="registerLastName"/>
                                     <constraints>
@@ -49,7 +49,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" textContentType="name"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mx8-Vf-hHy" customClass="StyledTextField" customModule="gopetext" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mx8-Vf-hHy" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
                                     <rect key="frame" x="26" y="266.66666666666669" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="registerAge"/>
                                     <constraints>
@@ -58,7 +58,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electronico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXa-9R-RL8" customClass="StyledTextField" customModule="gopetext" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electronico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXa-9R-RL8" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
                                     <rect key="frame" x="26" y="336.66666666666669" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="registerEmail"/>
                                     <constraints>
@@ -67,7 +67,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gn8-lM-9GK" customClass="StyledTextField" customModule="gopetext" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gn8-lM-9GK" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
                                     <rect key="frame" x="26" y="406.66666666666663" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="registerPassword"/>
                                     <constraints>
@@ -76,7 +76,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fc1-Si-THk" customClass="StyledTextField" customModule="gopetext" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fc1-Si-THk" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
                                     <rect key="frame" x="26" y="476.66666666666663" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="registerConfirmPassword"/>
                                     <constraints>
@@ -93,7 +93,7 @@
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="Enviar">
-                                        <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                        <color key="baseBackgroundColor" red="0.29411764705882354" green="0.0" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="didTapSend:" destination="-1" eventType="touchUpInside" id="HOl-8H-pJX"/>
@@ -161,9 +161,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
