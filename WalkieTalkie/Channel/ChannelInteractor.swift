@@ -24,6 +24,8 @@ final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelega
 
     func connectToChannel(named name: String) {
         socket.connect(to: name)
+        audioService.startStreaming(to: socket)
+        audioService.stopStreaming()
     }
 
     func startTalking() {
@@ -41,16 +43,16 @@ final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelega
     }
     
     func didReceive(message: String) {
-        if message == "🗣️ Puedes hablar" {
-            presenter?.didReceivePermissionToSpeak()
-            return
+        if let audioData = Data(base64Encoded: message) {
+            print("🎧 Received audio data")
+            audioService.playAudioData(audioData)
+        } else {
+            if let json = try? JSONSerialization.jsonObject(with: Data(message.utf8), options: []) as? [String: Any],
+               let serverMessage = json["message"] as? String {
+                print("ℹ️ Server message: \(serverMessage)")
+            } else {
+                print("⚠️ Received non-audio message: \(message)")
+            }
         }
-
-        guard let data = Data(base64Encoded: message) else {
-            print("❌ Could not decode base64 audio")
-            return
-        }
-
-        audioService.playAudioData(data)
     }
 }
