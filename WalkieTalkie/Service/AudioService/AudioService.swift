@@ -12,22 +12,34 @@ final class AudioService: AudioServiceProtocol {
     private let playbackEngine = AVAudioEngine()
     private let playerNode = AVAudioPlayerNode()
     private var inputNode: AVAudioInputNode?
-    private var format: AVAudioFormat?
+    
+    private var playbackFormat: AVAudioFormat!
     private var socket: WebSocketServiceProtocol?
+    private var converter: AVAudioConverter?
     
     init() {
         configureAudioSession()
+        setupFormats()
     }
     
     private func configureAudioSession() {
         do {
             let session = AVAudioSession.sharedInstance()
             try session.setCategory(.playAndRecord, mode: .voiceChat, options: [.defaultToSpeaker, .allowBluetooth])
+            try session.setPreferredSampleRate(48000)
+            try session.setPreferredIOBufferDuration(0.02)
             try session.setActive(true)
-            print("🔧 Audio session configured with sampleRate: \(session.sampleRate) Hz")
+            print("🔧 Audio session configured: \(session.sampleRate) Hz")
         } catch {
-            print("❌ Failed to configure audio session: \(error.localizedDescription)")
+            print("❌ Audio session config failed: \(error.localizedDescription)")
         }
+    }
+    
+    private func setupFormats() {
+        playbackFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32,
+                                       sampleRate: 16000,
+                                       channels: 1,
+                                       interleaved: true)
     }
     
     func startStreaming(to socket: WebSocketServiceProtocol) {
@@ -39,40 +51,66 @@ final class AudioService: AudioServiceProtocol {
             return
         }
         
-        let inputFormat = inputNode.outputFormat(forBus: 0)
-        self.format = inputFormat
+        inputNode.removeTap(onBus: 0)
         
-        inputNode.installTap(onBus: 0, bufferSize: 2048, format: inputFormat) { [weak self] buffer, _ in
-            guard let self else { return }
+        let inputFormat = inputNode.inputFormat(forBus: 0)
+        let targetFormat = AVAudioFormat(commonFormat: .pcmFormatInt16,
+                                         sampleRate: 16000,
+                                         channels: 1,
+                                         interleaved: true)!
+        
+        converter = AVAudioConverter(from: inputFormat, to: targetFormat)
+        
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: inputFormat) { [weak self] buffer, _ in
+            guard let self = self, let converter = self.converter else { return }
             
-            let audioData = self.convertBufferToData(buffer: buffer)
-            self.socket?.send(message: audioData.base64EncodedString())
+            guard let convertedBuffer = AVAudioPCMBuffer(pcmFormat: targetFormat,
+                                                         frameCapacity: AVAudioFrameCount(buffer.frameLength)) else {
+                print("❌ Could not allocate PCM buffer")
+                return
+            }
+            
+            var error: NSError?
+            let inputBlock: AVAudioConverterInputBlock = { _, outStatus in
+                outStatus.pointee = .haveData
+                return buffer
+            }
+            
+            let status = converter.convert(to: convertedBuffer, error: &error, withInputFrom: inputBlock)
+            
+            if status == .haveData {
+                let audioData = convertedBuffer.int16ChannelData!.pointee
+                let byteCount = Int(convertedBuffer.frameLength) * MemoryLayout<Int16>.stride
+                let data = Data(bytes: audioData, count: byteCount)
+                self.socket?.send(data: data)
+            } else if let error {
+                print("❌ Conversion error: \(error.localizedDescription)")
+            }
         }
         
         do {
             try audioEngine.start()
-            print("🎙️ Audio streaming started")
+            print("🎙️ Audio engine started")
         } catch {
-            print("❌ Failed to start audio engine: \(error)")
+            print("❌ Audio engine failed to start: \(error)")
         }
     }
     
     func stopStreaming() {
         inputNode?.removeTap(onBus: 0)
         audioEngine.stop()
-        print("🛑 Audio streaming stopped")
+        print("🛑 Streaming stopped")
     }
     
     func playAudioData(_ data: Data) {
-        guard let format = self.format,
-              let buffer = dataToPCMBuffer(data: data, format: format) else {
-            print("❌ Failed to prepare buffer for playback")
+        guard let buffer = int16DataToFloat32PCMBuffer(data: data) else {
+            print("❌ Failed to convert data to buffer")
             return
         }
         
         if !playbackEngine.attachedNodes.contains(playerNode) {
             playbackEngine.attach(playerNode)
-            playbackEngine.connect(playerNode, to: playbackEngine.mainMixerNode, format: format)
+            playbackEngine.connect(playerNode, to: playbackEngine.mainMixerNode, format: playbackFormat)
         }
         
         do {
@@ -80,33 +118,34 @@ final class AudioService: AudioServiceProtocol {
                 try playbackEngine.start()
             }
             
-            playerNode.scheduleBuffer(buffer, at: nil, options: .interrupts)
-            playerNode.play()
-            print("🔊 Playing audio")
+            if !playerNode.isPlaying {
+                playerNode.play()
+            }
+            
+            playerNode.scheduleBuffer(buffer, at: nil, options: .interrupts, completionHandler: nil)
+            
+            print("🔊 Playing audio - frames: \(buffer.frameLength)")
         } catch {
-            print("❌ Playback error: \(error)")
+            print("❌ Playback engine failed: \(error)")
         }
     }
     
-    private func convertBufferToData(buffer: AVAudioPCMBuffer) -> Data {
-        let audioBuffer = buffer.audioBufferList.pointee.mBuffers
-        guard let mData = audioBuffer.mData else { return Data() }
-        return Data(bytes: mData, count: Int(audioBuffer.mDataByteSize))
-    }
-    
-    private func dataToPCMBuffer(data: Data, format: AVAudioFormat) -> AVAudioPCMBuffer? {
-        let frameLength = UInt32(data.count) / format.streamDescription.pointee.mBytesPerFrame
+    private func int16DataToFloat32PCMBuffer(data: Data) -> AVAudioPCMBuffer? {
+        let sampleCount = data.count / MemoryLayout<Int16>.size
         
-        guard let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: frameLength) else {
+        guard let buffer = AVAudioPCMBuffer(pcmFormat: playbackFormat, frameCapacity: AVAudioFrameCount(sampleCount)) else {
             return nil
         }
         
-        buffer.frameLength = frameLength
-        let audioBuffer = buffer.audioBufferList.pointee.mBuffers
-        guard let mData = audioBuffer.mData else { return nil }
+        buffer.frameLength = AVAudioFrameCount(sampleCount)
+        let floatChannel = buffer.floatChannelData![0]
         
-        let bytePointer = mData.bindMemory(to: UInt8.self, capacity: data.count)
-        data.copyBytes(to: bytePointer, count: data.count)
+        data.withUnsafeBytes { (rawBuffer: UnsafeRawBufferPointer) in
+            let int16Pointer = rawBuffer.bindMemory(to: Int16.self)
+            for i in 0..<sampleCount {
+                floatChannel[i] = Float(int16Pointer[i]) / Float(Int16.max)
+            }
+        }
         
         return buffer
     }

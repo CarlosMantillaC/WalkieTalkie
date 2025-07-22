@@ -12,7 +12,7 @@ final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelega
     private var socket: WebSocketServiceProtocol
     private let audioService: AudioServiceProtocol
     private let channel: Channel
-
+    
     init(channel: Channel,
          socket: WebSocketServiceProtocol = WebSocketService(),
          audioService: AudioServiceProtocol = AudioService()) {
@@ -21,23 +21,23 @@ final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelega
         self.audioService = audioService
         self.socket.delegate = self
     }
-
+    
     func connectToChannel(named name: String) {
         socket.connect(to: name)
         audioService.startStreaming(to: socket)
         audioService.stopStreaming()
     }
-
+    
     func startTalking() {
         socket.send(message: "START")
         audioService.startStreaming(to: socket)
     }
-
+    
     func stopTalking() {
         socket.send(message: "STOP")
         audioService.stopStreaming()
     }
-
+    
     func disconnectFromChannel() {
         socket.disconnect()
     }
@@ -54,5 +54,10 @@ final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelega
                 print("⚠️ Received non-audio message: \(message)")
             }
         }
+    }
+    
+    func didReceive(data: Data) {
+        print("🎧 Received audio data (\(data.count) bytes)")
+        audioService.playAudioData(data)
     }
 }

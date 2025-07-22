@@ -44,9 +44,19 @@ final class WebSocketService: WebSocketServiceProtocol {
     func send(message: String) {
         webSocketTask?.send(.string(message)) { error in
             if let error = error {
-                print("❌ Error sending message: \(error)")
+                print("❌ Error sending string: \(error)")
             } else {
-                print("✅ Sent message: \(message)")
+                print("✅ Sent string: \(message)")
+            }
+        }
+    }
+
+    func send(data: Data) {
+        webSocketTask?.send(.data(data)) { error in
+            if let error = error {
+                print("❌ Error sending data: \(error)")
+            } else {
+                print("✅ Sent binary data (\(data.count) bytes)")
             }
         }
     }
@@ -58,11 +68,7 @@ final class WebSocketService: WebSocketServiceProtocol {
         }
 
         webSocketTask?.receive { [weak self] result in
-            guard let self = self else { return }
-            guard self.isConnected else {
-                print("🔌 Stopped listening: connection closed")
-                return
-            }
+            guard let self = self, self.isConnected else { return }
 
             switch result {
             case .failure(let error):
@@ -70,10 +76,11 @@ final class WebSocketService: WebSocketServiceProtocol {
             case .success(let message):
                 switch message {
                 case .string(let text):
-                    print("📩 Received string message: \(text)")
+                    print("📩 Received string: \(text)")
                     delegate?.didReceive(message: text)
                 case .data(let data):
-                    print("📩 Received binary message: \(data)")
+                    print("📩 Received binary data (\(data.count) bytes)")
+                    delegate?.didReceive(data: data)
                 @unknown default:
                     print("📩 Received unknown message")
                 }
