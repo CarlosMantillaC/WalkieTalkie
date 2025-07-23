@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChannelViewController" customModule="WalkieTalkie" customModuleProvider="target">
             <connections>
+                <outlet property="countUsersLabel" destination="JLV-mQ-amR" id="5lX-F5-Qvj"/>
                 <outlet property="nameChannelLabel" destination="xrG-Ts-WKf" id="dvv-AB-0fR"/>
-                <outlet property="tableView" destination="nRM-NW-bhK" id="flS-PT-caX"/>
                 <outlet property="talkToPushButton" destination="mHF-fa-1VD" id="pBB-Nm-PVC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,10 +36,6 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nRM-NW-bhK">
-                                    <rect key="frame" x="0.0" y="158" width="393" height="318"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                </tableView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHF-fa-1VD">
                                     <rect key="frame" x="37" y="534" width="318" height="80"/>
                                     <constraints>
@@ -54,18 +50,23 @@
                                         <action selector="talkButtonReleased:" destination="-1" eventType="touchUpInside" id="4tV-b4-lDc"/>
                                     </connections>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conectados: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLV-mQ-amR">
+                                    <rect key="frame" x="133" y="108" width="127" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="xrG-Ts-WKf" firstAttribute="top" secondItem="ZAV-7z-AXu" secondAttribute="top" constant="52" id="Csd-1H-b9j"/>
+                                <constraint firstItem="JLV-mQ-amR" firstAttribute="top" secondItem="xrG-Ts-WKf" secondAttribute="bottom" constant="8" symbolic="YES" id="EK6-Tl-CRp"/>
+                                <constraint firstItem="JLV-mQ-amR" firstAttribute="leading" secondItem="ZAV-7z-AXu" secondAttribute="leading" constant="133" id="H7o-cb-4J5"/>
                                 <constraint firstAttribute="trailing" secondItem="mHF-fa-1VD" secondAttribute="trailing" constant="38" id="Hu0-IH-UvS"/>
                                 <constraint firstItem="mHF-fa-1VD" firstAttribute="leading" secondItem="ZAV-7z-AXu" secondAttribute="leading" constant="37" id="Q2q-rW-pWB"/>
                                 <constraint firstAttribute="bottom" secondItem="mHF-fa-1VD" secondAttribute="bottom" constant="52" id="UIM-VI-GeC"/>
                                 <constraint firstItem="xrG-Ts-WKf" firstAttribute="centerX" secondItem="ZAV-7z-AXu" secondAttribute="centerX" id="bdi-Zd-sfC"/>
-                                <constraint firstItem="mHF-fa-1VD" firstAttribute="top" secondItem="nRM-NW-bhK" secondAttribute="bottom" constant="58" id="dow-55-Fa0"/>
                                 <constraint firstAttribute="height" constant="666" id="fuB-da-WPh"/>
-                                <constraint firstAttribute="trailing" secondItem="nRM-NW-bhK" secondAttribute="trailing" id="qAr-xl-MNq"/>
-                                <constraint firstItem="nRM-NW-bhK" firstAttribute="leading" secondItem="ZAV-7z-AXu" secondAttribute="leading" id="rf4-lo-3zX"/>
-                                <constraint firstItem="nRM-NW-bhK" firstAttribute="top" secondItem="xrG-Ts-WKf" secondAttribute="bottom" constant="58" id="w0Q-Xc-lPJ"/>
+                                <constraint firstAttribute="trailing" secondItem="JLV-mQ-amR" secondAttribute="trailing" constant="133" id="mcb-nw-rhg"/>
                             </constraints>
                         </view>
                     </subviews>

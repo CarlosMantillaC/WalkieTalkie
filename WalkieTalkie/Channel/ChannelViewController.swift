@@ -9,13 +9,12 @@ import UIKit
 
 class ChannelViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var countUsersLabel: UILabel!
     @IBOutlet weak var nameChannelLabel: UILabel!
     @IBOutlet weak var talkToPushButton: UIButton!
     
     var presenter: ChannelPresenterProtocol?
     private var gradientLayer: CAGradientLayer?
-    private var users: [String] = []
     private var fetchUsersTimer: Timer?
     
     override func viewDidLoad() {
@@ -29,9 +28,6 @@ class ChannelViewController: UIViewController {
             target: self,
             action: #selector(didTapExit)
         )
-        
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: "UsersTableViewCell", bundle: nil), forCellReuseIdentifier: "UsersTableViewCell")
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,9 +79,6 @@ extension ChannelViewController {
         talkToPushButton.layer.borderColor = UIColor.white.cgColor
         talkToPushButton.clipsToBounds = true
         updateTalkButtonImage(isTalking: false)
-        
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
     }
     
     private func updateTalkButtonImage(isTalking: Bool) {
@@ -103,23 +96,9 @@ extension ChannelViewController: ChannelViewProtocol {
     }
     
     func displayUsers(_ emails: [String]) {
-        self.users = emails
+        let count = emails.count
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.countUsersLabel.text = "Conectados: \(count)"
         }
-    }
-}
-
-extension ChannelViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UsersTableViewCell", for: indexPath) as? UsersTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.emailLabel.text = users[indexPath.row]
-        return cell
     }
 }
