@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C45D92DF2E31647300B3033B /* MockRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92DE2E31647300B3033B /* MockRegisterView.swift */; };
+		C45D92E12E3164B100B3033B /* MockRegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E02E3164B100B3033B /* MockRegisterInteractor.swift */; };
+		C45D92E32E31662700B3033B /* MockRegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E22E31662700B3033B /* MockRegisterRouter.swift */; };
+		C45D92E52E31664500B3033B /* MockRegisterInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E42E31664500B3033B /* MockRegisterInteractorOutput.swift */; };
+		C45D92E72E31672600B3033B /* MockRegisterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E62E31672600B3033B /* MockRegisterRepository.swift */; };
+		C45D92E92E31673C00B3033B /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E82E31673C00B3033B /* MockPresenter.swift */; };
+		C45D92EB2E3167D100B3033B /* RegisterRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92EA2E3167D100B3033B /* RegisterRouterTests.swift */; };
+		C45D92ED2E31683D00B3033B /* RegisterInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92EC2E31683D00B3033B /* RegisterInteractorTests.swift */; };
+		C45D92EF2E3168E200B3033B /* RegisterPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92EE2E3168E200B3033B /* RegisterPresenterTests.swift */; };
+		C45D92F12E316AB600B3033B /* RegisterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92F02E316AB600B3033B /* RegisterUITests.swift */; };
 		C46024A42E26FFCF0032EDA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460249E2E26FFCF0032EDA6 /* AppDelegate.swift */; };
 		C46024A52E26FFCF0032EDA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024A12E26FFCF0032EDA6 /* SceneDelegate.swift */; };
 		C46024A72E26FFCF0032EDA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C460249F2E26FFCF0032EDA6 /* Assets.xcassets */; };
-		C46024AB2E26FFD20032EDA6 /* WalkieTalkieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024A92E26FFD20032EDA6 /* WalkieTalkieTests.swift */; };
-		C46024AF2E26FFD60032EDA6 /* WalkieTalkieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024AC2E26FFD60032EDA6 /* WalkieTalkieUITests.swift */; };
-		C46024B02E26FFD60032EDA6 /* WalkieTalkieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024AD2E26FFD60032EDA6 /* WalkieTalkieUITestsLaunchTests.swift */; };
 		C46024B42E2700540032EDA6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024B22E2700540032EDA6 /* LoginViewController.swift */; };
 		C46024B52E2700540032EDA6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46024B32E2700540032EDA6 /* LoginViewController.xib */; };
 		C46024B82E2701A20032EDA6 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024B72E2701A20032EDA6 /* APIConstants.swift */; };
@@ -88,6 +95,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C45D92DE2E31647300B3033B /* MockRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterView.swift; sourceTree = "<group>"; };
+		C45D92E02E3164B100B3033B /* MockRegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterInteractor.swift; sourceTree = "<group>"; };
+		C45D92E22E31662700B3033B /* MockRegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterRouter.swift; sourceTree = "<group>"; };
+		C45D92E42E31664500B3033B /* MockRegisterInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterInteractorOutput.swift; sourceTree = "<group>"; };
+		C45D92E62E31672600B3033B /* MockRegisterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterRepository.swift; sourceTree = "<group>"; };
+		C45D92E82E31673C00B3033B /* MockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenter.swift; sourceTree = "<group>"; };
+		C45D92EA2E3167D100B3033B /* RegisterRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouterTests.swift; sourceTree = "<group>"; };
+		C45D92EC2E31683D00B3033B /* RegisterInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractorTests.swift; sourceTree = "<group>"; };
+		C45D92EE2E3168E200B3033B /* RegisterPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenterTests.swift; sourceTree = "<group>"; };
+		C45D92F02E316AB600B3033B /* RegisterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUITests.swift; sourceTree = "<group>"; };
 		C460246A2E26FF880032EDA6 /* WalkieTalkie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkieTalkie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46024802E26FF8A0032EDA6 /* WalkieTalkieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkieTalkieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C460248A2E26FF8A0032EDA6 /* WalkieTalkieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkieTalkieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,9 +112,6 @@
 		C460249F2E26FFCF0032EDA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C46024A02E26FFCF0032EDA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C46024A12E26FFCF0032EDA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C46024A92E26FFD20032EDA6 /* WalkieTalkieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkieTalkieTests.swift; sourceTree = "<group>"; };
-		C46024AC2E26FFD60032EDA6 /* WalkieTalkieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkieTalkieUITests.swift; sourceTree = "<group>"; };
-		C46024AD2E26FFD60032EDA6 /* WalkieTalkieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkieTalkieUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C46024B22E2700540032EDA6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C46024B32E2700540032EDA6 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		C46024B72E2701A20032EDA6 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
@@ -180,6 +194,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C45D92DC2E3163DD00B3033B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C45D92DD2E3163F200B3033B /* Mocks */,
+				C45D92EA2E3167D100B3033B /* RegisterRouterTests.swift */,
+				C45D92EC2E31683D00B3033B /* RegisterInteractorTests.swift */,
+				C45D92EE2E3168E200B3033B /* RegisterPresenterTests.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		C45D92DD2E3163F200B3033B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C45D92DE2E31647300B3033B /* MockRegisterView.swift */,
+				C45D92E02E3164B100B3033B /* MockRegisterInteractor.swift */,
+				C45D92E22E31662700B3033B /* MockRegisterRouter.swift */,
+				C45D92E42E31664500B3033B /* MockRegisterInteractorOutput.swift */,
+				C45D92E62E31672600B3033B /* MockRegisterRepository.swift */,
+				C45D92E82E31673C00B3033B /* MockPresenter.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		C46024612E26FF880032EDA6 = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +260,7 @@
 		C46024AA2E26FFD20032EDA6 /* WalkieTalkieTests */ = {
 			isa = PBXGroup;
 			children = (
-				C46024A92E26FFD20032EDA6 /* WalkieTalkieTests.swift */,
+				C45D92DC2E3163DD00B3033B /* Register */,
 			);
 			path = WalkieTalkieTests;
 			sourceTree = "<group>";
@@ -230,8 +268,7 @@
 		C46024AE2E26FFD60032EDA6 /* WalkieTalkieUITests */ = {
 			isa = PBXGroup;
 			children = (
-				C46024AC2E26FFD60032EDA6 /* WalkieTalkieUITests.swift */,
-				C46024AD2E26FFD60032EDA6 /* WalkieTalkieUITestsLaunchTests.swift */,
+				C45D92F02E316AB600B3033B /* RegisterUITests.swift */,
 			);
 			path = WalkieTalkieUITests;
 			sourceTree = "<group>";
@@ -472,10 +509,12 @@
 					};
 					C460247F2E26FF8A0032EDA6 = {
 						CreatedOnToolsVersion = 16.4;
+						LastSwiftMigration = 1640;
 						TestTargetID = C46024692E26FF880032EDA6;
 					};
 					C46024892E26FF8A0032EDA6 = {
 						CreatedOnToolsVersion = 16.4;
+						LastSwiftMigration = 1640;
 						TestTargetID = C46024692E26FF880032EDA6;
 					};
 				};
@@ -595,7 +634,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C46024AB2E26FFD20032EDA6 /* WalkieTalkieTests.swift in Sources */,
+				C45D92E52E31664500B3033B /* MockRegisterInteractorOutput.swift in Sources */,
+				C45D92EB2E3167D100B3033B /* RegisterRouterTests.swift in Sources */,
+				C45D92E72E31672600B3033B /* MockRegisterRepository.swift in Sources */,
+				C45D92ED2E31683D00B3033B /* RegisterInteractorTests.swift in Sources */,
+				C45D92E32E31662700B3033B /* MockRegisterRouter.swift in Sources */,
+				C45D92DF2E31647300B3033B /* MockRegisterView.swift in Sources */,
+				C45D92E92E31673C00B3033B /* MockPresenter.swift in Sources */,
+				C45D92EF2E3168E200B3033B /* RegisterPresenterTests.swift in Sources */,
+				C45D92E12E3164B100B3033B /* MockRegisterInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,8 +650,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C46024AF2E26FFD60032EDA6 /* WalkieTalkieUITests.swift in Sources */,
-				C46024B02E26FFD60032EDA6 /* WalkieTalkieUITestsLaunchTests.swift in Sources */,
+				C45D92F12E316AB600B3033B /* RegisterUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,6 +847,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -809,6 +856,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = WalkieTalkie.WalkieTalkieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkieTalkie.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WalkieTalkie";
@@ -819,6 +867,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -836,6 +885,7 @@
 		C460249C2E26FF8A0032EDA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -843,6 +893,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = WalkieTalkie.WalkieTalkieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = WalkieTalkie;
@@ -852,6 +903,7 @@
 		C460249D2E26FF8A0032EDA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -13,7 +13,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameTextField: StyledTextField!
     @IBOutlet weak var lastNameTextField: StyledTextField!
-    @IBOutlet weak var ageTextField: StyledTextField!
     @IBOutlet weak var emailTextField: StyledTextField!
     @IBOutlet weak var passwordTextField: StyledTextField!
     @IBOutlet weak var confirmPasswordTextField: StyledTextField!
@@ -27,7 +26,6 @@ class RegisterViewController: UIViewController {
         
         nameTextField.delegate = self
         lastNameTextField.delegate = self
-        ageTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
@@ -88,7 +86,7 @@ extension RegisterViewController: UITextFieldDelegate {
         case nameTextField:
             lastNameTextField.becomeFirstResponder()
         case lastNameTextField:
-            ageTextField.becomeFirstResponder()
+            emailTextField.becomeFirstResponder()
         case emailTextField:
             passwordTextField.becomeFirstResponder()
         case passwordTextField:

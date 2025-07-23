@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="WalkieTalkie" customModuleProvider="target">
             <connections>
-                <outlet property="ageTextField" destination="mx8-Vf-hHy" id="jDt-Tb-PS6"/>
                 <outlet property="confirmPasswordTextField" destination="fc1-Si-THk" id="iHU-GJ-L6H"/>
                 <outlet property="emailTextField" destination="gXa-9R-RL8" id="h3Q-b3-FhZ"/>
                 <outlet property="lastNameTextField" destination="R13-IT-R7B" id="5mf-su-Aho"/>
@@ -49,17 +48,8 @@
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" textContentType="name"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mx8-Vf-hHy" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
-                                    <rect key="frame" x="26" y="266.66666666666669" width="341" height="50"/>
-                                    <accessibility key="accessibilityConfiguration" identifier="registerAge"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="wKu-GS-sxC"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electronico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXa-9R-RL8" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
-                                    <rect key="frame" x="26" y="336.66666666666669" width="341" height="50"/>
+                                    <rect key="frame" x="26" y="266.66666666666669" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="registerEmail"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="Ie9-U9-R2J"/>
@@ -68,7 +58,7 @@
                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gn8-lM-9GK" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
-                                    <rect key="frame" x="26" y="406.66666666666663" width="341" height="50"/>
+                                    <rect key="frame" x="26" y="336.66666666666669" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="registerPassword"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="Arg-wq-Qwf"/>
@@ -77,7 +67,7 @@
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fc1-Si-THk" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
-                                    <rect key="frame" x="26" y="476.66666666666663" width="341" height="50"/>
+                                    <rect key="frame" x="26" y="406.66666666666663" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="registerConfirmPassword"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="lRX-xe-Eai"/>
@@ -86,7 +76,7 @@
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eY-Jj-1w9">
-                                    <rect key="frame" x="26" y="561.66666666666663" width="341" height="50"/>
+                                    <rect key="frame" x="26" y="491.66666666666663" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="registerSend"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="XQl-nW-WIk"/>
@@ -118,11 +108,9 @@
                                 <constraint firstItem="fc1-Si-THk" firstAttribute="leading" secondItem="tkq-5l-6XY" secondAttribute="leading" constant="26" id="JOe-NL-xRf"/>
                                 <constraint firstItem="fc1-Si-THk" firstAttribute="top" secondItem="gn8-lM-9GK" secondAttribute="bottom" constant="20" id="Jb5-up-Hcu"/>
                                 <constraint firstAttribute="trailing" secondItem="gn8-lM-9GK" secondAttribute="trailing" constant="26" id="S6u-q5-swZ"/>
-                                <constraint firstItem="gXa-9R-RL8" firstAttribute="top" secondItem="mx8-Vf-hHy" secondAttribute="bottom" constant="20" id="SKG-bT-8mY"/>
                                 <constraint firstItem="KUX-Xy-Cas" firstAttribute="leading" secondItem="tkq-5l-6XY" secondAttribute="leading" constant="151" id="SYB-uX-sy2"/>
                                 <constraint firstItem="3eY-Jj-1w9" firstAttribute="leading" secondItem="tkq-5l-6XY" secondAttribute="leading" constant="26" id="VBU-oq-lkz"/>
                                 <constraint firstItem="gXa-9R-RL8" firstAttribute="leading" secondItem="tkq-5l-6XY" secondAttribute="leading" constant="26" id="WRD-L9-oNf"/>
-                                <constraint firstAttribute="trailing" secondItem="mx8-Vf-hHy" secondAttribute="trailing" constant="26" id="e6P-fW-lH8"/>
                                 <constraint firstAttribute="trailing" secondItem="R13-IT-R7B" secondAttribute="trailing" constant="26" id="gIV-CS-kfR"/>
                                 <constraint firstAttribute="trailing" secondItem="KUX-Xy-Cas" secondAttribute="trailing" constant="151" id="ipe-om-ozV"/>
                                 <constraint firstAttribute="height" constant="684" id="mBr-Ok-nYd"/>
@@ -131,8 +119,7 @@
                                 <constraint firstItem="R13-IT-R7B" firstAttribute="leading" secondItem="tkq-5l-6XY" secondAttribute="leading" constant="26" id="wl9-e8-Vpr"/>
                                 <constraint firstItem="gn8-lM-9GK" firstAttribute="top" secondItem="gXa-9R-RL8" secondAttribute="bottom" constant="20" id="x6H-lx-TDp"/>
                                 <constraint firstItem="3eY-Jj-1w9" firstAttribute="top" secondItem="fc1-Si-THk" secondAttribute="bottom" constant="35" id="xC8-0n-XfH"/>
-                                <constraint firstItem="mx8-Vf-hHy" firstAttribute="top" secondItem="R13-IT-R7B" secondAttribute="bottom" constant="20" id="yrs-M0-wBT"/>
-                                <constraint firstItem="mx8-Vf-hHy" firstAttribute="leading" secondItem="tkq-5l-6XY" secondAttribute="leading" constant="26" id="zO2-vU-56y"/>
+                                <constraint firstItem="gXa-9R-RL8" firstAttribute="top" secondItem="R13-IT-R7B" secondAttribute="bottom" constant="20" id="xpu-9N-aFb"/>
                             </constraints>
                         </view>
                     </subviews>
