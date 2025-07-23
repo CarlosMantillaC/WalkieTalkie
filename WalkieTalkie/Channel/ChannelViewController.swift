@@ -15,6 +15,8 @@ class ChannelViewController: UIViewController {
     
     var presenter: ChannelPresenterProtocol?
     private var gradientLayer: CAGradientLayer?
+    private var users: [String] = []
+    private var fetchUsersTimer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +29,24 @@ class ChannelViewController: UIViewController {
             target: self,
             action: #selector(didTapExit)
         )
+        
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "UsersTableViewCell", bundle: nil), forCellReuseIdentifier: "UsersTableViewCell")
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         applyGradientBackground()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startUserFetchTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopUserFetchTimer()
     }
     
     @IBAction func talkButtonPressed(_ sender: UIButton) {
@@ -46,6 +61,18 @@ class ChannelViewController: UIViewController {
     
     @objc private func didTapExit() {
         presenter?.didTapExit()
+    }
+    
+    private func startUserFetchTimer() {
+        fetchUsersTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { [weak self] _ in
+            self?.presenter?.refreshUsers()
+        }
+        RunLoop.main.add(fetchUsersTimer!, forMode: .common)
+    }
+    
+    private func stopUserFetchTimer() {
+        fetchUsersTimer?.invalidate()
+        fetchUsersTimer = nil
     }
 }
 
@@ -73,5 +100,26 @@ extension ChannelViewController {
 extension ChannelViewController: ChannelViewProtocol {
     func setChannelName(_ name: String) {
         nameChannelLabel.text = name
+    }
+    
+    func displayUsers(_ emails: [String]) {
+        self.users = emails
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+}
+
+extension ChannelViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UsersTableViewCell", for: indexPath) as? UsersTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.emailLabel.text = users[indexPath.row]
+        return cell
     }
 }

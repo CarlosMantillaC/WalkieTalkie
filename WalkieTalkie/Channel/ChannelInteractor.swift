@@ -12,13 +12,16 @@ final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelega
     private var socket: WebSocketServiceProtocol
     private let audioService: AudioServiceProtocol
     private let channel: Channel
+    private let usersRepository: ChannelUsersRepositoryProtocol
     
     init(channel: Channel,
          socket: WebSocketServiceProtocol = WebSocketService(),
-         audioService: AudioServiceProtocol = AudioService()) {
+         audioService: AudioServiceProtocol = AudioService(),
+         usersRepository: ChannelUsersRepositoryProtocol = ChannelUsersRepository()) {
         self.channel = channel
         self.socket = socket
         self.audioService = audioService
+        self.usersRepository = usersRepository
         self.socket.delegate = self
     }
     
@@ -59,5 +62,17 @@ final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelega
     func didReceive(data: Data) {
         print("🎧 Received audio data (\(data.count) bytes)")
         audioService.playAudioData(data)
+    }
+    
+    func fetchUsersInChannel(named channelName: String) {
+        usersRepository.fetchUsers(for: channelName) { [weak self] result in
+            switch result {
+            case .success(let emails):
+                print("✅ Users in channel: \(emails)")
+                self?.presenter?.didFetchUsers(emails)
+            case .failure(let error):
+                print("❌ Failed to fetch users: \(error.localizedDescription)")
+            }
+        }
     }
 }

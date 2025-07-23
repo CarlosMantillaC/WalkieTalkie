@@ -37,7 +37,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nRM-NW-bhK">
-                                    <rect key="frame" x="37" y="158" width="318" height="318"/>
+                                    <rect key="frame" x="0.0" y="158" width="393" height="318"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHF-fa-1VD">
@@ -63,8 +63,8 @@
                                 <constraint firstItem="xrG-Ts-WKf" firstAttribute="centerX" secondItem="ZAV-7z-AXu" secondAttribute="centerX" id="bdi-Zd-sfC"/>
                                 <constraint firstItem="mHF-fa-1VD" firstAttribute="top" secondItem="nRM-NW-bhK" secondAttribute="bottom" constant="58" id="dow-55-Fa0"/>
                                 <constraint firstAttribute="height" constant="666" id="fuB-da-WPh"/>
-                                <constraint firstAttribute="trailing" secondItem="nRM-NW-bhK" secondAttribute="trailing" constant="38" id="qAr-xl-MNq"/>
-                                <constraint firstItem="nRM-NW-bhK" firstAttribute="leading" secondItem="ZAV-7z-AXu" secondAttribute="leading" constant="37" id="rf4-lo-3zX"/>
+                                <constraint firstAttribute="trailing" secondItem="nRM-NW-bhK" secondAttribute="trailing" id="qAr-xl-MNq"/>
+                                <constraint firstItem="nRM-NW-bhK" firstAttribute="leading" secondItem="ZAV-7z-AXu" secondAttribute="leading" id="rf4-lo-3zX"/>
                                 <constraint firstItem="nRM-NW-bhK" firstAttribute="top" secondItem="xrG-Ts-WKf" secondAttribute="bottom" constant="58" id="w0Q-Xc-lPJ"/>
                             </constraints>
                         </view>

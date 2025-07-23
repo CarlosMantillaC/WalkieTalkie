@@ -10,6 +10,7 @@ import UIKit
 
 protocol ChannelViewProtocol: AnyObject {
     func setChannelName(_ name: String)
+    func displayUsers(_ emails: [String])
 }
 
 protocol ChannelPresenterProtocol: AnyObject {
@@ -17,6 +18,7 @@ protocol ChannelPresenterProtocol: AnyObject {
     func startTalking()
     func stopTalking()
     func didTapExit()
+    func refreshUsers()
 }
 
 protocol ChannelInteractorProtocol: AnyObject {
@@ -24,10 +26,12 @@ protocol ChannelInteractorProtocol: AnyObject {
     func startTalking()
     func stopTalking()
     func disconnectFromChannel()
+    func fetchUsersInChannel(named channelName: String)
 }
 
 protocol ChannelInteractorOutputProtocol: AnyObject {
     func didReceivePermissionToSpeak()
+    func didFetchUsers(_ emails: [String])
 }
 
 protocol ChannelRouterProtocol: AnyObject {

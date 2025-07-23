@@ -21,6 +21,7 @@ final class ChannelPresenter: ChannelPresenterProtocol {
     func viewDidLoad() {
         interactor?.connectToChannel(named: channel.name)
         view?.setChannelName(channel.name)
+        interactor?.fetchUsersInChannel(named: channel.name)
     }
 
     func startTalking() {
@@ -35,10 +36,19 @@ final class ChannelPresenter: ChannelPresenterProtocol {
         interactor?.disconnectFromChannel()
         router?.navigateToChannels()
     }
+    
+    func refreshUsers() {
+        interactor?.fetchUsersInChannel(named: channel.name)
+    }
 }
 
 extension ChannelPresenter: ChannelInteractorOutputProtocol {
     func didReceivePermissionToSpeak() {
         print("🎙️ Tienes permiso para hablar")
+    }
+    
+    func didFetchUsers(_ emails: [String]) {
+        print("👥 Emails recibidos en presenter: \(emails)")
+        view?.displayUsers(emails)
     }
 }
