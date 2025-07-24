@@ -7,16 +7,16 @@
 
 import Foundation
 
-class ChannelsInteractor: ChannelsInteractorProtocol {
+class ChannelsInteractor {
     weak var presenter: ChannelsInteractorOutput?
     private let repository: ChannelsRepositoryProtocol
-    private let repositoryLogout: LogoutRepositoryProtocol
-
-    init(repository: ChannelsRepositoryProtocol = ChannelsRepository(), repositoryLogout: LogoutRepositoryProtocol = LogoutRepository() ) {
+    
+    init(repository: ChannelsRepositoryProtocol = ChannelsRepository()) {
         self.repository = repository
-        self.repositoryLogout = repositoryLogout
     }
+}
 
+extension ChannelsInteractor: ChannelsInteractorProtocol {
     func loadChannels() {
         repository.fetchChannels { [weak self] result in
             DispatchQueue.main.async {
@@ -31,16 +31,7 @@ class ChannelsInteractor: ChannelsInteractorProtocol {
     }
     
     func logout() {
-        repositoryLogout.logout { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let message):
-                    TokenManager.clear()
-                    self?.presenter?.logoutSucceeded(message: message)
-                case .failure(let error):
-                    self?.presenter?.logoutFailed(with: error)
-                }
-            }
-        }
+        TokenManager.clear()
+        self.presenter?.logoutSucceeded(message: "Sesión cerrada exitosamente")
     }
 }

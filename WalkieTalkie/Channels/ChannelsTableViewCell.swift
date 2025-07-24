@@ -8,7 +8,6 @@
 import UIKit
 
 class ChannelsTableViewCell: UITableViewCell {
-
     
     @IBOutlet weak var customImageView: UIImageView!
     @IBOutlet weak var customLabel: UILabel!

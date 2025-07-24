@@ -25,6 +25,7 @@ final class RegisterRepositoryTests: XCTestCase {
         let expectedMessage = "Registro exitoso"
         let response = RegisterResponse(message: expectedMessage)
         let responseData = try! JSONEncoder().encode(response)
+        
         MockURLProtocol.mockResponseData = responseData
         MockURLProtocol.mockError = nil
 
@@ -71,6 +72,7 @@ final class RegisterRepositoryTests: XCTestCase {
 
     func testRegisterHandlesNetworkError() {
         let networkError = NSError(domain: "Network", code: -1009, userInfo: [NSLocalizedDescriptionKey: "Sin conexión"])
+        
         MockURLProtocol.mockError = networkError
         MockURLProtocol.mockResponseData = nil
 

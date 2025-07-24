@@ -8,7 +8,6 @@
 import UIKit
 
 class StyledTextField: UITextField {
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupStyle()

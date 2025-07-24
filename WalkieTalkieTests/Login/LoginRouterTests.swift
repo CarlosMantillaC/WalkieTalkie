@@ -48,4 +48,3 @@ final class LoginRouterTests: XCTestCase {
         XCTAssertEqual(mockView.presentedStyle, .formSheet)
     }
 }
-

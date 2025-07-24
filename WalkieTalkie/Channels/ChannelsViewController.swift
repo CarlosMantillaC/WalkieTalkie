@@ -42,22 +42,22 @@ class ChannelsViewController: UIViewController {
     }
 }
 
-extension ChannelsViewController: UITableViewDataSource, UITableViewDelegate {
+extension ChannelsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter?.channelsCount ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ChannelsCell", for: indexPath) as? ChannelsTableViewCell
-        else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChannelsCell", for: indexPath) as? ChannelsTableViewCell else {
             return UITableViewCell()
         }
         
         presenter?.configure(cell: cell, at: indexPath.row)
         return cell
     }
-    
+}
+
+extension ChannelsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didSelectChannel(at: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)

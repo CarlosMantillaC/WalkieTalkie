@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelegate {
+final class ChannelInteractor {
     weak var presenter: ChannelInteractorOutputProtocol?
     private var socket: WebSocketServiceProtocol
     private let audioService: AudioServiceProtocol
@@ -24,7 +24,9 @@ final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelega
         self.usersRepository = usersRepository
         self.socket.delegate = self
     }
-    
+}
+
+extension ChannelInteractor: ChannelInteractorProtocol {
     func connectToChannel(named name: String) {
         socket.connect(to: name)
         audioService.startStreaming(to: socket)
@@ -45,34 +47,36 @@ final class ChannelInteractor: ChannelInteractorProtocol, WebSocketServiceDelega
         socket.disconnect()
     }
     
+    func fetchUsersInChannel(named channelName: String) {
+        usersRepository.fetchUsers(for: channelName) { [weak self] result in
+            switch result {
+            case .success(let emails):
+                print("Users in channel: \(emails)")
+                self?.presenter?.didFetchUsers(emails)
+            case .failure(let error):
+                print("Failed to fetch users: \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
+extension ChannelInteractor: WebSocketServiceDelegate {
     func didReceive(message: String) {
         if let audioData = Data(base64Encoded: message) {
-            print("🎧 Received audio data")
+            print("Received audio data")
             audioService.playAudioData(audioData)
         } else {
             if let json = try? JSONSerialization.jsonObject(with: Data(message.utf8), options: []) as? [String: Any],
                let serverMessage = json["message"] as? String {
-                print("ℹ️ Server message: \(serverMessage)")
+                print("Server message: \(serverMessage)")
             } else {
-                print("⚠️ Received non-audio message: \(message)")
+                print("Received non-audio message: \(message)")
             }
         }
     }
     
     func didReceive(data: Data) {
-        print("🎧 Received audio data (\(data.count) bytes)")
+        print("Received audio data (\(data.count) bytes)")
         audioService.playAudioData(data)
-    }
-    
-    func fetchUsersInChannel(named channelName: String) {
-        usersRepository.fetchUsers(for: channelName) { [weak self] result in
-            switch result {
-            case .success(let emails):
-                print("✅ Users in channel: \(emails)")
-                self?.presenter?.didFetchUsers(emails)
-            case .failure(let error):
-                print("❌ Failed to fetch users: \(error.localizedDescription)")
-            }
-        }
     }
 }

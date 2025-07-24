@@ -14,8 +14,8 @@ protocol ChannelsViewProtocol: AnyObject {
 }
 
 protocol ChannelsPresenterProtocol: AnyObject {
-    func didTapLogout()
     var channelsCount: Int { get }
+    func didTapLogout()
     func viewDidLoad()
     func configure(cell: ChannelsTableViewCell, at index: Int)
     func didSelectChannel(at index: Int)
@@ -28,7 +28,6 @@ protocol ChannelsInteractorProtocol: AnyObject {
 
 protocol ChannelsInteractorOutput: AnyObject {
     func logoutSucceeded(message: String)
-    func logoutFailed(with error: Error)
     func didLoadChannels(_ channels: [Channel])
     func didFailLoadingChannels(error: Error)
 }

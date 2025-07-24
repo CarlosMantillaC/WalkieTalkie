@@ -27,7 +27,6 @@ final class ChannelRouter: ChannelRouterProtocol {
     }
         
     func navigateToChannels() {
-        print("saliendo a canales")
         let channelsVC = ChannelsRouter.createModule()
         viewController?.navigationController?.setViewControllers([channelsVC], animated: true)
     }

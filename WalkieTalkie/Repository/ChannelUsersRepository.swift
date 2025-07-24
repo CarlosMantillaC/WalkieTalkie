@@ -39,10 +39,6 @@ final class ChannelUsersRepository: ChannelUsersRepositoryProtocol {
                 return
             }
             
-            if let raw = String(data: data, encoding: .utf8) {
-                print("🧾 Raw JSON response: \(raw)")
-            }
-            
             do {
                 let userList = try JSONDecoder().decode([String].self, from: data)
                 completion(.success(userList))

@@ -72,6 +72,7 @@ final class LoginRepositoryTests: XCTestCase {
 
     func testLoginHandlesNetworkError() {
         let networkError = NSError(domain: "Network", code: -1009, userInfo: [NSLocalizedDescriptionKey: "Sin conexión"])
+        
         MockURLProtocol.mockError = networkError
         MockURLProtocol.mockResponseData = nil
 

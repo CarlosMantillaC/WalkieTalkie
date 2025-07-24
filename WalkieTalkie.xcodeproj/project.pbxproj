@@ -31,6 +31,7 @@
 		C45D930C2E3173F400B3033B /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D930B2E3173F400B3033B /* LoginInteractorTests.swift */; };
 		C45D930E2E31742A00B3033B /* LoginFunctionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D930D2E31742A00B3033B /* LoginFunctionalTests.swift */; };
 		C45D93102E31755600B3033B /* LoginRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D930F2E31755600B3033B /* LoginRepositoryTests.swift */; };
+		C45D93122E32AE5300B3033B /* MockLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D93112E32AE5300B3033B /* MockLoginViewController.swift */; };
 		C46024A42E26FFCF0032EDA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460249E2E26FFCF0032EDA6 /* AppDelegate.swift */; };
 		C46024A52E26FFCF0032EDA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024A12E26FFCF0032EDA6 /* SceneDelegate.swift */; };
 		C46024A72E26FFCF0032EDA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C460249F2E26FFCF0032EDA6 /* Assets.xcassets */; };
@@ -39,8 +40,6 @@
 		C46024B82E2701A20032EDA6 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024B72E2701A20032EDA6 /* APIConstants.swift */; };
 		C46024BA2E2702180032EDA6 /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024B92E2702180032EDA6 /* URLRequest+Extensions.swift */; };
 		C46024BC2E27023B0032EDA6 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024BB2E27023B0032EDA6 /* TokenManager.swift */; };
-		C46024BE2E27025A0032EDA6 /* Notifications+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024BD2E27025A0032EDA6 /* Notifications+Extensions.swift */; };
-		C46024C02E2702750032EDA6 /* TokenExpirationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024BF2E2702750032EDA6 /* TokenExpirationHandler.swift */; };
 		C46024C32E2702B30032EDA6 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024C22E2702B30032EDA6 /* LoginRepository.swift */; };
 		C46024C62E2702E90032EDA6 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024C52E2702E90032EDA6 /* LoginRequest.swift */; };
 		C46024C82E2702FC0032EDA6 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024C72E2702FC0032EDA6 /* LoginResponse.swift */; };
@@ -67,7 +66,6 @@
 		C46024F92E2804520032EDA6 /* ChannelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024F82E2804520032EDA6 /* ChannelProtocols.swift */; };
 		C46024FD2E2804DE0032EDA6 /* ChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46024FB2E2804DE0032EDA6 /* ChannelViewController.xib */; };
 		C46024FF2E2805390032EDA6 /* ChannelRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024FE2E2805390032EDA6 /* ChannelRouter.swift */; };
-		C46025012E2805990032EDA6 /* LogoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025002E2805990032EDA6 /* LogoutRepository.swift */; };
 		C46025072E2905640032EDA6 /* ChannelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025052E2905640032EDA6 /* ChannelsTableViewCell.swift */; };
 		C46025082E2905640032EDA6 /* ChannelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46025062E2905640032EDA6 /* ChannelsTableViewCell.xib */; };
 		C460250A2E290A200032EDA6 /* ChannelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025092E290A200032EDA6 /* ChannelsRepository.swift */; };
@@ -133,6 +131,7 @@
 		C45D930B2E3173F400B3033B /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
 		C45D930D2E31742A00B3033B /* LoginFunctionalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFunctionalTests.swift; sourceTree = "<group>"; };
 		C45D930F2E31755600B3033B /* LoginRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryTests.swift; sourceTree = "<group>"; };
+		C45D93112E32AE5300B3033B /* MockLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewController.swift; sourceTree = "<group>"; };
 		C460246A2E26FF880032EDA6 /* WalkieTalkie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkieTalkie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46024802E26FF8A0032EDA6 /* WalkieTalkieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkieTalkieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C460248A2E26FF8A0032EDA6 /* WalkieTalkieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkieTalkieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,8 +144,6 @@
 		C46024B72E2701A20032EDA6 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		C46024B92E2702180032EDA6 /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
 		C46024BB2E27023B0032EDA6 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
-		C46024BD2E27025A0032EDA6 /* Notifications+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications+Extensions.swift"; sourceTree = "<group>"; };
-		C46024BF2E2702750032EDA6 /* TokenExpirationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenExpirationHandler.swift; sourceTree = "<group>"; };
 		C46024C22E2702B30032EDA6 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		C46024C52E2702E90032EDA6 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		C46024C72E2702FC0032EDA6 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -173,7 +170,6 @@
 		C46024F82E2804520032EDA6 /* ChannelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelProtocols.swift; sourceTree = "<group>"; };
 		C46024FB2E2804DE0032EDA6 /* ChannelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelViewController.xib; sourceTree = "<group>"; };
 		C46024FE2E2805390032EDA6 /* ChannelRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelRouter.swift; sourceTree = "<group>"; };
-		C46025002E2805990032EDA6 /* LogoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRepository.swift; sourceTree = "<group>"; };
 		C46025052E2905640032EDA6 /* ChannelsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsTableViewCell.swift; sourceTree = "<group>"; };
 		C46025062E2905640032EDA6 /* ChannelsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsTableViewCell.xib; sourceTree = "<group>"; };
 		C46025092E290A200032EDA6 /* ChannelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRepository.swift; sourceTree = "<group>"; };
@@ -262,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				C45D92F92E31716000B3033B /* MockNavigationController.swift */,
+				C45D93112E32AE5300B3033B /* MockLoginViewController.swift */,
 				C45D92FB2E31717B00B3033B /* MockLoginView.swift */,
 				C45D92FD2E31719000B3033B /* MockLoginInteractor.swift */,
 				C45D92FF2E3171A700B3033B /* MockLoginRouter.swift */,
@@ -359,8 +356,6 @@
 				C46024B72E2701A20032EDA6 /* APIConstants.swift */,
 				C46024B92E2702180032EDA6 /* URLRequest+Extensions.swift */,
 				C46024BB2E27023B0032EDA6 /* TokenManager.swift */,
-				C46024BD2E27025A0032EDA6 /* Notifications+Extensions.swift */,
-				C46024BF2E2702750032EDA6 /* TokenExpirationHandler.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -370,7 +365,6 @@
 			children = (
 				C46024C22E2702B30032EDA6 /* LoginRepository.swift */,
 				C46024E32E27F8930032EDA6 /* RegisterRepository.swift */,
-				C46025002E2805990032EDA6 /* LogoutRepository.swift */,
 				C46025092E290A200032EDA6 /* ChannelsRepository.swift */,
 				C47B30902E30276500275424 /* ChannelUsersRepository.swift */,
 			);
@@ -662,7 +656,6 @@
 				C46025112E2916110032EDA6 /* ChannelsInteractor.swift in Sources */,
 				C460251D2E29439A0032EDA6 /* WebSocketService.swift in Sources */,
 				C46024D02E27038A0032EDA6 /* LoginInteractor.swift in Sources */,
-				C46024C02E2702750032EDA6 /* TokenExpirationHandler.swift in Sources */,
 				C46024D22E2703A20032EDA6 /* LoginRouter.swift in Sources */,
 				C46024A42E26FFCF0032EDA6 /* AppDelegate.swift in Sources */,
 				C46024F32E2803F60032EDA6 /* LogoutResponse.swift in Sources */,
@@ -673,10 +666,8 @@
 				C46024E22E27F86D0032EDA6 /* RegisterProtocols.swift in Sources */,
 				C46024CA2E2703180032EDA6 /* LoginAPIErrorResponse.swift in Sources */,
 				C46024C32E2702B30032EDA6 /* LoginRepository.swift in Sources */,
-				C46025012E2805990032EDA6 /* LogoutRepository.swift in Sources */,
 				C46024CE2E2703730032EDA6 /* LoginPresenter.swift in Sources */,
 				C46024A52E26FFCF0032EDA6 /* SceneDelegate.swift in Sources */,
-				C46024BE2E27025A0032EDA6 /* Notifications+Extensions.swift in Sources */,
 				C47B30912E30276500275424 /* ChannelUsersRepository.swift in Sources */,
 				C460250F2E290AD20032EDA6 /* ChannelsProtocols.swift in Sources */,
 				C48C3FD92E2AC99400D9B24A /* UIViewController+GradientBackground.swift in Sources */,
@@ -710,6 +701,7 @@
 				C45D930A2E31731A00B3033B /* LoginPresenterTests.swift in Sources */,
 				C45D92ED2E31683D00B3033B /* RegisterInteractorTests.swift in Sources */,
 				C45D93002E3171A700B3033B /* MockLoginRouter.swift in Sources */,
+				C45D93122E32AE5300B3033B /* MockLoginViewController.swift in Sources */,
 				C45D93062E31724800B3033B /* MockLoginPresenter.swift in Sources */,
 				C45D92E32E31662700B3033B /* MockRegisterRouter.swift in Sources */,
 				C45D93022E3171BF00B3033B /* MockLoginRepository.swift in Sources */,

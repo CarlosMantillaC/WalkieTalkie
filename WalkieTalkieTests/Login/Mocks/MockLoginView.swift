@@ -15,4 +15,3 @@ final class MockLoginView: LoginViewProtocol {
         lastErrorMessage = message
     }
 }
-

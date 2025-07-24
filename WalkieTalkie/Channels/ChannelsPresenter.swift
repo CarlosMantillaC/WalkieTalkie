@@ -8,21 +8,23 @@
 import Foundation
 import UIKit
 
-final class ChannelsPresenter: ChannelsPresenterProtocol {
+final class ChannelsPresenter {
     weak var view: ChannelsViewProtocol?
     var interactor: ChannelsInteractorProtocol?
     var router: ChannelsRouterProtocol?
 
     private var channels: [Channel] = []
+}
 
-    func viewDidLoad() {
-        interactor?.loadChannels()
-    }
-
+extension ChannelsPresenter: ChannelsPresenterProtocol {
     var channelsCount: Int {
         return channels.count
     }
 
+    func viewDidLoad() {
+        interactor?.loadChannels()
+    }
+    
     func configure(cell: ChannelsTableViewCell, at index: Int) {
         let channel = channels[index]
         cell.customLabel.text = channel.name
@@ -44,10 +46,6 @@ extension ChannelsPresenter: ChannelsInteractorOutput {
         router?.navigateToLogin(with: message)
     }
 
-    func logoutFailed(with error: Error) {
-        view?.showError(message: error.localizedDescription)
-    }
-    
     func didLoadChannels(_ channels: [Channel]) {
         self.channels = channels
         view?.reloadData()

@@ -7,17 +7,18 @@
 
 import Foundation
 
-final class ChannelPresenter: ChannelPresenterProtocol {
+final class ChannelPresenter {
     weak var view: ChannelViewProtocol?
     var interactor: ChannelInteractorProtocol?
     var router: ChannelRouterProtocol?
-    
     private let channel: Channel
     
     init(channel: Channel) {
         self.channel = channel
     }
+}
 
+extension ChannelPresenter: ChannelPresenterProtocol {
     func viewDidLoad() {
         interactor?.connectToChannel(named: channel.name)
         view?.setChannelName(channel.name)
@@ -44,11 +45,11 @@ final class ChannelPresenter: ChannelPresenterProtocol {
 
 extension ChannelPresenter: ChannelInteractorOutputProtocol {
     func didReceivePermissionToSpeak() {
-        print("🎙️ Tienes permiso para hablar")
+        print("Tienes permiso para hablar")
     }
     
     func didFetchUsers(_ emails: [String]) {
-        print("👥 Emails recibidos en presenter: \(emails)")
+        print("Emails recibidos en presenter: \(emails)")
         view?.displayUsers(emails)
     }
 }
