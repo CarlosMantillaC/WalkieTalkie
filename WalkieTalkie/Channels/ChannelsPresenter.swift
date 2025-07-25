@@ -33,7 +33,9 @@ extension ChannelsPresenter: ChannelsPresenterProtocol {
     
     func didSelectChannel(at index: Int) {
         let channel = channels[index]
-        router?.navigateToChannel(with: channel)
+        if let view = view {
+            router?.navigateToChannel(from: view, with: channel)
+        }
     }
     
     func didTapLogout() {

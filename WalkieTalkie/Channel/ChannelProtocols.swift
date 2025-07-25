@@ -36,5 +36,4 @@ protocol ChannelInteractorOutputProtocol: AnyObject {
 
 protocol ChannelRouterProtocol: AnyObject {
     static func createModule(with channel: Channel) -> UIViewController
-    func navigateToChannels()
-}
+    func navigateToChannels(from view: ChannelViewProtocol)}

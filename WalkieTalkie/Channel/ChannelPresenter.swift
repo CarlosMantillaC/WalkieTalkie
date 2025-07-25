@@ -35,7 +35,9 @@ extension ChannelPresenter: ChannelPresenterProtocol {
     
     func didTapExit() {
         interactor?.disconnectFromChannel()
-        router?.navigateToChannels()
+        if let view = view {
+            router?.navigateToChannels(from: view)
+        }
     }
     
     func refreshUsers() {

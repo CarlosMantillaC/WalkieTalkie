@@ -31,7 +31,7 @@ final class LoginInteractorTests: XCTestCase {
     func testLoginSuccessNotifiesPresenter() {
         let expectation = self.expectation(description: "login success")
 
-        let expectedResponse = LoginResponse(token: "abc123", user_id: 1)
+        let expectedResponse = LoginResponse(token: "abc123")
         mockRepository.resultToReturn = .success(expectedResponse)
         mockPresenter.onSuccess = {
             expectation.fulfill()

@@ -1,5 +1,5 @@
 //
-//  LoginRepositoryTests.swift
+//  ChannelsRepositoryTests.swift
 //  WalkieTalkieTests
 //
 
@@ -8,8 +8,8 @@
 import XCTest
 @testable import WalkieTalkie
 
-final class LoginRepositoryTests: XCTestCase {
-    var repository: LoginRepository!
+final class ChannelsRepositoryTests: XCTestCase {
+    var repository: ChannelsRepository!
     var session: URLSession!
 
     override func setUp() {
@@ -18,25 +18,23 @@ final class LoginRepositoryTests: XCTestCase {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [MockURLProtocol.self]
         session = URLSession(configuration: config)
-        repository = LoginRepository(session: session)
+        repository = ChannelsRepository(session: session)
     }
 
-    func testLoginSuccessResponse() {
-        let expectedToken = "abc123"
-        let response = LoginResponse(token: expectedToken)
-        let responseData = try! JSONEncoder().encode(response)
+    func testFetchChannelsSuccessResponse() {
+        let mockChannelNames = ["Channel 1", "Channel 2", "Channel 3"]
+        let responseData = try! JSONEncoder().encode(mockChannelNames)
 
         MockURLProtocol.mockResponseData = responseData
         MockURLProtocol.mockError = nil
 
-        let expectation = self.expectation(description: "login completes")
+        let expectation = self.expectation(description: "fetchChannels completes")
 
-        let request = LoginRequest(email: "correo@valido.com", password: "123456")
-
-        repository.login(request: request) { result in
+        repository.fetchChannels { result in
             switch result {
-            case .success(let response):
-                XCTAssertEqual(response.token, expectedToken)
+            case .success(let channels):
+                XCTAssertEqual(channels.count, 3)
+                XCTAssertEqual(channels[0].name, "Channel 1")
             case .failure:
                 XCTFail("Expected success, got failure")
             }
@@ -46,23 +44,21 @@ final class LoginRepositoryTests: XCTestCase {
         waitForExpectations(timeout: 1)
     }
 
-    func testLoginReturnsAPIError() {
-        let errorResponse = LoginAPIErrorResponse(error: "Credenciales inválidas")
-        let responseData = try! JSONEncoder().encode(errorResponse)
+    func testFetchChannelsReturnsInvalidJSONError() {
+        let invalidJSON = ["invalid": "data"]
+        let responseData = try! JSONEncoder().encode(invalidJSON)
 
         MockURLProtocol.mockResponseData = responseData
         MockURLProtocol.mockError = nil
 
-        let expectation = self.expectation(description: "login completes")
+        let expectation = self.expectation(description: "fetchChannels completes")
 
-        let request = LoginRequest(email: "correo@valido.com", password: "incorrecta")
-
-        repository.login(request: request) { result in
+        repository.fetchChannels { result in
             switch result {
             case .success:
                 XCTFail("Expected failure, got success")
             case .failure(let error):
-                XCTAssertEqual(error.localizedDescription, "Credenciales inválidas")
+                XCTAssertEqual((error as NSError).domain, "InvalidJSON")
             }
             expectation.fulfill()
         }
@@ -70,17 +66,15 @@ final class LoginRepositoryTests: XCTestCase {
         waitForExpectations(timeout: 1)
     }
 
-    func testLoginHandlesNetworkError() {
+    func testFetchChannelsHandlesNetworkError() {
         let networkError = NSError(domain: "Network", code: -1009, userInfo: [NSLocalizedDescriptionKey: "Sin conexión"])
-        
+
         MockURLProtocol.mockError = networkError
         MockURLProtocol.mockResponseData = nil
 
-        let expectation = self.expectation(description: "login completes")
+        let expectation = self.expectation(description: "fetchChannels completes")
 
-        let request = LoginRequest(email: "correo@valido.com", password: "123456")
-
-        repository.login(request: request) { result in
+        repository.fetchChannels { result in
             switch result {
             case .success:
                 XCTFail("Expected failure, got success")

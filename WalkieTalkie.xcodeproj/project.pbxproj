@@ -32,6 +32,7 @@
 		C45D930E2E31742A00B3033B /* LoginFunctionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D930D2E31742A00B3033B /* LoginFunctionalTests.swift */; };
 		C45D93102E31755600B3033B /* LoginRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D930F2E31755600B3033B /* LoginRepositoryTests.swift */; };
 		C45D93122E32AE5300B3033B /* MockLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D93112E32AE5300B3033B /* MockLoginViewController.swift */; };
+		C45D93242E33DC3800B3033B /* ChannelsRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D93232E33DC3800B3033B /* ChannelsRouterTests.swift */; };
 		C46024A42E26FFCF0032EDA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460249E2E26FFCF0032EDA6 /* AppDelegate.swift */; };
 		C46024A52E26FFCF0032EDA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46024A12E26FFCF0032EDA6 /* SceneDelegate.swift */; };
 		C46024A72E26FFCF0032EDA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C460249F2E26FFCF0032EDA6 /* Assets.xcassets */; };
@@ -87,6 +88,19 @@
 		C480A10F2E298481000E0C7F /* WebSocketServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A10E2E298481000E0C7F /* WebSocketServiceProtocol.swift */; };
 		C48C3FD72E2AC6E600D9B24A /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48C3FD62E2AC6E600D9B24A /* UIColor+Hex.swift */; };
 		C48C3FD92E2AC99400D9B24A /* UIViewController+GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48C3FD82E2AC99400D9B24A /* UIViewController+GradientBackground.swift */; };
+		C4B989452E340126004CC463 /* MockChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989442E340126004CC463 /* MockChannelsViewController.swift */; };
+		C4B989472E3404EE004CC463 /* MockChannelsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989462E3404EE004CC463 /* MockChannelsNavigationController.swift */; };
+		C4B989492E340F12004CC463 /* MockChannelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989482E340F12004CC463 /* MockChannelsRepository.swift */; };
+		C4B9894B2E340F31004CC463 /* MockChannelsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9894A2E340F31004CC463 /* MockChannelsInteractorOutput.swift */; };
+		C4B9894D2E340F50004CC463 /* ChannelsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9894C2E340F50004CC463 /* ChannelsInteractorTests.swift */; };
+		C4B9894F2E340FA7004CC463 /* MockChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9894E2E340FA7004CC463 /* MockChannelsView.swift */; };
+		C4B989512E340FC7004CC463 /* MockChannelsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989502E340FC7004CC463 /* MockChannelsInteractor.swift */; };
+		C4B989532E340FF6004CC463 /* MockChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989522E340FF6004CC463 /* MockChannelsRouter.swift */; };
+		C4B989572E3410A9004CC463 /* ChannelsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989562E3410A9004CC463 /* ChannelsPresenterTests.swift */; };
+		C4B989592E341288004CC463 /* ChannelsFunctionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989582E341288004CC463 /* ChannelsFunctionalTests.swift */; };
+		C4B9895B2E3412A7004CC463 /* MockChannelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9895A2E3412A7004CC463 /* MockChannelsPresenter.swift */; };
+		C4B9895D2E3414CD004CC463 /* ChannelsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9895C2E3414CD004CC463 /* ChannelsRepositoryTests.swift */; };
+		C4B9895F2E341623004CC463 /* ChannelsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9895E2E341623004CC463 /* ChannelsUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +146,7 @@
 		C45D930D2E31742A00B3033B /* LoginFunctionalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFunctionalTests.swift; sourceTree = "<group>"; };
 		C45D930F2E31755600B3033B /* LoginRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryTests.swift; sourceTree = "<group>"; };
 		C45D93112E32AE5300B3033B /* MockLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewController.swift; sourceTree = "<group>"; };
+		C45D93232E33DC3800B3033B /* ChannelsRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouterTests.swift; sourceTree = "<group>"; };
 		C460246A2E26FF880032EDA6 /* WalkieTalkie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkieTalkie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46024802E26FF8A0032EDA6 /* WalkieTalkieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkieTalkieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C460248A2E26FF8A0032EDA6 /* WalkieTalkieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkieTalkieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +206,19 @@
 		C480A10E2E298481000E0C7F /* WebSocketServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketServiceProtocol.swift; sourceTree = "<group>"; };
 		C48C3FD62E2AC6E600D9B24A /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		C48C3FD82E2AC99400D9B24A /* UIViewController+GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+GradientBackground.swift"; sourceTree = "<group>"; };
+		C4B989442E340126004CC463 /* MockChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsViewController.swift; sourceTree = "<group>"; };
+		C4B989462E3404EE004CC463 /* MockChannelsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsNavigationController.swift; sourceTree = "<group>"; };
+		C4B989482E340F12004CC463 /* MockChannelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsRepository.swift; sourceTree = "<group>"; };
+		C4B9894A2E340F31004CC463 /* MockChannelsInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsInteractorOutput.swift; sourceTree = "<group>"; };
+		C4B9894C2E340F50004CC463 /* ChannelsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsInteractorTests.swift; sourceTree = "<group>"; };
+		C4B9894E2E340FA7004CC463 /* MockChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsView.swift; sourceTree = "<group>"; };
+		C4B989502E340FC7004CC463 /* MockChannelsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsInteractor.swift; sourceTree = "<group>"; };
+		C4B989522E340FF6004CC463 /* MockChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsRouter.swift; sourceTree = "<group>"; };
+		C4B989562E3410A9004CC463 /* ChannelsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenterTests.swift; sourceTree = "<group>"; };
+		C4B989582E341288004CC463 /* ChannelsFunctionalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsFunctionalTests.swift; sourceTree = "<group>"; };
+		C4B9895A2E3412A7004CC463 /* MockChannelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsPresenter.swift; sourceTree = "<group>"; };
+		C4B9895C2E3414CD004CC463 /* ChannelsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRepositoryTests.swift; sourceTree = "<group>"; };
+		C4B9895E2E341623004CC463 /* ChannelsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,8 +303,36 @@
 				C45D92F52E31704F00B3033B /* MockURLProtocol.swift */,
 				C45D92F72E31706D00B3033B /* RegisterRepositoryTests.swift */,
 				C45D930F2E31755600B3033B /* LoginRepositoryTests.swift */,
+				C4B9895C2E3414CD004CC463 /* ChannelsRepositoryTests.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		C45D93222E33DC2A00B3033B /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				C45D93252E33DC9B00B3033B /* Mocks */,
+				C45D93232E33DC3800B3033B /* ChannelsRouterTests.swift */,
+				C4B9894C2E340F50004CC463 /* ChannelsInteractorTests.swift */,
+				C4B989562E3410A9004CC463 /* ChannelsPresenterTests.swift */,
+				C4B989582E341288004CC463 /* ChannelsFunctionalTests.swift */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		C45D93252E33DC9B00B3033B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C4B989442E340126004CC463 /* MockChannelsViewController.swift */,
+				C4B989462E3404EE004CC463 /* MockChannelsNavigationController.swift */,
+				C4B989482E340F12004CC463 /* MockChannelsRepository.swift */,
+				C4B9894A2E340F31004CC463 /* MockChannelsInteractorOutput.swift */,
+				C4B9894E2E340FA7004CC463 /* MockChannelsView.swift */,
+				C4B989502E340FC7004CC463 /* MockChannelsInteractor.swift */,
+				C4B989522E340FF6004CC463 /* MockChannelsRouter.swift */,
+				C4B9895A2E3412A7004CC463 /* MockChannelsPresenter.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		C46024612E26FF880032EDA6 = {
@@ -321,6 +377,7 @@
 		C46024AA2E26FFD20032EDA6 /* WalkieTalkieTests */ = {
 			isa = PBXGroup;
 			children = (
+				C45D93222E33DC2A00B3033B /* Channels */,
 				C45D92F22E316F6C00B3033B /* Login */,
 				C45D92DC2E3163DD00B3033B /* Register */,
 				C45D92F42E316FA600B3033B /* Repository */,
@@ -332,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				C45D92F02E316AB600B3033B /* RegisterUITests.swift */,
+				C4B9895E2E341623004CC463 /* ChannelsUITests.swift */,
 			);
 			path = WalkieTalkieUITests;
 			sourceTree = "<group>";
@@ -691,17 +749,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B989572E3410A9004CC463 /* ChannelsPresenterTests.swift in Sources */,
 				C45D930E2E31742A00B3033B /* LoginFunctionalTests.swift in Sources */,
 				C45D92FE2E31719000B3033B /* MockLoginInteractor.swift in Sources */,
+				C4B9894D2E340F50004CC463 /* ChannelsInteractorTests.swift in Sources */,
 				C45D930C2E3173F400B3033B /* LoginInteractorTests.swift in Sources */,
 				C45D92E52E31664500B3033B /* MockRegisterInteractorOutput.swift in Sources */,
 				C45D92EB2E3167D100B3033B /* RegisterRouterTests.swift in Sources */,
 				C45D92E72E31672600B3033B /* MockRegisterRepository.swift in Sources */,
+				C4B9895B2E3412A7004CC463 /* MockChannelsPresenter.swift in Sources */,
 				C45D93102E31755600B3033B /* LoginRepositoryTests.swift in Sources */,
+				C4B989512E340FC7004CC463 /* MockChannelsInteractor.swift in Sources */,
 				C45D930A2E31731A00B3033B /* LoginPresenterTests.swift in Sources */,
 				C45D92ED2E31683D00B3033B /* RegisterInteractorTests.swift in Sources */,
 				C45D93002E3171A700B3033B /* MockLoginRouter.swift in Sources */,
+				C4B9895D2E3414CD004CC463 /* ChannelsRepositoryTests.swift in Sources */,
 				C45D93122E32AE5300B3033B /* MockLoginViewController.swift in Sources */,
+				C4B989532E340FF6004CC463 /* MockChannelsRouter.swift in Sources */,
+				C4B9894F2E340FA7004CC463 /* MockChannelsView.swift in Sources */,
 				C45D93062E31724800B3033B /* MockLoginPresenter.swift in Sources */,
 				C45D92E32E31662700B3033B /* MockRegisterRouter.swift in Sources */,
 				C45D93022E3171BF00B3033B /* MockLoginRepository.swift in Sources */,
@@ -710,11 +775,17 @@
 				C45D92E92E31673C00B3033B /* MockPresenter.swift in Sources */,
 				C45D92F62E31704F00B3033B /* MockURLProtocol.swift in Sources */,
 				C45D92FC2E31717B00B3033B /* MockLoginView.swift in Sources */,
+				C45D93242E33DC3800B3033B /* ChannelsRouterTests.swift in Sources */,
+				C4B989592E341288004CC463 /* ChannelsFunctionalTests.swift in Sources */,
 				C45D92EF2E3168E200B3033B /* RegisterPresenterTests.swift in Sources */,
+				C4B989492E340F12004CC463 /* MockChannelsRepository.swift in Sources */,
 				C45D92F82E31706D00B3033B /* RegisterRepositoryTests.swift in Sources */,
+				C4B9894B2E340F31004CC463 /* MockChannelsInteractorOutput.swift in Sources */,
 				C45D93082E31726600B3033B /* LoginRouterTests.swift in Sources */,
 				C45D92E12E3164B100B3033B /* MockRegisterInteractor.swift in Sources */,
+				C4B989452E340126004CC463 /* MockChannelsViewController.swift in Sources */,
 				C45D92FA2E31716000B3033B /* MockNavigationController.swift in Sources */,
+				C4B989472E3404EE004CC463 /* MockChannelsNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +794,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45D92F12E316AB600B3033B /* RegisterUITests.swift in Sources */,
+				C4B9895F2E341623004CC463 /* ChannelsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

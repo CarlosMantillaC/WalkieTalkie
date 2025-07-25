@@ -26,8 +26,10 @@ final class ChannelRouter: ChannelRouterProtocol {
         return view
     }
         
-    func navigateToChannels() {
+    func navigateToChannels(from view: ChannelViewProtocol) {
         let channelsVC = ChannelsRouter.createModule()
-        viewController?.navigationController?.setViewControllers([channelsVC], animated: true)
+        if let vc = view as? UIViewController {
+            vc.navigationController?.setViewControllers([channelsVC], animated: true)
+        }
     }
 }

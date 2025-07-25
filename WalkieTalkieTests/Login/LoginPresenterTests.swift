@@ -55,9 +55,8 @@ final class LoginPresenterTests: XCTestCase {
     }
 
     func testLoginSuccessNavigatesToHome() {
-        presenter.loginSucceeded(with: LoginResponse(token: "abc123", user_id: 1))
+        presenter.loginSucceeded(with: LoginResponse(token: "abc123"))
         XCTAssertEqual(TokenManager.accessToken, "abc123")
-        XCTAssertEqual(TokenManager.userId, 1)
         XCTAssertTrue(mockRouter.didNavigateToHome)
     }
 

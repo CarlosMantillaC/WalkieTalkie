@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class gopetextUITests: XCTestCase {
+final class RegisterUITests: XCTestCase {
     
     func testRegisterSuccessful() throws {
         let app = XCUIApplication()
