@@ -16,6 +16,10 @@ enum APIConstants {
         static let login = "/login"
         static let logout = "/logout"
         static let channels = "/channels"
+        
+        static func userChannel(channelName: String) -> String {
+            return "/channel-users?canal=\(channelName)"
+        }
     }
     
     struct Headers {

@@ -32,7 +32,7 @@ final class ChannelsRouter: ChannelsRouterProtocol {
 
         if let viewController = view as? UIViewController,
            let navController = viewController.navigationController {
-            navController.setViewControllers([viewController, channelVC], animated: true)
+            navController.setViewControllers([channelVC], animated: true)
         }
     }
     

@@ -19,7 +19,7 @@ final class ChannelUsersRepository: ChannelUsersRepositoryProtocol {
     }
     
     func fetchUsers(for channelName: String, completion: @escaping (Result<[String], Error>) -> Void) {
-        guard let url = URL(string: "http://159.203.187.94/channel-users?canal=\(channelName)") else {
+        guard let url = URL(string: APIConstants.baseURL + APIConstants.Endpoint.userChannel(channelName: channelName)) else {
             completion(.failure(NSError(domain: "BadURL", code: -1)))
             return
         }
