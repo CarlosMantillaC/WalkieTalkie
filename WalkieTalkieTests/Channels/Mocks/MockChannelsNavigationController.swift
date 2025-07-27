@@ -5,7 +5,7 @@
 
 //
 
-import UIKit
+import XCTest
 @testable import WalkieTalkie
 
 final class MockChannelsNavigationController: UINavigationController {

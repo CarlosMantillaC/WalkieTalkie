@@ -20,12 +20,12 @@ final class ChannelsFunctionalTests: XCTestCase {
         _ = viewController.view
     }
 
-    func testViewDidLoad_ShouldNotifyPresenter() {
+    func testViewDidLoadShouldNotifyPresenter() {
         viewController.viewDidLoad()
         XCTAssertTrue(mockPresenter.viewDidLoadCalled)
     }
 
-    func testReloadData_ShouldReloadTableView() {
+    func testReloadDataShouldReloadTableView() {
         let tableView = viewController.tableView!
         let dataSource = MockChannelsPresenter()
         dataSource.mockChannels = [Channel(name: "Test")]
@@ -37,7 +37,7 @@ final class ChannelsFunctionalTests: XCTestCase {
         XCTAssertEqual(rows, 1)
     }
 
-    func testDidSelectRow_ShouldCallPresenter() {
+    func testDidSelectRowShouldCallPresenter() {
         let indexPath = IndexPath(row: 0, section: 0)
         viewController.presenter = mockPresenter
 
@@ -46,7 +46,7 @@ final class ChannelsFunctionalTests: XCTestCase {
         XCTAssertEqual(mockPresenter.selectedIndex, 0)
     }
 
-    func testCellForRow_ShouldConfigureCell() {
+    func testCellForRowShouldConfigureCell() {
         let indexPath = IndexPath(row: 0, section: 0)
         mockPresenter.mockChannels = [Channel(name: "Mock")]
 

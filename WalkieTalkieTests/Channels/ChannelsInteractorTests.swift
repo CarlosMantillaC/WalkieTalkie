@@ -28,7 +28,7 @@ final class ChannelsInteractorTests: XCTestCase {
         super.tearDown()
     }
 
-    func testLoadChannels_Success() {
+    func testLoadChannelsSuccess() {
         let mockChannels = [Channel(name: "General"), Channel(name: "Tech")]
         mockRepository.stubbedResult = .success(mockChannels)
 
@@ -43,7 +43,7 @@ final class ChannelsInteractorTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 
-    func testLoadChannels_Failure() {
+    func testLoadChannelsFailure() {
         let expectedError = NSError(domain: "Test", code: 123, userInfo: nil)
         mockRepository.stubbedResult = .failure(expectedError)
 
@@ -57,7 +57,7 @@ final class ChannelsInteractorTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 
-    func testLogout_ClearsTokenAndCallsPresenter() {
+    func testLogoutClearsTokenAndCallsPresenter() {
         interactor.logout()
 
         XCTAssertEqual(mockPresenter.logoutMessage, "Sesión cerrada exitosamente")

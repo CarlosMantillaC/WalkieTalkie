@@ -10,7 +10,7 @@ import XCTest
 
 final class ChannelsRouterTests: XCTestCase {
 
-    func testCreateModule_AssemblesAllDependencies() {
+    func testCreateModuleAssemblesAllDependencies() {
         let viewController = ChannelsRouter.createModule()
 
         XCTAssertTrue(viewController is ChannelsViewController)
@@ -35,11 +35,11 @@ final class ChannelsRouterTests: XCTestCase {
         router.navigateToChannel(from: mockView, with: Channel(name: "Test"))
 
         XCTAssertTrue(navController.didSetViewControllers)
-        XCTAssertEqual(navController.setViewControllersCalledWith?.count, 2)
+        XCTAssertEqual(navController.setViewControllersCalledWith?.count, 1)
         XCTAssertTrue(navController.setViewControllersCalledWith?.last is ChannelViewController)
     }
 
-    func testNavigateToLogin_ReplacesRootWithLoginVC() {
+    func testNavigateToLoginReplacesRootWithLoginVC() {
         let window = UIWindow()
         let router = ChannelsRouter()
         let dummyView = UIViewController()

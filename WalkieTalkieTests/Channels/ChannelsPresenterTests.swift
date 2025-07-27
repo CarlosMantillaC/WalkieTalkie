@@ -26,12 +26,12 @@ final class ChannelsPresenterTests: XCTestCase {
         presenter.router = mockRouter
     }
 
-    func testViewDidLoad_ShouldCallLoadChannels() {
+    func testViewDidLoadShouldCallLoadChannels() {
         presenter.viewDidLoad()
         XCTAssertTrue(mockInteractor.loadChannelsCalled)
     }
 
-    func testDidLoadChannels_ShouldUpdateDataAndReloadView() {
+    func testDidLoadChannelsShouldUpdateDataAndReloadView() {
         let channels = [Channel(name: "Canal 1"), Channel(name: "Canal 2")]
         presenter.didLoadChannels(channels)
 
@@ -39,14 +39,14 @@ final class ChannelsPresenterTests: XCTestCase {
         XCTAssertTrue(mockView.reloadDataCalled)
     }
 
-    func testDidFailLoadingChannels_ShouldShowError() {
+    func testDidFailLoadingChannelsShouldShowError() {
         let error = NSError(domain: "Test", code: 123, userInfo: [NSLocalizedDescriptionKey: "Algo falló"])
         presenter.didFailLoadingChannels(error: error)
 
         XCTAssertEqual(mockView.shownErrorMessage, "Algo falló")
     }
 
-    func testDidSelectChannel_ShouldNavigate() {
+    func testDidSelectChannelShouldNavigate() {
         let channel = Channel(name: "Test")
         presenter.didLoadChannels([channel])
 
@@ -55,12 +55,12 @@ final class ChannelsPresenterTests: XCTestCase {
         XCTAssertEqual(mockRouter.navigatedChannel?.name, "Test")
     }
 
-    func testDidTapLogout_ShouldCallInteractor() {
+    func testDidTapLogoutShouldCallInteractor() {
         presenter.didTapLogout()
         XCTAssertTrue(mockInteractor.logoutCalled)
     }
 
-    func testLogoutSucceeded_ShouldNavigateToLogin() {
+    func testLogoutSucceededShouldNavigateToLogin() {
         presenter.logoutSucceeded(message: "Adiós")
         XCTAssertEqual(mockRouter.logoutMessage, "Adiós")
     }
