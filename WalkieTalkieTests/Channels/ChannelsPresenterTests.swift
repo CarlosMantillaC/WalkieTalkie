@@ -45,23 +45,4 @@ final class ChannelsPresenterTests: XCTestCase {
 
         XCTAssertEqual(mockView.shownErrorMessage, "Algo falló")
     }
-
-    func testDidSelectChannelShouldNavigate() {
-        let channel = Channel(name: "Test")
-        presenter.didLoadChannels([channel])
-
-        presenter.didSelectChannel(at: 0)
-
-        XCTAssertEqual(mockRouter.navigatedChannel?.name, "Test")
-    }
-
-    func testDidTapLogoutShouldCallInteractor() {
-        presenter.didTapLogout()
-        XCTAssertTrue(mockInteractor.logoutCalled)
-    }
-
-    func testLogoutSucceededShouldNavigateToLogin() {
-        presenter.logoutSucceeded(message: "Adiós")
-        XCTAssertEqual(mockRouter.logoutMessage, "Adiós")
-    }
 }

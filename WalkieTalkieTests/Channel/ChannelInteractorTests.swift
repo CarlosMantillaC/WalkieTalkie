@@ -12,26 +12,28 @@ final class ChannelInteractorTests: XCTestCase {
     var interactor: ChannelInteractor!
     var mockSocket: MockWebSocketService!
     var mockAudioService: MockAudioService!
+    var mockUsersRepository: MockChannelUsersRepository!
     var mockPresenter: MockChannelPresenter!
 
     override func setUp() {
         super.setUp()
         mockSocket = MockWebSocketService()
         mockAudioService = MockAudioService()
+        mockUsersRepository = MockChannelUsersRepository()
         mockPresenter = MockChannelPresenter()
-        
+
         interactor = ChannelInteractor(
             channel: Channel(name: "TestChannel"),
             socket: mockSocket,
             audioService: mockAudioService,
+            usersRepository: mockUsersRepository
         )
-        
         interactor.presenter = mockPresenter
     }
-    
+
     func testConnectToChannelShouldStartAndStopStreaming() {
         interactor.connectToChannel(named: "TestChannel")
-        
+
         XCTAssertEqual(mockSocket.connectedChannel, "TestChannel")
         XCTAssertTrue(mockAudioService.startStreamingCalled)
         XCTAssertTrue(mockAudioService.stopStreamingCalled)
@@ -39,20 +41,43 @@ final class ChannelInteractorTests: XCTestCase {
 
     func testStartTalkingShouldSendStartAndStartStreaming() {
         interactor.startTalking()
-        
+
         XCTAssertEqual(mockSocket.sentMessages.first, "START")
         XCTAssertTrue(mockAudioService.startStreamingCalled)
     }
 
     func testStopTalkingShouldSendStopAndStopStreaming() {
         interactor.stopTalking()
-        
+
         XCTAssertEqual(mockSocket.sentMessages.first, "STOP")
         XCTAssertTrue(mockAudioService.stopStreamingCalled)
     }
 
     func testDisconnectFromChannelShouldCallDisconnect() {
         interactor.disconnectFromChannel()
+
         XCTAssertTrue(mockSocket.disconnectCalled)
+    }
+
+    func testFetchUsersSuccessShouldNotifyPresenter() {
+        let expectedUsers = ["a@a.com", "b@b.com"]
+        mockUsersRepository.mockResult = .success(expectedUsers)
+
+        interactor.fetchUsersInChannel(named: "TestChannel")
+
+        XCTAssertEqual(mockPresenter.fetchedEmails, expectedUsers)
+    }
+
+    func testFetchUsersFailureShouldNotNotifyPresenter() {
+        mockUsersRepository.mockResult = .failure(NSError(domain: "TestError", code: 1))
+
+        interactor.fetchUsersInChannel(named: "TestChannel")
+
+        XCTAssertNil(mockPresenter.fetchedEmails)
+    }
+
+    func testLogoutShouldClearTokenAndNotifyPresenter() {
+        interactor.logout()
+        XCTAssertEqual(mockPresenter.logoutMessage, "Sesión cerrada exitosamente")
     }
 }

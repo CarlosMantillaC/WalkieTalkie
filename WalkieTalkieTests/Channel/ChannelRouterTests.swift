@@ -10,11 +10,10 @@ import XCTest
 
 final class ChannelRouterTests: XCTestCase {
     
-    func testCreateModuleAssemblesAllDependencies() {
+    func testCreateModuleAssemblesAllDependenciesCorrectly() {
         let channel = Channel(name: "TestChannel")
-        
         let viewController = ChannelRouter.createModule(with: channel)
-        
+
         XCTAssertTrue(viewController is ChannelViewController)
 
         let view = viewController as! ChannelViewController
@@ -31,18 +30,18 @@ final class ChannelRouterTests: XCTestCase {
         let router = presenter.router as! ChannelRouter
         XCTAssertEqual(router.viewController, view)
     }
-
-    func testNavigateToChannelsSetsViewControllers() {
-        let mockView = MockChannelView()
-        let mockNav = MockChannelNavigationController(rootViewController: mockView)
-
+    
+    func testNavigateToLoginReplacesRootViewControllerAndPresentsAlert() {
         let router = ChannelRouter()
-        router.viewController = mockView
+        let mockScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let mockWindow = UIWindow(windowScene: mockScene!)
+        let mockSceneDelegate = mockScene?.delegate as? SceneDelegate
+        mockSceneDelegate?.window = mockWindow
 
-        router.navigateToChannels(from: mockView)
+        router.navigateToLogin(with: "Token expirado")
 
-        XCTAssertTrue(mockNav.didSetViewControllers)
-        XCTAssertEqual(mockNav.setViewControllersCalledWith?.count, 1)
-        XCTAssertTrue(mockNav.setViewControllersCalledWith?.first is ChannelsViewController)
+        let navController = mockWindow.rootViewController as? UINavigationController
+        XCTAssertNotNil(navController, "Expected UINavigationController as rootViewController")
+        XCTAssertTrue(navController?.viewControllers.first is LoginViewController)
     }
 }

@@ -28,6 +28,4 @@ final class MockChannelsPresenter: ChannelsPresenterProtocol {
     func didSelectChannel(at index: Int) {
         selectedIndex = index
     }
-
-    func didTapLogout() { }
 }

@@ -26,12 +26,24 @@ final class ChannelPresenterTests: XCTestCase {
         presenter.router = mockRouter
     }
 
-    func testViewDidLoadShouldConnectAndFetchUsers() {
+    func testViewDidLoadWithChannel() {
         presenter.viewDidLoad()
 
+        XCTAssertEqual(mockView.channelName, "General")
         XCTAssertTrue(mockInteractor.connectCalled)
         XCTAssertTrue(mockInteractor.fetchUsersCalled)
-        XCTAssertEqual(mockView.channelName, "General")
+    }
+
+    func testViewDidLoadWithoutChannel() {
+        presenter = ChannelPresenter(channel: nil)
+        presenter.view = mockView
+        presenter.interactor = mockInteractor
+
+        presenter.viewDidLoad()
+
+        XCTAssertEqual(mockView.channelName, "Desconectado")
+        XCTAssertFalse(mockInteractor.connectCalled)
+        XCTAssertFalse(mockInteractor.fetchUsersCalled)
     }
 
     func testStartTalkingCallsInteractorStart() {
@@ -44,10 +56,11 @@ final class ChannelPresenterTests: XCTestCase {
         XCTAssertTrue(mockInteractor.stopTalkingCalled)
     }
 
-    func testDidTapExitDisconnectsAndNavigates() {
+    func testDidTapExitDisconnectsAndSetsDisconnected() {
         presenter.didTapExit()
         XCTAssertTrue(mockInteractor.disconnectCalled)
-        XCTAssertTrue(mockRouter.navigateCalled)
+        XCTAssertEqual(mockView.channelName, "Desconectado")
+        XCTAssertFalse(mockRouter.navigateCalled)
     }
 
     func testRefreshUsersCallsInteractorFetch() {
@@ -55,9 +68,32 @@ final class ChannelPresenterTests: XCTestCase {
         XCTAssertTrue(mockInteractor.fetchUsersCalled)
     }
 
+    func testRefreshUsersWithoutChannelDoesNothing() {
+        presenter = ChannelPresenter(channel: nil)
+        presenter.interactor = mockInteractor
+        presenter.refreshUsers()
+        XCTAssertFalse(mockInteractor.fetchUsersCalled)
+    }
+
+    func testDidTapLogoutCallsInteractorLogout() {
+        presenter.didTapLogout()
+        XCTAssertTrue(mockInteractor.logoutCalled)
+    }
+
+    func testDidTapDropdownPresentsModal() {
+        presenter.didTapDropdown()
+        XCTAssertTrue(mockRouter.presentModalCalled)
+    }
+
     func testDidFetchUsersDisplaysOnView() {
         let emails = ["a@a.com", "b@b.com"]
         presenter.didFetchUsers(emails)
         XCTAssertEqual(mockView.usersShown, emails)
+    }
+
+    func testLogoutSucceededNavigatesToLogin() {
+        presenter.logoutSucceeded(message: "Sesión cerrada")
+        XCTAssertTrue(mockRouter.navigateCalled)
+        XCTAssertEqual(mockRouter.lastMessage, "Sesión cerrada")
     }
 }
