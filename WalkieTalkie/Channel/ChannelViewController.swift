@@ -112,11 +112,19 @@ class ChannelViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startUserFetchTimer()
+        
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.restrictRotationToPortrait = true
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         stopUserFetchTimer()
+        
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.restrictRotationToPortrait = false
+        }
     }
     
     @objc private func didTapLogout() {
