@@ -4,6 +4,7 @@
 //
 
 //
+
 import UIKit
 
 class ChannelViewController: UIViewController {
@@ -211,16 +212,19 @@ extension ChannelViewController {
             disconnectButton.widthAnchor.constraint(equalToConstant: 24),
             disconnectButton.heightAnchor.constraint(equalToConstant: 24)
         ])
-        
+    
         disconnectButton.addTarget(self, action: #selector(didTapExit), for: .touchUpInside)
-        dropdownButton.addTarget(self, action: #selector(didTapDropdown), for: .touchUpInside)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapDropdown))
+        nameChannelStackView.isUserInteractionEnabled = true
+        nameChannelStackView.addGestureRecognizer(tapGesture)
     }
     
     private func setupTalkButton() {
         contentView.addSubview(talkToPushButton)
         
         NSLayoutConstraint.activate([
-            talkToPushButton.topAnchor.constraint(equalTo: infoContainerView.bottomAnchor, constant: 160),
+            talkToPushButton.topAnchor.constraint(equalTo: infoContainerView.bottomAnchor, constant: 340),
             talkToPushButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             talkToPushButton.widthAnchor.constraint(equalToConstant: 120),
             talkToPushButton.heightAnchor.constraint(equalToConstant: 120),
@@ -228,7 +232,7 @@ extension ChannelViewController {
         ])
         
         talkToPushButton.addTarget(self, action: #selector(talkButtonPressed), for: .touchDown)
-        talkToPushButton.addTarget(self, action: #selector(talkButtonReleased), for: [.touchUpInside, .touchUpOutside])
+        talkToPushButton.addTarget(self, action: #selector(talkButtonReleased), for: .touchUpInside)
     }
     
     private func applyTalkButtonImage(isTalking: Bool) {
