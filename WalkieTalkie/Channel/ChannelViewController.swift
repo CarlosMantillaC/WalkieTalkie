@@ -21,6 +21,7 @@ class ChannelViewController: UIViewController {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         view.layer.cornerRadius = 12
         view.translatesAutoresizingMaskIntoConstraints = false
+        
         return view
     }()
     
@@ -30,6 +31,7 @@ class ChannelViewController: UIViewController {
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 32)
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
     }()
     
@@ -39,6 +41,7 @@ class ChannelViewController: UIViewController {
         button.setImage(image, for: .normal)
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
     
@@ -49,6 +52,7 @@ class ChannelViewController: UIViewController {
         stack.alignment = .center
         stack.distribution = .equalCentering
         stack.translatesAutoresizingMaskIntoConstraints = false
+        
         return stack
     }()
     
@@ -57,6 +61,7 @@ class ChannelViewController: UIViewController {
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
     }()
     
@@ -67,6 +72,7 @@ class ChannelViewController: UIViewController {
         button.setImage(image, for: .normal)
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
     
@@ -87,6 +93,7 @@ class ChannelViewController: UIViewController {
         button.layer.borderColor = UIColor.white.cgColor
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
     
@@ -170,8 +177,6 @@ class ChannelViewController: UIViewController {
 
 extension ChannelViewController {
     private func setupUI() {
-        view.backgroundColor = .black
-        
         setupScrollView()
         setupInfoContainer()
         setupTalkButton()
@@ -254,7 +259,6 @@ extension ChannelViewController {
         talkToPushButton.configuration?.image = UIImage(systemName: iconName, withConfiguration: imageConfig)
         talkToPushButton.configuration?.baseForegroundColor = color
         talkToPushButton.layer.borderColor = color.cgColor
-        
     }
 }
 
