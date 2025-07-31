@@ -93,6 +93,9 @@
 		C460251D2E29439A0032EDA6 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460251C2E29439A0032EDA6 /* WebSocketService.swift */; };
 		C466098F2E3BAB8900834531 /* MockChannelUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C466098E2E3BAB8900834531 /* MockChannelUsersRepository.swift */; };
 		C47B30912E30276500275424 /* ChannelUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47B30902E30276500275424 /* ChannelUsersRepository.swift */; };
+		C47EB27B2E3BF58C002EA5A0 /* audio_end_talking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C47EB2792E3BF58C002EA5A0 /* audio_end_talking.mp3 */; };
+		C47EB27C2E3BF58C002EA5A0 /* audio_start_talking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C47EB27A2E3BF58C002EA5A0 /* audio_start_talking.mp3 */; };
+		C47EB27E2E3BF5A2002EA5A0 /* SoundButtonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47EB27D2E3BF5A2002EA5A0 /* SoundButtonService.swift */; };
 		C480A1072E297AE1000E0C7F /* AudioServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A1062E297AE1000E0C7F /* AudioServiceProtocol.swift */; };
 		C480A10A2E297B11000E0C7F /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A1092E297B11000E0C7F /* AudioService.swift */; };
 		C480A10D2E298457000E0C7F /* WebSocketServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A10C2E298457000E0C7F /* WebSocketServiceDelegate.swift */; };
@@ -221,6 +224,9 @@
 		C460251C2E29439A0032EDA6 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
 		C466098E2E3BAB8900834531 /* MockChannelUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelUsersRepository.swift; sourceTree = "<group>"; };
 		C47B30902E30276500275424 /* ChannelUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelUsersRepository.swift; sourceTree = "<group>"; };
+		C47EB2792E3BF58C002EA5A0 /* audio_end_talking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio_end_talking.mp3; sourceTree = "<group>"; };
+		C47EB27A2E3BF58C002EA5A0 /* audio_start_talking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio_start_talking.mp3; sourceTree = "<group>"; };
+		C47EB27D2E3BF5A2002EA5A0 /* SoundButtonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundButtonService.swift; sourceTree = "<group>"; };
 		C480A1062E297AE1000E0C7F /* AudioServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioServiceProtocol.swift; sourceTree = "<group>"; };
 		C480A1092E297B11000E0C7F /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		C480A10C2E298457000E0C7F /* WebSocketServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketServiceDelegate.swift; sourceTree = "<group>"; };
@@ -405,6 +411,7 @@
 		C46024A32E26FFCF0032EDA6 /* WalkieTalkie */ = {
 			isa = PBXGroup;
 			children = (
+				C47EB2782E3BF57B002EA5A0 /* Sound */,
 				C480A1052E2979D3000E0C7F /* Service */,
 				C46024B62E27018B0032EDA6 /* Networking */,
 				C46024C12E2702970032EDA6 /* Repository */,
@@ -568,6 +575,15 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		C47EB2782E3BF57B002EA5A0 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				C47EB2792E3BF58C002EA5A0 /* audio_end_talking.mp3 */,
+				C47EB27A2E3BF58C002EA5A0 /* audio_start_talking.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		C480A1052E2979D3000E0C7F /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +598,7 @@
 			children = (
 				C480A1062E297AE1000E0C7F /* AudioServiceProtocol.swift */,
 				C480A1092E297B11000E0C7F /* AudioService.swift */,
+				C47EB27D2E3BF5A2002EA5A0 /* SoundButtonService.swift */,
 			);
 			path = AudioService;
 			sourceTree = "<group>";
@@ -715,6 +732,8 @@
 				C46024EC2E27F8E40032EDA6 /* RegisterViewController.xib in Resources */,
 				C46024FD2E2804DE0032EDA6 /* ChannelViewController.xib in Resources */,
 				C46025082E2905640032EDA6 /* ChannelsTableViewCell.xib in Resources */,
+				C47EB27B2E3BF58C002EA5A0 /* audio_end_talking.mp3 in Resources */,
+				C47EB27C2E3BF58C002EA5A0 /* audio_start_talking.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,6 +767,7 @@
 				C480A10A2E297B11000E0C7F /* AudioService.swift in Sources */,
 				C46024F52E28042A0032EDA6 /* ChannelInteractor.swift in Sources */,
 				C46024E62E27F8B40032EDA6 /* RegisterInteractor.swift in Sources */,
+				C47EB27E2E3BF5A2002EA5A0 /* SoundButtonService.swift in Sources */,
 				C48C3FD72E2AC6E600D9B24A /* UIColor+Hex.swift in Sources */,
 				C46025132E2917C90032EDA6 /* ChannelsPresenter.swift in Sources */,
 				C480A1072E297AE1000E0C7F /* AudioServiceProtocol.swift in Sources */,

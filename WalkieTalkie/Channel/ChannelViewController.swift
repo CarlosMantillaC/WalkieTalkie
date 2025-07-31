@@ -14,7 +14,8 @@ class ChannelViewController: UIViewController {
     private var fetchUsersTimer: Timer?
     private let scrollView = UIScrollView()
     private let contentView = UIView()
-    
+    private let soundService = SoundButtonService()
+
     private let infoContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
@@ -130,12 +131,14 @@ class ChannelViewController: UIViewController {
         presenter?.startTalking()
         applyTalkButtonImage(isTalking: true)
         talkToPushButton.backgroundColor = .clear
+        soundService.playSound(named: "audio_start_talking.mp3")
     }
     
     @objc private func talkButtonReleased() {
         presenter?.stopTalking()
         applyTalkButtonImage(isTalking: false)
         talkToPushButton.backgroundColor = .clear
+        soundService.playSound(named: "audio_end_talking.mp3")
     }
     
     @objc private func didTapDropdown() {
