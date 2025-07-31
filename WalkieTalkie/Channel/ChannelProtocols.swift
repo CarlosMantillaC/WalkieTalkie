@@ -14,14 +14,18 @@ protocol ChannelViewProtocol: AnyObject {
 }
 
 protocol ChannelPresenterProtocol: AnyObject {
+    func didTapLogout()
     func viewDidLoad()
     func startTalking()
     func stopTalking()
     func didTapExit()
     func refreshUsers()
+    func didTapDropdown()
+    var interactor: ChannelInteractorProtocol? { get }
 }
 
 protocol ChannelInteractorProtocol: AnyObject {
+    func logout()
     func connectToChannel(named name: String)
     func startTalking()
     func stopTalking()
@@ -30,10 +34,12 @@ protocol ChannelInteractorProtocol: AnyObject {
 }
 
 protocol ChannelInteractorOutputProtocol: AnyObject {
-    func didReceivePermissionToSpeak()
+    func logoutSucceeded(message: String)
     func didFetchUsers(_ emails: [String])
 }
 
 protocol ChannelRouterProtocol: AnyObject {
-    static func createModule(with channel: Channel) -> UIViewController
-    func navigateToChannels(from view: ChannelViewProtocol)}
+    static func createModule(with channel: Channel?) -> UIViewController
+    func presentChannelsModally(from view: ChannelViewProtocol)
+    func navigateToLogin(with message: String)
+}

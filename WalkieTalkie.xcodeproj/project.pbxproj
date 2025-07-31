@@ -92,8 +92,6 @@
 		C460251B2E2939B00032EDA6 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460251A2E2939B00032EDA6 /* ChannelViewController.swift */; };
 		C460251D2E29439A0032EDA6 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460251C2E29439A0032EDA6 /* WebSocketService.swift */; };
 		C47B30912E30276500275424 /* ChannelUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47B30902E30276500275424 /* ChannelUsersRepository.swift */; };
-		C47B30942E30300A00275424 /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47B30932E30300A00275424 /* UsersTableViewCell.xib */; };
-		C47B30952E30300A00275424 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47B30922E30300A00275424 /* UsersTableViewCell.swift */; };
 		C480A1072E297AE1000E0C7F /* AudioServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A1062E297AE1000E0C7F /* AudioServiceProtocol.swift */; };
 		C480A10A2E297B11000E0C7F /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A1092E297B11000E0C7F /* AudioService.swift */; };
 		C480A10D2E298457000E0C7F /* WebSocketServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A10C2E298457000E0C7F /* WebSocketServiceDelegate.swift */; };
@@ -222,8 +220,6 @@
 		C460251A2E2939B00032EDA6 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		C460251C2E29439A0032EDA6 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
 		C47B30902E30276500275424 /* ChannelUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelUsersRepository.swift; sourceTree = "<group>"; };
-		C47B30922E30300A00275424 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
-		C47B30932E30300A00275424 /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
 		C480A1062E297AE1000E0C7F /* AudioServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioServiceProtocol.swift; sourceTree = "<group>"; };
 		C480A1092E297B11000E0C7F /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		C480A10C2E298457000E0C7F /* WebSocketServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketServiceDelegate.swift; sourceTree = "<group>"; };
@@ -525,8 +521,6 @@
 				C46024F82E2804520032EDA6 /* ChannelProtocols.swift */,
 				C460251A2E2939B00032EDA6 /* ChannelViewController.swift */,
 				C46024FB2E2804DE0032EDA6 /* ChannelViewController.xib */,
-				C47B30922E30300A00275424 /* UsersTableViewCell.swift */,
-				C47B30932E30300A00275424 /* UsersTableViewCell.xib */,
 				C46024FE2E2805390032EDA6 /* ChannelRouter.swift */,
 			);
 			path = Channel;
@@ -715,7 +709,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C47B30942E30300A00275424 /* UsersTableViewCell.xib in Resources */,
 				C46025172E2918730032EDA6 /* ChannelsViewController.xib in Resources */,
 				C46024B52E2700540032EDA6 /* LoginViewController.xib in Resources */,
 				C46024A72E26FFCF0032EDA6 /* Assets.xcassets in Resources */,
@@ -789,7 +782,6 @@
 				C46024F92E2804520032EDA6 /* ChannelProtocols.swift in Sources */,
 				C460250A2E290A200032EDA6 /* ChannelsRepository.swift in Sources */,
 				C46024C62E2702E90032EDA6 /* LoginRequest.swift in Sources */,
-				C47B30952E30300A00275424 /* UsersTableViewCell.swift in Sources */,
 				C460250D2E290A8B0032EDA6 /* Channels.swift in Sources */,
 				C46024EE2E27F92D0032EDA6 /* StyleTextField.swift in Sources */,
 				C460251B2E2939B00032EDA6 /* ChannelViewController.swift in Sources */,

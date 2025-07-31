@@ -25,9 +25,9 @@ final class LoginRouter: LoginRouterProtocol {
     }
     
     func navigateToHome(from view: LoginViewProtocol) {
-        let homeVC = ChannelsRouter.createModule()
+        let homeVC = ChannelRouter.createModule()
         if let vc = view as? UIViewController {
-            vc.navigationController?.pushViewController(homeVC, animated: true)
+            vc.navigationController?.setViewControllers([homeVC], animated: true)
         }
     }
     

@@ -19,13 +19,6 @@ class ChannelsViewController: UIViewController {
         
         setupTableView()
         presenter?.viewDidLoad()
-
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "Cerrar sesión",
-            style: .plain,
-            target: self,
-            action: #selector(didTapLogout)
-        )
     }
     
     private func setupTableView() {
@@ -35,10 +28,6 @@ class ChannelsViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ChannelsTableViewCell", bundle: nil), forCellReuseIdentifier: "ChannelsCell")
         tableView.backgroundColor = .clear
-    }
-    
-    @objc private func didTapLogout() {
-        presenter?.didTapLogout()
     }
 }
 

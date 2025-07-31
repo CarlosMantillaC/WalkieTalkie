@@ -11,7 +11,6 @@ class ChannelViewController: UIViewController {
     var presenter: ChannelPresenterProtocol?
     private var gradientLayer: CAGradientLayer?
     private var fetchUsersTimer: Timer?
-    
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
@@ -79,7 +78,7 @@ class ChannelViewController: UIViewController {
             withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .bold)
         )
         config.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20)
-
+        
         let button = UIButton(configuration: config)
         button.layer.borderWidth = 2
         button.layer.cornerRadius = 20
@@ -96,10 +95,10 @@ class ChannelViewController: UIViewController {
         applyTalkButtonImage(isTalking: false)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "Salir",
+            title: "Cerrar sesión",
             style: .plain,
             target: self,
-            action: #selector(didTapExit)
+            action: #selector(didTapLogout)
         )
     }
     
@@ -118,6 +117,10 @@ class ChannelViewController: UIViewController {
         stopUserFetchTimer()
     }
     
+    @objc private func didTapLogout() {
+        presenter?.didTapLogout()
+    }
+    
     @objc private func didTapExit() {
         presenter?.didTapExit()
     }
@@ -134,7 +137,13 @@ class ChannelViewController: UIViewController {
         talkToPushButton.backgroundColor = .clear
     }
     
+    @objc private func didTapDropdown() {
+        presenter?.didTapDropdown()
+    }
+    
     private func startUserFetchTimer() {
+        guard fetchUsersTimer == nil else { return }
+        
         fetchUsersTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { [weak self] _ in
             self?.presenter?.refreshUsers()
         }
@@ -204,6 +213,7 @@ extension ChannelViewController {
         ])
         
         disconnectButton.addTarget(self, action: #selector(didTapExit), for: .touchUpInside)
+        dropdownButton.addTarget(self, action: #selector(didTapDropdown), for: .touchUpInside)
     }
     
     private func setupTalkButton() {
@@ -224,12 +234,12 @@ extension ChannelViewController {
     private func applyTalkButtonImage(isTalking: Bool) {
         let iconName = isTalking ? "mic.fill" : "mic.slash.fill"
         let color: UIColor = isTalking ? .systemGreen : .systemRed
-
+        
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold)
         talkToPushButton.configuration?.image = UIImage(systemName: iconName, withConfiguration: imageConfig)
         talkToPushButton.configuration?.baseForegroundColor = color
         talkToPushButton.layer.borderColor = color.cgColor
-
+        
     }
 }
 
@@ -237,6 +247,16 @@ extension ChannelViewController: ChannelViewProtocol {
     func setChannelName(_ name: String) {
         DispatchQueue.main.async {
             self.nameChannelLabel.text = name
+            let isConnected = name != "Desconectado"
+            self.disconnectButton.isHidden = !isConnected
+            self.talkToPushButton.isHidden = !isConnected
+            self.countUsersLabel.isHidden = !isConnected
+            
+            if isConnected {
+                self.startUserFetchTimer()
+            } else {
+                self.stopUserFetchTimer()
+            }
         }
     }
     

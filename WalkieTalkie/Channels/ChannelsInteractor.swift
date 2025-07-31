@@ -29,9 +29,4 @@ extension ChannelsInteractor: ChannelsInteractorProtocol {
             }
         }
     }
-    
-    func logout() {
-        TokenManager.clear()
-        self.presenter?.logoutSucceeded(message: "Sesión cerrada exitosamente")
-    }
 }

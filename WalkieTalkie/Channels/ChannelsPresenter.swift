@@ -12,7 +12,7 @@ final class ChannelsPresenter {
     weak var view: ChannelsViewProtocol?
     var interactor: ChannelsInteractorProtocol?
     var router: ChannelsRouterProtocol?
-
+    var onChannelSelected: ((Channel) -> Void)?
     private var channels: [Channel] = []
 }
 
@@ -32,22 +32,12 @@ extension ChannelsPresenter: ChannelsPresenterProtocol {
     }
     
     func didSelectChannel(at index: Int) {
-        let channel = channels[index]
-        if let view = view {
-            router?.navigateToChannel(from: view, with: channel)
-        }
-    }
-    
-    func didTapLogout() {
-        interactor?.logout()
+        let selectedChannel = channels[index]
+        onChannelSelected?(selectedChannel)
     }
 }
 
 extension ChannelsPresenter: ChannelsInteractorOutput {
-    func logoutSucceeded(message: String) {
-        router?.navigateToLogin(with: message)
-    }
-
     func didLoadChannels(_ channels: [Channel]) {
         self.channels = channels
         view?.reloadData()

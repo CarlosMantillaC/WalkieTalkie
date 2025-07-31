@@ -11,10 +11,10 @@ final class ChannelInteractor {
     weak var presenter: ChannelInteractorOutputProtocol?
     private var socket: WebSocketServiceProtocol
     private let audioService: AudioServiceProtocol
-    private let channel: Channel
+    private let channel: Channel?
     private let usersRepository: ChannelUsersRepositoryProtocol
     
-    init(channel: Channel,
+    init(channel: Channel?,
          socket: WebSocketServiceProtocol = WebSocketService(),
          audioService: AudioServiceProtocol = AudioService(),
          usersRepository: ChannelUsersRepositoryProtocol = ChannelUsersRepository()) {
@@ -28,6 +28,7 @@ final class ChannelInteractor {
 
 extension ChannelInteractor: ChannelInteractorProtocol {
     func connectToChannel(named name: String) {
+        guard let _ = channel else { return }
         socket.connect(to: name)
         audioService.startStreaming(to: socket)
         audioService.stopStreaming()
@@ -57,6 +58,11 @@ extension ChannelInteractor: ChannelInteractorProtocol {
                 print("Failed to fetch users: \(error.localizedDescription)")
             }
         }
+    }
+    
+    func logout() {
+        TokenManager.clear()
+        self.presenter?.logoutSucceeded(message: "Sesión cerrada exitosamente")
     }
 }
 
