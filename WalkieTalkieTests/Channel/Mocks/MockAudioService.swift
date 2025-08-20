@@ -11,6 +11,7 @@ import XCTest
 final class MockAudioService: AudioServiceProtocol {
     var startStreamingCalled = false
     var stopStreamingCalled = false
+    var playedAudioData = false
     
     func startStreaming(to socket: WebSocketServiceProtocol) {
         startStreamingCalled = true
@@ -20,5 +21,7 @@ final class MockAudioService: AudioServiceProtocol {
         stopStreamingCalled = true
     }
     
-    func playAudioData(_ data: Data) {}
+    func playAudioData(_ data: Data) {
+        playedAudioData = true
+    }
 }
