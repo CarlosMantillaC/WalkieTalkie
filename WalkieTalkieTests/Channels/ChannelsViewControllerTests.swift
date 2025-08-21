@@ -8,7 +8,7 @@
 import XCTest
 @testable import WalkieTalkie
 
-final class ChannelsFunctionalTests: XCTestCase {
+final class ChannelsViewControllerTests: XCTestCase {
     var viewController: ChannelsViewController!
     var mockPresenter: MockChannelsPresenter!
 

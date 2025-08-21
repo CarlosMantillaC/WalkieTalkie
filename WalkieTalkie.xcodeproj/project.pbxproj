@@ -112,7 +112,7 @@
 		C4B989512E340FC7004CC463 /* MockChannelsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989502E340FC7004CC463 /* MockChannelsInteractor.swift */; };
 		C4B989532E340FF6004CC463 /* MockChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989522E340FF6004CC463 /* MockChannelsRouter.swift */; };
 		C4B989572E3410A9004CC463 /* ChannelsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989562E3410A9004CC463 /* ChannelsPresenterTests.swift */; };
-		C4B989592E341288004CC463 /* ChannelsFunctionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989582E341288004CC463 /* ChannelsFunctionalTests.swift */; };
+		C4B989592E341288004CC463 /* ChannelsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989582E341288004CC463 /* ChannelsViewControllerTests.swift */; };
 		C4B9895B2E3412A7004CC463 /* MockChannelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9895A2E3412A7004CC463 /* MockChannelsPresenter.swift */; };
 		C4B9895D2E3414CD004CC463 /* ChannelsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9895C2E3414CD004CC463 /* ChannelsRepositoryTests.swift */; };
 /* End PBXBuildFile section */
@@ -244,7 +244,7 @@
 		C4B989502E340FC7004CC463 /* MockChannelsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsInteractor.swift; sourceTree = "<group>"; };
 		C4B989522E340FF6004CC463 /* MockChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsRouter.swift; sourceTree = "<group>"; };
 		C4B989562E3410A9004CC463 /* ChannelsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenterTests.swift; sourceTree = "<group>"; };
-		C4B989582E341288004CC463 /* ChannelsFunctionalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsFunctionalTests.swift; sourceTree = "<group>"; };
+		C4B989582E341288004CC463 /* ChannelsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewControllerTests.swift; sourceTree = "<group>"; };
 		C4B9895A2E3412A7004CC463 /* MockChannelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsPresenter.swift; sourceTree = "<group>"; };
 		C4B9895C2E3414CD004CC463 /* ChannelsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -344,7 +344,7 @@
 				C45D93232E33DC3800B3033B /* ChannelsRouterTests.swift */,
 				C4B9894C2E340F50004CC463 /* ChannelsInteractorTests.swift */,
 				C4B989562E3410A9004CC463 /* ChannelsPresenterTests.swift */,
-				C4B989582E341288004CC463 /* ChannelsFunctionalTests.swift */,
+				C4B989582E341288004CC463 /* ChannelsViewControllerTests.swift */,
 			);
 			path = Channels;
 			sourceTree = "<group>";
@@ -853,7 +853,7 @@
 				C45D92FC2E31717B00B3033B /* MockLoginView.swift in Sources */,
 				C45DBFAF2E351C90007DAD63 /* MockAudioService.swift in Sources */,
 				C45D93242E33DC3800B3033B /* ChannelsRouterTests.swift in Sources */,
-				C4B989592E341288004CC463 /* ChannelsFunctionalTests.swift in Sources */,
+				C4B989592E341288004CC463 /* ChannelsViewControllerTests.swift in Sources */,
 				C45D92EF2E3168E200B3033B /* RegisterPresenterTests.swift in Sources */,
 				C4B989492E340F12004CC463 /* MockChannelsRepository.swift in Sources */,
 				C45DBFA52E351004007DAD63 /* MockChannelNavigationController.swift in Sources */,
