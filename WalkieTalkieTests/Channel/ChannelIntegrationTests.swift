@@ -76,7 +76,7 @@ final class ChannelsIntegrationTests: XCTestCase {
         XCTAssertEqual(mockSocket.sentMessages.last, "STOP")
     }
     
-    func test_didTapExit_shouldDisconnectAndSetViewDisconnected() {
+    func testDidTapExitShouldDisconnectAndSetViewDisconnected() {
         sut.didTapExit()
         
         XCTAssertTrue(mockSocket.disconnectCalled)
@@ -90,11 +90,11 @@ final class ChannelsIntegrationTests: XCTestCase {
         XCTAssertEqual(mockRouter.lastMessage, "Sesión cerrada exitosamente")
     }
     
-    func test_interactorDidReceiveAudio_shouldPlayData() {
-           let audioData = "dGVzdA==".data(using: .utf8)!
-           
-           interactor.didReceive(data: audioData)
-           
-           XCTAssertTrue(mockAudio.playedAudioData)
-       }
+    func testInteractorDidReceiveAudioShouldPlayData() {
+        let audioData = "dGVzdA==".data(using: .utf8)!
+        
+        interactor.didReceive(data: audioData)
+        
+        XCTAssertTrue(mockAudio.playedAudioData)
+    }
 }
