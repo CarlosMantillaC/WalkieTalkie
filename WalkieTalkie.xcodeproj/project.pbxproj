@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C40871712E5C8CD1006BAD21 /* ChannelNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40871702E5C8CD1006BAD21 /* ChannelNavigationTests.swift */; };
+		C40871732E5CA48C006BAD21 /* LoginNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40871722E5CA48C006BAD21 /* LoginNavigationTests.swift */; };
 		C45D92DF2E31647300B3033B /* MockRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92DE2E31647300B3033B /* MockRegisterView.swift */; };
 		C45D92E12E3164B100B3033B /* MockRegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E02E3164B100B3033B /* MockRegisterInteractor.swift */; };
 		C45D92E32E31662700B3033B /* MockRegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E22E31662700B3033B /* MockRegisterRouter.swift */; };
@@ -137,6 +138,7 @@
 
 /* Begin PBXFileReference section */
 		C40871702E5C8CD1006BAD21 /* ChannelNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelNavigationTests.swift; sourceTree = "<group>"; };
+		C40871722E5CA48C006BAD21 /* LoginNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationTests.swift; sourceTree = "<group>"; };
 		C45D92DE2E31647300B3033B /* MockRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterView.swift; sourceTree = "<group>"; };
 		C45D92E02E3164B100B3033B /* MockRegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterInteractor.swift; sourceTree = "<group>"; };
 		C45D92E22E31662700B3033B /* MockRegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterRouter.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				C45D93092E31731A00B3033B /* LoginPresenterTests.swift */,
 				C45D930B2E3173F400B3033B /* LoginInteractorTests.swift */,
 				C45D930D2E31742A00B3033B /* LoginViewControllerTests.swift */,
+				C40871722E5CA48C006BAD21 /* LoginNavigationTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -844,6 +847,7 @@
 				C45DBFB32E351D3B007DAD63 /* MockChannelRouter.swift in Sources */,
 				C466098F2E3BAB8900834531 /* MockChannelUsersRepository.swift in Sources */,
 				C45DBFB52E351E54007DAD63 /* ChannelPresenterTests.swift in Sources */,
+				C40871732E5CA48C006BAD21 /* LoginNavigationTests.swift in Sources */,
 				C4B9894F2E340FA7004CC463 /* MockChannelsView.swift in Sources */,
 				C45D93062E31724800B3033B /* MockLoginPresenter.swift in Sources */,
 				C45D92E32E31662700B3033B /* MockRegisterRouter.swift in Sources */,
