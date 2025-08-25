@@ -8,7 +8,7 @@
 import XCTest
 @testable import WalkieTalkie
 
-final class ChannelsIntegrationTests: XCTestCase {
+final class ChannelModuleIntegrationTests: XCTestCase {
     var sut: ChannelPresenter!
     var mockView: MockChannelView!
     var mockRouter: MockChannelRouter!
