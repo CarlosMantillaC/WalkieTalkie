@@ -15,7 +15,6 @@
 		C45D92E52E31664500B3033B /* MockRegisterInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E42E31664500B3033B /* MockRegisterInteractorOutput.swift */; };
 		C45D92E72E31672600B3033B /* MockRegisterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E62E31672600B3033B /* MockRegisterRepository.swift */; };
 		C45D92E92E31673C00B3033B /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E82E31673C00B3033B /* MockPresenter.swift */; };
-		C45D92EB2E3167D100B3033B /* RegisterRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92EA2E3167D100B3033B /* RegisterRouterTests.swift */; };
 		C45D92ED2E31683D00B3033B /* RegisterInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92EC2E31683D00B3033B /* RegisterInteractorTests.swift */; };
 		C45D92EF2E3168E200B3033B /* RegisterPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92EE2E3168E200B3033B /* RegisterPresenterTests.swift */; };
 		C45D92F12E316AB600B3033B /* RegisterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92F02E316AB600B3033B /* RegisterUITests.swift */; };
@@ -28,15 +27,12 @@
 		C45D93022E3171BF00B3033B /* MockLoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D93012E3171BF00B3033B /* MockLoginRepository.swift */; };
 		C45D93042E31723000B3033B /* MockLoginInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D93032E31723000B3033B /* MockLoginInteractorOutput.swift */; };
 		C45D93062E31724800B3033B /* MockLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D93052E31724800B3033B /* MockLoginPresenter.swift */; };
-		C45D93082E31726600B3033B /* LoginRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D93072E31726600B3033B /* LoginRouterTests.swift */; };
 		C45D930A2E31731A00B3033B /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D93092E31731A00B3033B /* LoginPresenterTests.swift */; };
 		C45D930C2E3173F400B3033B /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D930B2E3173F400B3033B /* LoginInteractorTests.swift */; };
 		C45D930E2E31742A00B3033B /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D930D2E31742A00B3033B /* LoginViewControllerTests.swift */; };
 		C45D93102E31755600B3033B /* LoginRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D930F2E31755600B3033B /* LoginRepositoryTests.swift */; };
 		C45D93122E32AE5300B3033B /* MockLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D93112E32AE5300B3033B /* MockLoginViewController.swift */; };
-		C45D93242E33DC3800B3033B /* ChannelsRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D93232E33DC3800B3033B /* ChannelsRouterTests.swift */; };
 		C45DBFA12E350D00007DAD63 /* MockChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DBFA02E350D00007DAD63 /* MockChannelView.swift */; };
-		C45DBFA32E350D58007DAD63 /* ChannelRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DBFA22E350D58007DAD63 /* ChannelRouterTests.swift */; };
 		C45DBFA52E351004007DAD63 /* MockChannelNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DBFA42E351004007DAD63 /* MockChannelNavigationController.swift */; };
 		C45DBFA92E351991007DAD63 /* MockChannelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DBFA82E351991007DAD63 /* MockChannelPresenter.swift */; };
 		C45DBFAB2E3519E8007DAD63 /* ChannelInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DBFAA2E3519E8007DAD63 /* ChannelInteractorTests.swift */; };
@@ -105,7 +101,6 @@
 		C480A10F2E298481000E0C7F /* WebSocketServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A10E2E298481000E0C7F /* WebSocketServiceProtocol.swift */; };
 		C48C3FD72E2AC6E600D9B24A /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48C3FD62E2AC6E600D9B24A /* UIColor+Hex.swift */; };
 		C48C3FD92E2AC99400D9B24A /* UIViewController+GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48C3FD82E2AC99400D9B24A /* UIViewController+GradientBackground.swift */; };
-		C4B989452E340126004CC463 /* MockChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989442E340126004CC463 /* MockChannelsViewController.swift */; };
 		C4B989472E3404EE004CC463 /* MockChannelsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989462E3404EE004CC463 /* MockChannelsNavigationController.swift */; };
 		C4B989492E340F12004CC463 /* MockChannelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989482E340F12004CC463 /* MockChannelsRepository.swift */; };
 		C4B9894B2E340F31004CC463 /* MockChannelsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9894A2E340F31004CC463 /* MockChannelsInteractorOutput.swift */; };
@@ -145,7 +140,6 @@
 		C45D92E42E31664500B3033B /* MockRegisterInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterInteractorOutput.swift; sourceTree = "<group>"; };
 		C45D92E62E31672600B3033B /* MockRegisterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterRepository.swift; sourceTree = "<group>"; };
 		C45D92E82E31673C00B3033B /* MockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenter.swift; sourceTree = "<group>"; };
-		C45D92EA2E3167D100B3033B /* RegisterRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouterTests.swift; sourceTree = "<group>"; };
 		C45D92EC2E31683D00B3033B /* RegisterInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractorTests.swift; sourceTree = "<group>"; };
 		C45D92EE2E3168E200B3033B /* RegisterPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenterTests.swift; sourceTree = "<group>"; };
 		C45D92F02E316AB600B3033B /* RegisterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUITests.swift; sourceTree = "<group>"; };
@@ -158,15 +152,12 @@
 		C45D93012E3171BF00B3033B /* MockLoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginRepository.swift; sourceTree = "<group>"; };
 		C45D93032E31723000B3033B /* MockLoginInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginInteractorOutput.swift; sourceTree = "<group>"; };
 		C45D93052E31724800B3033B /* MockLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginPresenter.swift; sourceTree = "<group>"; };
-		C45D93072E31726600B3033B /* LoginRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouterTests.swift; sourceTree = "<group>"; };
 		C45D93092E31731A00B3033B /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		C45D930B2E3173F400B3033B /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
 		C45D930D2E31742A00B3033B /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		C45D930F2E31755600B3033B /* LoginRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryTests.swift; sourceTree = "<group>"; };
 		C45D93112E32AE5300B3033B /* MockLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewController.swift; sourceTree = "<group>"; };
-		C45D93232E33DC3800B3033B /* ChannelsRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouterTests.swift; sourceTree = "<group>"; };
 		C45DBFA02E350D00007DAD63 /* MockChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelView.swift; sourceTree = "<group>"; };
-		C45DBFA22E350D58007DAD63 /* ChannelRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelRouterTests.swift; sourceTree = "<group>"; };
 		C45DBFA42E351004007DAD63 /* MockChannelNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelNavigationController.swift; sourceTree = "<group>"; };
 		C45DBFA82E351991007DAD63 /* MockChannelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelPresenter.swift; sourceTree = "<group>"; };
 		C45DBFAA2E3519E8007DAD63 /* ChannelInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelInteractorTests.swift; sourceTree = "<group>"; };
@@ -239,7 +230,6 @@
 		C480A10E2E298481000E0C7F /* WebSocketServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketServiceProtocol.swift; sourceTree = "<group>"; };
 		C48C3FD62E2AC6E600D9B24A /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		C48C3FD82E2AC99400D9B24A /* UIViewController+GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+GradientBackground.swift"; sourceTree = "<group>"; };
-		C4B989442E340126004CC463 /* MockChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsViewController.swift; sourceTree = "<group>"; };
 		C4B989462E3404EE004CC463 /* MockChannelsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsNavigationController.swift; sourceTree = "<group>"; };
 		C4B989482E340F12004CC463 /* MockChannelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsRepository.swift; sourceTree = "<group>"; };
 		C4B9894A2E340F31004CC463 /* MockChannelsInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsInteractorOutput.swift; sourceTree = "<group>"; };
@@ -282,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				C45D92DD2E3163F200B3033B /* Mocks */,
-				C45D92EA2E3167D100B3033B /* RegisterRouterTests.swift */,
 				C45D92EE2E3168E200B3033B /* RegisterPresenterTests.swift */,
 				C45D92EC2E31683D00B3033B /* RegisterInteractorTests.swift */,
 			);
@@ -306,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				C45D92F32E316F8000B3033B /* Mocks */,
-				C45D93072E31726600B3033B /* LoginRouterTests.swift */,
 				C45D93092E31731A00B3033B /* LoginPresenterTests.swift */,
 				C45D930B2E3173F400B3033B /* LoginInteractorTests.swift */,
 				C45D930D2E31742A00B3033B /* LoginViewControllerTests.swift */,
@@ -346,7 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				C45D93252E33DC9B00B3033B /* Mocks */,
-				C45D93232E33DC3800B3033B /* ChannelsRouterTests.swift */,
 				C4B9894C2E340F50004CC463 /* ChannelsInteractorTests.swift */,
 				C4B989562E3410A9004CC463 /* ChannelsPresenterTests.swift */,
 				C4B989582E341288004CC463 /* ChannelsViewControllerTests.swift */,
@@ -357,7 +344,6 @@
 		C45D93252E33DC9B00B3033B /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				C4B989442E340126004CC463 /* MockChannelsViewController.swift */,
 				C4B989462E3404EE004CC463 /* MockChannelsNavigationController.swift */,
 				C4B989482E340F12004CC463 /* MockChannelsRepository.swift */,
 				C4B9894A2E340F31004CC463 /* MockChannelsInteractorOutput.swift */,
@@ -373,7 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				C45DBF9F2E350BBB007DAD63 /* Mocks */,
-				C45DBFA22E350D58007DAD63 /* ChannelRouterTests.swift */,
 				C45DBFAA2E3519E8007DAD63 /* ChannelInteractorTests.swift */,
 				C45DBFB42E351E54007DAD63 /* ChannelPresenterTests.swift */,
 				C46763E92E56194A00FF0374 /* ChannelModuleIntegrationTests.swift */,
@@ -825,14 +810,12 @@
 				C4B989572E3410A9004CC463 /* ChannelsPresenterTests.swift in Sources */,
 				C45D930E2E31742A00B3033B /* LoginViewControllerTests.swift in Sources */,
 				C45D92FE2E31719000B3033B /* MockLoginInteractor.swift in Sources */,
-				C45DBFA32E350D58007DAD63 /* ChannelRouterTests.swift in Sources */,
 				C4B9894D2E340F50004CC463 /* ChannelsInteractorTests.swift in Sources */,
 				C45D930C2E3173F400B3033B /* LoginInteractorTests.swift in Sources */,
 				C45DBFA92E351991007DAD63 /* MockChannelPresenter.swift in Sources */,
 				C45DBFB12E351CDB007DAD63 /* MockChannelInteractor.swift in Sources */,
 				C45DBFAB2E3519E8007DAD63 /* ChannelInteractorTests.swift in Sources */,
 				C45D92E52E31664500B3033B /* MockRegisterInteractorOutput.swift in Sources */,
-				C45D92EB2E3167D100B3033B /* RegisterRouterTests.swift in Sources */,
 				C45D92E72E31672600B3033B /* MockRegisterRepository.swift in Sources */,
 				C4B9895B2E3412A7004CC463 /* MockChannelsPresenter.swift in Sources */,
 				C45D93102E31755600B3033B /* LoginRepositoryTests.swift in Sources */,
@@ -859,7 +842,6 @@
 				C45D92F62E31704F00B3033B /* MockURLProtocol.swift in Sources */,
 				C45D92FC2E31717B00B3033B /* MockLoginView.swift in Sources */,
 				C45DBFAF2E351C90007DAD63 /* MockAudioService.swift in Sources */,
-				C45D93242E33DC3800B3033B /* ChannelsRouterTests.swift in Sources */,
 				C4B989592E341288004CC463 /* ChannelsViewControllerTests.swift in Sources */,
 				C45D92EF2E3168E200B3033B /* RegisterPresenterTests.swift in Sources */,
 				C4B989492E340F12004CC463 /* MockChannelsRepository.swift in Sources */,
@@ -867,9 +849,7 @@
 				C45D92F82E31706D00B3033B /* RegisterRepositoryTests.swift in Sources */,
 				C4B9894B2E340F31004CC463 /* MockChannelsInteractorOutput.swift in Sources */,
 				C45DBFA12E350D00007DAD63 /* MockChannelView.swift in Sources */,
-				C45D93082E31726600B3033B /* LoginRouterTests.swift in Sources */,
 				C45D92E12E3164B100B3033B /* MockRegisterInteractor.swift in Sources */,
-				C4B989452E340126004CC463 /* MockChannelsViewController.swift in Sources */,
 				C45D92FA2E31716000B3033B /* MockNavigationController.swift in Sources */,
 				C46763EA2E56194A00FF0374 /* ChannelModuleIntegrationTests.swift in Sources */,
 				C40871712E5C8CD1006BAD21 /* ChannelNavigationTests.swift in Sources */,
