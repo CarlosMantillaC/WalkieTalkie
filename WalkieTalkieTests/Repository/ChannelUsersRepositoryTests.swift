@@ -16,12 +16,12 @@ final class ChannelUsersRepositoryTests: XCTestCase {
         super.setUp()
         
         let config = URLSessionConfiguration.ephemeral
-        config.protocolClasses = [MockURLProtocol.self]
+        config.protocolClasses = [StubURLProtocol.self]
         session = URLSession(configuration: config)
         repository = ChannelUsersRepository(session: session)
 
-        MockURLProtocol.mockResponseData = nil
-        MockURLProtocol.mockError = nil
+        StubURLProtocol.stubResponseData = nil
+        StubURLProtocol.stubError = nil
     }
 
     override func tearDown() {
@@ -32,7 +32,7 @@ final class ChannelUsersRepositoryTests: XCTestCase {
 
     func testFetchUsersWithValidJSONReturnsUserList() {
         let expectedUsers = ["user1@example.com", "user2@example.com"]
-        MockURLProtocol.mockResponseData = try? JSONEncoder().encode(expectedUsers)
+        StubURLProtocol.stubResponseData = try? JSONEncoder().encode(expectedUsers)
 
         let expectation = self.expectation(description: "Wait for fetchUsers")
 
@@ -50,7 +50,7 @@ final class ChannelUsersRepositoryTests: XCTestCase {
     }
 
     func testFetchUsersWithInvalidJSONReturnsInvalidJSONError() {
-        MockURLProtocol.mockResponseData = Data("not a json array".utf8)
+        StubURLProtocol.stubResponseData = Data("not a json array".utf8)
         let expectation = self.expectation(description: "Wait for fetchUsers")
 
         repository.fetchUsers(for: "test-channel") { result in
@@ -69,7 +69,7 @@ final class ChannelUsersRepositoryTests: XCTestCase {
 
     func testFetchUsersWithNetworkErrorReturnsError() {
         let expectedError = NSError(domain: "TestError", code: -999)
-        MockURLProtocol.mockError = expectedError
+        StubURLProtocol.stubError = expectedError
         let expectation = self.expectation(description: "Wait for fetchUsers")
 
         repository.fetchUsers(for: "test-channel") { result in

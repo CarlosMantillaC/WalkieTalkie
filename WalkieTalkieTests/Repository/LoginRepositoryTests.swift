@@ -16,7 +16,7 @@ final class LoginRepositoryTests: XCTestCase {
         super.setUp()
 
         let config = URLSessionConfiguration.ephemeral
-        config.protocolClasses = [MockURLProtocol.self]
+        config.protocolClasses = [StubURLProtocol.self]
         session = URLSession(configuration: config)
         repository = LoginRepository(session: session)
     }
@@ -26,8 +26,8 @@ final class LoginRepositoryTests: XCTestCase {
         let response = LoginResponse(token: expectedToken)
         let responseData = try! JSONEncoder().encode(response)
 
-        MockURLProtocol.mockResponseData = responseData
-        MockURLProtocol.mockError = nil
+        StubURLProtocol.stubResponseData = responseData
+        StubURLProtocol.stubError = nil
 
         let expectation = self.expectation(description: "login completes")
 
@@ -50,8 +50,8 @@ final class LoginRepositoryTests: XCTestCase {
         let errorResponse = LoginAPIErrorResponse(error: "Credenciales inválidas")
         let responseData = try! JSONEncoder().encode(errorResponse)
 
-        MockURLProtocol.mockResponseData = responseData
-        MockURLProtocol.mockError = nil
+        StubURLProtocol.stubResponseData = responseData
+        StubURLProtocol.stubError = nil
 
         let expectation = self.expectation(description: "login completes")
 
@@ -73,8 +73,8 @@ final class LoginRepositoryTests: XCTestCase {
     func testLoginHandlesNetworkError() {
         let networkError = NSError(domain: "Network", code: -1009, userInfo: [NSLocalizedDescriptionKey: "Sin conexión"])
         
-        MockURLProtocol.mockError = networkError
-        MockURLProtocol.mockResponseData = nil
+        StubURLProtocol.stubError = networkError
+        StubURLProtocol.stubResponseData = nil
 
         let expectation = self.expectation(description: "login completes")
 

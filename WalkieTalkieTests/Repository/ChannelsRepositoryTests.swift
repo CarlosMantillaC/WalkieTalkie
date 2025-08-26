@@ -16,7 +16,7 @@ final class ChannelsRepositoryTests: XCTestCase {
         super.setUp()
 
         let config = URLSessionConfiguration.ephemeral
-        config.protocolClasses = [MockURLProtocol.self]
+        config.protocolClasses = [StubURLProtocol.self]
         session = URLSession(configuration: config)
         repository = ChannelsRepository(session: session)
     }
@@ -25,8 +25,8 @@ final class ChannelsRepositoryTests: XCTestCase {
         let mockChannelNames = ["Channel 1", "Channel 2", "Channel 3"]
         let responseData = try! JSONEncoder().encode(mockChannelNames)
 
-        MockURLProtocol.mockResponseData = responseData
-        MockURLProtocol.mockError = nil
+        StubURLProtocol.stubResponseData = responseData
+        StubURLProtocol.stubError = nil
 
         let expectation = self.expectation(description: "fetchChannels completes")
 
@@ -48,8 +48,8 @@ final class ChannelsRepositoryTests: XCTestCase {
         let invalidJSON = ["invalid": "data"]
         let responseData = try! JSONEncoder().encode(invalidJSON)
 
-        MockURLProtocol.mockResponseData = responseData
-        MockURLProtocol.mockError = nil
+        StubURLProtocol.stubResponseData = responseData
+        StubURLProtocol.stubError = nil
 
         let expectation = self.expectation(description: "fetchChannels completes")
 
@@ -69,8 +69,8 @@ final class ChannelsRepositoryTests: XCTestCase {
     func testFetchChannelsHandlesNetworkError() {
         let networkError = NSError(domain: "Network", code: -1009, userInfo: [NSLocalizedDescriptionKey: "Sin conexión"])
 
-        MockURLProtocol.mockError = networkError
-        MockURLProtocol.mockResponseData = nil
+        StubURLProtocol.stubError = networkError
+        StubURLProtocol.stubResponseData = nil
 
         let expectation = self.expectation(description: "fetchChannels completes")
 

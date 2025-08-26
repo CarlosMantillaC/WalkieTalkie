@@ -16,7 +16,7 @@ final class RegisterRepositoryTests: XCTestCase {
         super.setUp()
 
         let config = URLSessionConfiguration.ephemeral
-        config.protocolClasses = [MockURLProtocol.self]
+        config.protocolClasses = [StubURLProtocol.self]
         session = URLSession(configuration: config)
         repository = RegisterRepository(session: session)
     }
@@ -26,8 +26,8 @@ final class RegisterRepositoryTests: XCTestCase {
         let response = RegisterResponse(message: expectedMessage)
         let responseData = try! JSONEncoder().encode(response)
         
-        MockURLProtocol.mockResponseData = responseData
-        MockURLProtocol.mockError = nil
+        StubURLProtocol.stubResponseData = responseData
+        StubURLProtocol.stubError = nil
 
         let expectation = self.expectation(description: "register completes")
 
@@ -50,8 +50,8 @@ final class RegisterRepositoryTests: XCTestCase {
         let errorResponse = RegisterAPIErrorResponse(error:  "Correo ya registrado")
         let responseData = try! JSONEncoder().encode(errorResponse)
 
-        MockURLProtocol.mockResponseData = responseData
-        MockURLProtocol.mockError = nil
+        StubURLProtocol.stubResponseData = responseData
+        StubURLProtocol.stubError = nil
 
         let expectation = self.expectation(description: "register completes")
 
@@ -73,8 +73,8 @@ final class RegisterRepositoryTests: XCTestCase {
     func testRegisterHandlesNetworkError() {
         let networkError = NSError(domain: "Network", code: -1009, userInfo: [NSLocalizedDescriptionKey: "Sin conexión"])
         
-        MockURLProtocol.mockError = networkError
-        MockURLProtocol.mockResponseData = nil
+        StubURLProtocol.stubError = networkError
+        StubURLProtocol.stubResponseData = nil
 
         let expectation = self.expectation(description: "register completes")
 
