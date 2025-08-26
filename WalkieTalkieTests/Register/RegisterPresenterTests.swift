@@ -12,18 +12,15 @@ final class RegisterPresenterTests: XCTestCase {
     var presenter: RegisterPresenter!
     var mockView: MockRegisterView!
     var mockInteractor: MockRegisterInteractor!
-    var mockRouter: MockRegisterRouter!
 
     override func setUp() {
         super.setUp()
         presenter = RegisterPresenter()
         mockView = MockRegisterView()
         mockInteractor = MockRegisterInteractor()
-        mockRouter = MockRegisterRouter()
         
         presenter.view = mockView
         presenter.interactor = mockInteractor
-        presenter.router = mockRouter
     }
 
     func testEmptyFieldsShouldShowError() {

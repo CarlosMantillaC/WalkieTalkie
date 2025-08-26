@@ -12,18 +12,15 @@ final class ChannelsPresenterTests: XCTestCase {
     var presenter: ChannelsPresenter!
     var mockView: MockChannelsView!
     var mockInteractor: MockChannelsInteractor!
-    var mockRouter: MockChannelsRouter!
 
     override func setUp() {
         super.setUp()
         presenter = ChannelsPresenter()
         mockView = MockChannelsView()
         mockInteractor = MockChannelsInteractor()
-        mockRouter = MockChannelsRouter()
 
         presenter.view = mockView
         presenter.interactor = mockInteractor
-        presenter.router = mockRouter
     }
 
     func testViewDidLoadShouldCallLoadChannels() {
