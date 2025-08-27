@@ -84,6 +84,7 @@
 		C460251B2E2939B00032EDA6 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460251A2E2939B00032EDA6 /* ChannelViewController.swift */; };
 		C460251D2E29439A0032EDA6 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460251C2E29439A0032EDA6 /* WebSocketService.swift */; };
 		C46091082E5F4D8000AE9A12 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46091072E5F4D8000AE9A12 /* NetworkService.swift */; };
+		C460910E2E5F663F00AE9A12 /* AudioServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460910D2E5F663F00AE9A12 /* AudioServiceTests.swift */; };
 		C466098F2E3BAB8900834531 /* MockChannelUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C466098E2E3BAB8900834531 /* MockChannelUsersRepository.swift */; };
 		C47B30912E30276500275424 /* ChannelUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47B30902E30276500275424 /* ChannelUsersRepository.swift */; };
 		C47EB27B2E3BF58C002EA5A0 /* audio_end_talking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C47EB2792E3BF58C002EA5A0 /* audio_end_talking.mp3 */; };
@@ -203,6 +204,7 @@
 		C460251A2E2939B00032EDA6 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		C460251C2E29439A0032EDA6 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
 		C46091072E5F4D8000AE9A12 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C460910D2E5F663F00AE9A12 /* AudioServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioServiceTests.swift; sourceTree = "<group>"; };
 		C466098E2E3BAB8900834531 /* MockChannelUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelUsersRepository.swift; sourceTree = "<group>"; };
 		C47B30902E30276500275424 /* ChannelUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelUsersRepository.swift; sourceTree = "<group>"; };
 		C47EB2792E3BF58C002EA5A0 /* audio_end_talking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio_end_talking.mp3; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 		C46024AA2E26FFD20032EDA6 /* WalkieTalkieTests */ = {
 			isa = PBXGroup;
 			children = (
+				C460910C2E5F663200AE9A12 /* Services */,
 				C45DBF9E2E350B9A007DAD63 /* Channel */,
 				C45D93222E33DC2A00B3033B /* Channels */,
 				C45D92F22E316F6C00B3033B /* Login */,
@@ -537,6 +540,14 @@
 				C46024F22E2803F60032EDA6 /* LogoutResponse.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		C460910C2E5F663200AE9A12 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C460910D2E5F663F00AE9A12 /* AudioServiceTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		C47EB2782E3BF57B002EA5A0 /* Sound */ = {
@@ -801,6 +812,7 @@
 				C466098F2E3BAB8900834531 /* MockChannelUsersRepository.swift in Sources */,
 				C45DBFB52E351E54007DAD63 /* ChannelPresenterTests.swift in Sources */,
 				C4B9894F2E340FA7004CC463 /* MockChannelsView.swift in Sources */,
+				C460910E2E5F663F00AE9A12 /* AudioServiceTests.swift in Sources */,
 				C45D93022E3171BF00B3033B /* MockLoginRepository.swift in Sources */,
 				C45D92DF2E31647300B3033B /* MockRegisterView.swift in Sources */,
 				C45D93042E31723000B3033B /* MockLoginInteractorOutput.swift in Sources */,
