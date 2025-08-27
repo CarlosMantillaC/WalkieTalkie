@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os
 
 final class WebSocketService: WebSocketServiceProtocol {
     weak var delegate: WebSocketServiceDelegate?
@@ -13,6 +14,8 @@ final class WebSocketService: WebSocketServiceProtocol {
     private let url = URL(string: APIConstants.webSocketURL)!
     private let session: URLSession
     private var isConnected = false
+    
+    private let logger = Logger(subsystem: "com..WalkieTalkie", category: "WebSocket")
     
     init() {
         let config = URLSessionConfiguration.default
@@ -25,11 +28,16 @@ final class WebSocketService: WebSocketServiceProtocol {
     }
     
     func connect(to channel: String) {
-        guard !isConnected else { return }
+        guard !isConnected else {
+            logger.debug("Already connected, ignoring connect request.")
+            return
+        }
         
         webSocketTask = session.webSocketTask(with: url)
         webSocketTask?.resume()
         isConnected = true
+        
+        logger.info("Connected to WebSocket at \(self.url.absoluteString, privacy: .public)")
         
         let json: [String: String] = ["canal": channel]
         if let data = try? JSONSerialization.data(withJSONObject: json),
@@ -41,24 +49,28 @@ final class WebSocketService: WebSocketServiceProtocol {
     }
     
     func send(message: String) {
-        webSocketTask?.send(.string(message)) { error in
+        webSocketTask?.send(.string(message)) { [weak self] error in
             if let error = error {
-                print("Error sending string: \(error)")
+                self?.logger.error("Error sending string: \(error.localizedDescription, privacy: .public)")
+            } else {
+                self?.logger.debug("Sent string message: \(message, privacy: .public)")
             }
         }
     }
     
     func send(data: Data) {
-        webSocketTask?.send(.data(data)) { error in
+        webSocketTask?.send(.data(data)) { [weak self] error in
             if let error = error {
-                print("Error sending data: \(error)")
+                self?.logger.error("Error sending data: \(error.localizedDescription, privacy: .public)")
+            } else {
+                self?.logger.debug("Sent binary data of size: \(data.count, privacy: .public)")
             }
         }
     }
     
     private func listen() {
         guard isConnected else {
-            print("Not listening: socket not connected")
+            logger.warning("Not listening: socket not connected")
             return
         }
         
@@ -67,15 +79,17 @@ final class WebSocketService: WebSocketServiceProtocol {
             
             switch result {
             case .failure(let error):
-                print("Error receiving message: \(error)")
+                self.logger.error("Error receiving message: \(error.localizedDescription, privacy: .public)")
             case .success(let message):
                 switch message {
                 case .string(let text):
+                    self.logger.debug("Received text message: \(text, privacy: .public)")
                     delegate?.didReceive(message: text)
                 case .data(let data):
+                    self.logger.debug("Received binary data of size: \(data.count, privacy: .public)")
                     delegate?.didReceive(data: data)
                 @unknown default:
-                    print("Received unknown message")
+                    self.logger.warning("Received unknown message type")
                 }
             }
             
@@ -85,6 +99,7 @@ final class WebSocketService: WebSocketServiceProtocol {
     
     func disconnect() {
         isConnected = false
+        logger.info("Disconnected from WebSocket.")
         webSocketTask?.cancel(with: .normalClosure, reason: nil)
         webSocketTask = nil
     }

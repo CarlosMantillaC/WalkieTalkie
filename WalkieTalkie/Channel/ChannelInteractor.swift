@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os
 
 final class ChannelInteractor {
     weak var presenter: ChannelInteractorOutputProtocol?
@@ -13,6 +14,8 @@ final class ChannelInteractor {
     private let audioService: AudioServiceProtocol
     private let channel: Channel?
     private let usersRepository: ChannelUsersRepositoryProtocol
+    
+    private let logger = Logger(subsystem: "com..WalkieTalkie", category: "ChannelInteractor")
     
     init(channel: Channel?,
          socket: WebSocketServiceProtocol = WebSocketService(),
@@ -52,10 +55,9 @@ extension ChannelInteractor: ChannelInteractorProtocol {
         usersRepository.fetchUsers(for: channelName) { [weak self] result in
             switch result {
             case .success(let emails):
-                print("Users in channel: \(emails)")
                 self?.presenter?.didFetchUsers(emails)
             case .failure(let error):
-                print("Failed to fetch users: \(error.localizedDescription)")
+                self?.logger.error("Failed to fetch users: \(error.localizedDescription, privacy: .public)")
             }
         }
     }
@@ -69,20 +71,11 @@ extension ChannelInteractor: ChannelInteractorProtocol {
 extension ChannelInteractor: WebSocketServiceDelegate {
     func didReceive(message: String) {
         if let audioData = Data(base64Encoded: message) {
-            print("Received audio data")
             audioService.playAudioData(audioData)
-        } else {
-            if let json = try? JSONSerialization.jsonObject(with: Data(message.utf8), options: []) as? [String: Any],
-               let serverMessage = json["message"] as? String {
-                print("Server message: \(serverMessage)")
-            } else {
-                print("Received non-audio message: \(message)")
-            }
         }
     }
     
     func didReceive(data: Data) {
-        print("Received audio data (\(data.count) bytes)")
         audioService.playAudioData(data)
     }
 }

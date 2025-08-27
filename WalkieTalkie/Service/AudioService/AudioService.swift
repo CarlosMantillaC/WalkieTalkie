@@ -6,6 +6,7 @@
 //
 
 import AVFoundation
+import os
 
 final class AudioService: AudioServiceProtocol {
     private let audioEngine = AVAudioEngine()
@@ -16,6 +17,8 @@ final class AudioService: AudioServiceProtocol {
     private var playbackFormat: AVAudioFormat?
     private var socket: WebSocketServiceProtocol?
     private var converter: AVAudioConverter?
+    
+    private let logger = Logger(subsystem: "com..WalkieTalkie", category: "AudioService")
     
     init() {
         configureAudioSession()
@@ -29,17 +32,19 @@ final class AudioService: AudioServiceProtocol {
             try session.setPreferredSampleRate(48000)
             try session.setPreferredIOBufferDuration(0.02)
             try session.setActive(true)
-            print("Audio session configured: \(session.sampleRate) Hz")
+            logger.info("Audio session configured: \(session.sampleRate) Hz")
         } catch {
-            print("Audio session config failed: \(error.localizedDescription)")
+            logger.error("Audio session config failed: \(error.localizedDescription)")
         }
     }
     
     private func setupFormats() {
-        playbackFormat = AVAudioFormat(commonFormat: .pcmFormatFloat32,
-                                       sampleRate: 16000,
-                                       channels: 1,
-                                       interleaved: true)
+        playbackFormat = AVAudioFormat(
+            commonFormat: .pcmFormatFloat32,
+            sampleRate: 16000,
+            channels: 1,
+            interleaved: true
+        )
     }
     
     func startStreaming(to socket: WebSocketServiceProtocol) {
@@ -47,18 +52,20 @@ final class AudioService: AudioServiceProtocol {
         inputNode = audioEngine.inputNode
         
         guard let inputNode else {
-            print("No input node available")
+            logger.error("No input node available")
             return
         }
         
         inputNode.removeTap(onBus: 0)
         
         let inputFormat = inputNode.inputFormat(forBus: 0)
-        guard let targetFormat = AVAudioFormat(commonFormat: .pcmFormatInt16,
-                                               sampleRate: 16000,
-                                               channels: 1,
-                                               interleaved: true) else {
-            print("Failed to create target audio format")
+        guard let targetFormat = AVAudioFormat(
+            commonFormat: .pcmFormatInt16,
+            sampleRate: 16000,
+            channels: 1,
+            interleaved: true
+        ) else {
+            logger.error("Failed to create target audio format")
             return
         }
         
@@ -68,7 +75,7 @@ final class AudioService: AudioServiceProtocol {
             guard let self = self, let converter = self.converter else { return }
             
             guard let convertedBuffer = AVAudioPCMBuffer(pcmFormat: targetFormat, frameCapacity: AVAudioFrameCount(buffer.frameLength)) else {
-                print("Could not allocate PCM buffer")
+                self.logger.error("Could not allocate PCM buffer")
                 return
             }
             
@@ -86,32 +93,32 @@ final class AudioService: AudioServiceProtocol {
                 let data = Data(bytes: audioData, count: byteCount)
                 self.socket?.send(data: data)
             } else if let error {
-                print("Conversion error: \(error.localizedDescription)")
+                self.logger.error("Conversion error: \(error.localizedDescription)")
             }
         }
         
         do {
             try audioEngine.start()
-            print("Audio engine started")
+            logger.info("Audio engine started")
         } catch {
-            print("Audio engine failed to start: \(error)")
+            logger.error("Audio engine failed to start: \(error.localizedDescription)")
         }
     }
     
     func stopStreaming() {
         inputNode?.removeTap(onBus: 0)
         audioEngine.stop()
-        print("Streaming stopped")
+        logger.info("Streaming stopped")
     }
     
     func playAudioData(_ data: Data) {
         guard let buffer = int16DataToFloat32PCMBuffer(data: data) else {
-            print("Failed to convert data to buffer")
+            logger.error("Failed to convert data to buffer")
             return
         }
         
         guard let playbackFormat else {
-            print("Playback format not configured")
+            logger.error("Playback format not configured")
             return
         }
         
@@ -131,15 +138,15 @@ final class AudioService: AudioServiceProtocol {
             
             playerNode.scheduleBuffer(buffer, at: nil, options: .interrupts, completionHandler: nil)
             
-            print("Playing audio - frames: \(buffer.frameLength)")
+            logger.debug("Playing audio - frames: \(buffer.frameLength)")
         } catch {
-            print("Playback engine failed: \(error)")
+            logger.error("Playback engine failed: \(error.localizedDescription)")
         }
     }
     
     private func int16DataToFloat32PCMBuffer(data: Data) -> AVAudioPCMBuffer? {
         guard let playbackFormat else {
-            print("Playback format not available")
+            logger.error("Playback format not available")
             return nil
         }
         

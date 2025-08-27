@@ -64,7 +64,6 @@ extension ChannelPresenter: ChannelInteractorOutputProtocol {
     }
 
     func didFetchUsers(_ emails: [String]) {
-        print("Emails recibidos en presenter: \(emails)")
         view?.displayUsers(emails)
     }
 }
