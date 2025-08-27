@@ -15,24 +15,25 @@ final class RegisterPresenter {
 
 extension RegisterPresenter: RegisterPresenterProtocol {
     func didTapSend(
-        first_name: String,
-        last_name: String,
+        firstName: String,
+        lastName: String,
         email: String,
         password: String,
-        confirm_password: String) {
+        confirmPassword: String
+    ) {
             
-            guard !first_name.isEmpty, !last_name.isEmpty, !email.isEmpty, !password.isEmpty, !confirm_password.isEmpty else {
+            guard !firstName.isEmpty, !lastName.isEmpty, !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {
                 view?.showError("Todos los campos son obligatorios.")
                 return
             }
             
             let nameRegex = "^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$"
-            if !NSPredicate(format: "SELF MATCHES %@", nameRegex).evaluate(with: first_name) {
+            if !NSPredicate(format: "SELF MATCHES %@", nameRegex).evaluate(with: firstName) {
                 view?.showError("El nombre solo debe contener letras.")
                 return
             }
             
-            if !NSPredicate(format: "SELF MATCHES %@", nameRegex).evaluate(with: last_name) {
+            if !NSPredicate(format: "SELF MATCHES %@", nameRegex).evaluate(with: lastName) {
                 view?.showError("El apellido solo debe contener letras.")
                 return
             }
@@ -42,7 +43,7 @@ extension RegisterPresenter: RegisterPresenterProtocol {
                 return
             }
             
-            guard password == confirm_password else {
+            guard password == confirmPassword else {
                 view?.showError("Las contraseñas no coinciden.")
                 return
             }
@@ -53,11 +54,11 @@ extension RegisterPresenter: RegisterPresenterProtocol {
             }
             
             let request = RegisterRequest(
-                first_name: first_name,
-                last_name: last_name,
+                firstName: firstName,
+                lastName: lastName,
                 email: email,
                 password: password,
-                confirm_password: confirm_password
+                confirmPassword: confirmPassword
             )
             interactor?.register(user: request)
         }

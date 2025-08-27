@@ -23,11 +23,11 @@ final class RegisterInteractorTests: XCTestCase {
     
     func testRegisterCallsRepositoryWithRequest() {
         let request = RegisterRequest(
-            first_name: "Ana",
-            last_name: "Díaz",
+            firstName: "Ana",
+            lastName: "Díaz",
             email: "ana@example.com",
             password: "123456",
-            confirm_password: "123456"
+            confirmPassword: "123456"
         )
         interactor.register(user: request)
         
@@ -43,11 +43,11 @@ final class RegisterInteractorTests: XCTestCase {
         }
 
         let request = RegisterRequest(
-            first_name: "A",
-            last_name: "B",
+            firstName: "A",
+            lastName: "B",
             email: "a@b.com",
             password: "123",
-            confirm_password: "123"
+            confirmPassword: "123"
         )
         interactor.register(user: request)
 
@@ -66,11 +66,11 @@ final class RegisterInteractorTests: XCTestCase {
         }
         
         let request = RegisterRequest(
-            first_name: "A",
-            last_name: "B",
+            firstName: "A",
+            lastName: "B",
             email: "a@b.com",
             password: "123",
-            confirm_password: "123"
+            confirmPassword: "123"
         )
         interactor.register(user: request)
 

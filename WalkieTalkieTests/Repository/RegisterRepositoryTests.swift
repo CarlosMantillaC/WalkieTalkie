@@ -21,11 +21,11 @@ final class RegisterRepositoryTests: XCTestCase {
         session = URLSession(configuration: config)
         repository = RegisterRepository(session: session)
         request = RegisterRequest(
-            first_name: "Ana",
-            last_name: "Gómez",
+            firstName: "Ana",
+            lastName: "Gómez",
             email: "ana@mail.com",
             password: "123456",
-            confirm_password: "123456"
+            confirmPassword: "123456"
         )
     }
 

@@ -11,36 +11,36 @@ import XCTest
 final class RegisterEntitiesTests: XCTestCase {
     
     func testRegisterRequestInitialization() {
-        let first_name = "Carlos"
-        let last_name = "Mantilla"
+        let firstName = "Carlos"
+        let lastName = "Mantilla"
         let email = "carlos@mail.com"
         let password = "123456"
-        let confirm_password = "123456"
+        let confirmPassword = "123456"
         
         let registerRequest = RegisterRequest(
-            first_name: first_name,
-            last_name: last_name,
+            firstName: firstName,
+            lastName: lastName,
             email: email,
             password: password,
-            confirm_password: confirm_password
+            confirmPassword: confirmPassword
         )
         
-        XCTAssertEqual(registerRequest.first_name, first_name)
-        XCTAssertEqual(registerRequest.last_name, last_name)
+        XCTAssertEqual(registerRequest.firstName, firstName)
+        XCTAssertEqual(registerRequest.lastName, lastName)
         XCTAssertEqual(registerRequest.email, email)
-        XCTAssertEqual(registerRequest.password, registerRequest.confirm_password)
+        XCTAssertEqual(registerRequest.password, registerRequest.confirmPassword)
     }
     
     func testRegisterRequestEncodingToJson() throws {
         let request = RegisterRequest(
-            first_name: "Carlos",
-            last_name: "Mantilla",
+            firstName: "Carlos",
+            lastName: "Mantilla",
             email: "carlos@test.com",
             password: "123456",
-            confirm_password: "123456"
+            confirmPassword: "123456"
         )
-        
-        let jsonData = try JSONEncoder().encode(request)
+        let encoder = NetworkService.shared.encoder
+        let jsonData = try encoder.encode(request)
         let jsonString = String(data: jsonData, encoding: .utf8)
         
         XCTAssertTrue(jsonString?.contains("\"first_name\":\"Carlos\"") ?? false)
@@ -61,12 +61,13 @@ final class RegisterEntitiesTests: XCTestCase {
           }
           """.data(using: .utf8)!
         
-        let decoded = try JSONDecoder().decode(RegisterRequest.self, from: json)
+        let decoder = NetworkService.shared.decoder
+        let decoded = try decoder.decode(RegisterRequest.self, from: json)
         
-        XCTAssertEqual(decoded.first_name, "Carlos")
-        XCTAssertEqual(decoded.last_name, "Mantilla")
+        XCTAssertEqual(decoded.firstName, "Carlos")
+        XCTAssertEqual(decoded.lastName, "Mantilla")
         XCTAssertEqual(decoded.email, "carlos@test.com")
-        XCTAssertEqual(decoded.password, decoded.confirm_password)
+        XCTAssertEqual(decoded.password, decoded.confirmPassword)
     }
     
     func testRegisterResponseInitialization() {

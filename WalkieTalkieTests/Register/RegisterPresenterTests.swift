@@ -25,11 +25,11 @@ final class RegisterPresenterTests: XCTestCase {
 
     func testEmptyFieldsShouldShowError() {
         presenter.didTapSend(
-            first_name: "",
-            last_name: "",
+            firstName: "",
+            lastName: "",
             email: "",
             password: "",
-            confirm_password: ""
+            confirmPassword: ""
         )
         
         XCTAssertEqual(mockView.errorMessage, "Todos los campos son obligatorios.")
@@ -37,11 +37,11 @@ final class RegisterPresenterTests: XCTestCase {
 
     func testMismatchedPasswordsShouldShowError() {
         presenter.didTapSend(
-            first_name: "Test",
-            last_name: "User",
+            firstName: "Test",
+            lastName: "User",
             email: "test@mail.com",
             password: "123456",
-            confirm_password: "654321"
+            confirmPassword: "654321"
         )
         
         XCTAssertEqual(mockView.errorMessage, "Las contraseñas no coinciden.")
@@ -49,11 +49,11 @@ final class RegisterPresenterTests: XCTestCase {
 
     func testInvalidEmailShouldShowError() {
         presenter.didTapSend(
-            first_name: "Test",
-            last_name: "User",
+            firstName: "Test",
+            lastName: "User",
             email: "testmail",
             password: "123456",
-            confirm_password: "123456"
+            confirmPassword: "123456"
         )
         
         XCTAssertEqual(mockView.errorMessage, "Correo electrónico inválido.")
@@ -61,15 +61,15 @@ final class RegisterPresenterTests: XCTestCase {
 
     func testValidInputShouldCallInteractorRegister() {
         presenter.didTapSend(
-            first_name: "Test",
-            last_name: "User",
+            firstName: "Test",
+            lastName: "User",
             email: "test@mail.com",
             password: "123456",
-            confirm_password: "123456"
+            confirmPassword: "123456"
         )
         
         XCTAssertNotNil(mockInteractor.lastRegisterRequest)
-        XCTAssertEqual(mockInteractor.lastRegisterRequest?.first_name, "Test")
+        XCTAssertEqual(mockInteractor.lastRegisterRequest?.firstName, "Test")
     }
 
     func testRegisterSuccessShouldCallViewShowSuccess() {

@@ -83,6 +83,7 @@
 		C46025192E291ACE0032EDA6 /* ChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46025182E291ACE0032EDA6 /* ChannelsRouter.swift */; };
 		C460251B2E2939B00032EDA6 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460251A2E2939B00032EDA6 /* ChannelViewController.swift */; };
 		C460251D2E29439A0032EDA6 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C460251C2E29439A0032EDA6 /* WebSocketService.swift */; };
+		C46091082E5F4D8000AE9A12 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46091072E5F4D8000AE9A12 /* NetworkService.swift */; };
 		C466098F2E3BAB8900834531 /* MockChannelUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C466098E2E3BAB8900834531 /* MockChannelUsersRepository.swift */; };
 		C47B30912E30276500275424 /* ChannelUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47B30902E30276500275424 /* ChannelUsersRepository.swift */; };
 		C47EB27B2E3BF58C002EA5A0 /* audio_end_talking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C47EB2792E3BF58C002EA5A0 /* audio_end_talking.mp3 */; };
@@ -201,6 +202,7 @@
 		C46025182E291ACE0032EDA6 /* ChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouter.swift; sourceTree = "<group>"; };
 		C460251A2E2939B00032EDA6 /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		C460251C2E29439A0032EDA6 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
+		C46091072E5F4D8000AE9A12 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C466098E2E3BAB8900834531 /* MockChannelUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelUsersRepository.swift; sourceTree = "<group>"; };
 		C47B30902E30276500275424 /* ChannelUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelUsersRepository.swift; sourceTree = "<group>"; };
 		C47EB2792E3BF58C002EA5A0 /* audio_end_talking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio_end_talking.mp3; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				C46024B72E2701A20032EDA6 /* APIConstants.swift */,
 				C46024B92E2702180032EDA6 /* URLRequest+Extensions.swift */,
 				C46024BB2E27023B0032EDA6 /* TokenManager.swift */,
+				C46091072E5F4D8000AE9A12 /* NetworkService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				C48C3FD72E2AC6E600D9B24A /* UIColor+Hex.swift in Sources */,
 				C46025132E2917C90032EDA6 /* ChannelsPresenter.swift in Sources */,
 				C480A1072E297AE1000E0C7F /* AudioServiceProtocol.swift in Sources */,
+				C46091082E5F4D8000AE9A12 /* NetworkService.swift in Sources */,
 				C46025162E2918730032EDA6 /* ChannelsViewController.swift in Sources */,
 				C46024D92E27F75A0032EDA6 /* RegisterRequest.swift in Sources */,
 				C46024F02E27F9480032EDA6 /* RegisterRouter.swift in Sources */,

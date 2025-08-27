@@ -34,11 +34,11 @@ class RegisterViewController: UIViewController {
     @IBAction func didTapSend(_ sender: Any) {
         if let presenter = presenter {
             presenter.didTapSend(
-                first_name: nameTextField.text ?? "",
-                last_name: lastNameTextField.text ?? "",
+                firstName: nameTextField.text ?? "",
+                lastName: lastNameTextField.text ?? "",
                 email: emailTextField.text ?? "",
                 password: passwordTextField.text ?? "",
-                confirm_password: confirmPasswordTextField.text ?? ""
+                confirmPassword: confirmPasswordTextField.text ?? ""
             )
         }
     }

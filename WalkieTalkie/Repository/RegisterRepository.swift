@@ -10,8 +10,11 @@ import Foundation
 protocol RegisterRepositoryProtocol {
     func register(user: RegisterRequest, completion: @escaping (Result<RegisterResponse, Error>) -> Void)
 }
+
 final class RegisterRepository: RegisterRepositoryProtocol {
     private let session: URLSession
+    private let encoder = NetworkService.shared.encoder
+    private let decoder = NetworkService.shared.decoder
     
     init(session: URLSession = .shared) {
         self.session = session
@@ -28,13 +31,15 @@ final class RegisterRepository: RegisterRepositoryProtocol {
         request.applyDefaultHeaders()
         
         do {
-            request.httpBody = try JSONEncoder().encode(user)
+            request.httpBody = try encoder.encode(user)
         } catch {
             completion(.failure(error))
             return
         }
         
-        session.dataTask(with: request) { data, _, error in
+        session.dataTask(with: request) { [weak self] data, _, error in
+            guard let self = self else { return }
+
             if let error = error {
                 completion(.failure(error))
                 return
@@ -46,10 +51,10 @@ final class RegisterRepository: RegisterRepositoryProtocol {
             }
             
             do {
-                let decoded = try JSONDecoder().decode(RegisterResponse.self, from: data)
+                let decoded = try self.decoder.decode(RegisterResponse.self, from: data)
                 completion(.success(decoded))
             } catch {
-                if let apiError = try? JSONDecoder().decode(RegisterAPIErrorResponse.self, from: data) {
+                if let apiError = try? self.decoder.decode(RegisterAPIErrorResponse.self, from: data) {
                     let customError = NSError(
                         domain: "API",
                         code: 400,
