@@ -23,12 +23,6 @@ class RegisterViewController: UIViewController {
         
         passwordTextField.textContentType = .oneTimeCode
         confirmPasswordTextField.textContentType = .oneTimeCode
-        
-        nameTextField.delegate = self
-        lastNameTextField.delegate = self
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        confirmPasswordTextField.delegate = self
     }
     
     @IBAction func didTapSend(_ sender: Any) {
@@ -77,25 +71,5 @@ extension RegisterViewController: RegisterViewProtocol {
 extension RegisterViewController: KeyboardScrollable {
     var keyboardScrollableView: UIScrollView {
         return scrollView
-    }
-}
-
-extension RegisterViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case nameTextField:
-            lastNameTextField.becomeFirstResponder()
-        case lastNameTextField:
-            emailTextField.becomeFirstResponder()
-        case emailTextField:
-            passwordTextField.becomeFirstResponder()
-        case passwordTextField:
-            confirmPasswordTextField.becomeFirstResponder()
-        case confirmPasswordTextField:
-            textField.resignFirstResponder()
-        default:
-            textField.resignFirstResponder()
-        }
-        return true
     }
 }

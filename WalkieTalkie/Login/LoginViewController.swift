@@ -20,9 +20,6 @@ class LoginViewController: UIViewController {
         startObservingKeyboard()
         
         passwordTextField.textContentType = .oneTimeCode
-        
-        passwordTextField.delegate = self
-        emailTextField.delegate = self
     }
     
     @IBAction func didTapLogin(_ sender: Any) {
@@ -58,19 +55,5 @@ extension LoginViewController: LoginViewProtocol {
 extension LoginViewController: KeyboardScrollable {
     var keyboardScrollableView: UIScrollView {
         return scrollView
-    }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case emailTextField:
-            passwordTextField.becomeFirstResponder()
-        case passwordTextField:
-            textField.resignFirstResponder()
-        default:
-            textField.resignFirstResponder()
-        }
-        return true
     }
 }
