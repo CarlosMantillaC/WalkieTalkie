@@ -25,6 +25,7 @@ final class ChannelsPresenterTests: XCTestCase {
 
     func testViewDidLoadShouldCallLoadChannels() {
         presenter.viewDidLoad()
+        
         XCTAssertTrue(mockInteractor.loadChannelsCalled)
     }
 

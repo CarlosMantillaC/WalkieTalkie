@@ -17,7 +17,13 @@ final class RegisterEntitiesTests: XCTestCase {
         let password = "123456"
         let confirm_password = "123456"
         
-        let registerRequest = RegisterRequest(first_name: first_name, last_name: last_name, email: email, password: password, confirm_password: confirm_password)
+        let registerRequest = RegisterRequest(
+            first_name: first_name,
+            last_name: last_name,
+            email: email,
+            password: password,
+            confirm_password: confirm_password
+        )
         
         XCTAssertEqual(registerRequest.first_name, first_name)
         XCTAssertEqual(registerRequest.last_name, last_name)

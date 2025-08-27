@@ -29,7 +29,8 @@ final class RegisterPresenterTests: XCTestCase {
             last_name: "",
             email: "",
             password: "",
-            confirm_password: "")
+            confirm_password: ""
+        )
         
         XCTAssertEqual(mockView.errorMessage, "Todos los campos son obligatorios.")
     }
@@ -40,7 +41,8 @@ final class RegisterPresenterTests: XCTestCase {
             last_name: "User",
             email: "test@mail.com",
             password: "123456",
-            confirm_password: "654321")
+            confirm_password: "654321"
+        )
         
         XCTAssertEqual(mockView.errorMessage, "Las contraseñas no coinciden.")
     }
@@ -51,7 +53,8 @@ final class RegisterPresenterTests: XCTestCase {
             last_name: "User",
             email: "testmail",
             password: "123456",
-            confirm_password: "123456")
+            confirm_password: "123456"
+        )
         
         XCTAssertEqual(mockView.errorMessage, "Correo electrónico inválido.")
     }
@@ -62,7 +65,8 @@ final class RegisterPresenterTests: XCTestCase {
             last_name: "User",
             email: "test@mail.com",
             password: "123456",
-            confirm_password: "123456")
+            confirm_password: "123456"
+        )
         
         XCTAssertNotNil(mockInteractor.lastRegisterRequest)
         XCTAssertEqual(mockInteractor.lastRegisterRequest?.first_name, "Test")
@@ -76,6 +80,7 @@ final class RegisterPresenterTests: XCTestCase {
 
     func testRegisterFailedShouldCallViewShowError() {
         let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Error de red"])
+        
         presenter.registerFailed(with: error)
         
         XCTAssertEqual(mockView.errorMessage, "Error de red")

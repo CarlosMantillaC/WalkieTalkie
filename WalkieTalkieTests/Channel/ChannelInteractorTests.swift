@@ -78,6 +78,7 @@ final class ChannelInteractorTests: XCTestCase {
 
     func testLogoutShouldClearTokenAndNotifyPresenter() {
         interactor.logout()
+        
         XCTAssertEqual(mockPresenter.logoutMessage, "Sesión cerrada exitosamente")
     }
 }

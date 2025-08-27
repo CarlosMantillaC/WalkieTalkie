@@ -11,6 +11,7 @@ import XCTest
 final class RegisterRepositoryTests: XCTestCase {
     var repository: RegisterRepository!
     var session: URLSession!
+    var request: RegisterRequest!
 
     override func setUp() {
         super.setUp()
@@ -19,6 +20,13 @@ final class RegisterRepositoryTests: XCTestCase {
         config.protocolClasses = [StubURLProtocol.self]
         session = URLSession(configuration: config)
         repository = RegisterRepository(session: session)
+        request = RegisterRequest(
+            first_name: "Ana",
+            last_name: "Gómez",
+            email: "ana@mail.com",
+            password: "123456",
+            confirm_password: "123456"
+        )
     }
 
     func testRegisterSuccessResponse() {
@@ -30,8 +38,6 @@ final class RegisterRepositoryTests: XCTestCase {
         StubURLProtocol.stubError = nil
 
         let expectation = self.expectation(description: "register completes")
-
-        let request = RegisterRequest(first_name: "Ana", last_name: "Gómez", email: "ana@mail.com", password: "123456", confirm_password: "123456")
 
         repository.register(user: request) { result in
             switch result {
@@ -55,8 +61,6 @@ final class RegisterRepositoryTests: XCTestCase {
 
         let expectation = self.expectation(description: "register completes")
 
-        let request = RegisterRequest(first_name: "Ana", last_name: "Gómez", email: "ana@mail.com", password: "123456", confirm_password: "123456")
-
         repository.register(user: request) { result in
             switch result {
             case .success:
@@ -77,8 +81,6 @@ final class RegisterRepositoryTests: XCTestCase {
         StubURLProtocol.stubResponseData = nil
 
         let expectation = self.expectation(description: "register completes")
-
-        let request = RegisterRequest(first_name: "Ana", last_name: "Gómez", email: "ana@mail.com", password: "123456", confirm_password: "123456")
 
         repository.register(user: request) { result in
             switch result {
