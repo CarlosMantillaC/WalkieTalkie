@@ -36,6 +36,12 @@ final class RegisterInteractorTests: XCTestCase {
     
     func testRepositorySuccessShouldCallPresenterSuccess() {
         let expectation = self.expectation(description: "Success callback")
+        
+        mockRepository.resultToReturn = .success(RegisterResponse(message: "Cuenta creada"))
+        mockPresenter.onSuccess = {
+            expectation.fulfill()
+        }
+
         let request = RegisterRequest(
             first_name: "A",
             last_name: "B",
@@ -44,13 +50,7 @@ final class RegisterInteractorTests: XCTestCase {
             confirm_password: "123"
         )
         interactor.register(user: request)
-        
-        mockPresenter.onSuccess = {
-            expectation.fulfill()
-        }
 
-        mockRepository.simulateSuccess(message: "Cuenta creada")
-        
         waitForExpectations(timeout: 1.0)
         
         XCTAssertEqual(mockPresenter.successMessage, "Cuenta creada")
@@ -58,6 +58,13 @@ final class RegisterInteractorTests: XCTestCase {
     
     func testRepositoryFailureShouldCallPresenterFailure() {
         let expectation = self.expectation(description: "Failure callback")
+        
+        let expectedError = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Falló el registro"])
+        mockRepository.resultToReturn = .failure(expectedError)
+        mockPresenter.onFailure = {
+            expectation.fulfill()
+        }
+        
         let request = RegisterRequest(
             first_name: "A",
             last_name: "B",
@@ -66,14 +73,7 @@ final class RegisterInteractorTests: XCTestCase {
             confirm_password: "123"
         )
         interactor.register(user: request)
-        
-        mockPresenter.onFailure = {
-            expectation.fulfill()
-        }
-        
-        let expectedError = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Falló el registro"])
-        mockRepository.simulateFailure(error: expectedError)
-        
+
         waitForExpectations(timeout: 1.0)
         
         XCTAssertEqual(mockPresenter.receivedError?.localizedDescription, "Falló el registro")

@@ -261,8 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				C45D92DE2E31647300B3033B /* MockRegisterView.swift */,
-				C45D92E02E3164B100B3033B /* MockRegisterInteractor.swift */,
 				C45D92E42E31664500B3033B /* MockRegisterInteractorOutput.swift */,
+				C45D92E02E3164B100B3033B /* MockRegisterInteractor.swift */,
 				C45D92E62E31672600B3033B /* MockRegisterRepository.swift */,
 			);
 			path = Mocks;

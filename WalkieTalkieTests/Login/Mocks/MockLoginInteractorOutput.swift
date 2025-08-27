@@ -10,7 +10,7 @@ import XCTest
 
 final class MockLoginInteractorOutput: LoginInteractorOutputProtocol {
     var lastSuccessToken: LoginResponse?
-    var lastError: Error?
+    var receivedError: Error?
     var onSuccess: (() -> Void)?
     var onFailure: (() -> Void)?
 
@@ -20,7 +20,7 @@ final class MockLoginInteractorOutput: LoginInteractorOutputProtocol {
     }
 
     func loginFailed(with error: Error) {
-        lastError = error
+        receivedError = error
         onFailure?()
     }
 }

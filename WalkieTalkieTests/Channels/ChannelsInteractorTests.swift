@@ -30,7 +30,7 @@ final class ChannelsInteractorTests: XCTestCase {
 
     func testLoadChannelsSuccess() {
         let mockChannels = [Channel(name: "General"), Channel(name: "Tech")]
-        mockRepository.stubbedResult = .success(mockChannels)
+        mockRepository.resultToReturn = .success(mockChannels)
 
         interactor.loadChannels()
 
@@ -45,7 +45,7 @@ final class ChannelsInteractorTests: XCTestCase {
 
     func testLoadChannelsFailure() {
         let expectedError = NSError(domain: "Test", code: 123, userInfo: nil)
-        mockRepository.stubbedResult = .failure(expectedError)
+        mockRepository.resultToReturn = .failure(expectedError)
 
         interactor.loadChannels()
 

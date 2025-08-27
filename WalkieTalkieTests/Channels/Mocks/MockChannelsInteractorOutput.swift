@@ -25,3 +25,4 @@ final class MockChannelsInteractorOutput: ChannelsInteractorOutput {
         logoutMessage = message
     }
 }
+    

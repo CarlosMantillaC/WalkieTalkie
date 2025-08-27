@@ -42,7 +42,7 @@ final class LoginInteractorTests: XCTestCase {
 
         waitForExpectations(timeout: 1.0)
 
-        XCTAssertEqual(mockRepository.lastRequest?.email, "user@test.com")
+        XCTAssertEqual(mockRepository.capturedRequest?.email, "user@test.com")
         XCTAssertEqual(mockPresenter.lastSuccessToken?.token, "abc123")
     }
 
@@ -60,6 +60,6 @@ final class LoginInteractorTests: XCTestCase {
 
         waitForExpectations(timeout: 1.0)
 
-        XCTAssertEqual(mockPresenter.lastError?.localizedDescription, "Error de login")
+        XCTAssertEqual(mockPresenter.receivedError?.localizedDescription, "Error de login")
     }
 }

@@ -61,7 +61,7 @@ final class ChannelInteractorTests: XCTestCase {
 
     func testFetchUsersSuccessShouldNotifyPresenter() {
         let expectedUsers = ["a@a.com", "b@b.com"]
-        mockUsersRepository.mockResult = .success(expectedUsers)
+        mockUsersRepository.resultToReturn = .success(expectedUsers)
 
         interactor.fetchUsersInChannel(named: "TestChannel")
 
@@ -69,7 +69,7 @@ final class ChannelInteractorTests: XCTestCase {
     }
 
     func testFetchUsersFailureShouldNotNotifyPresenter() {
-        mockUsersRepository.mockResult = .failure(NSError(domain: "TestError", code: 1))
+        mockUsersRepository.resultToReturn = .failure(NSError(domain: "TestError", code: 1))
 
         interactor.fetchUsersInChannel(named: "TestChannel")
 
