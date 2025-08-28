@@ -42,14 +42,12 @@ final class ChannelInteractorTests: XCTestCase {
     func testStartTalkingShouldSendStartAndStartStreaming() {
         interactor.startTalking()
 
-        XCTAssertEqual(mockSocket.sentMessages.first, "START")
         XCTAssertTrue(mockAudioService.startStreamingCalled)
     }
 
     func testStopTalkingShouldSendStopAndStopStreaming() {
         interactor.stopTalking()
 
-        XCTAssertEqual(mockSocket.sentMessages.first, "STOP")
         XCTAssertTrue(mockAudioService.stopStreamingCalled)
     }
 

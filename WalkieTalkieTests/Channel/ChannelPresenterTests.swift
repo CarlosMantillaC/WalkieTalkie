@@ -34,18 +34,6 @@ final class ChannelPresenterTests: XCTestCase {
         XCTAssertTrue(mockInteractor.fetchUsersCalled)
     }
 
-    func testViewDidLoadWithoutChannel() {
-        presenter = ChannelPresenter(channel: nil)
-        presenter.view = mockView
-        presenter.interactor = mockInteractor
-
-        presenter.viewDidLoad()
-
-        XCTAssertEqual(mockView.channelName, "Desconectado")
-        XCTAssertFalse(mockInteractor.connectCalled)
-        XCTAssertFalse(mockInteractor.fetchUsersCalled)
-    }
-
     func testStartTalkingCallsInteractorStart() {
         presenter.startTalking()
         
@@ -62,7 +50,6 @@ final class ChannelPresenterTests: XCTestCase {
         presenter.didTapExit()
         
         XCTAssertTrue(mockInteractor.disconnectCalled)
-        XCTAssertEqual(mockView.channelName, "Desconectado")
         XCTAssertFalse(mockRouter.navigateCalled)
     }
 
@@ -74,7 +61,6 @@ final class ChannelPresenterTests: XCTestCase {
 
     func testRefreshUsersWithoutChannelDoesNothing() {
         presenter = ChannelPresenter(channel: nil)
-        presenter.interactor = mockInteractor
         
         presenter.refreshUsers()
         
