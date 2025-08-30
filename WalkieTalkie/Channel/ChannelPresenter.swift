@@ -45,7 +45,7 @@ extension ChannelPresenter: ChannelPresenterProtocol {
         interactor?.disconnectFromChannel()
         view?.setChannelName("Desconectado")
     }
-    
+
     func refreshUsers() {
         guard let channel = channel else { return }
         interactor?.fetchUsersInChannel(named: channel.name)
@@ -64,6 +64,12 @@ extension ChannelPresenter: ChannelInteractorOutputProtocol {
     }
 
     func didFetchUsers(_ emails: [String]) {
-        view?.displayUsers(emails)
+        let count = emails.count
+        let text = "\(count) conectados"
+        view?.displayUsers(text)
+    }
+    
+    func didDisconnect() {
+        view?.showDisconnectedState()
     }
 }

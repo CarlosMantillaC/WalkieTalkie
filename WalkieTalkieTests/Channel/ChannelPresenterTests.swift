@@ -83,9 +83,15 @@ final class ChannelPresenterTests: XCTestCase {
         let emails = ["a@a.com", "b@b.com"]
         presenter.didFetchUsers(emails)
         
-        XCTAssertEqual(mockView.usersShown, emails)
+        XCTAssertEqual(mockView.usersShown, "2 conectados")
     }
 
+    func testDidDisconnect() {
+        presenter.didDisconnect()
+        
+        XCTAssertTrue(mockView.showDisconnectedStateCalled)
+    }
+    
     func testLogoutSucceededNavigatesToLogin() {
         presenter.logoutSucceeded(message: "Sesión cerrada")
         

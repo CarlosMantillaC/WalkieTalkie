@@ -79,4 +79,10 @@ final class ChannelInteractorTests: XCTestCase {
         
         XCTAssertEqual(mockPresenter.logoutMessage, "Sesión cerrada exitosamente")
     }
+    
+    func testDidDisconnectSuccessShouldNotifyPresenter() {
+        interactor.disconnectFromChannel()
+        
+        XCTAssertTrue(mockPresenter.didDisconnectCalled)
+    }
 }

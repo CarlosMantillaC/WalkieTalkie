@@ -10,7 +10,8 @@ import UIKit
 
 protocol ChannelViewProtocol: AnyObject {
     func setChannelName(_ name: String)
-    func displayUsers(_ emails: [String])
+    func displayUsers(_ text: String)
+    func showDisconnectedState()
 }
 
 protocol ChannelPresenterProtocol: AnyObject {
@@ -36,6 +37,7 @@ protocol ChannelInteractorProtocol: AnyObject {
 protocol ChannelInteractorOutputProtocol: AnyObject {
     func logoutSucceeded(message: String)
     func didFetchUsers(_ emails: [String])
+    func didDisconnect()
 }
 
 protocol ChannelRouterProtocol: AnyObject {

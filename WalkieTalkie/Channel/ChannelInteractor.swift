@@ -49,6 +49,7 @@ extension ChannelInteractor: ChannelInteractorProtocol {
     
     func disconnectFromChannel() {
         socket.disconnect()
+        presenter?.didDisconnect()
     }
     
     func fetchUsersInChannel(named channelName: String) {

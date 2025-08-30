@@ -15,7 +15,7 @@ class ChannelViewController: UIViewController {
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let soundService = SoundButtonService()
-
+    
     private let infoContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
@@ -228,7 +228,7 @@ extension ChannelViewController {
             disconnectButton.widthAnchor.constraint(equalToConstant: 24),
             disconnectButton.heightAnchor.constraint(equalToConstant: 24)
         ])
-    
+        
         disconnectButton.addTarget(self, action: #selector(didTapExit), for: .touchUpInside)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapDropdown))
@@ -264,25 +264,20 @@ extension ChannelViewController {
 
 extension ChannelViewController: ChannelViewProtocol {
     func setChannelName(_ name: String) {
+        nameChannelLabel.text = name
+    }
+    
+    func displayUsers(_ text: String) {
         DispatchQueue.main.async {
-            self.nameChannelLabel.text = name
-            let isConnected = name != "Desconectado"
-            self.disconnectButton.isHidden = !isConnected
-            self.talkToPushButton.isHidden = !isConnected
-            self.countUsersLabel.isHidden = !isConnected
-            
-            if isConnected {
-                self.startUserFetchTimer()
-            } else {
-                self.stopUserFetchTimer()
-            }
+            self.countUsersLabel.text = text
         }
     }
     
-    func displayUsers(_ emails: [String]) {
-        let count = emails.count
-        DispatchQueue.main.async {
-            self.countUsersLabel.text = "\(count) conectados"
-        }
+    func showDisconnectedState() {
+        nameChannelLabel.text = "Desconectado"
+        disconnectButton.isHidden = true
+        talkToPushButton.isHidden = true
+        countUsersLabel.isHidden = true
+        stopUserFetchTimer()
     }
 }
