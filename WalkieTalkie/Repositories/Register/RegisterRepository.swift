@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol RegisterRepositoryProtocol {
-    func register(user: RegisterRequest, completion: @escaping (Result<RegisterResponse, Error>) -> Void)
-}
-
 final class RegisterRepository: RegisterRepositoryProtocol {
     private let session: URLSession
     private let encoder = NetworkService.shared.encoder

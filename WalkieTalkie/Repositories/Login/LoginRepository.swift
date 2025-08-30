@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol LoginRepositoryProtocol {
-    func login(request: LoginRequest, completion: @escaping (Result<LoginResponse, Error>) -> Void)
-}
-
 final class LoginRepository: LoginRepositoryProtocol {
     private let session: URLSession
     

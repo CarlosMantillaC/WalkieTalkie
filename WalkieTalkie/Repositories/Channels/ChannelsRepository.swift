@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol ChannelsRepositoryProtocol {
-    func fetchChannels(completion: @escaping (Result<[Channel], Error>) -> Void)
-}
-
 class ChannelsRepository: ChannelsRepositoryProtocol {
     private let session: URLSession
     

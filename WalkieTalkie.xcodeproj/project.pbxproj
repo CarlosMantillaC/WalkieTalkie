@@ -96,6 +96,10 @@
 		C480A10F2E298481000E0C7F /* WebSocketServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480A10E2E298481000E0C7F /* WebSocketServiceProtocol.swift */; };
 		C48C3FD72E2AC6E600D9B24A /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48C3FD62E2AC6E600D9B24A /* UIColor+Hex.swift */; };
 		C48C3FD92E2AC99400D9B24A /* UIViewController+GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48C3FD82E2AC99400D9B24A /* UIViewController+GradientBackground.swift */; };
+		C49947A22E624ABD00CE40BB /* LoginRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49947A12E624ABD00CE40BB /* LoginRepositoryProtocol.swift */; };
+		C49947A42E624AE000CE40BB /* RegisterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49947A32E624AE000CE40BB /* RegisterRepositoryProtocol.swift */; };
+		C49947A62E624B0F00CE40BB /* ChannelUsersRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49947A52E624B0F00CE40BB /* ChannelUsersRepositoryProtocol.swift */; };
+		C49947A82E624B2400CE40BB /* ChannelsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49947A72E624B2400CE40BB /* ChannelsRepositoryProtocol.swift */; };
 		C4B989492E340F12004CC463 /* MockChannelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989482E340F12004CC463 /* MockChannelsRepository.swift */; };
 		C4B9894B2E340F31004CC463 /* MockChannelsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9894A2E340F31004CC463 /* MockChannelsInteractorOutput.swift */; };
 		C4B9894D2E340F50004CC463 /* ChannelsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9894C2E340F50004CC463 /* ChannelsInteractorTests.swift */; };
@@ -216,6 +220,10 @@
 		C480A10E2E298481000E0C7F /* WebSocketServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketServiceProtocol.swift; sourceTree = "<group>"; };
 		C48C3FD62E2AC6E600D9B24A /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		C48C3FD82E2AC99400D9B24A /* UIViewController+GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+GradientBackground.swift"; sourceTree = "<group>"; };
+		C49947A12E624ABD00CE40BB /* LoginRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryProtocol.swift; sourceTree = "<group>"; };
+		C49947A32E624AE000CE40BB /* RegisterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRepositoryProtocol.swift; sourceTree = "<group>"; };
+		C49947A52E624B0F00CE40BB /* ChannelUsersRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelUsersRepositoryProtocol.swift; sourceTree = "<group>"; };
+		C49947A72E624B2400CE40BB /* ChannelsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		C4B989482E340F12004CC463 /* MockChannelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsRepository.swift; sourceTree = "<group>"; };
 		C4B9894A2E340F31004CC463 /* MockChannelsInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsInteractorOutput.swift; sourceTree = "<group>"; };
 		C4B9894C2E340F50004CC463 /* ChannelsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsInteractorTests.swift; sourceTree = "<group>"; };
@@ -379,7 +387,7 @@
 				C47EB2782E3BF57B002EA5A0 /* Sound */,
 				C480A1052E2979D3000E0C7F /* Service */,
 				C46024B62E27018B0032EDA6 /* Networking */,
-				C46024C12E2702970032EDA6 /* Repository */,
+				C46024C12E2702970032EDA6 /* Repositories */,
 				C46024B12E26FFE80032EDA6 /* Login */,
 				C46024D62E27F4D10032EDA6 /* Register */,
 				C46024D72E27F69C0032EDA6 /* Channel */,
@@ -440,15 +448,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		C46024C12E2702970032EDA6 /* Repository */ = {
+		C46024C12E2702970032EDA6 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				C46024C22E2702B30032EDA6 /* LoginRepository.swift */,
-				C46024E32E27F8930032EDA6 /* RegisterRepository.swift */,
-				C46025092E290A200032EDA6 /* ChannelsRepository.swift */,
-				C47B30902E30276500275424 /* ChannelUsersRepository.swift */,
+				C499479D2E624A3800CE40BB /* Login */,
+				C499479E2E624A6600CE40BB /* Register */,
+				C49947A02E624A8200CE40BB /* ChannelUsers */,
+				C499479F2E624A7200CE40BB /* Channels */,
 			);
-			path = Repository;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		C46024C42E2702D60032EDA6 /* Entities */ = {
@@ -586,6 +594,42 @@
 				C480A10E2E298481000E0C7F /* WebSocketServiceProtocol.swift */,
 			);
 			path = WebSocketService;
+			sourceTree = "<group>";
+		};
+		C499479D2E624A3800CE40BB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C46024C22E2702B30032EDA6 /* LoginRepository.swift */,
+				C49947A12E624ABD00CE40BB /* LoginRepositoryProtocol.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C499479E2E624A6600CE40BB /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C46024E32E27F8930032EDA6 /* RegisterRepository.swift */,
+				C49947A32E624AE000CE40BB /* RegisterRepositoryProtocol.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		C499479F2E624A7200CE40BB /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				C46025092E290A200032EDA6 /* ChannelsRepository.swift */,
+				C49947A72E624B2400CE40BB /* ChannelsRepositoryProtocol.swift */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		C49947A02E624A8200CE40BB /* ChannelUsers */ = {
+			isa = PBXGroup;
+			children = (
+				C47B30902E30276500275424 /* ChannelUsersRepository.swift */,
+				C49947A52E624B0F00CE40BB /* ChannelUsersRepositoryProtocol.swift */,
+			);
+			path = ChannelUsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -740,6 +784,7 @@
 				C480A10F2E298481000E0C7F /* WebSocketServiceProtocol.swift in Sources */,
 				C46024F72E2804420032EDA6 /* ChannelPresenter.swift in Sources */,
 				C480A10A2E297B11000E0C7F /* AudioService.swift in Sources */,
+				C49947A42E624AE000CE40BB /* RegisterRepositoryProtocol.swift in Sources */,
 				C46024F52E28042A0032EDA6 /* ChannelInteractor.swift in Sources */,
 				C46024E62E27F8B40032EDA6 /* RegisterInteractor.swift in Sources */,
 				C47EB27E2E3BF5A2002EA5A0 /* SoundButtonService.swift in Sources */,
@@ -749,6 +794,7 @@
 				C46091082E5F4D8000AE9A12 /* NetworkService.swift in Sources */,
 				C46025162E2918730032EDA6 /* ChannelsViewController.swift in Sources */,
 				C46024D92E27F75A0032EDA6 /* RegisterRequest.swift in Sources */,
+				C49947A82E624B2400CE40BB /* ChannelsRepositoryProtocol.swift in Sources */,
 				C46024F02E27F9480032EDA6 /* RegisterRouter.swift in Sources */,
 				C46024B82E2701A20032EDA6 /* APIConstants.swift in Sources */,
 				C46024C82E2702FC0032EDA6 /* LoginResponse.swift in Sources */,
@@ -776,8 +822,10 @@
 				C46024BC2E27023B0032EDA6 /* TokenManager.swift in Sources */,
 				C46024EB2E27F8E40032EDA6 /* RegisterViewController.swift in Sources */,
 				C46024F92E2804520032EDA6 /* ChannelProtocols.swift in Sources */,
+				C49947A62E624B0F00CE40BB /* ChannelUsersRepositoryProtocol.swift in Sources */,
 				C460250A2E290A200032EDA6 /* ChannelsRepository.swift in Sources */,
 				C46024C62E2702E90032EDA6 /* LoginRequest.swift in Sources */,
+				C49947A22E624ABD00CE40BB /* LoginRepositoryProtocol.swift in Sources */,
 				C460250D2E290A8B0032EDA6 /* Channels.swift in Sources */,
 				C46024EE2E27F92D0032EDA6 /* StyleTextField.swift in Sources */,
 				C460251B2E2939B00032EDA6 /* ChannelViewController.swift in Sources */,
