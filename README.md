@@ -1,50 +1,50 @@
-# 1. Título y Descripción
-* WalkieTalkie
-* Aplicación de walkie-talkie digital para iOS. 
-* Permite a los usuarios registrarse e iniciar sesión, unirse a canales de comunicación, ver la lista de usuarios conectados en tiempo real y hablar mediante la funcionalidad push-to-talk.
 
-# 2. Tecnologías y Arquitectura
-* Lenguaje de programación: Swift
-* Arquitectura: VIPER
-* Principios: SOLID, Repository, Delegate Pattern
-* Framework de UI: UIKit
-* Uso de .XiB
+## 1. Title and Description
+- **WalkieTalkie**
+- Digital walkie-talkie app for iOS.
+- Allows users to register and log in, join communication channels, view the list of connected users in real-time, and talk through push-to-talk functionality.
 
-# 3. Características principales
-* Register y Login con API
-* Comunicación de audio en tiempo real con WebSocket
-* Gestión de cantidad de usuarios conectados
-* Desconexión y estados de UI
+## 2. Technologies and Architecture
+- Programming Language: Swift
+- Architecture: VIPER
+- Principles: SOLID, Repository, Delegate Pattern
+- UI Framework: UIKit
+- Uses `.xib`
 
-# 4. Estructura del proyecto
+## 3. Main Features
+- Register and Login with API
+- Real-time audio communication with WebSocket
+- Management of connected users count
+- Disconnection handling and UI states
 
+## 4. Project Structure
 ```plaintext
 WalkieTalkie/
 │
-├── Register/       # Módulo Register (VIPER)
-├── Login/          # Módulo Login (VIPER)
-├── Channel/        # Módulo Channel (VIPER)
-├── Channels/       # Módulo Channels (VIPER)
+├── Register/       # Register Module (VIPER)
+├── Login/          # Login Module (VIPER)
+├── Channel/        # Channel Module (VIPER)
+├── Channels/       # Channels Module (VIPER)
 │
-├── Services/       # Servicios reutilizables (AudioService, WebSocketService)
-├── Repositories/   # Lógica de red y persistencia
-├── Networking/     # Configuración de API, Endpoints, URLSession
-├── Components/     # Componentes de UI reutilizables (Configuración del teclado, TextField)
+├── Services/       # Reusable services (AudioService, WebSocketService)
+├── Repositories/   # Networking and persistence logic
+├── Networking/     # API configuration, Endpoints, URLSession
+├── Components/     # Reusable UI components (Keyboard handling, TextField)
 │
-├── Tests/          # Unit Tests e Integration Tests
-├── UITests/        # UI e E2E Tests
+├── Tests/          # Unit Tests and Integration Tests
+├── UITests/        # UI and E2E Tests
 │
 ```
 
-# 5. Instalación y Configuración
-* iOS 18.5
-* Swift 5
+## 5. Installation and Setup
+- iOS 18.5
+- Swift 5
 
-# 6. Uso
-* Cómo correr la app en el simulador (Cmd+R)
-* Cómo correr los tests (Cmd+U en Xcode o xcodebuild test)
-* Ejemplo de flujo básico (Login → Entrar a un canal → Conectarse con usuarios)
+## 6. Usage
+- How to run the app in the simulator: **Cmd+R**
+- How to run the tests: **Cmd+U** in Xcode or `xcodebuild test`
+- Example flow: **Login → Join a channel → Connect with users**
 
-# 7. Pruebas
-* Framework usado (XCTest)
-* Estrategia: Unit Tests, Integration Tests, UI Tests, E2E Tests
+## 7. Testing
+- Framework used: **XCTest**
+- Strategy: Unit Tests, Integration Tests, UI Tests, E2E Tests
