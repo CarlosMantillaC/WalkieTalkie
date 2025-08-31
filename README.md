@@ -18,6 +18,7 @@
 
 # 4. Estructura del proyecto
 
+```plaintext
 WalkieTalkie/
 │
 ├── Register/       # Módulo Register (VIPER)
@@ -30,9 +31,10 @@ WalkieTalkie/
 ├── Networking/     # Configuración de API, Endpoints, URLSession
 ├── Components/     # Componentes de UI reutilizables (Configuración del teclado, TextField)
 │
-├── Tests/     # Unit Tests e Integration Tests
-├── UITests/   # UI e E2E Tests
+├── Tests/          # Unit Tests e Integration Tests
+├── UITests/        # UI e E2E Tests
 │
+```
 
 # 5. Instalación y Configuración
 * iOS 18.5
