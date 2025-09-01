@@ -16,6 +16,7 @@ final class LoginPresenterTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        
         presenter = LoginPresenter()
         mockView = MockLoginView()
         mockInteractor = MockLoginInteractor()
@@ -24,14 +25,6 @@ final class LoginPresenterTests: XCTestCase {
         presenter.view = mockView
         presenter.interactor = mockInteractor
         presenter.router = mockRouter
-    }
-
-    override func tearDown() {
-        presenter = nil
-        mockView = nil
-        mockInteractor = nil
-        mockRouter = nil
-        super.tearDown()
     }
 
     func testLoginWithEmptyFieldsShowsError() {

@@ -15,19 +15,14 @@ final class ChannelsInteractorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        
         mockRepository = MockChannelsRepository()
         mockPresenter = MockChannelsInteractorOutput()
         interactor = ChannelsInteractor(repository: mockRepository)
+        
         interactor.presenter = mockPresenter
     }
-
-    override func tearDown() {
-        interactor = nil
-        mockRepository = nil
-        mockPresenter = nil
-        super.tearDown()
-    }
-
+    
     func testLoadChannelsSuccess() {
         let mockChannels = [Channel(name: "General"), Channel(name: "Tech")]
         mockRepository.resultToReturn = .success(mockChannels)

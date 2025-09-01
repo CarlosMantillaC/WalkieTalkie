@@ -25,5 +25,4 @@ final class MockChannelRouter: ChannelRouterProtocol {
         navigateCalled = true
         lastMessage = message
     }
-
 }

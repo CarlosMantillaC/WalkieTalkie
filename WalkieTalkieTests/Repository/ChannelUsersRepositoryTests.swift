@@ -24,12 +24,6 @@ final class ChannelUsersRepositoryTests: XCTestCase {
         StubURLProtocol.stubError = nil
     }
 
-    override func tearDown() {
-        repository = nil
-        session = nil
-        super.tearDown()
-    }
-
     func testFetchUsersWithValidJSONReturnsUserList() {
         let expectedUsers = ["user1@example.com", "user2@example.com"]
         StubURLProtocol.stubResponseData = try? JSONEncoder().encode(expectedUsers)

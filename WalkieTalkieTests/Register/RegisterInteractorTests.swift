@@ -15,9 +15,11 @@ final class RegisterInteractorTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        
         mockPresenter = MockRegisterInteractorOutput()
         mockRepository = MockRegisterRepository()
         interactor = RegisterInteractor(repository: mockRepository)
+        
         interactor.presenter = mockPresenter
     }
     

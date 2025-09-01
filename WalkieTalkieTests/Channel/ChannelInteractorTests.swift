@@ -17,6 +17,7 @@ final class ChannelInteractorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        
         mockSocket = MockWebSocketService()
         mockAudioService = MockAudioService()
         mockUsersRepository = MockChannelUsersRepository()

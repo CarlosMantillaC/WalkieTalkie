@@ -15,6 +15,7 @@ final class ChannelsPresenterTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        
         presenter = ChannelsPresenter()
         mockView = MockChannelsView()
         mockInteractor = MockChannelsInteractor()

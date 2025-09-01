@@ -15,17 +15,12 @@ final class LoginInteractorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        
         mockRepository = MockLoginRepository()
         mockPresenter = MockLoginInteractorOutput()
         interactor = LoginInteractor(repository: mockRepository)
+        
         interactor.presenter = mockPresenter
-    }
-
-    override func tearDown() {
-        interactor = nil
-        mockRepository = nil
-        mockPresenter = nil
-        super.tearDown()
     }
 
     func testLoginSuccessNotifiesPresenter() {

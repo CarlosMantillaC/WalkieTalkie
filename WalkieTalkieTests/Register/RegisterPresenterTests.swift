@@ -15,6 +15,7 @@ final class RegisterPresenterTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        
         presenter = RegisterPresenter()
         mockView = MockRegisterView()
         mockInteractor = MockRegisterInteractor()

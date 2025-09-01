@@ -17,10 +17,12 @@ final class ChannelPresenterTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        
         mockView = MockChannelView()
         mockInteractor = MockChannelInteractor()
         mockRouter = MockChannelRouter()
         presenter = ChannelPresenter(channel: sampleChannel)
+        
         presenter.view = mockView
         presenter.interactor = mockInteractor
         presenter.router = mockRouter
