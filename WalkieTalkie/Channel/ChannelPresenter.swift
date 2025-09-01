@@ -21,7 +21,7 @@ final class ChannelPresenter {
 extension ChannelPresenter: ChannelPresenterProtocol {
     func viewDidLoad() {
         guard let channel = channel else {
-            view?.setChannelName("Desconectado")
+            view?.showDisconnectedState()
             return
         }
         interactor?.connectToChannel(named: channel.name)
@@ -43,7 +43,6 @@ extension ChannelPresenter: ChannelPresenterProtocol {
     
     func didTapExit() {
         interactor?.disconnectFromChannel()
-        view?.setChannelName("Desconectado")
     }
 
     func refreshUsers() {
