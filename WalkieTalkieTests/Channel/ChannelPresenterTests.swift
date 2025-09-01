@@ -35,6 +35,15 @@ final class ChannelPresenterTests: XCTestCase {
         XCTAssertTrue(mockInteractor.connectCalled)
         XCTAssertTrue(mockInteractor.fetchUsersCalled)
     }
+    
+    func testViewDidLoadWhenChannelIsNil() {
+        presenter = ChannelPresenter(channel: nil)
+        presenter.view = mockView
+        
+        presenter.viewDidLoad()
+        
+        XCTAssertTrue(mockView.showDisconnectedStateCalled)
+    }
 
     func testStartTalkingCallsInteractorStart() {
         presenter.startTalking()
