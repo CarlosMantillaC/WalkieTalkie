@@ -8,8 +8,8 @@
 import Foundation
 
 enum APIConstants {
-    static let baseURL = "http://159.203.187.94"
-    static let webSocketURL = "ws://159.203.187.94/ws"
+    static let baseURL = "http://159.223.150.185"
+    static let webSocketURL = "ws://159.223.150.185/ws"
 
     enum Endpoint {
         static let register = "/register"

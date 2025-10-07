@@ -28,7 +28,7 @@ final class AudioService: AudioServiceProtocol {
     private func configureAudioSession() {
         do {
             let session = AVAudioSession.sharedInstance()
-            try session.setCategory(.playAndRecord, mode: .voiceChat, options: [.defaultToSpeaker, .allowBluetooth])
+            try session.setCategory(.playAndRecord, mode: .voiceChat, options: [.defaultToSpeaker, AVAudioSession.CategoryOptions.allowBluetoothHFP])
             try session.setPreferredSampleRate(48000)
             try session.setPreferredIOBufferDuration(0.02)
             try session.setActive(true)
