@@ -34,10 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appearance.backgroundColor = UIColor.fromHex("#4b0082")
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        UINavigationBar.appearance().compactAppearance = appearance
+
         UINavigationBar.appearance().tintColor = .white
         
         self.window?.makeKeyAndVisible()

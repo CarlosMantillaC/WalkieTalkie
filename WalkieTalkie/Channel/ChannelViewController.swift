@@ -16,20 +16,29 @@ class ChannelViewController: UIViewController {
     private let contentView = UIView()
     private let soundService = SoundButtonService()
     
-    private let infoContainerView: UIView = {
+    private let generalInfoContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         view.layer.cornerRadius = 12
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()
-    
+
+    private let infoContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+        view.layer.cornerRadius = 12
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+
     private let nameChannelLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 32)
+        label.font = UIFont.boldSystemFont(ofSize: 28)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -66,18 +75,31 @@ class ChannelViewController: UIViewController {
     }()
     
     private let disconnectButton: UIButton = {
-        let button = UIButton(type: .system)
-        let config = UIImage.SymbolConfiguration(pointSize: 18, weight: .bold)
-        let image = UIImage(systemName: "power", withConfiguration: config)
-        button.setImage(image, for: .normal)
-        button.tintColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
+        var config = UIButton.Configuration.filled()
+        config.title = "Desconectar"
+        config.baseBackgroundColor = UIColor(red: 75/255.0, green: 0/255.0, blue: 130/255.0, alpha: 1.0)
+        config.baseForegroundColor = .white
+        config.cornerStyle = .large
         
+        let button = UIButton(configuration: config)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let changeChannelButton: UIButton = {
+        var config = UIButton.Configuration.filled()
+        config.title = "Cambiar"
+        config.baseBackgroundColor = UIColor(red: 75/255.0, green: 0/255.0, blue: 130/255.0, alpha: 1.0)
+        config.baseForegroundColor = .white
+        config.cornerStyle = .large
+        
+        let button = UIButton(configuration: config)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     private let talkToPushButton: UIButton = {
-        var config = UIButton.Configuration.filled()
+        var config = UIButton.Configuration.plain()
         config.baseBackgroundColor = .clear
         config.baseForegroundColor = .red
         config.cornerStyle = .capsule
@@ -85,11 +107,10 @@ class ChannelViewController: UIViewController {
             systemName: "mic.slash.fill",
             withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .bold)
         )
-        config.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20)
-        
+
         let button = UIButton(configuration: config)
-        button.layer.borderWidth = 2
-        button.layer.cornerRadius = 20
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.textAlignment = .center
         button.layer.borderColor = UIColor.white.cgColor
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -195,34 +216,42 @@ extension ChannelViewController {
     }
     
     private func setupInfoContainer() {
-        contentView.addSubview(infoContainerView)
+        contentView.addSubview(generalInfoContainerView)
+        generalInfoContainerView.addSubview(infoContainerView)
+        generalInfoContainerView.addSubview(disconnectButton)
+        generalInfoContainerView.addSubview(changeChannelButton)
         infoContainerView.addSubview(nameChannelStackView)
+        infoContainerView.addSubview(countUsersLabel)
         nameChannelStackView.addArrangedSubview(nameChannelLabel)
         nameChannelStackView.addArrangedSubview(dropdownButton)
-        infoContainerView.addSubview(countUsersLabel)
-        infoContainerView.addSubview(disconnectButton)
         
         NSLayoutConstraint.activate([
-            infoContainerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
-            infoContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            infoContainerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            generalInfoContainerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
+            generalInfoContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 40),
+            generalInfoContainerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -40),
+            generalInfoContainerView.bottomAnchor.constraint(equalTo: infoContainerView.bottomAnchor, constant: 90),
+
+            infoContainerView.topAnchor.constraint(equalTo: generalInfoContainerView.topAnchor, constant: 30),
+            infoContainerView.leadingAnchor.constraint(equalTo: generalInfoContainerView.leadingAnchor, constant: 40),
+            infoContainerView.trailingAnchor.constraint(equalTo: generalInfoContainerView.trailingAnchor, constant: -40),
             
             nameChannelStackView.topAnchor.constraint(equalTo: infoContainerView.topAnchor, constant: 30),
             nameChannelStackView.centerXAnchor.constraint(equalTo: infoContainerView.centerXAnchor),
             
             countUsersLabel.topAnchor.constraint(equalTo: nameChannelLabel.bottomAnchor, constant: 24),
-            countUsersLabel.leadingAnchor.constraint(equalTo: infoContainerView.leadingAnchor, constant: 24),
-            countUsersLabel.trailingAnchor.constraint(equalTo: infoContainerView.trailingAnchor, constant: -12),
+            countUsersLabel.centerXAnchor.constraint(equalTo: infoContainerView.centerXAnchor),
             countUsersLabel.bottomAnchor.constraint(equalTo: infoContainerView.bottomAnchor, constant: -30),
             
-            disconnectButton.centerYAnchor.constraint(equalTo: countUsersLabel.centerYAnchor),
-            disconnectButton.trailingAnchor.constraint(equalTo: infoContainerView.trailingAnchor, constant: -20),
-            disconnectButton.widthAnchor.constraint(equalToConstant: 24),
-            disconnectButton.heightAnchor.constraint(equalToConstant: 24)
+            disconnectButton.bottomAnchor.constraint(equalTo: generalInfoContainerView.bottomAnchor, constant: -30),
+            disconnectButton.trailingAnchor.constraint(equalTo: generalInfoContainerView.trailingAnchor, constant: -40),
+
+            changeChannelButton.bottomAnchor.constraint(equalTo: generalInfoContainerView.bottomAnchor, constant: -30),
+            changeChannelButton.leadingAnchor.constraint(equalTo: generalInfoContainerView.leadingAnchor, constant: 40)
         ])
         
         disconnectButton.addTarget(self, action: #selector(didTapExit), for: .touchUpInside)
         dropdownButton.addTarget(self, action: #selector(didTapDropdown), for: .touchUpInside)
+        changeChannelButton.addTarget(self, action: #selector(didTapDropdown), for: .touchUpInside)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapDropdown))
         nameChannelStackView.isUserInteractionEnabled = true
@@ -235,8 +264,8 @@ extension ChannelViewController {
         NSLayoutConstraint.activate([
             talkToPushButton.topAnchor.constraint(equalTo: infoContainerView.bottomAnchor, constant: 340),
             talkToPushButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            talkToPushButton.widthAnchor.constraint(equalToConstant: 120),
-            talkToPushButton.heightAnchor.constraint(equalToConstant: 120),
+            talkToPushButton.widthAnchor.constraint(equalToConstant: 200),
+            talkToPushButton.heightAnchor.constraint(equalToConstant: 200),
             talkToPushButton.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -40)
         ])
         
@@ -246,12 +275,21 @@ extension ChannelViewController {
     
     private func applyTalkButtonImage(isTalking: Bool) {
         let iconName = isTalking ? "mic.fill" : "mic.slash.fill"
+        let textName = isTalking ? "Hablando..." : "Pulsa para hablar"
         let color: UIColor = isTalking ? .systemGreen : .systemRed
         
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold)
         talkToPushButton.configuration?.image = UIImage(systemName: iconName, withConfiguration: imageConfig)
+        
+        var container = AttributeContainer()
+        container.font = UIFont.boldSystemFont(ofSize: 24)
+         
+        talkToPushButton.configuration?.attributedTitle = AttributedString(textName, attributes: container)
         talkToPushButton.configuration?.baseForegroundColor = color
         talkToPushButton.layer.borderColor = color.cgColor
+        talkToPushButton.configuration?.imagePlacement = .top
+        talkToPushButton.configuration?.imagePadding = 10
+        talkToPushButton.configuration?.titleAlignment = .center
     }
 }
 
@@ -271,6 +309,8 @@ extension ChannelViewController: ChannelViewProtocol {
         disconnectButton.isHidden = true
         talkToPushButton.isHidden = true
         countUsersLabel.isHidden = true
+        changeChannelButton.isHidden = true
         stopUserFetchTimer()
     }
 }
+
