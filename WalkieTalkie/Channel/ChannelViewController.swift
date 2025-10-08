@@ -119,19 +119,11 @@ class ChannelViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startUserFetchTimer()
-        
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            delegate.restrictRotationToPortrait = true
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         stopUserFetchTimer()
-        
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            delegate.restrictRotationToPortrait = false
-        }
     }
     
     @objc private func didTapLogout() {
@@ -230,6 +222,7 @@ extension ChannelViewController {
         ])
         
         disconnectButton.addTarget(self, action: #selector(didTapExit), for: .touchUpInside)
+        dropdownButton.addTarget(self, action: #selector(didTapDropdown), for: .touchUpInside)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapDropdown))
         nameChannelStackView.isUserInteractionEnabled = true
