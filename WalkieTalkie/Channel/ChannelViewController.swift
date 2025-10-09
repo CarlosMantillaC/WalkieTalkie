@@ -38,10 +38,24 @@ class ChannelViewController: UIViewController {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .center
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         label.font = UIFont.boldSystemFont(ofSize: 28)
         label.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return label
+    }()
+    
+    private let nameChannelLabelContainer: UIView = {
+        let container = UIView()
+        container.backgroundColor = UIColor.white.withAlphaComponent(0.12)
+        container.layer.cornerRadius = 10
+        container.layer.borderWidth = 1
+        container.layer.borderColor = UIColor.white.withAlphaComponent(0.3).cgColor
+        container.clipsToBounds = true
+        container.translatesAutoresizingMaskIntoConstraints = false
+
+        return container
     }()
     
     private let dropdownButton: UIButton = {
@@ -50,7 +64,9 @@ class ChannelViewController: UIViewController {
         button.setImage(image, for: .normal)
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
-        
+        button.accessibilityLabel = "Cambiar canal"
+        button.accessibilityHint = "Muestra la lista de canales"
+
         return button
     }()
     
@@ -59,19 +75,57 @@ class ChannelViewController: UIViewController {
         stack.axis = .horizontal
         stack.spacing = 8
         stack.alignment = .center
-        stack.distribution = .equalCentering
+        stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return stack
     }()
     
     private let countUsersLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return label
+    }()
+    
+    private let countUsersLabelContainer: UIView = {
+        let container = UIView()
+        container.backgroundColor = UIColor.white.withAlphaComponent(0.12)
+        container.layer.cornerRadius = 10
+        container.layer.borderWidth = 1
+        container.layer.borderColor = UIColor.white.withAlphaComponent(0.3).cgColor
+        container.clipsToBounds = true
+        container.translatesAutoresizingMaskIntoConstraints = false
+
+        return container
+    }()
+    
+    private let countUsersDropdownButton: UIButton = {
+        let button = UIButton(type: .system)
+        let image = UIImage(systemName: "chevron.down")?.withRenderingMode(.alwaysTemplate)
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.accessibilityLabel = "Ver usuarios"
+        button.accessibilityHint = "Muestra la lista de usuarios conectados"
+
+        return button
+    }()
+    
+    private let countUsersStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 8
+        stack.alignment = .center
+        stack.distribution = .fill
+        stack.translatesAutoresizingMaskIntoConstraints = false
+    
+        return stack
     }()
     
     private let disconnectButton: UIButton = {
@@ -83,6 +137,7 @@ class ChannelViewController: UIViewController {
         
         let button = UIButton(configuration: config)
         button.translatesAutoresizingMaskIntoConstraints = false
+
         return button
     }()
     
@@ -95,7 +150,33 @@ class ChannelViewController: UIViewController {
         
         let button = UIButton(configuration: config)
         button.translatesAutoresizingMaskIntoConstraints = false
+
         return button
+    }()
+    
+    private let talkButtonContainer: UIView = {
+        let container = UIView()
+        container.backgroundColor = UIColor.white.withAlphaComponent(0.12)
+        container.layer.cornerRadius = 20
+        container.layer.borderWidth = 1
+        container.layer.borderColor = UIColor.white.withAlphaComponent(0.3).cgColor
+        container.clipsToBounds = true
+        container.translatesAutoresizingMaskIntoConstraints = false
+
+        return container
+    }()
+    
+    private let disconnectedInfoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Desconectado, selecciona un canal"
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true
+
+        return label
     }()
     
     private let talkToPushButton: UIButton = {
@@ -221,9 +302,39 @@ extension ChannelViewController {
         generalInfoContainerView.addSubview(disconnectButton)
         generalInfoContainerView.addSubview(changeChannelButton)
         infoContainerView.addSubview(nameChannelStackView)
-        infoContainerView.addSubview(countUsersLabel)
-        nameChannelStackView.addArrangedSubview(nameChannelLabel)
+        infoContainerView.addSubview(countUsersStackView)
+        nameChannelLabelContainer.addSubview(nameChannelLabel)
+        countUsersLabelContainer.addSubview(countUsersLabel)
+
+        NSLayoutConstraint.activate([
+            nameChannelLabel.topAnchor.constraint(equalTo: nameChannelLabelContainer.topAnchor, constant: 12),
+            nameChannelLabel.leadingAnchor.constraint(equalTo: nameChannelLabelContainer.leadingAnchor, constant: 16),
+            nameChannelLabel.trailingAnchor.constraint(equalTo: nameChannelLabelContainer.trailingAnchor, constant: -16),
+            nameChannelLabel.bottomAnchor.constraint(equalTo: nameChannelLabelContainer.bottomAnchor, constant: -12)
+        ])
+        
+        nameChannelStackView.addArrangedSubview(nameChannelLabelContainer)
         nameChannelStackView.addArrangedSubview(dropdownButton)
+
+        nameChannelLabelContainer.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        nameChannelLabelContainer.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        dropdownButton.setContentCompressionResistancePriority(.required, for: .horizontal)
+        dropdownButton.setContentHuggingPriority(.required, for: .horizontal)
+        
+        NSLayoutConstraint.activate([
+            countUsersLabel.topAnchor.constraint(equalTo: countUsersLabelContainer.topAnchor, constant: 12),
+            countUsersLabel.leadingAnchor.constraint(equalTo: countUsersLabelContainer.leadingAnchor, constant: 16),
+            countUsersLabel.trailingAnchor.constraint(equalTo: countUsersLabelContainer.trailingAnchor, constant: -16),
+            countUsersLabel.bottomAnchor.constraint(equalTo: countUsersLabelContainer.bottomAnchor, constant: -12)
+        ])
+        
+        countUsersStackView.addArrangedSubview(countUsersLabelContainer)
+        countUsersStackView.addArrangedSubview(countUsersDropdownButton)
+        
+        countUsersLabelContainer.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        countUsersLabelContainer.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        countUsersDropdownButton.setContentCompressionResistancePriority(.required, for: .horizontal)
+        countUsersDropdownButton.setContentHuggingPriority(.required, for: .horizontal)
         
         NSLayoutConstraint.activate([
             generalInfoContainerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
@@ -236,11 +347,15 @@ extension ChannelViewController {
             infoContainerView.trailingAnchor.constraint(equalTo: generalInfoContainerView.trailingAnchor, constant: -40),
             
             nameChannelStackView.topAnchor.constraint(equalTo: infoContainerView.topAnchor, constant: 30),
+            nameChannelStackView.leadingAnchor.constraint(equalTo: infoContainerView.leadingAnchor, constant: 20),
+            nameChannelStackView.trailingAnchor.constraint(equalTo: infoContainerView.trailingAnchor, constant: -20),
             nameChannelStackView.centerXAnchor.constraint(equalTo: infoContainerView.centerXAnchor),
             
-            countUsersLabel.topAnchor.constraint(equalTo: nameChannelLabel.bottomAnchor, constant: 24),
-            countUsersLabel.centerXAnchor.constraint(equalTo: infoContainerView.centerXAnchor),
-            countUsersLabel.bottomAnchor.constraint(equalTo: infoContainerView.bottomAnchor, constant: -30),
+            countUsersStackView.topAnchor.constraint(equalTo: nameChannelStackView.bottomAnchor, constant: 24),
+            countUsersStackView.leadingAnchor.constraint(equalTo: infoContainerView.leadingAnchor, constant: 20),
+            countUsersStackView.trailingAnchor.constraint(equalTo: infoContainerView.trailingAnchor, constant: -20),
+            countUsersStackView.centerXAnchor.constraint(equalTo: infoContainerView.centerXAnchor),
+            countUsersStackView.bottomAnchor.constraint(equalTo: infoContainerView.bottomAnchor, constant: -30),
             
             disconnectButton.bottomAnchor.constraint(equalTo: generalInfoContainerView.bottomAnchor, constant: -30),
             disconnectButton.trailingAnchor.constraint(equalTo: generalInfoContainerView.trailingAnchor, constant: -40),
@@ -252,21 +367,48 @@ extension ChannelViewController {
         disconnectButton.addTarget(self, action: #selector(didTapExit), for: .touchUpInside)
         dropdownButton.addTarget(self, action: #selector(didTapDropdown), for: .touchUpInside)
         changeChannelButton.addTarget(self, action: #selector(didTapDropdown), for: .touchUpInside)
+        countUsersDropdownButton.addTarget(self, action: #selector(didTapDropdown), for: .touchUpInside)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapDropdown))
+        let tapGestureName = UITapGestureRecognizer(target: self, action: #selector(didTapDropdown))
         nameChannelStackView.isUserInteractionEnabled = true
-        nameChannelStackView.addGestureRecognizer(tapGesture)
+        nameChannelStackView.addGestureRecognizer(tapGestureName)
+        
+        let tapGestureUsers = UITapGestureRecognizer(target: self, action: #selector(didTapDropdown))
+        countUsersStackView.isUserInteractionEnabled = true
+        countUsersStackView.addGestureRecognizer(tapGestureUsers)
     }
     
     private func setupTalkButton() {
-        contentView.addSubview(talkToPushButton)
+        contentView.addSubview(talkButtonContainer)
+        talkButtonContainer.addSubview(talkToPushButton)
+        talkButtonContainer.addSubview(disconnectedInfoLabel)
         
         NSLayoutConstraint.activate([
-            talkToPushButton.topAnchor.constraint(equalTo: infoContainerView.bottomAnchor, constant: 340),
-            talkToPushButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            talkToPushButton.widthAnchor.constraint(equalToConstant: 200),
-            talkToPushButton.heightAnchor.constraint(equalToConstant: 200),
-            talkToPushButton.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -40)
+            talkButtonContainer.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            talkButtonContainer.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: 40),
+            talkButtonContainer.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -40),
+            talkButtonContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
+        ])
+
+        let minTopSpacing = talkButtonContainer.topAnchor.constraint(greaterThanOrEqualTo: infoContainerView.bottomAnchor, constant: 99)
+        minTopSpacing.priority = .defaultHigh
+        minTopSpacing.isActive = true
+
+        NSLayoutConstraint.activate([
+            talkToPushButton.topAnchor.constraint(equalTo: talkButtonContainer.topAnchor, constant: 20),
+            talkToPushButton.leadingAnchor.constraint(equalTo: talkButtonContainer.leadingAnchor, constant: 20),
+            talkToPushButton.trailingAnchor.constraint(equalTo: talkButtonContainer.trailingAnchor, constant: -20),
+            talkToPushButton.bottomAnchor.constraint(equalTo: talkButtonContainer.bottomAnchor, constant: -20),
+            talkToPushButton.widthAnchor.constraint(equalToConstant: 160),
+            talkToPushButton.heightAnchor.constraint(equalToConstant: 160),
+            talkButtonContainer.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -40)
+        ])
+        
+        NSLayoutConstraint.activate([
+            disconnectedInfoLabel.topAnchor.constraint(equalTo: talkButtonContainer.topAnchor, constant: 16),
+            disconnectedInfoLabel.leadingAnchor.constraint(equalTo: talkButtonContainer.leadingAnchor, constant: 16),
+            disconnectedInfoLabel.trailingAnchor.constraint(equalTo: talkButtonContainer.trailingAnchor, constant: -16),
+            disconnectedInfoLabel.bottomAnchor.constraint(equalTo: talkButtonContainer.bottomAnchor, constant: -16)
         ])
         
         talkToPushButton.addTarget(self, action: #selector(talkButtonPressed), for: .touchDown)
@@ -283,7 +425,7 @@ extension ChannelViewController {
         
         var container = AttributeContainer()
         container.font = UIFont.boldSystemFont(ofSize: 24)
-         
+
         talkToPushButton.configuration?.attributedTitle = AttributedString(textName, attributes: container)
         talkToPushButton.configuration?.baseForegroundColor = color
         talkToPushButton.layer.borderColor = color.cgColor
@@ -308,9 +450,9 @@ extension ChannelViewController: ChannelViewProtocol {
         nameChannelLabel.text = "Desconectado"
         disconnectButton.isHidden = true
         talkToPushButton.isHidden = true
-        countUsersLabel.isHidden = true
+        disconnectedInfoLabel.isHidden = false
+        countUsersStackView.isHidden = true
         changeChannelButton.isHidden = true
         stopUserFetchTimer()
     }
 }
-
