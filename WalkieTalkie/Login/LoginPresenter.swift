@@ -38,7 +38,7 @@ extension LoginPresenter: LoginPresenterProtocol {
 
 extension LoginPresenter: LoginInteractorOutputProtocol {
     func loginSucceeded(with token: LoginResponse) {
-        TokenManager.accessToken = token.token
+        TokenManager.accessToken = token.accessToken
         if let view = view {
             router?.navigateToHome(from: view)
         }

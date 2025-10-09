@@ -39,7 +39,7 @@ final class WebSocketService: WebSocketServiceProtocol {
         
         logger.info("Connected to WebSocket at \(self.url.absoluteString, privacy: .public)")
         
-        let json: [String: String] = ["canal": channel]
+        let json: [String: String] = ["channel": channel]
         if let data = try? JSONSerialization.data(withJSONObject: json),
            let message = String(data: data, encoding: .utf8) {
             send(message: message)

@@ -19,21 +19,28 @@ class ChannelsRepository: ChannelsRepositoryProtocol {
             completion(.failure(NSError(domain: "BadURL", code: -1)))
             return
         }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.applyAuthHeaders()
         
-        session.dataTask(with: url) { data, response, error in
+        session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
             }
             
-            guard let data = data,
-                  let jsonArray = try? JSONDecoder().decode([String].self, from: data) else {
-                completion(.failure(NSError(domain: "InvalidJSON", code: -1)))
+            guard let data = data else {
+                completion(.failure(NSError(domain: "NoData", code: -1)))
                 return
             }
             
-            let channels = jsonArray.map { Channel(name: $0) }
-            completion(.success(channels))
+            do {
+                let channels = try JSONDecoder().decode([Channel].self, from: data)
+                completion(.success(channels))
+            } catch {
+                completion(.failure(NSError(domain: "InvalidJSON", code: -1, userInfo: [NSUnderlyingErrorKey: error])))
+            }
         }.resume()
     }
 }
