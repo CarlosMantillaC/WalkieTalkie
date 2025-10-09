@@ -80,4 +80,11 @@ final class ChannelRouter: ChannelRouterProtocol {
             }
         }
     }
+
+    func navigateToChannelPrivateCreate(from view: ChannelViewProtocol) {
+        let channelPrivateCreateVC = ChannelPrivateCreateRouter.createModule()
+        if let vc = view as? UIViewController {
+            vc.navigationController?.setViewControllers([channelPrivateCreateVC], animated: true)
+        }
+    }
 }

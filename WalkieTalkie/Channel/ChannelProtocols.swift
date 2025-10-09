@@ -23,6 +23,7 @@ protocol ChannelPresenterProtocol: AnyObject {
     func refreshUsers()
     func didTapDropdown()
     var interactor: ChannelInteractorProtocol? { get }
+    func didTapDropdownCountUser()
 }
 
 protocol ChannelInteractorProtocol: AnyObject {
@@ -44,4 +45,5 @@ protocol ChannelRouterProtocol: AnyObject {
     static func createModule(with channel: Channel?) -> UIViewController
     func presentChannelsModally(from view: ChannelViewProtocol)
     func navigateToLogin(with message: String)
+    func navigateToChannelPrivateCreate(from view: ChannelViewProtocol)
 }

@@ -253,6 +253,10 @@ class ChannelViewController: UIViewController {
     @objc private func didTapDropdown() {
         presenter?.didTapDropdown()
     }
+
+    @objc private func didTapDropdownCountUser() {
+        presenter?.didTapDropdownCountUser()
+    }
     
     private func startUserFetchTimer() {
         guard fetchUsersTimer == nil else { return }
@@ -367,7 +371,7 @@ extension ChannelViewController {
         disconnectButton.addTarget(self, action: #selector(didTapExit), for: .touchUpInside)
         dropdownButton.addTarget(self, action: #selector(didTapDropdown), for: .touchUpInside)
         changeChannelButton.addTarget(self, action: #selector(didTapDropdown), for: .touchUpInside)
-        countUsersDropdownButton.addTarget(self, action: #selector(didTapDropdown), for: .touchUpInside)
+        countUsersDropdownButton.addTarget(self, action: #selector(didTapDropdownCountUser), for: .touchUpInside)
         
         let tapGestureName = UITapGestureRecognizer(target: self, action: #selector(didTapDropdown))
         nameChannelStackView.isUserInteractionEnabled = true

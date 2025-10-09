@@ -107,6 +107,12 @@
 		C4B989512E340FC7004CC463 /* MockChannelsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989502E340FC7004CC463 /* MockChannelsInteractor.swift */; };
 		C4B989572E3410A9004CC463 /* ChannelsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B989562E3410A9004CC463 /* ChannelsPresenterTests.swift */; };
 		C4B9895D2E3414CD004CC463 /* ChannelsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9895C2E3414CD004CC463 /* ChannelsRepositoryTests.swift */; };
+		C4C4E4332E98013B0077AEA9 /* ChannelPrivateCreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4E4322E98013B0077AEA9 /* ChannelPrivateCreatePresenter.swift */; };
+		C4C4E4352E9801540077AEA9 /* ChannelPrivateCreateProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4E4342E9801540077AEA9 /* ChannelPrivateCreateProtocols.swift */; };
+		C4C4E4372E9801780077AEA9 /* ChannelPrivateCreateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4E4362E9801780077AEA9 /* ChannelPrivateCreateRouter.swift */; };
+		C4C4E43A2E9801A90077AEA9 /* ChannelPrivateCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4E4382E9801A90077AEA9 /* ChannelPrivateCreateViewController.swift */; };
+		C4C4E43B2E9801A90077AEA9 /* ChannelPrivateCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C4E4392E9801A90077AEA9 /* ChannelPrivateCreateViewController.xib */; };
+		C4C4E43D2E9803E80077AEA9 /* ChannelPrivateCreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4E43C2E9803E80077AEA9 /* ChannelPrivateCreateInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +237,12 @@
 		C4B989502E340FC7004CC463 /* MockChannelsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelsInteractor.swift; sourceTree = "<group>"; };
 		C4B989562E3410A9004CC463 /* ChannelsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenterTests.swift; sourceTree = "<group>"; };
 		C4B9895C2E3414CD004CC463 /* ChannelsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRepositoryTests.swift; sourceTree = "<group>"; };
+		C4C4E4322E98013B0077AEA9 /* ChannelPrivateCreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreatePresenter.swift; sourceTree = "<group>"; };
+		C4C4E4342E9801540077AEA9 /* ChannelPrivateCreateProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateProtocols.swift; sourceTree = "<group>"; };
+		C4C4E4362E9801780077AEA9 /* ChannelPrivateCreateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRouter.swift; sourceTree = "<group>"; };
+		C4C4E4382E9801A90077AEA9 /* ChannelPrivateCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateViewController.swift; sourceTree = "<group>"; };
+		C4C4E4392E9801A90077AEA9 /* ChannelPrivateCreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelPrivateCreateViewController.xib; sourceTree = "<group>"; };
+		C4C4E43C2E9803E80077AEA9 /* ChannelPrivateCreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,6 +403,7 @@
 				C46024B12E26FFE80032EDA6 /* Login */,
 				C46024D62E27F4D10032EDA6 /* Register */,
 				C46024D72E27F69C0032EDA6 /* Channel */,
+				C4C4E42F2E9800D70077AEA9 /* ChannelPrivateCreate */,
 				C46025042E2904680032EDA6 /* Channels */,
 				C46024D32E2703DB0032EDA6 /* Components */,
 				C460249E2E26FFCF0032EDA6 /* AppDelegate.swift */,
@@ -632,6 +645,19 @@
 			path = ChannelUsers;
 			sourceTree = "<group>";
 		};
+		C4C4E42F2E9800D70077AEA9 /* ChannelPrivateCreate */ = {
+			isa = PBXGroup;
+			children = (
+				C4C4E43C2E9803E80077AEA9 /* ChannelPrivateCreateInteractor.swift */,
+				C4C4E4322E98013B0077AEA9 /* ChannelPrivateCreatePresenter.swift */,
+				C4C4E4342E9801540077AEA9 /* ChannelPrivateCreateProtocols.swift */,
+				C4C4E4362E9801780077AEA9 /* ChannelPrivateCreateRouter.swift */,
+				C4C4E4382E9801A90077AEA9 /* ChannelPrivateCreateViewController.swift */,
+				C4C4E4392E9801A90077AEA9 /* ChannelPrivateCreateViewController.xib */,
+			);
+			path = ChannelPrivateCreate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -747,6 +773,7 @@
 			files = (
 				C46025172E2918730032EDA6 /* ChannelsViewController.xib in Resources */,
 				C46024B52E2700540032EDA6 /* LoginViewController.xib in Resources */,
+				C4C4E43B2E9801A90077AEA9 /* ChannelPrivateCreateViewController.xib in Resources */,
 				C46024A72E26FFCF0032EDA6 /* Assets.xcassets in Resources */,
 				C46024EC2E27F8E40032EDA6 /* RegisterViewController.xib in Resources */,
 				C46024FD2E2804DE0032EDA6 /* ChannelViewController.xib in Resources */,
@@ -793,6 +820,7 @@
 				C480A1072E297AE1000E0C7F /* AudioServiceProtocol.swift in Sources */,
 				C46091082E5F4D8000AE9A12 /* NetworkService.swift in Sources */,
 				C46025162E2918730032EDA6 /* ChannelsViewController.swift in Sources */,
+				C4C4E43D2E9803E80077AEA9 /* ChannelPrivateCreateInteractor.swift in Sources */,
 				C46024D92E27F75A0032EDA6 /* RegisterRequest.swift in Sources */,
 				C49947A82E624B2400CE40BB /* ChannelsRepositoryProtocol.swift in Sources */,
 				C46024F02E27F9480032EDA6 /* RegisterRouter.swift in Sources */,
@@ -805,10 +833,12 @@
 				C46024A42E26FFCF0032EDA6 /* AppDelegate.swift in Sources */,
 				C46024F32E2803F60032EDA6 /* LogoutResponse.swift in Sources */,
 				C46024E42E27F8930032EDA6 /* RegisterRepository.swift in Sources */,
+				C4C4E43A2E9801A90077AEA9 /* ChannelPrivateCreateViewController.swift in Sources */,
 				C46025072E2905640032EDA6 /* ChannelsTableViewCell.swift in Sources */,
 				C480A10D2E298457000E0C7F /* WebSocketServiceDelegate.swift in Sources */,
 				C46024BA2E2702180032EDA6 /* URLRequest+Extensions.swift in Sources */,
 				C46024E22E27F86D0032EDA6 /* RegisterProtocols.swift in Sources */,
+				C4C4E4372E9801780077AEA9 /* ChannelPrivateCreateRouter.swift in Sources */,
 				C46024CA2E2703180032EDA6 /* LoginAPIErrorResponse.swift in Sources */,
 				C46024C32E2702B30032EDA6 /* LoginRepository.swift in Sources */,
 				C46024CE2E2703730032EDA6 /* LoginPresenter.swift in Sources */,
@@ -826,7 +856,9 @@
 				C460250A2E290A200032EDA6 /* ChannelsRepository.swift in Sources */,
 				C46024C62E2702E90032EDA6 /* LoginRequest.swift in Sources */,
 				C49947A22E624ABD00CE40BB /* LoginRepositoryProtocol.swift in Sources */,
+				C4C4E4332E98013B0077AEA9 /* ChannelPrivateCreatePresenter.swift in Sources */,
 				C460250D2E290A8B0032EDA6 /* Channels.swift in Sources */,
+				C4C4E4352E9801540077AEA9 /* ChannelPrivateCreateProtocols.swift in Sources */,
 				C46024EE2E27F92D0032EDA6 /* StyleTextField.swift in Sources */,
 				C460251B2E2939B00032EDA6 /* ChannelViewController.swift in Sources */,
 				C46024DB2E27F81B0032EDA6 /* RegisterResponse.swift in Sources */,

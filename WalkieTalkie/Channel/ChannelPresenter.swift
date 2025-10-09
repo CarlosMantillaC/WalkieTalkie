@@ -55,6 +55,12 @@ extension ChannelPresenter: ChannelPresenterProtocol {
             router?.presentChannelsModally(from: view)
         }
     }
+
+    func didTapDropdownCountUser() {
+        if let view = view {
+            router?.navigateToChannelPrivateCreate(from: view)
+        }
+    }
 }
 
 extension ChannelPresenter: ChannelInteractorOutputProtocol {
