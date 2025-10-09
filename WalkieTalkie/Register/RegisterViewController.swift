@@ -69,7 +69,7 @@ extension RegisterViewController: RegisterViewProtocol {
 }
 
 extension RegisterViewController: KeyboardScrollable {
-    var keyboardScrollableView: UIScrollView {
+    var keyboardScrollableView: UIScrollView? {
         return scrollView
     }
 }

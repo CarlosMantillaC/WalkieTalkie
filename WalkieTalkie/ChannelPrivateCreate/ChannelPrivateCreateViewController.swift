@@ -14,13 +14,23 @@ class ChannelPrivateCreateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        startObservingKeyboard()
+
         title = "Crea un canal privado"
         configureViewContainer()
     }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        applyGradientBackground()
+    }
+
+    deinit {
+        stopObservingKeyboard()
+    }
     
     func configureViewContainer() {
-        viewContainer.backgroundColor = UIColor.black.withAlphaComponent(0.12)
+        viewContainer.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         viewContainer.layer.cornerRadius = 20
         viewContainer.layer.borderWidth = 1
         viewContainer.layer.borderColor = UIColor.white.withAlphaComponent(0.3).cgColor
@@ -45,3 +55,10 @@ extension ChannelPrivateCreateViewController: ChannelPrivateCreateViewProtocol {
         
     }
 }
+
+extension ChannelPrivateCreateViewController: KeyboardScrollable {
+    var keyboardScrollableView: UIScrollView? {
+        nil
+    }
+}
+

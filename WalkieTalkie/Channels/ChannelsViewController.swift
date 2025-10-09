@@ -17,6 +17,7 @@ class ChannelsViewController: UIViewController {
         super.viewDidLoad()
         title = "Lista de Canales"
         
+        setupButtons()
         setupTableView()
         presenter?.viewDidLoad()
     }
@@ -28,6 +29,22 @@ class ChannelsViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ChannelsTableViewCell", bundle: nil), forCellReuseIdentifier: "ChannelsCell")
         tableView.backgroundColor = .clear
+    }
+    
+    private func setupButtons() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Unirme", style: .plain, target: self, action: #selector(joinChannel))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Crear", style: .plain, target: self, action: #selector(createChannel))
+        
+        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    
+    @objc private func joinChannel() {
+        presenter?.joinChannelTapped()
+    }
+    
+    @objc private func createChannel() {
+        presenter?.createChannelTapped()
     }
 }
 

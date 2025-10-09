@@ -35,7 +35,7 @@ final class ChannelRouter: ChannelRouterProtocol {
         navController.modalPresentationStyle = .pageSheet
         
         if let sheet = navController.sheetPresentationController {
-            sheet.detents = [.medium()]
+            sheet.detents = [.medium(), .large()]
             sheet.prefersGrabberVisible = true
             sheet.preferredCornerRadius = 20
         }

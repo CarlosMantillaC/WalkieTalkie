@@ -8,7 +8,7 @@
 import UIKit
 
 protocol KeyboardScrollable where Self: UIViewController {
-    var keyboardScrollableView: UIScrollView { get }
+    var keyboardScrollableView: UIScrollView? { get }
     func startObservingKeyboard()
     func stopObservingKeyboard()
 }
@@ -49,15 +49,15 @@ extension UIViewController {
         guard let selfWithScroll = self as? KeyboardScrollable else { return }
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
         let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
-        selfWithScroll.keyboardScrollableView.contentInset = contentInset
-        selfWithScroll.keyboardScrollableView.scrollIndicatorInsets = contentInset
+        selfWithScroll.keyboardScrollableView?.contentInset = contentInset
+        selfWithScroll.keyboardScrollableView?.scrollIndicatorInsets = contentInset
     }
     
     @objc func handleKeyboardWillHide(_ notification: Notification) {
         guard let selfWithScroll = self as? KeyboardScrollable else { return }
         let contentInset = UIEdgeInsets.zero
-        selfWithScroll.keyboardScrollableView.contentInset = contentInset
-        selfWithScroll.keyboardScrollableView.scrollIndicatorInsets = contentInset
+        selfWithScroll.keyboardScrollableView?.contentInset = contentInset
+        selfWithScroll.keyboardScrollableView?.scrollIndicatorInsets = contentInset
     }
     
     @objc func dismissKeyboard() {

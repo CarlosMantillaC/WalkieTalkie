@@ -53,7 +53,7 @@ extension LoginViewController: LoginViewProtocol {
 }
 
 extension LoginViewController: KeyboardScrollable {
-    var keyboardScrollableView: UIScrollView {
+    var keyboardScrollableView: UIScrollView? {
         return scrollView
     }
 }

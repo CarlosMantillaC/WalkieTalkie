@@ -18,6 +18,8 @@ protocol ChannelsPresenterProtocol: AnyObject {
     func viewDidLoad()
     func configure(cell: ChannelsTableViewCell, at index: Int)
     func didSelectChannel(at index: Int)
+    func joinChannelTapped()
+    func createChannelTapped()
 }
 
 protocol ChannelsInteractorProtocol: AnyObject {
@@ -31,4 +33,6 @@ protocol ChannelsInteractorOutput: AnyObject {
 
 protocol ChannelsRouterProtocol: AnyObject {
     static func createModule(onChannelSelected: @escaping (Channel) -> Void) -> UIViewController
+    func navigateToJoinChannel()
+    func navigateToCreateChannel()
 }

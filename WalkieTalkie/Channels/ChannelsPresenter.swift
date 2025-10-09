@@ -35,6 +35,14 @@ extension ChannelsPresenter: ChannelsPresenterProtocol {
         let selectedChannel = channels[index]
         onChannelSelected?(selectedChannel)
     }
+    
+    func joinChannelTapped() {
+        router?.navigateToJoinChannel()
+    }
+    
+    func createChannelTapped() {
+        router?.navigateToCreateChannel()
+    }
 }
 
 extension ChannelsPresenter: ChannelsInteractorOutput {
