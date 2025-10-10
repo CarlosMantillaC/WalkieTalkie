@@ -25,6 +25,11 @@ class RegisterViewController: UIViewController {
         confirmPasswordTextField.textContentType = .oneTimeCode
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        applyGradientBackground()
+    }
+
     @IBAction func didTapSend(_ sender: Any) {
         if let presenter = presenter {
             presenter.didTapSend(

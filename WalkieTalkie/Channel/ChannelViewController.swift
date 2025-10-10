@@ -131,7 +131,7 @@ class ChannelViewController: UIViewController {
     private let disconnectButton: UIButton = {
         var config = UIButton.Configuration.filled()
         config.title = "Desconectar"
-        config.baseBackgroundColor = UIColor(red: 75/255.0, green: 0/255.0, blue: 130/255.0, alpha: 1.0)
+        config.baseBackgroundColor = UIColor(red: 91/255.0, green: 0/255.0, blue: 158/255.0, alpha: 1.0)
         config.baseForegroundColor = .white
         config.cornerStyle = .large
         
@@ -144,7 +144,7 @@ class ChannelViewController: UIViewController {
     private let changeChannelButton: UIButton = {
         var config = UIButton.Configuration.filled()
         config.title = "Cambiar"
-        config.baseBackgroundColor = UIColor(red: 75/255.0, green: 0/255.0, blue: 130/255.0, alpha: 1.0)
+        config.baseBackgroundColor = UIColor(red: 91/255.0, green: 0/255.0, blue: 158/255.0, alpha: 1.0)
         config.baseForegroundColor = .white
         config.cornerStyle = .large
         

@@ -11,12 +11,13 @@ class ChannelPrivateCreateViewController: UIViewController {
 
     var presenter: ChannelPrivateCreatePresenterProtocol?
     @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var pinTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startObservingKeyboard()
 
-        title = "Crea un canal privado"
+        startObservingKeyboard()
         configureViewContainer()
     }
 
@@ -36,23 +37,30 @@ class ChannelPrivateCreateViewController: UIViewController {
         viewContainer.layer.borderColor = UIColor.white.withAlphaComponent(0.3).cgColor
         viewContainer.clipsToBounds = true
     }
+    
+    @IBAction func createButtonTapped(_ sender: Any) {
+        guard let name = nameTextField.text, !name.isEmpty,
+              let pin = pinTextField.text, !pin.isEmpty else {
+            showError(error: "Por favor, rellene todos los campos.")
+            return
+        }
+        presenter?.createChannel(name: name, pin: pin)
+    }
 }
 
 extension ChannelPrivateCreateViewController: ChannelPrivateCreateViewProtocol {
-    func showLoading() {
-        
-    }
-    
-    func hideLoading() {
-        
-    }
-    
-    func show(error: String) {
-        
+    func showError(error: String) {
+        let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
     
     func showSuccess(message: String) {
-        
+        let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+            self?.presenter?.router?.dismiss()
+        }))
+        present(alert, animated: true)
     }
 }
 

@@ -15,8 +15,14 @@ class StyledTextField: UITextField {
     
     private func setupStyle() {
         layer.borderWidth = 1.5
-        layer.borderColor = UIColor.fromHex("4b0082").cgColor
+        layer.borderColor = UIColor.white.cgColor
         layer.cornerRadius = 20
+        backgroundColor = .black
         clipsToBounds = true
+        textColor = .white
+        
+        if let placeholder = placeholder {
+            attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.4)])
+        }
     }
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C450D1BC2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */; };
+		C450D1BE2E98474B00F21013 /* ChannelPrivateCreateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */; };
+		C450D1C22E98498000F21013 /* ChannelPrivateCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */; };
+		C450D1C32E98498000F21013 /* ChannelPrivateCreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1C02E98498000F21013 /* ChannelPrivateCreateResponse.swift */; };
+		C450D1C52E98546300F21013 /* ChannelPrivateCreateAPIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1C42E98546300F21013 /* ChannelPrivateCreateAPIErrorResponse.swift */; };
 		C45D92DF2E31647300B3033B /* MockRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92DE2E31647300B3033B /* MockRegisterView.swift */; };
 		C45D92E12E3164B100B3033B /* MockRegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E02E3164B100B3033B /* MockRegisterInteractor.swift */; };
 		C45D92E52E31664500B3033B /* MockRegisterInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D92E42E31664500B3033B /* MockRegisterInteractorOutput.swift */; };
@@ -133,6 +138,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepositoryProtocol.swift; sourceTree = "<group>"; };
+		C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepository.swift; sourceTree = "<group>"; };
+		C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRequest.swift; sourceTree = "<group>"; };
+		C450D1C02E98498000F21013 /* ChannelPrivateCreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateResponse.swift; sourceTree = "<group>"; };
+		C450D1C42E98546300F21013 /* ChannelPrivateCreateAPIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateAPIErrorResponse.swift; sourceTree = "<group>"; };
 		C45D92DE2E31647300B3033B /* MockRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterView.swift; sourceTree = "<group>"; };
 		C45D92E02E3164B100B3033B /* MockRegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterInteractor.swift; sourceTree = "<group>"; };
 		C45D92E42E31664500B3033B /* MockRegisterInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterInteractorOutput.swift; sourceTree = "<group>"; };
@@ -270,6 +280,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C450D1BA2E9846DE00F21013 /* ChannelPrivateCreate */ = {
+			isa = PBXGroup;
+			children = (
+				C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */,
+				C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */,
+			);
+			path = ChannelPrivateCreate;
+			sourceTree = "<group>";
+		};
+		C450D1C12E98498000F21013 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */,
+				C450D1C02E98498000F21013 /* ChannelPrivateCreateResponse.swift */,
+				C450D1C42E98546300F21013 /* ChannelPrivateCreateAPIErrorResponse.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		C45D92DC2E3163DD00B3033B /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +493,7 @@
 		C46024C12E2702970032EDA6 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				C450D1BA2E9846DE00F21013 /* ChannelPrivateCreate */,
 				C499479D2E624A3800CE40BB /* Login */,
 				C499479E2E624A6600CE40BB /* Register */,
 				C49947A02E624A8200CE40BB /* ChannelUsers */,
@@ -648,6 +678,7 @@
 		C4C4E42F2E9800D70077AEA9 /* ChannelPrivateCreate */ = {
 			isa = PBXGroup;
 			children = (
+				C450D1C12E98498000F21013 /* Entities */,
 				C4C4E43C2E9803E80077AEA9 /* ChannelPrivateCreateInteractor.swift */,
 				C4C4E4322E98013B0077AEA9 /* ChannelPrivateCreatePresenter.swift */,
 				C4C4E4342E9801540077AEA9 /* ChannelPrivateCreateProtocols.swift */,
@@ -831,6 +862,7 @@
 				C46024D02E27038A0032EDA6 /* LoginInteractor.swift in Sources */,
 				C46024D22E2703A20032EDA6 /* LoginRouter.swift in Sources */,
 				C46024A42E26FFCF0032EDA6 /* AppDelegate.swift in Sources */,
+				C450D1C52E98546300F21013 /* ChannelPrivateCreateAPIErrorResponse.swift in Sources */,
 				C46024F32E2803F60032EDA6 /* LogoutResponse.swift in Sources */,
 				C46024E42E27F8930032EDA6 /* RegisterRepository.swift in Sources */,
 				C4C4E43A2E9801A90077AEA9 /* ChannelPrivateCreateViewController.swift in Sources */,
@@ -840,9 +872,12 @@
 				C46024E22E27F86D0032EDA6 /* RegisterProtocols.swift in Sources */,
 				C4C4E4372E9801780077AEA9 /* ChannelPrivateCreateRouter.swift in Sources */,
 				C46024CA2E2703180032EDA6 /* LoginAPIErrorResponse.swift in Sources */,
+				C450D1C22E98498000F21013 /* ChannelPrivateCreateRequest.swift in Sources */,
+				C450D1C32E98498000F21013 /* ChannelPrivateCreateResponse.swift in Sources */,
 				C46024C32E2702B30032EDA6 /* LoginRepository.swift in Sources */,
 				C46024CE2E2703730032EDA6 /* LoginPresenter.swift in Sources */,
 				C46024A52E26FFCF0032EDA6 /* SceneDelegate.swift in Sources */,
+				C450D1BE2E98474B00F21013 /* ChannelPrivateCreateRepository.swift in Sources */,
 				C47B30912E30276500275424 /* ChannelUsersRepository.swift in Sources */,
 				C460250F2E290AD20032EDA6 /* ChannelsProtocols.swift in Sources */,
 				C48C3FD92E2AC99400D9B24A /* UIViewController+GradientBackground.swift in Sources */,
@@ -857,6 +892,7 @@
 				C46024C62E2702E90032EDA6 /* LoginRequest.swift in Sources */,
 				C49947A22E624ABD00CE40BB /* LoginRepositoryProtocol.swift in Sources */,
 				C4C4E4332E98013B0077AEA9 /* ChannelPrivateCreatePresenter.swift in Sources */,
+				C450D1BC2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift in Sources */,
 				C460250D2E290A8B0032EDA6 /* Channels.swift in Sources */,
 				C4C4E4352E9801540077AEA9 /* ChannelPrivateCreateProtocols.swift in Sources */,
 				C46024EE2E27F92D0032EDA6 /* StyleTextField.swift in Sources */,

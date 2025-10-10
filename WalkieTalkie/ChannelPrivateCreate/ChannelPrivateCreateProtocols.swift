@@ -9,9 +9,7 @@ import Foundation
 import UIKit
 
 protocol ChannelPrivateCreateViewProtocol: AnyObject {
-    func showLoading()
-    func hideLoading()
-    func show(error: String)
+    func showError(error: String)
     func showSuccess(message: String)
 }
 
@@ -20,13 +18,13 @@ protocol ChannelPrivateCreatePresenterProtocol: AnyObject {
     var interactor: ChannelPrivateCreateInteractorInputProtocol? { get set }
     var router: ChannelPrivateCreateRouterProtocol? { get set }
     
-    func createChannel()
+    func createChannel(name: String, pin: String)
 }
 
 protocol ChannelPrivateCreateInteractorInputProtocol: AnyObject {
     var presenter: ChannelPrivateCreateInteractorOutputProtocol? { get set }
     
-    func createChannel()
+    func createChannel(name: String, pin: String)
 }
 
 protocol ChannelPrivateCreateInteractorOutputProtocol: AnyObject {

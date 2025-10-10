@@ -16,10 +16,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Iniciar Sesión"
         startObservingKeyboard()
         
         passwordTextField.textContentType = .oneTimeCode
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        applyGradientBackground()
     }
     
     @IBAction func didTapLogin(_ sender: Any) {

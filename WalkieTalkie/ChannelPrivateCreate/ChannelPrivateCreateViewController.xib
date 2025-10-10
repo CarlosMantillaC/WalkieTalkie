@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChannelPrivateCreateViewController" customModule="WalkieTalkie" customModuleProvider="target">
             <connections>
+                <outlet property="nameTextField" destination="APf-7G-POb" id="VGT-1L-Qq4"/>
+                <outlet property="pinTextField" destination="6uO-wy-bKt" id="l1N-Jw-Bpa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewContainer" destination="Vva-2W-0Y1" id="33D-ez-kdJ"/>
             </connections>
@@ -21,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vva-2W-0Y1">
-                    <rect key="frame" x="40" y="305" width="313" height="346"/>
+                    <rect key="frame" x="40" y="229" width="313" height="394"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uN-8e-4d6">
                             <rect key="frame" x="113" y="46" width="87.333333333333314" height="28.666666666666671"/>
@@ -45,7 +47,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingrese el PIN del canal" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6uO-wy-bKt" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
-                            <rect key="frame" x="38.333333333333329" y="231.66666666666663" width="236.33333333333337" height="50"/>
+                            <rect key="frame" x="38.333333333333329" y="231.66666666666669" width="236.33333333333337" height="50"/>
                             <accessibility key="accessibilityConfiguration" identifier="registerName"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="6vk-ch-jI3"/>
@@ -53,13 +55,27 @@
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                             <textInputTraits key="textInputTraits" textContentType="name"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7j-2g-aM3">
+                            <rect key="frame" x="106" y="307.66666666666663" width="101" height="40.333333333333314"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="101" id="A9C-kt-SgH"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Crear">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="baseBackgroundColor" red="0.35686274509803922" green="0.0" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="createButtonTapped:" destination="-1" eventType="touchUpInside" id="eVF-57-nKT"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <constraints>
                         <constraint firstItem="6uO-wy-bKt" firstAttribute="centerX" secondItem="Vva-2W-0Y1" secondAttribute="centerX" id="1n9-nL-ITD"/>
                         <constraint firstItem="APf-7G-POb" firstAttribute="centerX" secondItem="Vva-2W-0Y1" secondAttribute="centerX" id="2hE-8F-C1t"/>
                         <constraint firstItem="6uO-wy-bKt" firstAttribute="top" secondItem="aA0-Xg-yHa" secondAttribute="bottom" constant="26" id="CnN-al-rBA"/>
-                        <constraint firstAttribute="height" constant="346" id="IEv-zB-vje"/>
+                        <constraint firstAttribute="height" constant="394" id="IEv-zB-vje"/>
                         <constraint firstItem="APf-7G-POb" firstAttribute="top" secondItem="9uN-8e-4d6" secondAttribute="bottom" constant="26" id="M55-EE-z92"/>
                         <constraint firstItem="aA0-Xg-yHa" firstAttribute="top" secondItem="APf-7G-POb" secondAttribute="bottom" constant="26" id="N0t-qn-OIR"/>
                         <constraint firstItem="9uN-8e-4d6" firstAttribute="centerX" secondItem="Vva-2W-0Y1" secondAttribute="centerX" id="NP5-at-Usc"/>
@@ -67,14 +83,24 @@
                         <constraint firstItem="9uN-8e-4d6" firstAttribute="top" secondItem="Vva-2W-0Y1" secondAttribute="top" constant="46" id="cje-N0-fFc"/>
                         <constraint firstItem="aA0-Xg-yHa" firstAttribute="centerX" secondItem="Vva-2W-0Y1" secondAttribute="centerX" id="jCw-j8-9d0"/>
                         <constraint firstItem="APf-7G-POb" firstAttribute="leading" secondItem="Vva-2W-0Y1" secondAttribute="leading" constant="38" id="laX-MU-RPc"/>
+                        <constraint firstItem="N7j-2g-aM3" firstAttribute="centerX" secondItem="Vva-2W-0Y1" secondAttribute="centerX" id="mLN-nO-xR5"/>
+                        <constraint firstItem="N7j-2g-aM3" firstAttribute="top" secondItem="6uO-wy-bKt" secondAttribute="bottom" constant="26" id="s5m-aO-9Ic"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crea un Canal Privado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX9-vp-s7H">
+                    <rect key="frame" x="76.666666666666686" y="156" width="240" height="29"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="jX9-vp-s7H" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="38" id="4w0-aF-CkT"/>
                 <constraint firstItem="Vva-2W-0Y1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="Ahs-At-pcj"/>
-                <constraint firstItem="Vva-2W-0Y1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="187" id="SQC-om-3qk"/>
+                <constraint firstItem="Vva-2W-0Y1" firstAttribute="top" secondItem="jX9-vp-s7H" secondAttribute="bottom" constant="44" id="Q49-o7-0xd"/>
+                <constraint firstItem="jX9-vp-s7H" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="jgn-0F-L4E"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vva-2W-0Y1" secondAttribute="trailing" constant="40" id="ncE-4a-d0l"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="146.47887323943664"/>

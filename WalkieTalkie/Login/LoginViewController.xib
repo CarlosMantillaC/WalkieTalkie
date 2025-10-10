@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +29,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-a3-NjT" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
-                                    <rect key="frame" x="26" y="128" width="341" height="50"/>
+                                    <rect key="frame" x="26" y="145" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="loginPassword"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="3kL-yv-sbN"/>
@@ -37,7 +38,7 @@
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electronico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uHd-AK-stL" customClass="StyledTextField" customModule="WalkieTalkie" customModuleProvider="target">
-                                    <rect key="frame" x="26" y="58" width="341" height="50"/>
+                                    <rect key="frame" x="26" y="75" width="341" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="loginEmail"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="gGh-Dk-C6q"/>
@@ -46,7 +47,7 @@
                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mm8-tT-fWf">
-                                    <rect key="frame" x="72" y="218" width="111" height="50"/>
+                                    <rect key="frame" x="72" y="235" width="111" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="loginEnter"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="111" id="PJo-yF-HiQ"/>
@@ -54,14 +55,14 @@
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="Entrar">
-                                        <color key="baseBackgroundColor" red="0.29411764705882354" green="0.0" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="baseBackgroundColor" red="0.35686274509803922" green="0.0" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="didTapLogin:" destination="-1" eventType="touchUpInside" id="uni-2A-WG5"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeJ-eP-853">
-                                    <rect key="frame" x="210" y="218" width="111" height="50"/>
+                                    <rect key="frame" x="210" y="235" width="111" height="50"/>
                                     <accessibility key="accessibilityConfiguration" identifier="LoginRegister"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="QOv-iF-ZeR"/>
@@ -69,16 +70,22 @@
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="Registrarse">
-                                        <color key="baseBackgroundColor" red="0.29411764705882354" green="0.0" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="baseBackgroundColor" red="0.35686274509803922" green="0.0" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="didTapRegister:" destination="-1" eventType="touchUpInside" id="ZuG-Lc-Kb8"/>
                                     </connections>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iniciar Sesión" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyy-hx-jyr">
+                                    <rect key="frame" x="124" y="8" width="145" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="uHd-AK-stL" firstAttribute="top" secondItem="L0P-Y6-Qe3" secondAttribute="top" constant="58" id="5R9-Rm-Ean"/>
+                                <constraint firstItem="yyy-hx-jyr" firstAttribute="top" secondItem="L0P-Y6-Qe3" secondAttribute="top" constant="8" id="49r-BJ-Pj3"/>
+                                <constraint firstItem="uHd-AK-stL" firstAttribute="top" secondItem="L0P-Y6-Qe3" secondAttribute="top" constant="75" id="5R9-Rm-Ean"/>
                                 <constraint firstAttribute="trailing" secondItem="CeJ-eP-853" secondAttribute="trailing" constant="72" id="94n-FK-a2F"/>
                                 <constraint firstItem="uHd-AK-stL" firstAttribute="leading" secondItem="L0P-Y6-Qe3" secondAttribute="leading" constant="26" id="NjZ-yn-Ey9"/>
                                 <constraint firstAttribute="trailing" secondItem="uHd-AK-stL" secondAttribute="trailing" constant="26" id="PIW-b7-TXJ"/>
@@ -86,6 +93,7 @@
                                 <constraint firstAttribute="trailing" secondItem="Ecz-a3-NjT" secondAttribute="trailing" constant="26" id="ZXM-ip-HTk"/>
                                 <constraint firstAttribute="height" constant="666" id="acq-PB-JEC"/>
                                 <constraint firstItem="CeJ-eP-853" firstAttribute="top" secondItem="Ecz-a3-NjT" secondAttribute="bottom" constant="40" id="dyQ-zV-X3N"/>
+                                <constraint firstItem="yyy-hx-jyr" firstAttribute="centerX" secondItem="L0P-Y6-Qe3" secondAttribute="centerX" id="pIx-c3-rPB"/>
                                 <constraint firstItem="Mm8-tT-fWf" firstAttribute="top" secondItem="Ecz-a3-NjT" secondAttribute="bottom" constant="40" id="rb8-Y8-8s5"/>
                                 <constraint firstItem="Ecz-a3-NjT" firstAttribute="top" secondItem="uHd-AK-stL" secondAttribute="bottom" constant="20" id="t9B-EC-dDA"/>
                                 <constraint firstItem="Ecz-a3-NjT" firstAttribute="leading" secondItem="L0P-Y6-Qe3" secondAttribute="leading" constant="26" id="zmy-6A-YTe"/>
