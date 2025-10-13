@@ -38,5 +38,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().tintColor = .white
         
         self.window?.makeKeyAndVisible()
+        
+        setupTokenExpirationHandler()
+    }
+
+    private func setupTokenExpirationHandler() {
+        NotificationCenter.default.addObserver(
+            forName: .tokenExpired,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            TokenManager.clear()
+            
+            let loginVC = LoginRouter.createModule()
+            let navController = UINavigationController(rootViewController: loginVC)
+            self?.window?.rootViewController = navController
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                let alert = UIAlertController(
+                    title: "Sesión expirada",
+                    message: "Por seguridad, se ha cerrado tu sesión. Por favor vuelve a iniciar.",
+                    preferredStyle: .alert
+                )
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                navController.present(alert, animated: true)
+            }
+        }
     }
 }

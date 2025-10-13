@@ -25,6 +25,10 @@ class ChannelsRepository: ChannelsRepositoryProtocol {
         request.applyAuthHeaders()
         
         session.dataTask(with: request) { data, response, error in
+            if TokenExpirationHandler.handleIfNeeded(response) {
+                return
+            }
+
             if let error = error {
                 completion(.failure(error))
                 return

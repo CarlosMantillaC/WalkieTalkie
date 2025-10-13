@@ -18,6 +18,8 @@
 		C4382BF02E9C888800312672 /* MockSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BE62E9C888800312672 /* MockSettingsInteractor.swift */; };
 		C4382BF12E9C888800312672 /* MockSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BE82E9C888800312672 /* MockSettingsRouter.swift */; };
 		C4382BF22E9C888800312672 /* MockSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BE72E9C888800312672 /* MockSettingsPresenter.swift */; };
+		C4382BF42E9C8B7700312672 /* TokenExpirationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BF32E9C8B7700312672 /* TokenExpirationHandler.swift */; };
+		C4382BF62E9C8BF000312672 /* Notifications+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BF52E9C8BF000312672 /* Notifications+Extensions.swift */; };
 		C450D1BC2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */; };
 		C450D1BE2E98474B00F21013 /* ChannelPrivateCreateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */; };
 		C450D1C22E98498000F21013 /* ChannelPrivateCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */; };
@@ -160,6 +162,8 @@
 		C4382BE92E9C888800312672 /* MockSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettingsView.swift; sourceTree = "<group>"; };
 		C4382BEB2E9C888800312672 /* SettingsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractorTests.swift; sourceTree = "<group>"; };
 		C4382BEC2E9C888800312672 /* SettingsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterTests.swift; sourceTree = "<group>"; };
+		C4382BF32E9C8B7700312672 /* TokenExpirationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenExpirationHandler.swift; sourceTree = "<group>"; };
+		C4382BF52E9C8BF000312672 /* Notifications+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications+Extensions.swift"; sourceTree = "<group>"; };
 		C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepositoryProtocol.swift; sourceTree = "<group>"; };
 		C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepository.swift; sourceTree = "<group>"; };
 		C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRequest.swift; sourceTree = "<group>"; };
@@ -543,6 +547,8 @@
 				C46024B92E2702180032EDA6 /* URLRequest+Extensions.swift */,
 				C46024BB2E27023B0032EDA6 /* TokenManager.swift */,
 				C46091072E5F4D8000AE9A12 /* NetworkService.swift */,
+				C4382BF32E9C8B7700312672 /* TokenExpirationHandler.swift */,
+				C4382BF52E9C8BF000312672 /* Notifications+Extensions.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -900,12 +906,14 @@
 				C46024F72E2804420032EDA6 /* ChannelPresenter.swift in Sources */,
 				C480A10A2E297B11000E0C7F /* AudioService.swift in Sources */,
 				C49947A42E624AE000CE40BB /* RegisterRepositoryProtocol.swift in Sources */,
+				C4382BF62E9C8BF000312672 /* Notifications+Extensions.swift in Sources */,
 				C46024F52E28042A0032EDA6 /* ChannelInteractor.swift in Sources */,
 				C46024E62E27F8B40032EDA6 /* RegisterInteractor.swift in Sources */,
 				C47EB27E2E3BF5A2002EA5A0 /* SoundButtonService.swift in Sources */,
 				C48C3FD72E2AC6E600D9B24A /* UIColor+Hex.swift in Sources */,
 				C46025132E2917C90032EDA6 /* ChannelsPresenter.swift in Sources */,
 				C480A1072E297AE1000E0C7F /* AudioServiceProtocol.swift in Sources */,
+				C4382BF42E9C8B7700312672 /* TokenExpirationHandler.swift in Sources */,
 				C46091082E5F4D8000AE9A12 /* NetworkService.swift in Sources */,
 				C46025162E2918730032EDA6 /* ChannelsViewController.swift in Sources */,
 				C4C4E43D2E9803E80077AEA9 /* ChannelPrivateCreateInteractor.swift in Sources */,

@@ -33,6 +33,10 @@ final class ChannelPrivateCreateRepository: ChannelPrivateCreateRepositoryProtoc
         }
         
         session.dataTask(with: urlRequest) { data, response, error in
+            if TokenExpirationHandler.handleIfNeeded(response) {
+                return
+            }
+
             if let error = error {
                 completion(.failure(error))
                 return
