@@ -12,6 +12,12 @@
 		C4382BE22E9C6BDF00312672 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BDB2E9C6BDF00312672 /* SettingsInteractor.swift */; };
 		C4382BE32E9C6BDF00312672 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BDF2E9C6BDF00312672 /* SettingsViewController.swift */; };
 		C4382BE42E9C6BDF00312672 /* SettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BDD2E9C6BDF00312672 /* SettingsProtocols.swift */; };
+		C4382BED2E9C888800312672 /* MockSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BE92E9C888800312672 /* MockSettingsView.swift */; };
+		C4382BEE2E9C888800312672 /* SettingsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BEC2E9C888800312672 /* SettingsPresenterTests.swift */; };
+		C4382BEF2E9C888800312672 /* SettingsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BEB2E9C888800312672 /* SettingsInteractorTests.swift */; };
+		C4382BF02E9C888800312672 /* MockSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BE62E9C888800312672 /* MockSettingsInteractor.swift */; };
+		C4382BF12E9C888800312672 /* MockSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BE82E9C888800312672 /* MockSettingsRouter.swift */; };
+		C4382BF22E9C888800312672 /* MockSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BE72E9C888800312672 /* MockSettingsPresenter.swift */; };
 		C450D1BC2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */; };
 		C450D1BE2E98474B00F21013 /* ChannelPrivateCreateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */; };
 		C450D1C22E98498000F21013 /* ChannelPrivateCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */; };
@@ -148,6 +154,12 @@
 		C4382BDD2E9C6BDF00312672 /* SettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocols.swift; sourceTree = "<group>"; };
 		C4382BDE2E9C6BDF00312672 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		C4382BDF2E9C6BDF00312672 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C4382BE62E9C888800312672 /* MockSettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettingsInteractor.swift; sourceTree = "<group>"; };
+		C4382BE72E9C888800312672 /* MockSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettingsPresenter.swift; sourceTree = "<group>"; };
+		C4382BE82E9C888800312672 /* MockSettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettingsRouter.swift; sourceTree = "<group>"; };
+		C4382BE92E9C888800312672 /* MockSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettingsView.swift; sourceTree = "<group>"; };
+		C4382BEB2E9C888800312672 /* SettingsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractorTests.swift; sourceTree = "<group>"; };
+		C4382BEC2E9C888800312672 /* SettingsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterTests.swift; sourceTree = "<group>"; };
 		C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepositoryProtocol.swift; sourceTree = "<group>"; };
 		C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepository.swift; sourceTree = "<group>"; };
 		C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRequest.swift; sourceTree = "<group>"; };
@@ -300,6 +312,27 @@
 				C4382BDF2E9C6BDF00312672 /* SettingsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		C4382BE52E9C880000312672 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C4382BEA2E9C888800312672 /* Mocks */,
+				C4382BEB2E9C888800312672 /* SettingsInteractorTests.swift */,
+				C4382BEC2E9C888800312672 /* SettingsPresenterTests.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		C4382BEA2E9C888800312672 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C4382BE62E9C888800312672 /* MockSettingsInteractor.swift */,
+				C4382BE72E9C888800312672 /* MockSettingsPresenter.swift */,
+				C4382BE82E9C888800312672 /* MockSettingsRouter.swift */,
+				C4382BE92E9C888800312672 /* MockSettingsView.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		C450D1BA2E9846DE00F21013 /* ChannelPrivateCreate */ = {
@@ -469,6 +502,7 @@
 		C46024AA2E26FFD20032EDA6 /* WalkieTalkieTests */ = {
 			isa = PBXGroup;
 			children = (
+				C4382BE52E9C880000312672 /* Settings */,
 				C460910C2E5F663200AE9A12 /* Services */,
 				C45DBF9E2E350B9A007DAD63 /* Channel */,
 				C45D93222E33DC2A00B3033B /* Channels */,
@@ -969,6 +1003,12 @@
 				C45D92F82E31706D00B3033B /* RegisterRepositoryTests.swift in Sources */,
 				C4B9894B2E340F31004CC463 /* MockChannelsInteractorOutput.swift in Sources */,
 				C45DBFA12E350D00007DAD63 /* MockChannelView.swift in Sources */,
+				C4382BED2E9C888800312672 /* MockSettingsView.swift in Sources */,
+				C4382BEE2E9C888800312672 /* SettingsPresenterTests.swift in Sources */,
+				C4382BEF2E9C888800312672 /* SettingsInteractorTests.swift in Sources */,
+				C4382BF02E9C888800312672 /* MockSettingsInteractor.swift in Sources */,
+				C4382BF12E9C888800312672 /* MockSettingsRouter.swift in Sources */,
+				C4382BF22E9C888800312672 /* MockSettingsPresenter.swift in Sources */,
 				C45D92E12E3164B100B3033B /* MockRegisterInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
