@@ -203,13 +203,19 @@ class ChannelViewController: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad()
         setupUI()
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = "Atrás"
+        navigationItem.backBarButtonItem = backButton
+        
         applyTalkButtonImage(isTalking: false)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "Cerrar sesión",
+        let settingsIcon = UIImage(systemName: "gearshape")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: settingsIcon,
             style: .plain,
             target: self,
-            action: #selector(didTapLogout)
+            action: #selector(didTapSettings)
         )
     }
     
@@ -228,8 +234,8 @@ class ChannelViewController: UIViewController {
         stopUserFetchTimer()
     }
     
-    @objc private func didTapLogout() {
-        presenter?.didTapLogout()
+    @objc private func didTapSettings() {
+        presenter?.didTapSettings()
     }
     
     @objc private func didTapExit() {

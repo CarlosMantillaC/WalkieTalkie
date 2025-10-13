@@ -15,7 +15,6 @@ protocol ChannelViewProtocol: AnyObject {
 }
 
 protocol ChannelPresenterProtocol: AnyObject {
-    func didTapLogout()
     func viewDidLoad()
     func startTalking()
     func stopTalking()
@@ -24,10 +23,10 @@ protocol ChannelPresenterProtocol: AnyObject {
     func didTapDropdown()
     var interactor: ChannelInteractorProtocol? { get }
     func didTapDropdownCountUser()
+    func didTapSettings()
 }
 
 protocol ChannelInteractorProtocol: AnyObject {
-    func logout()
     func connectToChannel(named name: String)
     func startTalking()
     func stopTalking()
@@ -36,7 +35,6 @@ protocol ChannelInteractorProtocol: AnyObject {
 }
 
 protocol ChannelInteractorOutputProtocol: AnyObject {
-    func logoutSucceeded(message: String)
     func didFetchUsers(_ emails: [String])
     func didDisconnect()
 }
@@ -44,6 +42,6 @@ protocol ChannelInteractorOutputProtocol: AnyObject {
 protocol ChannelRouterProtocol: AnyObject {
     static func createModule(with channel: Channel?) -> UIViewController
     func presentChannelsModally(from view: ChannelViewProtocol)
-    func navigateToLogin(with message: String)
     func navigateToChannelPrivateCreate(from view: ChannelViewProtocol)
+    func navigateToSettings(from view: ChannelViewProtocol)
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4382BE02E9C6BDF00312672 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BDE2E9C6BDF00312672 /* SettingsRouter.swift */; };
+		C4382BE12E9C6BDF00312672 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BDC2E9C6BDF00312672 /* SettingsPresenter.swift */; };
+		C4382BE22E9C6BDF00312672 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BDB2E9C6BDF00312672 /* SettingsInteractor.swift */; };
+		C4382BE32E9C6BDF00312672 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BDF2E9C6BDF00312672 /* SettingsViewController.swift */; };
+		C4382BE42E9C6BDF00312672 /* SettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BDD2E9C6BDF00312672 /* SettingsProtocols.swift */; };
 		C450D1BC2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */; };
 		C450D1BE2E98474B00F21013 /* ChannelPrivateCreateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */; };
 		C450D1C22E98498000F21013 /* ChannelPrivateCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */; };
@@ -138,6 +143,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C4382BDB2E9C6BDF00312672 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		C4382BDC2E9C6BDF00312672 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		C4382BDD2E9C6BDF00312672 /* SettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocols.swift; sourceTree = "<group>"; };
+		C4382BDE2E9C6BDF00312672 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		C4382BDF2E9C6BDF00312672 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepositoryProtocol.swift; sourceTree = "<group>"; };
 		C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepository.swift; sourceTree = "<group>"; };
 		C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRequest.swift; sourceTree = "<group>"; };
@@ -280,6 +290,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C4382BDA2E9C6B2000312672 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C4382BDB2E9C6BDF00312672 /* SettingsInteractor.swift */,
+				C4382BDC2E9C6BDF00312672 /* SettingsPresenter.swift */,
+				C4382BDD2E9C6BDF00312672 /* SettingsProtocols.swift */,
+				C4382BDE2E9C6BDF00312672 /* SettingsRouter.swift */,
+				C4382BDF2E9C6BDF00312672 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		C450D1BA2E9846DE00F21013 /* ChannelPrivateCreate */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +447,7 @@
 		C46024A32E26FFCF0032EDA6 /* WalkieTalkie */ = {
 			isa = PBXGroup;
 			children = (
+				C4382BDA2E9C6B2000312672 /* Settings */,
 				C47EB2782E3BF57B002EA5A0 /* Sound */,
 				C480A1052E2979D3000E0C7F /* Service */,
 				C46024B62E27018B0032EDA6 /* Networking */,
@@ -877,6 +900,11 @@
 				C46024C32E2702B30032EDA6 /* LoginRepository.swift in Sources */,
 				C46024CE2E2703730032EDA6 /* LoginPresenter.swift in Sources */,
 				C46024A52E26FFCF0032EDA6 /* SceneDelegate.swift in Sources */,
+				C4382BE02E9C6BDF00312672 /* SettingsRouter.swift in Sources */,
+				C4382BE12E9C6BDF00312672 /* SettingsPresenter.swift in Sources */,
+				C4382BE22E9C6BDF00312672 /* SettingsInteractor.swift in Sources */,
+				C4382BE32E9C6BDF00312672 /* SettingsViewController.swift in Sources */,
+				C4382BE42E9C6BDF00312672 /* SettingsProtocols.swift in Sources */,
 				C450D1BE2E98474B00F21013 /* ChannelPrivateCreateRepository.swift in Sources */,
 				C47B30912E30276500275424 /* ChannelUsersRepository.swift in Sources */,
 				C460250F2E290AD20032EDA6 /* ChannelsProtocols.swift in Sources */,

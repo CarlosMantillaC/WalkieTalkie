@@ -62,11 +62,6 @@ extension ChannelInteractor: ChannelInteractorProtocol {
             }
         }
     }
-    
-    func logout() {
-        TokenManager.clear()
-        self.presenter?.logoutSucceeded(message: "Sesión cerrada exitosamente")
-    }
 }
 
 extension ChannelInteractor: WebSocketServiceDelegate {

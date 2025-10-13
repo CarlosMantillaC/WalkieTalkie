@@ -29,10 +29,6 @@ extension ChannelPresenter: ChannelPresenterProtocol {
         interactor?.fetchUsersInChannel(named: channel.name)
     }
     
-    func didTapLogout() {
-        interactor?.logout()
-    }
-    
     func startTalking() {
         interactor?.startTalking()
     }
@@ -61,13 +57,14 @@ extension ChannelPresenter: ChannelPresenterProtocol {
             router?.navigateToChannelPrivateCreate(from: view)
         }
     }
+    
+    func didTapSettings() {
+        guard let view = view else { return }
+        router?.navigateToSettings(from: view)
+    }
 }
 
 extension ChannelPresenter: ChannelInteractorOutputProtocol {
-    func logoutSucceeded(message: String) {
-        router?.navigateToLogin(with: message)
-    }
-
     func didFetchUsers(_ emails: [String]) {
         let count = emails.count
         let text = "\(count) conectados"
