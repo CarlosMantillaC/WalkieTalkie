@@ -23,7 +23,7 @@ final class LoginRepositoryTests: XCTestCase {
 
     func testLoginSuccessResponse() {
         let expectedToken = "abc123"
-        let response = LoginResponse(token: expectedToken)
+        let response = LoginResponse(accessToken: expectedToken, accessTokenExpiresIn: 3600, email: "", first_name: "", last_name: "", refreshToken: "", refreshTokenExpiresAt: "", user_id: 1)
         let responseData = try! JSONEncoder().encode(response)
 
         StubURLProtocol.stubResponseData = responseData
@@ -36,7 +36,7 @@ final class LoginRepositoryTests: XCTestCase {
         repository.login(request: request) { result in
             switch result {
             case .success(let response):
-                XCTAssertEqual(response.token, expectedToken)
+                XCTAssertEqual(response.accessToken, expectedToken)
             case .failure:
                 XCTFail("Expected success, got failure")
             }

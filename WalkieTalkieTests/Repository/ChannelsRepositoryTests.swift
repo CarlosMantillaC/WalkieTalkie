@@ -22,8 +22,11 @@ final class ChannelsRepositoryTests: XCTestCase {
     }
 
     func testFetchChannelsSuccessResponse() {
-        let mockChannelNames = ["Channel 1", "Channel 2", "Channel 3"]
-        let responseData = try! JSONEncoder().encode(mockChannelNames)
+        let mockChannels = [
+            Channel(name: "Channel 1", isPrivate: false, maxUsers: 100),
+            Channel(name: "Channel 2", isPrivate: true, maxUsers: 20)
+        ]
+        let responseData = try! JSONEncoder().encode(mockChannels)
 
         StubURLProtocol.stubResponseData = responseData
         StubURLProtocol.stubError = nil
@@ -33,8 +36,11 @@ final class ChannelsRepositoryTests: XCTestCase {
         repository.fetchChannels { result in
             switch result {
             case .success(let channels):
-                XCTAssertEqual(channels.count, 3)
+                XCTAssertEqual(channels.count, 2)
                 XCTAssertEqual(channels[0].name, "Channel 1")
+                XCTAssertEqual(channels[1].name, "Channel 2")
+                XCTAssertEqual(channels[1].isPrivate, true)
+                XCTAssertEqual(channels[1].maxUsers, 20)
             case .failure:
                 XCTFail("Expected success, got failure")
             }

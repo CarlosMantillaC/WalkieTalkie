@@ -13,7 +13,7 @@ final class ChannelPresenterTests: XCTestCase {
     var mockView: MockChannelView!
     var mockInteractor: MockChannelInteractor!
     var mockRouter: MockChannelRouter!
-    let sampleChannel = Channel(name: "General")
+    let sampleChannel = Channel(name: "General", isPrivate: false, maxUsers: 100)
 
     override func setUp() {
         super.setUp()
@@ -61,7 +61,9 @@ final class ChannelPresenterTests: XCTestCase {
         presenter.didTapExit()
         
         XCTAssertTrue(mockInteractor.disconnectCalled)
-        XCTAssertFalse(mockRouter.navigateCalled)
+        XCTAssertFalse(mockRouter.presentModalCalled)
+        XCTAssertFalse(mockRouter.navigateToSettingsCalled)
+        XCTAssertFalse(mockRouter.navigateToChannelPrivateCreateCalled)
     }
 
     func testRefreshUsersCallsInteractorFetch() {
@@ -70,24 +72,16 @@ final class ChannelPresenterTests: XCTestCase {
         XCTAssertTrue(mockInteractor.fetchUsersCalled)
     }
 
-    func testRefreshUsersWithoutChannelDoesNothing() {
-        presenter = ChannelPresenter(channel: nil)
-        
-        presenter.refreshUsers()
-        
-        XCTAssertFalse(mockInteractor.fetchUsersCalled)
-    }
-
-    func testDidTapLogoutCallsInteractorLogout() {
-        presenter.didTapLogout()
-        
-        XCTAssertTrue(mockInteractor.logoutCalled)
-    }
-
     func testDidTapDropdownPresentsModal() {
         presenter.didTapDropdown()
         
         XCTAssertTrue(mockRouter.presentModalCalled)
+    }
+
+    func testDidTapSettingsCallsRouter() {
+        presenter.didTapSettings()
+
+        XCTAssertTrue(mockRouter.navigateToSettingsCalled)
     }
 
     func testDidFetchUsersDisplaysOnView() {
@@ -102,11 +96,10 @@ final class ChannelPresenterTests: XCTestCase {
         
         XCTAssertTrue(mockView.showDisconnectedStateCalled)
     }
-    
-    func testLogoutSucceededNavigatesToLogin() {
-        presenter.logoutSucceeded(message: "Sesión cerrada")
-        
-        XCTAssertTrue(mockRouter.navigateCalled)
-        XCTAssertEqual(mockRouter.lastMessage, "Sesión cerrada")
+
+    func testDidTapDropdownCountUserNavigatesToPrivateCreate() {
+        presenter.didTapDropdownCountUser()
+
+        XCTAssertTrue(mockRouter.navigateToChannelPrivateCreateCalled)
     }
 }

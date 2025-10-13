@@ -10,8 +10,8 @@ import XCTest
 
 final class MockChannelRouter: ChannelRouterProtocol {
     var presentModalCalled = false
-    var lastMessage: String?
-    var navigateCalled = false
+    var navigateToSettingsCalled = false
+    var navigateToChannelPrivateCreateCalled = false
 
     static func createModule(with channel: WalkieTalkie.Channel?) -> UIViewController {
         return UIViewController()
@@ -21,8 +21,11 @@ final class MockChannelRouter: ChannelRouterProtocol {
         presentModalCalled = true
     }
 
-    func navigateToLogin(with message: String) {
-        navigateCalled = true
-        lastMessage = message
+    func navigateToChannelPrivateCreate(from view: ChannelViewProtocol) {
+        navigateToChannelPrivateCreateCalled = true
+    }
+    
+    func navigateToSettings(from view: ChannelViewProtocol) {
+        navigateToSettingsCalled = true
     }
 }

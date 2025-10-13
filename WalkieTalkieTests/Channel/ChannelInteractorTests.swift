@@ -24,7 +24,7 @@ final class ChannelInteractorTests: XCTestCase {
         mockPresenter = MockChannelPresenter()
 
         interactor = ChannelInteractor(
-            channel: Channel(name: "TestChannel"),
+            channel: Channel(name: "TestChannel", isPrivate: false, maxUsers: 100),
             socket: mockSocket,
             audioService: mockAudioService,
             usersRepository: mockUsersRepository
@@ -75,12 +75,7 @@ final class ChannelInteractorTests: XCTestCase {
         XCTAssertNil(mockPresenter.fetchedEmails)
     }
 
-    func testLogoutShouldClearTokenAndNotifyPresenter() {
-        interactor.logout()
-        
-        XCTAssertEqual(mockPresenter.logoutMessage, "Sesión cerrada exitosamente")
-    }
-    
+
     func testDidDisconnectSuccessShouldNotifyPresenter() {
         interactor.disconnectFromChannel()
         

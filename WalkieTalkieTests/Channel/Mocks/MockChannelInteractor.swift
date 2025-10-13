@@ -9,17 +9,13 @@ import XCTest
 @testable import WalkieTalkie
 
 final class MockChannelInteractor: ChannelInteractorProtocol {
-    var logoutCalled = false
     var connectCalled = false
     var startTalkingCalled = false
     var stopTalkingCalled = false
     var disconnectCalled = false
     var fetchUsersCalled = false
 
-    func logout() {
-        logoutCalled = true
-    }
-    
+
     func connectToChannel(named name: String) {
         connectCalled = true
     }

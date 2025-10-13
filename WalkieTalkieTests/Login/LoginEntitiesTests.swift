@@ -45,32 +45,59 @@ final class LoginEntitiesTests: XCTestCase {
     }
     
     func testLoginResponseInitialization() {
-        let token = "1234abc"
+        let response = LoginResponse(
+            accessToken: "acc_token",
+            accessTokenExpiresIn: 3600,
+            email: "test@mail.com",
+            first_name: "Test",
+            last_name: "User",
+            refreshToken: "ref_token",
+            refreshTokenExpiresAt: "2025-10-12",
+            user_id: 1
+        )
         
-        let loginResponse = LoginResponse(token: token)
-        
-        XCTAssertEqual(loginResponse.token, token)
+        XCTAssertEqual(response.accessToken, "acc_token")
+        XCTAssertEqual(response.email, "test@mail.com")
+        XCTAssertEqual(response.user_id, 1)
     }
     
     func testLoginResponseEncodingToJson() throws {
-        let request = LoginResponse(token: "1234abc")
+        let response = LoginResponse(
+            accessToken: "acc_token",
+            accessTokenExpiresIn: 3600,
+            email: "test@mail.com",
+            first_name: "Test",
+            last_name: "User",
+            refreshToken: "ref_token",
+            refreshTokenExpiresAt: "2025-10-12",
+            user_id: 1
+        )
         
-        let jsonData = try JSONEncoder().encode(request)
+        let jsonData = try JSONEncoder().encode(response)
         let jsonString = String(data: jsonData, encoding: .utf8)
         
-        XCTAssertTrue(jsonString?.contains("\"token\":\"1234abc\"") ?? false)
+        XCTAssertTrue(jsonString?.contains("\"accessToken\":\"acc_token\"") ?? false)
+        XCTAssertTrue(jsonString?.contains("\"user_id\":1") ?? false)
     }
     
     func testLoginResponseDecodingFromJson() throws {
         let json = """
             {
-                "token": "1234abc"
+                "accessToken": "acc_token",
+                "accessTokenExpiresIn": 3600,
+                "email": "test@mail.com",
+                "first_name": "Test",
+                "last_name": "User",
+                "refreshToken": "ref_token",
+                "refreshTokenExpiresAt": "2025-10-12",
+                "user_id": 1
             }
             """.data(using: .utf8)!
         
         let decoded = try JSONDecoder().decode(LoginResponse.self, from: json)
         
-        XCTAssertEqual(decoded.token, "1234abc")
+        XCTAssertEqual(decoded.accessToken, "acc_token")
+        XCTAssertEqual(decoded.email, "test@mail.com")
     }
     
     func testLoginErrorResponseInitialization() {

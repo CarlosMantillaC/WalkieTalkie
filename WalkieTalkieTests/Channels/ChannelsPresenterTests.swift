@@ -31,7 +31,7 @@ final class ChannelsPresenterTests: XCTestCase {
     }
 
     func testDidLoadChannelsShouldUpdateDataAndReloadView() {
-        let channels = [Channel(name: "Canal 1"), Channel(name: "Canal 2")]
+        let channels = [Channel(name: "Canal 1", isPrivate: false, maxUsers: 100), Channel(name: "Canal 2", isPrivate: false, maxUsers: 100)]
         presenter.didLoadChannels(channels)
 
         XCTAssertEqual(presenter.channelsCount, 2)

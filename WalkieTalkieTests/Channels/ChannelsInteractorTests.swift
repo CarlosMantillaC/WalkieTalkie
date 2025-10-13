@@ -24,7 +24,7 @@ final class ChannelsInteractorTests: XCTestCase {
     }
     
     func testLoadChannelsSuccess() {
-        let mockChannels = [Channel(name: "General"), Channel(name: "Tech")]
+        let mockChannels = [Channel(name: "General", isPrivate: false, maxUsers: 100), Channel(name: "Tech", isPrivate: false, maxUsers: 100)]
         mockRepository.resultToReturn = .success(mockChannels)
 
         interactor.loadChannels()

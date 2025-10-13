@@ -26,7 +26,7 @@ final class LoginInteractorTests: XCTestCase {
     func testLoginSuccessNotifiesPresenter() {
         let expectation = self.expectation(description: "login success")
 
-        let expectedResponse = LoginResponse(token: "abc123")
+        let expectedResponse = LoginResponse(accessToken: "abc123", accessTokenExpiresIn: 3600, email: "", first_name: "", last_name: "", refreshToken: "", refreshTokenExpiresAt: "", user_id: 1)
         mockRepository.resultToReturn = .success(expectedResponse)
         mockPresenter.onSuccess = {
             expectation.fulfill()
@@ -38,7 +38,7 @@ final class LoginInteractorTests: XCTestCase {
         waitForExpectations(timeout: 1.0)
 
         XCTAssertEqual(mockRepository.capturedRequest?.email, "user@test.com")
-        XCTAssertEqual(mockPresenter.lastSuccessToken?.token, "abc123")
+        XCTAssertEqual(mockPresenter.lastSuccessResponse?.accessToken, "abc123")
     }
 
     func testLoginFailureNotifiesPresenter() {
