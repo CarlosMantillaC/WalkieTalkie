@@ -8,7 +8,6 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    
     var presenter: SettingsPresenterProtocol?
     private var gradientLayer: CAGradientLayer?
     
@@ -33,7 +32,6 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.viewDidLoad()
         setupUI()
         title = "Ajustes"
     }
@@ -84,6 +82,19 @@ extension SettingsViewController: SettingsViewProtocol {
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    func showLogoutConfirmation() {
+        let alert = UIAlertController(
+            title: "Cerrar Sesión",
+            message: "¿Estás seguro de que quieres cerrar la sesión?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Cerrar Sesión", style: .destructive, handler: { [weak self] _ in
+            self?.presenter?.confirmLogoutTapped()
+        }))
         present(alert, animated: true)
     }
 }

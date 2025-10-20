@@ -8,7 +8,6 @@
 import UIKit
 
 class SettingsRouter: SettingsRouterProtocol {
-    
     static func createModule() -> UIViewController {
         let view = SettingsViewController()
         let presenter: SettingsPresenterProtocol & SettingsInteractorOutputProtocol = SettingsPresenter()

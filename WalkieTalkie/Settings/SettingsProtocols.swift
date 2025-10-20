@@ -13,6 +13,7 @@ protocol SettingsViewProtocol: AnyObject {
     func showLoading()
     func hideLoading()
     func showAlert(title: String, message: String)
+    func showLogoutConfirmation()
 }
 
 protocol SettingsPresenterProtocol: AnyObject {
@@ -20,8 +21,8 @@ protocol SettingsPresenterProtocol: AnyObject {
     var interactor: SettingsInteractorInputProtocol? { get set }
     var router: SettingsRouterProtocol? { get set }
     
-    func viewDidLoad()
     func didTapLogout()
+    func confirmLogoutTapped()
 }
 
 protocol SettingsInteractorInputProtocol: AnyObject {

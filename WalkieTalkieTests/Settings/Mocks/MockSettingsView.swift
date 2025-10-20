@@ -10,9 +10,9 @@ import Foundation
 
 final class MockSettingsView: SettingsViewProtocol {
     var presenter: SettingsPresenterProtocol?
-    
     var showLoadingCalled = false
     var hideLoadingCalled = false
+    var showLogoutConfirmationCalled = false
     var showAlertCalled = false
     
     func showLoading() {
@@ -21,6 +21,10 @@ final class MockSettingsView: SettingsViewProtocol {
     
     func hideLoading() {
         hideLoadingCalled = true
+    }
+    
+    func showLogoutConfirmation() {
+        showLogoutConfirmationCalled = true
     }
     
     func showAlert(title: String, message: String) {

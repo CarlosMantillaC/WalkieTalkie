@@ -26,22 +26,31 @@ final class SettingsPresenterTests: XCTestCase {
         presenter.router = mockRouter
     }
 
-    func testDidLogoutSuccessfullyHidesLoadingAndNavigatesToLogin() {
-        let expectation = XCTestExpectation(description: "Wait for main queue dispatch for UI updates")
+    func testDidTapLogoutDelegatesToView() {
+        presenter.didTapLogout()
+        
+        XCTAssertTrue(mockView.showLogoutConfirmationCalled)
+    }
 
+    func testConfirmLogoutTappedDelegatesToViewAndInteractor() {
+        presenter.confirmLogoutTapped()
+        
+        XCTAssertTrue(mockView.showLoadingCalled)
+        XCTAssertTrue(mockInteractor.performLogoutCalled)
+    }
+    
+    func testDidLogoutSuccessfullyDelegatesToViewAndRouter() {
+        let expectation = XCTestExpectation(description: "Main queue async executed")
+        
         presenter.didLogoutSuccessfully()
-
+        
         DispatchQueue.main.async {
-            XCTAssertTrue(self.mockView.hideLoadingCalled, "View should be told to hide the loading indicator")
-            XCTAssertTrue(self.mockRouter.navigateToLoginCalled, "Router should be told to navigate to the login screen")
             expectation.fulfill()
         }
         
         wait(for: [expectation], timeout: 1.0)
-    }
-    
-    func testViewDidLoadDoesNotCrash() {
-        presenter.viewDidLoad()
-        // No assertions needed, the test passes if no crash occurs.
+        
+        XCTAssertTrue(self.mockView.hideLoadingCalled)
+        XCTAssertTrue(self.mockRouter.navigateToLoginCalled)
     }
 }
