@@ -6,5 +6,6 @@
 //
 
 protocol ChannelsRepositoryProtocol {
-    func fetchChannels(completion: @escaping (Result<[Channel], Error>) -> Void)
+    func fetchPublicChannels(completion: @escaping (Result<[Channel], Error>) -> Void)
+    func fetchPrivateChannels(completion: @escaping (Result<[Channel], Error>) -> Void)
 }

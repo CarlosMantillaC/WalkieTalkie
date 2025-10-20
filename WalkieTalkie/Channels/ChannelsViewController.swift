@@ -49,8 +49,16 @@ class ChannelsViewController: UIViewController {
 }
 
 extension ChannelsViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter?.numberOfSections ?? 1
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter?.channelsCount ?? 0
+        presenter?.numberOfRows(in: section) ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return presenter?.titleForHeader(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,14 +66,14 @@ extension ChannelsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        presenter?.configure(cell: cell, at: indexPath.row)
+        presenter?.configure(cell: cell, at: indexPath)
         return cell
     }
 }
 
 extension ChannelsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didSelectChannel(at: indexPath.row)
+        presenter?.didSelectChannel(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -81,4 +89,3 @@ extension ChannelsViewController: ChannelsViewProtocol {
         present(alert, animated: true)
     }
 }
-

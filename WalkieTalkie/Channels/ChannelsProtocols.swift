@@ -14,10 +14,12 @@ protocol ChannelsViewProtocol: AnyObject {
 }
 
 protocol ChannelsPresenterProtocol: AnyObject {
-    var channelsCount: Int { get }
+    var numberOfSections: Int { get }
+    func numberOfRows(in section: Int) -> Int
+    func titleForHeader(in section: Int) -> String?
     func viewDidLoad()
-    func configure(cell: ChannelsTableViewCell, at index: Int)
-    func didSelectChannel(at index: Int)
+    func configure(cell: ChannelsTableViewCell, at indexPath: IndexPath)
+    func didSelectChannel(at indexPath: IndexPath)
     func joinChannelTapped()
     func createChannelTapped()
 }
@@ -27,7 +29,7 @@ protocol ChannelsInteractorProtocol: AnyObject {
 }
 
 protocol ChannelsInteractorOutput: AnyObject {
-    func didLoadChannels(_ channels: [Channel])
+    func didLoadChannels(publicChannels: [Channel], privateChannels: [Channel])
     func didFailLoadingChannels(error: Error)
 }
 
