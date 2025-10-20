@@ -465,4 +465,28 @@ extension ChannelViewController: ChannelViewProtocol {
         changeChannelButton.isHidden = true
         stopUserFetchTimer()
     }
+    
+    func promptForPIN(completion: @escaping (String?) -> Void) {
+        let alertController = UIAlertController(title: "Canal Privado", message: "Introduce el PIN para conectar", preferredStyle: .alert)
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "PIN"
+            textField.isSecureTextEntry = true
+            textField.keyboardType = .numberPad
+        }
+        
+        let connectAction = UIAlertAction(title: "Conectar", style: .default) { _ in
+            let pin = alertController.textFields?.first?.text
+            completion(pin)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel) { _ in
+            completion(nil)
+        }
+        
+        alertController.addAction(connectAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true)
+    }
 }

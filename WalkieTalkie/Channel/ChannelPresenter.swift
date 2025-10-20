@@ -24,9 +24,21 @@ extension ChannelPresenter: ChannelPresenterProtocol {
             view?.showDisconnectedState()
             return
         }
-        interactor?.connectToChannel(named: channel.name)
+
         view?.setChannelName(channel.name)
         interactor?.fetchUsersInChannel(named: channel.name)
+
+        if channel.isPrivate {
+            view?.promptForPIN { [weak self] pin in
+                guard let pin = pin, !pin.isEmpty else {
+                    self?.view?.showDisconnectedState()
+                    return
+                }
+                self?.interactor?.connectToChannel(named: channel.name, pin: pin)
+            }
+        } else {
+            interactor?.connectToChannel(named: channel.name, pin: nil)
+        }
     }
     
     func startTalking() {

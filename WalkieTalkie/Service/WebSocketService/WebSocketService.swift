@@ -27,7 +27,7 @@ final class WebSocketService: WebSocketServiceProtocol {
         session = URLSession(configuration: config)
     }
     
-    func connect(to channel: String) {
+    func connect(to channel: String, pin: String? = nil) {
         guard !isConnected else {
             logger.debug("Already connected, ignoring connect request.")
             return
@@ -39,7 +39,11 @@ final class WebSocketService: WebSocketServiceProtocol {
         
         logger.info("Connected to WebSocket at \(self.url.absoluteString, privacy: .public)")
         
-        let json: [String: String] = ["channel": channel]
+        var json: [String: String] = ["channel": channel]
+        if let pin = pin {
+            json["pin"] = pin
+        }
+        
         if let data = try? JSONSerialization.data(withJSONObject: json),
            let message = String(data: data, encoding: .utf8) {
             send(message: message)

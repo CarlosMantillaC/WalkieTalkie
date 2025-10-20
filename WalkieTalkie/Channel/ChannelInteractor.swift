@@ -30,9 +30,9 @@ final class ChannelInteractor {
 }
 
 extension ChannelInteractor: ChannelInteractorProtocol {
-    func connectToChannel(named name: String) {
+    func connectToChannel(named name: String, pin: String? = nil) {
         guard let _ = channel else { return }
-        socket.connect(to: name)
+        socket.connect(to: name, pin: pin)
         audioService.startStreaming(to: socket)
         audioService.stopStreaming()
     }

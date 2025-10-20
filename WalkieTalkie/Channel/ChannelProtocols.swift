@@ -12,6 +12,7 @@ protocol ChannelViewProtocol: AnyObject {
     func setChannelName(_ name: String)
     func displayUsers(_ text: String)
     func showDisconnectedState()
+    func promptForPIN(completion: @escaping (String?) -> Void)
 }
 
 protocol ChannelPresenterProtocol: AnyObject {
@@ -27,7 +28,7 @@ protocol ChannelPresenterProtocol: AnyObject {
 }
 
 protocol ChannelInteractorProtocol: AnyObject {
-    func connectToChannel(named name: String)
+    func connectToChannel(named name: String, pin: String?)
     func startTalking()
     func stopTalking()
     func disconnectFromChannel()

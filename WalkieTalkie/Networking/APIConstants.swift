@@ -16,6 +16,7 @@ enum APIConstants {
         static let login = "/login"
         static let logout = "/logout"
         static let channels = "/channels/public"
+        static let channelsPrivate = "/channels/private"
         static let createChannelPrivate = "/channels/private/create"
         
         static func userChannel(channelName: String) -> String {
