@@ -53,7 +53,7 @@
                                 <constraint firstAttribute="height" constant="50" id="6vk-ch-jI3"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                            <textInputTraits key="textInputTraits" textContentType="name"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="name"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7j-2g-aM3">
                             <rect key="frame" x="106" y="307.66666666666663" width="101" height="40.333333333333314"/>

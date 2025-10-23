@@ -44,6 +44,17 @@ class ChannelPrivateCreateViewController: UIViewController {
             showError(error: "Por favor, rellene todos los campos.")
             return
         }
+        
+        guard pin.count == 4 else {
+            showError(error: "El PIN debe tener 4 dígitos.")
+            return
+        }
+        
+        guard Int(pin) != nil else {
+            showError(error: "El PIN debe ser numérico.")
+            return
+        }
+        
         presenter?.createChannel(name: name, pin: pin)
     }
 }
