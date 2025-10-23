@@ -33,7 +33,44 @@ final class ChannelPresenterTests: XCTestCase {
 
         XCTAssertEqual(mockView.channelName, "General")
         XCTAssertTrue(mockInteractor.connectCalled)
+        XCTAssertEqual(mockInteractor.connectedChannelName, "General")
+        XCTAssertNil(mockInteractor.connectedWithPin)
         XCTAssertTrue(mockInteractor.fetchUsersCalled)
+    }
+    
+    func testViewDidLoadWithPrivateChannel() {
+        let privateChannel = Channel(name: "Private", isPrivate: true, maxUsers: 10)
+        presenter = ChannelPresenter(channel: privateChannel)
+        presenter.view = mockView
+        presenter.interactor = mockInteractor
+        presenter.router = mockRouter
+        
+        presenter.viewDidLoad()
+        
+        XCTAssertTrue(mockView.promptForPINCalled)
+        
+        mockView.simulatePinEntry("1234")
+        
+        XCTAssertTrue(mockInteractor.connectCalled)
+        XCTAssertEqual(mockInteractor.connectedChannelName, "Private")
+        XCTAssertEqual(mockInteractor.connectedWithPin, "1234")
+    }
+    
+    func testViewDidLoadWithPrivateChannelCancelPin() {
+        let privateChannel = Channel(name: "Private", isPrivate: true, maxUsers: 10)
+        presenter = ChannelPresenter(channel: privateChannel)
+        presenter.view = mockView
+        presenter.interactor = mockInteractor
+        presenter.router = mockRouter
+        
+        presenter.viewDidLoad()
+        
+        XCTAssertTrue(mockView.promptForPINCalled)
+        
+        mockView.simulatePinEntry(nil)
+        
+        XCTAssertFalse(mockInteractor.connectCalled)
+        XCTAssertTrue(mockView.showDisconnectedStateCalled)
     }
     
     func testViewDidLoadWhenChannelIsNil() {

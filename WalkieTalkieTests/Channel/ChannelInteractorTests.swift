@@ -33,11 +33,19 @@ final class ChannelInteractorTests: XCTestCase {
     }
 
     func testConnectToChannelShouldStartAndStopStreaming() {
-        interactor.connectToChannel(named: "TestChannel")
+        interactor.connectToChannel(named: "TestChannel", pin: nil)
 
         XCTAssertEqual(mockSocket.connectedChannel, "TestChannel")
+        XCTAssertNil(mockSocket.connectedWithPin)
         XCTAssertTrue(mockAudioService.startStreamingCalled)
         XCTAssertTrue(mockAudioService.stopStreamingCalled)
+    }
+
+    func testConnectToPrivateChannelShouldUsePIN() {
+        interactor.connectToChannel(named: "PrivateChannel", pin: "1234")
+
+        XCTAssertEqual(mockSocket.connectedChannel, "PrivateChannel")
+        XCTAssertEqual(mockSocket.connectedWithPin, "1234")
     }
 
     func testStartTalkingShouldSendStartAndStartStreaming() {

@@ -34,10 +34,12 @@ final class ChannelRouter: ChannelRouterProtocol {
         let navController = UINavigationController(rootViewController: channelsVC)
         navController.modalPresentationStyle = .pageSheet
         
-        if let sheet = navController.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-            sheet.prefersGrabberVisible = true
-            sheet.preferredCornerRadius = 20
+        if #available(iOS 15.0, *) {
+            if let sheet = navController.sheetPresentationController {
+                sheet.detents = [.medium(), .large()]
+                sheet.prefersGrabberVisible = true
+                sheet.preferredCornerRadius = 20
+            }
         }
         
         if let viewController = view as? UIViewController {
@@ -75,3 +77,4 @@ final class ChannelRouter: ChannelRouterProtocol {
         }
     }
 }
+

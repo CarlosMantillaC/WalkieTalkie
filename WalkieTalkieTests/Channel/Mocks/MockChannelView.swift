@@ -13,7 +13,9 @@ final class MockChannelView: UIViewController, ChannelViewProtocol {
     var channelName: String?
     var usersShown: String?
     var showDisconnectedStateCalled = false
-    
+    var promptForPINCalled = false
+    var pinCompletion: ((String?) -> Void)?
+
     func setChannelName(_ name: String) {
         channelName = name
     }
@@ -24,5 +26,14 @@ final class MockChannelView: UIViewController, ChannelViewProtocol {
     
     func showDisconnectedState() {
         showDisconnectedStateCalled = true
+    }
+    
+    func promptForPIN(completion: @escaping (String?) -> Void) {
+        promptForPINCalled = true
+        pinCompletion = completion
+    }
+    
+    func simulatePinEntry(_ pin: String?) {
+        pinCompletion?(pin)
     }
 }

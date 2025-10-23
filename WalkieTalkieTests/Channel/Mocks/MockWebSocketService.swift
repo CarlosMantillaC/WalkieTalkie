@@ -11,11 +11,13 @@ import XCTest
 final class MockWebSocketService: WebSocketServiceProtocol {
     var delegate: WebSocketServiceDelegate?
     var connectedChannel: String?
+    var connectedWithPin: String?
     var sentMessages: [String] = []
     var disconnectCalled = false
     
-    func connect(to channel: String) {
+    func connect(to channel: String, pin: String?) {
         connectedChannel = channel
+        connectedWithPin = pin
     }
     
     func disconnect() {

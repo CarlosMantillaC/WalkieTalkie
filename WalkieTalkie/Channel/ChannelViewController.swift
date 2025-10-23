@@ -211,12 +211,14 @@ class ChannelViewController: UIViewController {
         applyTalkButtonImage(isTalking: false)
         
         let settingsIcon = UIImage(systemName: "gearshape")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
+        let settingsButton = UIBarButtonItem(
             image: settingsIcon,
             style: .plain,
             target: self,
             action: #selector(didTapSettings)
         )
+        settingsButton.accessibilityIdentifier = "settingsButton"
+        navigationItem.rightBarButtonItem = settingsButton
     }
     
     override func viewDidLayoutSubviews() {

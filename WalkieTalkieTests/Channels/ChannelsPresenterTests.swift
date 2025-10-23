@@ -31,10 +31,16 @@ final class ChannelsPresenterTests: XCTestCase {
     }
 
     func testDidLoadChannelsShouldUpdateDataAndReloadView() {
-        let channels = [Channel(name: "Canal 1", isPrivate: false, maxUsers: 100), Channel(name: "Canal 2", isPrivate: false, maxUsers: 100)]
-        presenter.didLoadChannels(channels)
+        let publicChannels = [Channel(name: "Public1", isPrivate: false, maxUsers: 10)]
+        let privateChannels = [Channel(name: "Private1", isPrivate: true, maxUsers: 5)]
+        
+        presenter.didLoadChannels(publicChannels: publicChannels, privateChannels: privateChannels)
 
-        XCTAssertEqual(presenter.channelsCount, 2)
+        XCTAssertEqual(presenter.numberOfSections, 2)
+        XCTAssertEqual(presenter.numberOfRows(in: 0), 1)
+        XCTAssertEqual(presenter.numberOfRows(in: 1), 1)
+        XCTAssertEqual(presenter.titleForHeader(in: 0), "Canales Privados")
+        XCTAssertEqual(presenter.titleForHeader(in: 1), "Canales Públicos")
         XCTAssertTrue(mockView.reloadDataCalled)
     }
 
@@ -43,5 +49,23 @@ final class ChannelsPresenterTests: XCTestCase {
         presenter.didFailLoadingChannels(error: error)
 
         XCTAssertEqual(mockView.shownErrorMessage, "Algo falló")
+    }
+    
+    func testDidSelectChannel() {
+        let publicChannels = [Channel(name: "Public1", isPrivate: false, maxUsers: 10)]
+        let privateChannels = [Channel(name: "Private1", isPrivate: true, maxUsers: 5)]
+        var selectedChannel: Channel?
+        presenter.onChannelSelected = { channel in
+            selectedChannel = channel
+        }
+        presenter.didLoadChannels(publicChannels: publicChannels, privateChannels: privateChannels)
+        
+        let privateIndexPath = IndexPath(row: 0, section: 0)
+        presenter.didSelectChannel(at: privateIndexPath)
+        XCTAssertEqual(selectedChannel?.name, "Private1")
+        
+        let publicIndexPath = IndexPath(row: 0, section: 1)
+        presenter.didSelectChannel(at: publicIndexPath)
+        XCTAssertEqual(selectedChannel?.name, "Public1")
     }
 }

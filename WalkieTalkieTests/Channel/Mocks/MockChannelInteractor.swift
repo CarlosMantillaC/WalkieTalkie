@@ -14,10 +14,13 @@ final class MockChannelInteractor: ChannelInteractorProtocol {
     var stopTalkingCalled = false
     var disconnectCalled = false
     var fetchUsersCalled = false
+    var connectedChannelName: String?
+    var connectedWithPin: String?
 
-
-    func connectToChannel(named name: String) {
+    func connectToChannel(named name: String, pin: String?) {
         connectCalled = true
+        connectedChannelName = name
+        connectedWithPin = pin
     }
 
     func startTalking() {

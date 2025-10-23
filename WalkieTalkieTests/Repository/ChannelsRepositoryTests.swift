@@ -14,35 +14,35 @@ final class ChannelsRepositoryTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [StubURLProtocol.self]
         session = URLSession(configuration: config)
         repository = ChannelsRepository(session: session)
     }
 
-    func testFetchChannelsSuccessResponse() {
-        let mockChannels = [
-            Channel(name: "Channel 1", isPrivate: false, maxUsers: 100),
-            Channel(name: "Channel 2", isPrivate: true, maxUsers: 20)
-        ]
-        let responseData = try! JSONEncoder().encode(mockChannels)
-
-        StubURLProtocol.stubResponseData = responseData
+    override func tearDown() {
+        StubURLProtocol.stubResponseData = nil
         StubURLProtocol.stubError = nil
+        StubURLProtocol.stubResponse = nil
+        repository = nil
+        session = nil
+        super.tearDown()
+    }
 
-        let expectation = self.expectation(description: "fetchChannels completes")
+    func testFetchPublicChannelsSuccess() {
+        let mockChannels = [Channel(name: "Public Channel", isPrivate: false, maxUsers: 100)]
+        let responseData = try! JSONEncoder().encode(mockChannels)
+        StubURLProtocol.stubResponseData = responseData
+        StubURLProtocol.stubResponse = HTTPURLResponse(url: URL(string: APIConstants.baseURL)!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let expectation = self.expectation(description: "fetchPublicChannels completes with success")
 
-        repository.fetchChannels { result in
+        repository.fetchPublicChannels { result in
             switch result {
             case .success(let channels):
-                XCTAssertEqual(channels.count, 2)
-                XCTAssertEqual(channels[0].name, "Channel 1")
-                XCTAssertEqual(channels[1].name, "Channel 2")
-                XCTAssertEqual(channels[1].isPrivate, true)
-                XCTAssertEqual(channels[1].maxUsers, 20)
-            case .failure:
-                XCTFail("Expected success, got failure")
+                XCTAssertEqual(channels.count, 1)
+                XCTAssertEqual(channels.first?.name, "Public Channel")
+            case .failure(let error):
+                XCTFail("Expected success, got failure with error: \(error)")
             }
             expectation.fulfill()
         }
@@ -50,16 +50,12 @@ final class ChannelsRepositoryTests: XCTestCase {
         waitForExpectations(timeout: 1)
     }
 
-    func testFetchChannelsReturnsInvalidJSONError() {
-        let invalidJSON = ["invalid": "data"]
-        let responseData = try! JSONEncoder().encode(invalidJSON)
+    func testFetchPublicChannelsFailureInvalidJSON() {
+        StubURLProtocol.stubResponseData = Data("Invalid JSON".utf8)
+        StubURLProtocol.stubResponse = HTTPURLResponse(url: URL(string: APIConstants.baseURL)!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let expectation = self.expectation(description: "fetchPublicChannels completes with InvalidJSON error")
 
-        StubURLProtocol.stubResponseData = responseData
-        StubURLProtocol.stubError = nil
-
-        let expectation = self.expectation(description: "fetchChannels completes")
-
-        repository.fetchChannels { result in
+        repository.fetchPublicChannels { result in
             switch result {
             case .success:
                 XCTFail("Expected failure, got success")
@@ -72,20 +68,113 @@ final class ChannelsRepositoryTests: XCTestCase {
         waitForExpectations(timeout: 1)
     }
 
-    func testFetchChannelsHandlesNetworkError() {
-        let networkError = NSError(domain: "Network", code: -1009, userInfo: [NSLocalizedDescriptionKey: "Sin conexión"])
-
+    func testFetchPublicChannelsFailureNetworkError() {
+        let networkError = NSError(domain: "NetworkError", code: 123, userInfo: nil)
         StubURLProtocol.stubError = networkError
-        StubURLProtocol.stubResponseData = nil
+        let expectation = self.expectation(description: "fetchPublicChannels completes with network error")
 
-        let expectation = self.expectation(description: "fetchChannels completes")
-
-        repository.fetchChannels { result in
+        repository.fetchPublicChannels { result in
             switch result {
             case .success:
                 XCTFail("Expected failure, got success")
             case .failure(let error):
-                XCTAssertEqual(error.localizedDescription, "Sin conexión")
+                XCTAssertEqual((error as NSError).domain, "NetworkError")
+                XCTAssertEqual((error as NSError).code, 123)
+            }
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 1)
+    }
+    
+    func testFetchPublicChannelsFailureNoData() {
+        StubURLProtocol.stubResponseData = nil
+        StubURLProtocol.stubResponse = HTTPURLResponse(url: URL(string: APIConstants.baseURL)!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let expectation = self.expectation(description: "fetchPublicChannels completes with NoData error")
+
+        repository.fetchPublicChannels { result in
+            switch result {
+            case .success:
+                XCTFail("Expected failure, got success")
+            case .failure(let error):
+                XCTAssertEqual((error as NSError).domain, "InvalidJSON")
+            }
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 1)
+    }
+    
+    func testFetchPrivateChannelsSuccess() {
+        let mockChannels = [Channel(name: "Private Channel", isPrivate: true, maxUsers: 50)]
+        let responseData = try! JSONEncoder().encode(mockChannels)
+        StubURLProtocol.stubResponseData = responseData
+        StubURLProtocol.stubResponse = HTTPURLResponse(url: URL(string: APIConstants.baseURL)!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let expectation = self.expectation(description: "fetchPrivateChannels completes with success")
+
+        repository.fetchPrivateChannels { result in
+            switch result {
+            case .success(let channels):
+                XCTAssertEqual(channels.count, 1)
+                XCTAssertEqual(channels.first?.name, "Private Channel")
+                XCTAssertTrue(channels.first?.isPrivate ?? false)
+            case .failure(let error):
+                XCTFail("Expected success, got failure with error: \(error)")
+            }
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 1)
+    }
+
+    func testFetchPrivateChannelsFailureInvalidJSON() {
+        StubURLProtocol.stubResponseData = Data("Invalid JSON".utf8)
+        StubURLProtocol.stubResponse = HTTPURLResponse(url: URL(string: APIConstants.baseURL)!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let expectation = self.expectation(description: "fetchPrivateChannels completes with InvalidJSON error")
+
+        repository.fetchPrivateChannels { result in
+            switch result {
+            case .success:
+                XCTFail("Expected failure, got success")
+            case .failure(let error):
+                XCTAssertEqual((error as NSError).domain, "InvalidJSON")
+            }
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 1)
+    }
+
+    func testFetchPrivateChannelsFailureNetworkError() {
+        let networkError = NSError(domain: "NetworkError", code: 456, userInfo: nil)
+        StubURLProtocol.stubError = networkError
+        let expectation = self.expectation(description: "fetchPrivateChannels completes with network error")
+
+        repository.fetchPrivateChannels { result in
+            switch result {
+            case .success:
+                XCTFail("Expected failure, got success")
+            case .failure(let error):
+                XCTAssertEqual((error as NSError).domain, "NetworkError")
+                XCTAssertEqual((error as NSError).code, 456)
+            }
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 1)
+    }
+    
+    func testFetchPrivateChannelsFailureNoData() {
+        StubURLProtocol.stubResponseData = nil
+        StubURLProtocol.stubResponse = HTTPURLResponse(url: URL(string: APIConstants.baseURL)!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let expectation = self.expectation(description: "fetchPrivateChannels completes with NoData error")
+
+        repository.fetchPrivateChannels { result in
+            switch result {
+            case .success:
+                XCTFail("Expected failure, got success")
+            case .failure(let error):
+                XCTAssertEqual((error as NSError).domain, "InvalidJSON")
             }
             expectation.fulfill()
         }
