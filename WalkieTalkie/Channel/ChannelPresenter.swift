@@ -65,8 +65,8 @@ extension ChannelPresenter: ChannelPresenterProtocol {
     }
 
     func didTapDropdownCountUser() {
-        if let view = view {
-            router?.navigateToChannelPrivateCreate(from: view)
+        if let view = view, let channel = channel {
+            router?.navigateToListUsers(from: view, with: channel.name)
         }
     }
     

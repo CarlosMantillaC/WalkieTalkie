@@ -63,10 +63,21 @@ final class ChannelRouter: ChannelRouterProtocol {
         }
     }
 
-    func navigateToChannelPrivateCreate(from view: ChannelViewProtocol) {
-        let channelPrivateCreateVC = ChannelPrivateCreateRouter.createModule()
-        if let vc = view as? UIViewController {
-            vc.navigationController?.setViewControllers([channelPrivateCreateVC], animated: true)
+    func navigateToListUsers(from view: ChannelViewProtocol, with channelName: String) {
+        let listUsersVC = ListUsersRouter.createModule(with: channelName)
+        let navController = UINavigationController(rootViewController: listUsersVC)
+        navController.modalPresentationStyle = .pageSheet
+        
+        if #available(iOS 15.0, *) {
+            if let sheet = navController.sheetPresentationController {
+                sheet.detents = [.medium(), .large()]
+                sheet.prefersGrabberVisible = true
+                sheet.preferredCornerRadius = 20
+            }
+        }
+        
+        if let viewController = view as? UIViewController {
+            viewController.present(navController, animated: true)
         }
     }
     

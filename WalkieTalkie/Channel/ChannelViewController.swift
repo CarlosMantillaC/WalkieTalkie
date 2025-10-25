@@ -385,7 +385,7 @@ extension ChannelViewController {
         nameChannelStackView.isUserInteractionEnabled = true
         nameChannelStackView.addGestureRecognizer(tapGestureName)
         
-        let tapGestureUsers = UITapGestureRecognizer(target: self, action: #selector(didTapDropdown))
+        let tapGestureUsers = UITapGestureRecognizer(target: self, action: #selector(didTapDropdownCountUser))
         countUsersStackView.isUserInteractionEnabled = true
         countUsersStackView.addGestureRecognizer(tapGestureUsers)
     }

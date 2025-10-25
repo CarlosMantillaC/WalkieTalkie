@@ -43,6 +43,6 @@ protocol ChannelInteractorOutputProtocol: AnyObject {
 protocol ChannelRouterProtocol: AnyObject {
     static func createModule(with channel: Channel?) -> UIViewController
     func presentChannelsModally(from view: ChannelViewProtocol)
-    func navigateToChannelPrivateCreate(from view: ChannelViewProtocol)
+    func navigateToListUsers(from view: ChannelViewProtocol, with channelName: String)
     func navigateToSettings(from view: ChannelViewProtocol)
 }

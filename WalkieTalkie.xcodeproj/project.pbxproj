@@ -31,6 +31,16 @@
 		C441D46D2EAD837700768B13 /* ChannelPrivateJoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C441D4602EAD837700768B13 /* ChannelPrivateJoinViewController.xib */; };
 		C441D4712EAD838E00768B13 /* ChannelPrivateJoinRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D46E2EAD838E00768B13 /* ChannelPrivateJoinRepository.swift */; };
 		C441D4722EAD838E00768B13 /* ChannelPrivateJoinRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D46F2EAD838E00768B13 /* ChannelPrivateJoinRepositoryProtocol.swift */; };
+		C441D47D2EAD8B9000768B13 /* ListUsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C441D47A2EAD8B9000768B13 /* ListUsersTableViewCell.xib */; };
+		C441D47E2EAD8B9000768B13 /* ListUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C441D47C2EAD8B9000768B13 /* ListUsersViewController.xib */; };
+		C441D47F2EAD8B9000768B13 /* ListUsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4752EAD8B9000768B13 /* ListUsersInteractor.swift */; };
+		C441D4802EAD8B9000768B13 /* ListUsersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4782EAD8B9000768B13 /* ListUsersRouter.swift */; };
+		C441D4812EAD8B9000768B13 /* ListUsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4762EAD8B9000768B13 /* ListUsersPresenter.swift */; };
+		C441D4822EAD8B9000768B13 /* ListUsersProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4772EAD8B9000768B13 /* ListUsersProtocols.swift */; };
+		C441D4832EAD8B9000768B13 /* ListUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D47B2EAD8B9000768B13 /* ListUsersViewController.swift */; };
+		C441D4842EAD8B9000768B13 /* ListUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4792EAD8B9000768B13 /* ListUsersTableViewCell.swift */; };
+		C441D4882EAD8BA400768B13 /* ListUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4852EAD8BA400768B13 /* ListUsersRepository.swift */; };
+		C441D4892EAD8BA400768B13 /* ListUsersRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4862EAD8BA400768B13 /* ListUsersRepositoryProtocol.swift */; };
 		C450D1BC2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */; };
 		C450D1BE2E98474B00F21013 /* ChannelPrivateCreateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */; };
 		C450D1C22E98498000F21013 /* ChannelPrivateCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */; };
@@ -186,6 +196,16 @@
 		C441D4632EAD837700768B13 /* ChannelPrivateJoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinResponse.swift; sourceTree = "<group>"; };
 		C441D46E2EAD838E00768B13 /* ChannelPrivateJoinRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinRepository.swift; sourceTree = "<group>"; };
 		C441D46F2EAD838E00768B13 /* ChannelPrivateJoinRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinRepositoryProtocol.swift; sourceTree = "<group>"; };
+		C441D4752EAD8B9000768B13 /* ListUsersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersInteractor.swift; sourceTree = "<group>"; };
+		C441D4762EAD8B9000768B13 /* ListUsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersPresenter.swift; sourceTree = "<group>"; };
+		C441D4772EAD8B9000768B13 /* ListUsersProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersProtocols.swift; sourceTree = "<group>"; };
+		C441D4782EAD8B9000768B13 /* ListUsersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersRouter.swift; sourceTree = "<group>"; };
+		C441D4792EAD8B9000768B13 /* ListUsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersTableViewCell.swift; sourceTree = "<group>"; };
+		C441D47A2EAD8B9000768B13 /* ListUsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListUsersTableViewCell.xib; sourceTree = "<group>"; };
+		C441D47B2EAD8B9000768B13 /* ListUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewController.swift; sourceTree = "<group>"; };
+		C441D47C2EAD8B9000768B13 /* ListUsersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListUsersViewController.xib; sourceTree = "<group>"; };
+		C441D4852EAD8BA400768B13 /* ListUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersRepository.swift; sourceTree = "<group>"; };
+		C441D4862EAD8BA400768B13 /* ListUsersRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersRepositoryProtocol.swift; sourceTree = "<group>"; };
 		C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepositoryProtocol.swift; sourceTree = "<group>"; };
 		C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepository.swift; sourceTree = "<group>"; };
 		C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRequest.swift; sourceTree = "<group>"; };
@@ -394,6 +414,30 @@
 			path = ChannelPrivateJoin;
 			sourceTree = "<group>";
 		};
+		C441D4732EAD899C00768B13 /* ListUsers */ = {
+			isa = PBXGroup;
+			children = (
+				C441D4752EAD8B9000768B13 /* ListUsersInteractor.swift */,
+				C441D4762EAD8B9000768B13 /* ListUsersPresenter.swift */,
+				C441D4772EAD8B9000768B13 /* ListUsersProtocols.swift */,
+				C441D4782EAD8B9000768B13 /* ListUsersRouter.swift */,
+				C441D4792EAD8B9000768B13 /* ListUsersTableViewCell.swift */,
+				C441D47A2EAD8B9000768B13 /* ListUsersTableViewCell.xib */,
+				C441D47B2EAD8B9000768B13 /* ListUsersViewController.swift */,
+				C441D47C2EAD8B9000768B13 /* ListUsersViewController.xib */,
+			);
+			path = ListUsers;
+			sourceTree = "<group>";
+		};
+		C441D4872EAD8BA400768B13 /* ListUsers */ = {
+			isa = PBXGroup;
+			children = (
+				C441D4852EAD8BA400768B13 /* ListUsersRepository.swift */,
+				C441D4862EAD8BA400768B13 /* ListUsersRepositoryProtocol.swift */,
+			);
+			path = ListUsers;
+			sourceTree = "<group>";
+		};
 		C450D1BA2E9846DE00F21013 /* ChannelPrivateCreate */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,6 +591,7 @@
 				C46024B12E26FFE80032EDA6 /* Login */,
 				C46024D62E27F4D10032EDA6 /* Register */,
 				C46024D72E27F69C0032EDA6 /* Channel */,
+				C441D4732EAD899C00768B13 /* ListUsers */,
 				C4C4E42F2E9800D70077AEA9 /* ChannelPrivateCreate */,
 				C441D45A2EAD820600768B13 /* ChannelPrivateJoin */,
 				C46025042E2904680032EDA6 /* Channels */,
@@ -612,6 +657,7 @@
 		C46024C12E2702970032EDA6 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				C441D4872EAD8BA400768B13 /* ListUsers */,
 				C441D4702EAD838E00768B13 /* ChannelPrivateJoin */,
 				C450D1BA2E9846DE00F21013 /* ChannelPrivateCreate */,
 				C499479D2E624A3800CE40BB /* Login */,
@@ -930,6 +976,8 @@
 				C46024EC2E27F8E40032EDA6 /* RegisterViewController.xib in Resources */,
 				C46024FD2E2804DE0032EDA6 /* ChannelViewController.xib in Resources */,
 				C46025082E2905640032EDA6 /* ChannelsTableViewCell.xib in Resources */,
+				C441D47D2EAD8B9000768B13 /* ListUsersTableViewCell.xib in Resources */,
+				C441D47E2EAD8B9000768B13 /* ListUsersViewController.xib in Resources */,
 				C47EB27B2E3BF58C002EA5A0 /* audio_end_talking.mp3 in Resources */,
 				C47EB27C2E3BF58C002EA5A0 /* audio_start_talking.mp3 in Resources */,
 			);
@@ -998,10 +1046,18 @@
 				C4C4E4372E9801780077AEA9 /* ChannelPrivateCreateRouter.swift in Sources */,
 				C46024CA2E2703180032EDA6 /* LoginAPIErrorResponse.swift in Sources */,
 				C450D1C22E98498000F21013 /* ChannelPrivateCreateRequest.swift in Sources */,
+				C441D4882EAD8BA400768B13 /* ListUsersRepository.swift in Sources */,
+				C441D4892EAD8BA400768B13 /* ListUsersRepositoryProtocol.swift in Sources */,
 				C450D1C32E98498000F21013 /* ChannelPrivateCreateResponse.swift in Sources */,
 				C46024C32E2702B30032EDA6 /* LoginRepository.swift in Sources */,
 				C46024CE2E2703730032EDA6 /* LoginPresenter.swift in Sources */,
 				C46024A52E26FFCF0032EDA6 /* SceneDelegate.swift in Sources */,
+				C441D47F2EAD8B9000768B13 /* ListUsersInteractor.swift in Sources */,
+				C441D4802EAD8B9000768B13 /* ListUsersRouter.swift in Sources */,
+				C441D4812EAD8B9000768B13 /* ListUsersPresenter.swift in Sources */,
+				C441D4822EAD8B9000768B13 /* ListUsersProtocols.swift in Sources */,
+				C441D4832EAD8B9000768B13 /* ListUsersViewController.swift in Sources */,
+				C441D4842EAD8B9000768B13 /* ListUsersTableViewCell.swift in Sources */,
 				C4382BE02E9C6BDF00312672 /* SettingsRouter.swift in Sources */,
 				C4382BE12E9C6BDF00312672 /* SettingsPresenter.swift in Sources */,
 				C4382BE22E9C6BDF00312672 /* SettingsInteractor.swift in Sources */,
