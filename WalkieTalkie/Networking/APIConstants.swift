@@ -18,6 +18,7 @@ enum APIConstants {
         static let channels = "/channels/public"
         static let channelsPrivate = "/channels/private"
         static let createChannelPrivate = "/channels/private/create"
+        static let joinChannelPrivate = "/channels/private/join"
         
         static func userChannel(channelName: String) -> String {
             return "/channel-users?channel=\(channelName)"

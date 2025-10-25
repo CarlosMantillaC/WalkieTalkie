@@ -20,6 +20,17 @@
 		C4382BF22E9C888800312672 /* MockSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BE72E9C888800312672 /* MockSettingsPresenter.swift */; };
 		C4382BF42E9C8B7700312672 /* TokenExpirationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BF32E9C8B7700312672 /* TokenExpirationHandler.swift */; };
 		C4382BF62E9C8BF000312672 /* Notifications+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4382BF52E9C8BF000312672 /* Notifications+Extensions.swift */; };
+		C441D4652EAD837700768B13 /* ChannelPrivateJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D45F2EAD837700768B13 /* ChannelPrivateJoinViewController.swift */; };
+		C441D4662EAD837700768B13 /* ChannelPrivateJoinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D45B2EAD837700768B13 /* ChannelPrivateJoinInteractor.swift */; };
+		C441D4672EAD837700768B13 /* ChannelPrivateJoinAPIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4612EAD837700768B13 /* ChannelPrivateJoinAPIErrorResponse.swift */; };
+		C441D4682EAD837700768B13 /* ChannelPrivateJoinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D45C2EAD837700768B13 /* ChannelPrivateJoinPresenter.swift */; };
+		C441D4692EAD837700768B13 /* ChannelPrivateJoinProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D45D2EAD837700768B13 /* ChannelPrivateJoinProtocols.swift */; };
+		C441D46A2EAD837700768B13 /* ChannelPrivateJoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4622EAD837700768B13 /* ChannelPrivateJoinRequest.swift */; };
+		C441D46B2EAD837700768B13 /* ChannelPrivateJoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4632EAD837700768B13 /* ChannelPrivateJoinResponse.swift */; };
+		C441D46C2EAD837700768B13 /* ChannelPrivateJoinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D45E2EAD837700768B13 /* ChannelPrivateJoinRouter.swift */; };
+		C441D46D2EAD837700768B13 /* ChannelPrivateJoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C441D4602EAD837700768B13 /* ChannelPrivateJoinViewController.xib */; };
+		C441D4712EAD838E00768B13 /* ChannelPrivateJoinRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D46E2EAD838E00768B13 /* ChannelPrivateJoinRepository.swift */; };
+		C441D4722EAD838E00768B13 /* ChannelPrivateJoinRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D46F2EAD838E00768B13 /* ChannelPrivateJoinRepositoryProtocol.swift */; };
 		C450D1BC2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */; };
 		C450D1BE2E98474B00F21013 /* ChannelPrivateCreateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */; };
 		C450D1C22E98498000F21013 /* ChannelPrivateCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */; };
@@ -164,6 +175,17 @@
 		C4382BEC2E9C888800312672 /* SettingsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterTests.swift; sourceTree = "<group>"; };
 		C4382BF32E9C8B7700312672 /* TokenExpirationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenExpirationHandler.swift; sourceTree = "<group>"; };
 		C4382BF52E9C8BF000312672 /* Notifications+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications+Extensions.swift"; sourceTree = "<group>"; };
+		C441D45B2EAD837700768B13 /* ChannelPrivateJoinInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinInteractor.swift; sourceTree = "<group>"; };
+		C441D45C2EAD837700768B13 /* ChannelPrivateJoinPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinPresenter.swift; sourceTree = "<group>"; };
+		C441D45D2EAD837700768B13 /* ChannelPrivateJoinProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinProtocols.swift; sourceTree = "<group>"; };
+		C441D45E2EAD837700768B13 /* ChannelPrivateJoinRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinRouter.swift; sourceTree = "<group>"; };
+		C441D45F2EAD837700768B13 /* ChannelPrivateJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinViewController.swift; sourceTree = "<group>"; };
+		C441D4602EAD837700768B13 /* ChannelPrivateJoinViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelPrivateJoinViewController.xib; sourceTree = "<group>"; };
+		C441D4612EAD837700768B13 /* ChannelPrivateJoinAPIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinAPIErrorResponse.swift; sourceTree = "<group>"; };
+		C441D4622EAD837700768B13 /* ChannelPrivateJoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinRequest.swift; sourceTree = "<group>"; };
+		C441D4632EAD837700768B13 /* ChannelPrivateJoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinResponse.swift; sourceTree = "<group>"; };
+		C441D46E2EAD838E00768B13 /* ChannelPrivateJoinRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinRepository.swift; sourceTree = "<group>"; };
+		C441D46F2EAD838E00768B13 /* ChannelPrivateJoinRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinRepositoryProtocol.swift; sourceTree = "<group>"; };
 		C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepositoryProtocol.swift; sourceTree = "<group>"; };
 		C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepository.swift; sourceTree = "<group>"; };
 		C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRequest.swift; sourceTree = "<group>"; };
@@ -339,6 +361,39 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		C441D45A2EAD820600768B13 /* ChannelPrivateJoin */ = {
+			isa = PBXGroup;
+			children = (
+				C441D4642EAD837700768B13 /* Entities */,
+				C441D45B2EAD837700768B13 /* ChannelPrivateJoinInteractor.swift */,
+				C441D45C2EAD837700768B13 /* ChannelPrivateJoinPresenter.swift */,
+				C441D45D2EAD837700768B13 /* ChannelPrivateJoinProtocols.swift */,
+				C441D45E2EAD837700768B13 /* ChannelPrivateJoinRouter.swift */,
+				C441D45F2EAD837700768B13 /* ChannelPrivateJoinViewController.swift */,
+				C441D4602EAD837700768B13 /* ChannelPrivateJoinViewController.xib */,
+			);
+			path = ChannelPrivateJoin;
+			sourceTree = "<group>";
+		};
+		C441D4642EAD837700768B13 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C441D4612EAD837700768B13 /* ChannelPrivateJoinAPIErrorResponse.swift */,
+				C441D4622EAD837700768B13 /* ChannelPrivateJoinRequest.swift */,
+				C441D4632EAD837700768B13 /* ChannelPrivateJoinResponse.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C441D4702EAD838E00768B13 /* ChannelPrivateJoin */ = {
+			isa = PBXGroup;
+			children = (
+				C441D46E2EAD838E00768B13 /* ChannelPrivateJoinRepository.swift */,
+				C441D46F2EAD838E00768B13 /* ChannelPrivateJoinRepositoryProtocol.swift */,
+			);
+			path = ChannelPrivateJoin;
+			sourceTree = "<group>";
+		};
 		C450D1BA2E9846DE00F21013 /* ChannelPrivateCreate */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +548,7 @@
 				C46024D62E27F4D10032EDA6 /* Register */,
 				C46024D72E27F69C0032EDA6 /* Channel */,
 				C4C4E42F2E9800D70077AEA9 /* ChannelPrivateCreate */,
+				C441D45A2EAD820600768B13 /* ChannelPrivateJoin */,
 				C46025042E2904680032EDA6 /* Channels */,
 				C46024D32E2703DB0032EDA6 /* Components */,
 				C460249E2E26FFCF0032EDA6 /* AppDelegate.swift */,
@@ -556,6 +612,7 @@
 		C46024C12E2702970032EDA6 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				C441D4702EAD838E00768B13 /* ChannelPrivateJoin */,
 				C450D1BA2E9846DE00F21013 /* ChannelPrivateCreate */,
 				C499479D2E624A3800CE40BB /* Login */,
 				C499479E2E624A6600CE40BB /* Register */,
@@ -865,6 +922,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C441D46D2EAD837700768B13 /* ChannelPrivateJoinViewController.xib in Resources */,
 				C46025172E2918730032EDA6 /* ChannelsViewController.xib in Resources */,
 				C46024B52E2700540032EDA6 /* LoginViewController.xib in Resources */,
 				C4C4E43B2E9801A90077AEA9 /* ChannelPrivateCreateViewController.xib in Resources */,
@@ -910,6 +968,8 @@
 				C46024F52E28042A0032EDA6 /* ChannelInteractor.swift in Sources */,
 				C46024E62E27F8B40032EDA6 /* RegisterInteractor.swift in Sources */,
 				C47EB27E2E3BF5A2002EA5A0 /* SoundButtonService.swift in Sources */,
+				C441D4712EAD838E00768B13 /* ChannelPrivateJoinRepository.swift in Sources */,
+				C441D4722EAD838E00768B13 /* ChannelPrivateJoinRepositoryProtocol.swift in Sources */,
 				C48C3FD72E2AC6E600D9B24A /* UIColor+Hex.swift in Sources */,
 				C46025132E2917C90032EDA6 /* ChannelsPresenter.swift in Sources */,
 				C480A1072E297AE1000E0C7F /* AudioServiceProtocol.swift in Sources */,
@@ -950,6 +1010,14 @@
 				C450D1BE2E98474B00F21013 /* ChannelPrivateCreateRepository.swift in Sources */,
 				C47B30912E30276500275424 /* ChannelUsersRepository.swift in Sources */,
 				C460250F2E290AD20032EDA6 /* ChannelsProtocols.swift in Sources */,
+				C441D4652EAD837700768B13 /* ChannelPrivateJoinViewController.swift in Sources */,
+				C441D4662EAD837700768B13 /* ChannelPrivateJoinInteractor.swift in Sources */,
+				C441D4672EAD837700768B13 /* ChannelPrivateJoinAPIErrorResponse.swift in Sources */,
+				C441D4682EAD837700768B13 /* ChannelPrivateJoinPresenter.swift in Sources */,
+				C441D4692EAD837700768B13 /* ChannelPrivateJoinProtocols.swift in Sources */,
+				C441D46A2EAD837700768B13 /* ChannelPrivateJoinRequest.swift in Sources */,
+				C441D46B2EAD837700768B13 /* ChannelPrivateJoinResponse.swift in Sources */,
+				C441D46C2EAD837700768B13 /* ChannelPrivateJoinRouter.swift in Sources */,
 				C48C3FD92E2AC99400D9B24A /* UIViewController+GradientBackground.swift in Sources */,
 				C46024E82E27F8CB0032EDA6 /* RegisterPresenter.swift in Sources */,
 				C46024FF2E2805390032EDA6 /* ChannelRouter.swift in Sources */,

@@ -29,9 +29,8 @@ final class ChannelsRouter: ChannelsRouterProtocol {
     }
     
     func navigateToJoinChannel() {
-        let alert = UIAlertController(title: "Unirse a Canal", message: "Esta funcionalidad todavía no está implementada.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        viewController?.present(alert, animated: true)
+        let joinChannelVC = ChannelPrivateJoinRouter.createModule()
+        viewController?.present(joinChannelVC, animated: true)
     }
     
     func navigateToCreateChannel() {
