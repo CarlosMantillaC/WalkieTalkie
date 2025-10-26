@@ -121,6 +121,13 @@ final class ChannelPresenterTests: XCTestCase {
         XCTAssertTrue(mockRouter.navigateToSettingsCalled)
     }
 
+    func testDidTapDropdownCountUserNavigatesToListUsers() {
+        presenter.didTapDropdownCountUser()
+
+        XCTAssertTrue(mockRouter.navigateToListUsersCalled)
+        XCTAssertEqual(mockRouter.listUsersChannelName, "General")
+    }
+
     func testDidFetchUsersDisplaysOnView() {
         let emails = ["a@a.com", "b@b.com"]
         presenter.didFetchUsers(emails)
@@ -132,11 +139,5 @@ final class ChannelPresenterTests: XCTestCase {
         presenter.didDisconnect()
         
         XCTAssertTrue(mockView.showDisconnectedStateCalled)
-    }
-
-    func testDidTapDropdownCountUserNavigatesToPrivateCreate() {
-        presenter.didTapDropdownCountUser()
-
-        XCTAssertTrue(mockRouter.navigateToChannelPrivateCreateCalled)
     }
 }

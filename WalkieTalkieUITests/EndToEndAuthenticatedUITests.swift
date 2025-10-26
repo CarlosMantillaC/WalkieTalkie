@@ -7,8 +7,8 @@
 
 import XCTest
 
-final class ChannelUITests: XCTestCase {
-    func testChannelSuccessful() throws {
+final class EndToEndAuthenticatedUITests: XCTestCase {
+    func testEndToEndAuthenticatedSuccessful() throws {
         let app = XCUIApplication()
         app.launch()
 
@@ -29,6 +29,16 @@ final class ChannelUITests: XCTestCase {
         let canal1 = app.staticTexts["canal-1"].firstMatch
         canal1.tap()
         
+        let element = app.buttons["Ver usuarios"].firstMatch
+        element.tap()
+
+        let listUserSheet = app.otherElements.containing(.staticText, identifier: "Usuarios Conectados").firstMatch
+        if listUserSheet.exists {
+            let startCoordinate = listUserSheet.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.2))
+            let endCoordinate = listUserSheet.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.8))
+            startCoordinate.press(forDuration: 0.1, thenDragTo: endCoordinate)
+        }
+        
         let talkButton = app.buttons["Pulsa para hablar"].firstMatch
         talkButton.press(forDuration: 1.1)
         
@@ -37,8 +47,8 @@ final class ChannelUITests: XCTestCase {
         
         disconnectedStatic.tap()
 
-        let crearButton = app.buttons["Crear"].firstMatch
-        crearButton.tap()
+        let createButton = app.buttons["Crear"].firstMatch
+        createButton.tap()
         
         let nameChannel = app.textFields["Ingrese el nombre del canal"]
         nameChannel.tap()
@@ -61,6 +71,20 @@ final class ChannelUITests: XCTestCase {
             startCoordinate.press(forDuration: 0.1, thenDragTo: endCoordinate)
         }
         
+        let joinButton = app.buttons["Unirme"].firstMatch
+        joinButton.tap()
+
+        nameChannel.tap()
+        nameChannel.typeText("fesc-1")
+        
+        PINChannel.tap()
+        PINChannel.typeText("1234")
+        
+        let joinStatic = app.staticTexts["Unirse"].firstMatch
+        joinStatic.tap()
+        
+        okAlertButton.tap()
+
         let listSheet = app.otherElements.containing(.staticText, identifier: "Lista de Canales").firstMatch
         if listSheet.exists {
             let startCoordinate = listSheet.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.2))

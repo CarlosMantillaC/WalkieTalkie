@@ -41,6 +41,32 @@
 		C441D4842EAD8B9000768B13 /* ListUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4792EAD8B9000768B13 /* ListUsersTableViewCell.swift */; };
 		C441D4882EAD8BA400768B13 /* ListUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4852EAD8BA400768B13 /* ListUsersRepository.swift */; };
 		C441D4892EAD8BA400768B13 /* ListUsersRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4862EAD8BA400768B13 /* ListUsersRepositoryProtocol.swift */; };
+		C441D4932EADA86000768B13 /* MockChannelPrivateCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D48E2EADA86000768B13 /* MockChannelPrivateCreateView.swift */; };
+		C441D4942EADA86000768B13 /* MockChannelPrivateCreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D48B2EADA86000768B13 /* MockChannelPrivateCreatePresenter.swift */; };
+		C441D4952EADA86000768B13 /* ChannelPrivateCreateInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4902EADA86000768B13 /* ChannelPrivateCreateInteractorTests.swift */; };
+		C441D4962EADA86000768B13 /* MockChannelPrivateCreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D48A2EADA86000768B13 /* MockChannelPrivateCreateInteractor.swift */; };
+		C441D4972EADA86000768B13 /* MockChannelPrivateCreateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D48D2EADA86000768B13 /* MockChannelPrivateCreateRouter.swift */; };
+		C441D4982EADA86000768B13 /* MockChannelPrivateCreateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D48C2EADA86000768B13 /* MockChannelPrivateCreateRepository.swift */; };
+		C441D4992EADA86000768B13 /* ChannelPrivateCreatePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4912EADA86000768B13 /* ChannelPrivateCreatePresenterTests.swift */; };
+		C441D4A32EADA9D500768B13 /* MockChannelPrivateJoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D49E2EADA9D500768B13 /* MockChannelPrivateJoinView.swift */; };
+		C441D4A42EADA9D500768B13 /* MockChannelPrivateJoinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D49D2EADA9D500768B13 /* MockChannelPrivateJoinRouter.swift */; };
+		C441D4A52EADA9D500768B13 /* MockChannelPrivateJoinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D49B2EADA9D500768B13 /* MockChannelPrivateJoinPresenter.swift */; };
+		C441D4A62EADA9D500768B13 /* ChannelPrivateJoinInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4A02EADA9D500768B13 /* ChannelPrivateJoinInteractorTests.swift */; };
+		C441D4A72EADA9D500768B13 /* MockChannelPrivateJoinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D49A2EADA9D500768B13 /* MockChannelPrivateJoinInteractor.swift */; };
+		C441D4A82EADA9D500768B13 /* ChannelPrivateJoinPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4A12EADA9D500768B13 /* ChannelPrivateJoinPresenterTests.swift */; };
+		C441D4A92EADA9D500768B13 /* MockChannelPrivateJoinRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D49C2EADA9D500768B13 /* MockChannelPrivateJoinRepository.swift */; };
+		C441D4AB2EADAAA700768B13 /* ChannelPrivateCreateEntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4AA2EADAAA700768B13 /* ChannelPrivateCreateEntitiesTests.swift */; };
+		C441D4AD2EADAB2500768B13 /* ChannelPrivateJoinEntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4AC2EADAB2500768B13 /* ChannelPrivateJoinEntitiesTests.swift */; };
+		C441D4B72EADABD400768B13 /* MockListUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4B22EADABD400768B13 /* MockListUsersView.swift */; };
+		C441D4B82EADABD400768B13 /* ListUsersInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4B42EADABD400768B13 /* ListUsersInteractorTests.swift */; };
+		C441D4B92EADABD400768B13 /* MockListUsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4AE2EADABD400768B13 /* MockListUsersInteractor.swift */; };
+		C441D4BA2EADABD400768B13 /* MockListUsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4AF2EADABD400768B13 /* MockListUsersPresenter.swift */; };
+		C441D4BB2EADABD400768B13 /* MockListUsersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4B12EADABD400768B13 /* MockListUsersRouter.swift */; };
+		C441D4BC2EADABD400768B13 /* ListUsersPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4B52EADABD400768B13 /* ListUsersPresenterTests.swift */; };
+		C441D4BD2EADABD400768B13 /* MockListUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4B02EADABD400768B13 /* MockListUsersRepository.swift */; };
+		C441D4BF2EADB31100768B13 /* ChannelPrivateCreateRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4BE2EADB31100768B13 /* ChannelPrivateCreateRepositoryTests.swift */; };
+		C441D4C12EADB42C00768B13 /* ChannelPrivateJoinRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4C02EADB42C00768B13 /* ChannelPrivateJoinRepositoryTests.swift */; };
+		C441D4C32EADB4CC00768B13 /* ListUsersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441D4C22EADB4CC00768B13 /* ListUsersRepositoryTests.swift */; };
 		C450D1BC2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */; };
 		C450D1BE2E98474B00F21013 /* ChannelPrivateCreateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */; };
 		C450D1C22E98498000F21013 /* ChannelPrivateCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */; };
@@ -72,7 +98,7 @@
 		C45DBFB32E351D3B007DAD63 /* MockChannelRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DBFB22E351D3B007DAD63 /* MockChannelRouter.swift */; };
 		C45DBFB52E351E54007DAD63 /* ChannelPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DBFB42E351E54007DAD63 /* ChannelPresenterTests.swift */; };
 		C45DBFB72E352CF4007DAD63 /* ChannelUsersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DBFB62E352CF4007DAD63 /* ChannelUsersRepositoryTests.swift */; };
-		C45DBFB92E353015007DAD63 /* ChannelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DBFB82E353015007DAD63 /* ChannelUITests.swift */; };
+		C45DBFB92E353015007DAD63 /* EndToEndAuthenticatedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DBFB82E353015007DAD63 /* EndToEndAuthenticatedUITests.swift */; };
 		C45E284C2E5DF53600FE340D /* LoginEntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E284B2E5DF53600FE340D /* LoginEntitiesTests.swift */; };
 		C45E284E2E5E008100FE340D /* RegisterEntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E284D2E5E008100FE340D /* RegisterEntitiesTests.swift */; };
 		C45E28502E5E0F4B00FE340D /* ChannelsEntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E284F2E5E0F4B00FE340D /* ChannelsEntitiesTests.swift */; };
@@ -206,6 +232,32 @@
 		C441D47C2EAD8B9000768B13 /* ListUsersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListUsersViewController.xib; sourceTree = "<group>"; };
 		C441D4852EAD8BA400768B13 /* ListUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersRepository.swift; sourceTree = "<group>"; };
 		C441D4862EAD8BA400768B13 /* ListUsersRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersRepositoryProtocol.swift; sourceTree = "<group>"; };
+		C441D48A2EADA86000768B13 /* MockChannelPrivateCreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelPrivateCreateInteractor.swift; sourceTree = "<group>"; };
+		C441D48B2EADA86000768B13 /* MockChannelPrivateCreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelPrivateCreatePresenter.swift; sourceTree = "<group>"; };
+		C441D48C2EADA86000768B13 /* MockChannelPrivateCreateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelPrivateCreateRepository.swift; sourceTree = "<group>"; };
+		C441D48D2EADA86000768B13 /* MockChannelPrivateCreateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelPrivateCreateRouter.swift; sourceTree = "<group>"; };
+		C441D48E2EADA86000768B13 /* MockChannelPrivateCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelPrivateCreateView.swift; sourceTree = "<group>"; };
+		C441D4902EADA86000768B13 /* ChannelPrivateCreateInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateInteractorTests.swift; sourceTree = "<group>"; };
+		C441D4912EADA86000768B13 /* ChannelPrivateCreatePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreatePresenterTests.swift; sourceTree = "<group>"; };
+		C441D49A2EADA9D500768B13 /* MockChannelPrivateJoinInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelPrivateJoinInteractor.swift; sourceTree = "<group>"; };
+		C441D49B2EADA9D500768B13 /* MockChannelPrivateJoinPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelPrivateJoinPresenter.swift; sourceTree = "<group>"; };
+		C441D49C2EADA9D500768B13 /* MockChannelPrivateJoinRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelPrivateJoinRepository.swift; sourceTree = "<group>"; };
+		C441D49D2EADA9D500768B13 /* MockChannelPrivateJoinRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelPrivateJoinRouter.swift; sourceTree = "<group>"; };
+		C441D49E2EADA9D500768B13 /* MockChannelPrivateJoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelPrivateJoinView.swift; sourceTree = "<group>"; };
+		C441D4A02EADA9D500768B13 /* ChannelPrivateJoinInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinInteractorTests.swift; sourceTree = "<group>"; };
+		C441D4A12EADA9D500768B13 /* ChannelPrivateJoinPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinPresenterTests.swift; sourceTree = "<group>"; };
+		C441D4AA2EADAAA700768B13 /* ChannelPrivateCreateEntitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateEntitiesTests.swift; sourceTree = "<group>"; };
+		C441D4AC2EADAB2500768B13 /* ChannelPrivateJoinEntitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinEntitiesTests.swift; sourceTree = "<group>"; };
+		C441D4AE2EADABD400768B13 /* MockListUsersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListUsersInteractor.swift; sourceTree = "<group>"; };
+		C441D4AF2EADABD400768B13 /* MockListUsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListUsersPresenter.swift; sourceTree = "<group>"; };
+		C441D4B02EADABD400768B13 /* MockListUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListUsersRepository.swift; sourceTree = "<group>"; };
+		C441D4B12EADABD400768B13 /* MockListUsersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListUsersRouter.swift; sourceTree = "<group>"; };
+		C441D4B22EADABD400768B13 /* MockListUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListUsersView.swift; sourceTree = "<group>"; };
+		C441D4B42EADABD400768B13 /* ListUsersInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersInteractorTests.swift; sourceTree = "<group>"; };
+		C441D4B52EADABD400768B13 /* ListUsersPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersPresenterTests.swift; sourceTree = "<group>"; };
+		C441D4BE2EADB31100768B13 /* ChannelPrivateCreateRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepositoryTests.swift; sourceTree = "<group>"; };
+		C441D4C02EADB42C00768B13 /* ChannelPrivateJoinRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateJoinRepositoryTests.swift; sourceTree = "<group>"; };
+		C441D4C22EADB4CC00768B13 /* ListUsersRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersRepositoryTests.swift; sourceTree = "<group>"; };
 		C450D1BB2E98473300F21013 /* ChannelPrivateCreateRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepositoryProtocol.swift; sourceTree = "<group>"; };
 		C450D1BD2E98474B00F21013 /* ChannelPrivateCreateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRepository.swift; sourceTree = "<group>"; };
 		C450D1BF2E98498000F21013 /* ChannelPrivateCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPrivateCreateRequest.swift; sourceTree = "<group>"; };
@@ -237,7 +289,7 @@
 		C45DBFB22E351D3B007DAD63 /* MockChannelRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChannelRouter.swift; sourceTree = "<group>"; };
 		C45DBFB42E351E54007DAD63 /* ChannelPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPresenterTests.swift; sourceTree = "<group>"; };
 		C45DBFB62E352CF4007DAD63 /* ChannelUsersRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelUsersRepositoryTests.swift; sourceTree = "<group>"; };
-		C45DBFB82E353015007DAD63 /* ChannelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelUITests.swift; sourceTree = "<group>"; };
+		C45DBFB82E353015007DAD63 /* EndToEndAuthenticatedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndToEndAuthenticatedUITests.swift; sourceTree = "<group>"; };
 		C45E284B2E5DF53600FE340D /* LoginEntitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntitiesTests.swift; sourceTree = "<group>"; };
 		C45E284D2E5E008100FE340D /* RegisterEntitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEntitiesTests.swift; sourceTree = "<group>"; };
 		C45E284F2E5E0F4B00FE340D /* ChannelsEntitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsEntitiesTests.swift; sourceTree = "<group>"; };
@@ -438,6 +490,74 @@
 			path = ListUsers;
 			sourceTree = "<group>";
 		};
+		C441D48F2EADA86000768B13 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C441D48A2EADA86000768B13 /* MockChannelPrivateCreateInteractor.swift */,
+				C441D48B2EADA86000768B13 /* MockChannelPrivateCreatePresenter.swift */,
+				C441D48C2EADA86000768B13 /* MockChannelPrivateCreateRepository.swift */,
+				C441D48D2EADA86000768B13 /* MockChannelPrivateCreateRouter.swift */,
+				C441D48E2EADA86000768B13 /* MockChannelPrivateCreateView.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C441D4922EADA86000768B13 /* ChannelPrivateCreate */ = {
+			isa = PBXGroup;
+			children = (
+				C441D48F2EADA86000768B13 /* Mocks */,
+				C441D4902EADA86000768B13 /* ChannelPrivateCreateInteractorTests.swift */,
+				C441D4912EADA86000768B13 /* ChannelPrivateCreatePresenterTests.swift */,
+				C441D4AA2EADAAA700768B13 /* ChannelPrivateCreateEntitiesTests.swift */,
+			);
+			path = ChannelPrivateCreate;
+			sourceTree = "<group>";
+		};
+		C441D49F2EADA9D500768B13 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C441D49A2EADA9D500768B13 /* MockChannelPrivateJoinInteractor.swift */,
+				C441D49B2EADA9D500768B13 /* MockChannelPrivateJoinPresenter.swift */,
+				C441D49C2EADA9D500768B13 /* MockChannelPrivateJoinRepository.swift */,
+				C441D49D2EADA9D500768B13 /* MockChannelPrivateJoinRouter.swift */,
+				C441D49E2EADA9D500768B13 /* MockChannelPrivateJoinView.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C441D4A22EADA9D500768B13 /* ChannelPrivateJoin */ = {
+			isa = PBXGroup;
+			children = (
+				C441D49F2EADA9D500768B13 /* Mocks */,
+				C441D4A02EADA9D500768B13 /* ChannelPrivateJoinInteractorTests.swift */,
+				C441D4A12EADA9D500768B13 /* ChannelPrivateJoinPresenterTests.swift */,
+				C441D4AC2EADAB2500768B13 /* ChannelPrivateJoinEntitiesTests.swift */,
+			);
+			path = ChannelPrivateJoin;
+			sourceTree = "<group>";
+		};
+		C441D4B32EADABD400768B13 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C441D4AE2EADABD400768B13 /* MockListUsersInteractor.swift */,
+				C441D4AF2EADABD400768B13 /* MockListUsersPresenter.swift */,
+				C441D4B02EADABD400768B13 /* MockListUsersRepository.swift */,
+				C441D4B12EADABD400768B13 /* MockListUsersRouter.swift */,
+				C441D4B22EADABD400768B13 /* MockListUsersView.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C441D4B62EADABD400768B13 /* ListUsers */ = {
+			isa = PBXGroup;
+			children = (
+				C441D4B32EADABD400768B13 /* Mocks */,
+				C441D4B42EADABD400768B13 /* ListUsersInteractorTests.swift */,
+				C441D4B52EADABD400768B13 /* ListUsersPresenterTests.swift */,
+			);
+			path = ListUsers;
+			sourceTree = "<group>";
+		};
 		C450D1BA2E9846DE00F21013 /* ChannelPrivateCreate */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +630,9 @@
 				C45D930F2E31755600B3033B /* LoginRepositoryTests.swift */,
 				C4B9895C2E3414CD004CC463 /* ChannelsRepositoryTests.swift */,
 				C45DBFB62E352CF4007DAD63 /* ChannelUsersRepositoryTests.swift */,
+				C441D4BE2EADB31100768B13 /* ChannelPrivateCreateRepositoryTests.swift */,
+				C441D4C02EADB42C00768B13 /* ChannelPrivateJoinRepositoryTests.swift */,
+				C441D4C22EADB4CC00768B13 /* ListUsersRepositoryTests.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -610,7 +733,10 @@
 				C4382BE52E9C880000312672 /* Settings */,
 				C460910C2E5F663200AE9A12 /* Services */,
 				C45DBF9E2E350B9A007DAD63 /* Channel */,
+				C441D4922EADA86000768B13 /* ChannelPrivateCreate */,
+				C441D4A22EADA9D500768B13 /* ChannelPrivateJoin */,
 				C45D93222E33DC2A00B3033B /* Channels */,
+				C441D4B62EADABD400768B13 /* ListUsers */,
 				C45D92F22E316F6C00B3033B /* Login */,
 				C45D92DC2E3163DD00B3033B /* Register */,
 				C45D92F42E316FA600B3033B /* Repository */,
@@ -622,7 +748,7 @@
 			isa = PBXGroup;
 			children = (
 				C45D92F02E316AB600B3033B /* RegisterUITests.swift */,
-				C45DBFB82E353015007DAD63 /* ChannelUITests.swift */,
+				C45DBFB82E353015007DAD63 /* EndToEndAuthenticatedUITests.swift */,
 			);
 			path = WalkieTalkieUITests;
 			sourceTree = "<group>";
@@ -706,7 +832,6 @@
 		C46024D72E27F69C0032EDA6 /* Channel */ = {
 			isa = PBXGroup;
 			children = (
-				C46024F12E2803D60032EDA6 /* Entities */,
 				C46024F42E28042A0032EDA6 /* ChannelInteractor.swift */,
 				C46024F62E2804420032EDA6 /* ChannelPresenter.swift */,
 				C46024F82E2804520032EDA6 /* ChannelProtocols.swift */,
@@ -723,13 +848,6 @@
 				C46024D82E27F75A0032EDA6 /* RegisterRequest.swift */,
 				C46024DC2E27F8310032EDA6 /* RegisterAPIErrorResponse.swift */,
 				C46024DA2E27F81B0032EDA6 /* RegisterResponse.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		C46024F12E2803D60032EDA6 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1102,11 +1220,19 @@
 				C45E284E2E5E008100FE340D /* RegisterEntitiesTests.swift in Sources */,
 				C4B989572E3410A9004CC463 /* ChannelsPresenterTests.swift in Sources */,
 				C45D92FE2E31719000B3033B /* MockLoginInteractor.swift in Sources */,
+				C441D4AD2EADAB2500768B13 /* ChannelPrivateJoinEntitiesTests.swift in Sources */,
 				C4B9894D2E340F50004CC463 /* ChannelsInteractorTests.swift in Sources */,
 				C45D930C2E3173F400B3033B /* LoginInteractorTests.swift in Sources */,
 				C45DBFA92E351991007DAD63 /* MockChannelPresenter.swift in Sources */,
 				C45DBFB12E351CDB007DAD63 /* MockChannelInteractor.swift in Sources */,
 				C45DBFAB2E3519E8007DAD63 /* ChannelInteractorTests.swift in Sources */,
+				C441D4A32EADA9D500768B13 /* MockChannelPrivateJoinView.swift in Sources */,
+				C441D4A42EADA9D500768B13 /* MockChannelPrivateJoinRouter.swift in Sources */,
+				C441D4A52EADA9D500768B13 /* MockChannelPrivateJoinPresenter.swift in Sources */,
+				C441D4A62EADA9D500768B13 /* ChannelPrivateJoinInteractorTests.swift in Sources */,
+				C441D4A72EADA9D500768B13 /* MockChannelPrivateJoinInteractor.swift in Sources */,
+				C441D4A82EADA9D500768B13 /* ChannelPrivateJoinPresenterTests.swift in Sources */,
+				C441D4A92EADA9D500768B13 /* MockChannelPrivateJoinRepository.swift in Sources */,
 				C45D92E52E31664500B3033B /* MockRegisterInteractorOutput.swift in Sources */,
 				C45D92E72E31672600B3033B /* MockRegisterRepository.swift in Sources */,
 				C45D93102E31755600B3033B /* LoginRepositoryTests.swift in Sources */,
@@ -1118,12 +1244,14 @@
 				C45DBFAD2E351C66007DAD63 /* MockWebSocketService.swift in Sources */,
 				C4B9895D2E3414CD004CC463 /* ChannelsRepositoryTests.swift in Sources */,
 				C45E28502E5E0F4B00FE340D /* ChannelsEntitiesTests.swift in Sources */,
+				C441D4AB2EADAAA700768B13 /* ChannelPrivateCreateEntitiesTests.swift in Sources */,
 				C45DBFB32E351D3B007DAD63 /* MockChannelRouter.swift in Sources */,
 				C466098F2E3BAB8900834531 /* MockChannelUsersRepository.swift in Sources */,
 				C45DBFB52E351E54007DAD63 /* ChannelPresenterTests.swift in Sources */,
 				C4B9894F2E340FA7004CC463 /* MockChannelsView.swift in Sources */,
 				C460910E2E5F663F00AE9A12 /* AudioServiceTests.swift in Sources */,
 				C45D93022E3171BF00B3033B /* MockLoginRepository.swift in Sources */,
+				C441D4C32EADB4CC00768B13 /* ListUsersRepositoryTests.swift in Sources */,
 				C45D92DF2E31647300B3033B /* MockRegisterView.swift in Sources */,
 				C45D93042E31723000B3033B /* MockLoginInteractorOutput.swift in Sources */,
 				C45DBFB72E352CF4007DAD63 /* ChannelUsersRepositoryTests.swift in Sources */,
@@ -1132,11 +1260,27 @@
 				C45DBFAF2E351C90007DAD63 /* MockAudioService.swift in Sources */,
 				C45D92EF2E3168E200B3033B /* RegisterPresenterTests.swift in Sources */,
 				C4B989492E340F12004CC463 /* MockChannelsRepository.swift in Sources */,
+				C441D4932EADA86000768B13 /* MockChannelPrivateCreateView.swift in Sources */,
+				C441D4942EADA86000768B13 /* MockChannelPrivateCreatePresenter.swift in Sources */,
+				C441D4952EADA86000768B13 /* ChannelPrivateCreateInteractorTests.swift in Sources */,
+				C441D4962EADA86000768B13 /* MockChannelPrivateCreateInteractor.swift in Sources */,
+				C441D4972EADA86000768B13 /* MockChannelPrivateCreateRouter.swift in Sources */,
+				C441D4982EADA86000768B13 /* MockChannelPrivateCreateRepository.swift in Sources */,
+				C441D4BF2EADB31100768B13 /* ChannelPrivateCreateRepositoryTests.swift in Sources */,
+				C441D4992EADA86000768B13 /* ChannelPrivateCreatePresenterTests.swift in Sources */,
 				C45D92F82E31706D00B3033B /* RegisterRepositoryTests.swift in Sources */,
 				C4B9894B2E340F31004CC463 /* MockChannelsInteractorOutput.swift in Sources */,
 				C45DBFA12E350D00007DAD63 /* MockChannelView.swift in Sources */,
+				C441D4C12EADB42C00768B13 /* ChannelPrivateJoinRepositoryTests.swift in Sources */,
 				C4382BED2E9C888800312672 /* MockSettingsView.swift in Sources */,
 				C4382BEE2E9C888800312672 /* SettingsPresenterTests.swift in Sources */,
+				C441D4B72EADABD400768B13 /* MockListUsersView.swift in Sources */,
+				C441D4B82EADABD400768B13 /* ListUsersInteractorTests.swift in Sources */,
+				C441D4B92EADABD400768B13 /* MockListUsersInteractor.swift in Sources */,
+				C441D4BA2EADABD400768B13 /* MockListUsersPresenter.swift in Sources */,
+				C441D4BB2EADABD400768B13 /* MockListUsersRouter.swift in Sources */,
+				C441D4BC2EADABD400768B13 /* ListUsersPresenterTests.swift in Sources */,
+				C441D4BD2EADABD400768B13 /* MockListUsersRepository.swift in Sources */,
 				C4382BEF2E9C888800312672 /* SettingsInteractorTests.swift in Sources */,
 				C4382BF02E9C888800312672 /* MockSettingsInteractor.swift in Sources */,
 				C4382BF12E9C888800312672 /* MockSettingsRouter.swift in Sources */,
@@ -1150,7 +1294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45D92F12E316AB600B3033B /* RegisterUITests.swift in Sources */,
-				C45DBFB92E353015007DAD63 /* ChannelUITests.swift in Sources */,
+				C45DBFB92E353015007DAD63 /* EndToEndAuthenticatedUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

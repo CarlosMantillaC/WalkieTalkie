@@ -9,6 +9,14 @@ import XCTest
 @testable import WalkieTalkie
 
 final class MockChannelRouter: ChannelRouterProtocol {
+    var navigateToListUsersCalled = false
+    var listUsersChannelName: String?
+
+    func navigateToListUsers(from view: any WalkieTalkie.ChannelViewProtocol, with channelName: String) {
+        navigateToListUsersCalled = true
+        listUsersChannelName = channelName
+    }
+    
     var presentModalCalled = false
     var navigateToSettingsCalled = false
     var navigateToChannelPrivateCreateCalled = false
