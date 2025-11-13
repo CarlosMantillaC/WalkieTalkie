@@ -58,7 +58,21 @@ final class AudioService: AudioServiceProtocol {
         
         inputNode.removeTap(onBus: 0)
         
-        let inputFormat = inputNode.inputFormat(forBus: 0)
+        do {
+            try audioEngine.start()
+            logger.info("Audio engine started")
+        } catch {
+            logger.error("Audio engine failed to start: \(error.localizedDescription)")
+            return
+        }
+        
+        let inputFormat = inputNode.outputFormat(forBus: 0)
+        if inputFormat.sampleRate == 0 || inputFormat.channelCount == 0 {
+            logger.error("Invalid input format, sampleRate or channelCount is zero.")
+            audioEngine.stop()
+            return
+        }
+        
         guard let targetFormat = AVAudioFormat(
             commonFormat: .pcmFormatInt16,
             sampleRate: 16000,
@@ -66,6 +80,7 @@ final class AudioService: AudioServiceProtocol {
             interleaved: true
         ) else {
             logger.error("Failed to create target audio format")
+            audioEngine.stop()
             return
         }
         
@@ -95,13 +110,6 @@ final class AudioService: AudioServiceProtocol {
             } else if let error {
                 self.logger.error("Conversion error: \(error.localizedDescription)")
             }
-        }
-        
-        do {
-            try audioEngine.start()
-            logger.info("Audio engine started")
-        } catch {
-            logger.error("Audio engine failed to start: \(error.localizedDescription)")
         }
     }
     
