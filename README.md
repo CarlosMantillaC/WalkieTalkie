@@ -44,6 +44,7 @@ WalkieTalkie/
 - How to run the app in the simulator: **Cmd+R**
 - How to run the tests: **Cmd+U** in Xcode or `xcodebuild test`
 - Example flow: **Login → Join a channel → Connect with users**
+- 📹 [Watch the demo video](https://drive.google.com/file/d/1cACYnQzV_UC6ypneVnorx9fjk0tP77LT/view?usp=drive_link)
 
 ## 7. Testing
 - Framework used: **XCTest**
